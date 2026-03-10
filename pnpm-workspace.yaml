@@ -1,5 +1,6 @@
 packages:
   - 'packages/*'
   - 'packages/themes/*'
+  - '!packages/themes/_template'
   - 'apps/*'
   - 'tools/*'
