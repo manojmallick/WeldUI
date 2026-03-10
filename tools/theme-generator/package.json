@@ -1,19 +1,33 @@
 {
-  "name": "@weldui/theme-generator",
-  "version": "0.1.0",
-  "private": true,
+  "name": "create-weldui-theme",
+  "version": "0.2.0-beta.0",
+  "description": "Interactive CLI to scaffold WeldUI theme packages with WCAG AA compliance",
   "bin": {
-    "weldui-theme": "./dist/index.js"
+    "create-weldui-theme": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch"
   },
   "dependencies": {
-    "@weldui/core": "workspace:*"
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.4.0"
-  }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "weldui",
+    "theme",
+    "web-components",
+    "css",
+    "design-tokens"
+  ],
+  "license": "MIT"
 }

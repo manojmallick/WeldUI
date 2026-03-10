@@ -190,9 +190,9 @@ importers:
 
   tools/theme-generator:
     dependencies:
-      '@weldui/core':
-        specifier: workspace:*
-        version: link:../../packages/core
+      picocolors:
+        specifier: ^1.0.0
+        version: 1.1.1
     devDependencies:
       '@types/node':
         specifier: ^20.0.0

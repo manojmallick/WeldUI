@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "docs": "0.0.1",
+    "playground": "0.0.1",
+    "@weldui/angular": "0.1.0",
+    "@weldui/core": "0.1.0",
+    "@weldui/react": "0.1.0",
+    "@weldui/theme-default": "0.1.0",
+    "@weldui/theme-forest": "0.1.0",
+    "@weldui/theme-midnight": "0.1.0",
+    "@weldui/theme-ocean": "0.1.0",
+    "@weldui/tokens-tailwind": "0.1.0",
+    "@weldui/vue": "0.1.0",
+    "@weldui/build-tools": "0.1.0",
+    "create-weldui-theme": "0.1.0"
+  },
+  "changesets": []
+}
