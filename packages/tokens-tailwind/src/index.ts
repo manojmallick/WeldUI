@@ -10,7 +10,7 @@ import type { Config } from 'tailwindcss';
  *
  * export default { presets: [welduiPreset] };
  */
-export const welduiPreset: Config = {
+export const welduiPreset: Partial<Config> = {
   theme: {
     extend: {
       colors: {

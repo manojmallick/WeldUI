@@ -9,10 +9,10 @@
     "@weldui/core": "workspace:*"
   },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json"
+    "build": "tsc"
   },
   "devDependencies": {
-    "ng-packagr": "^17.0.0",
+    "typescript": "^5.4.0",
     "@angular/core": "^17.0.0"
   }
 }
