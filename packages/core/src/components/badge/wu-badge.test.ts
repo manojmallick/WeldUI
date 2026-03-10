@@ -5,7 +5,8 @@ import './wu-badge.js';
 describe('wu-badge', () => {
   it('renders with default variant', async () => {
     const el = await fixture(html`<wu-badge>Label</wu-badge>`);
-    expect(el.getAttribute('variant')).toBeNull();
+    // variant has reflect:true with default 'default', so attribute is present
+    expect(el.getAttribute('variant')).toBe('default');
   });
 
   it('reflects variant attribute', async () => {

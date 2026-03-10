@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/web-components';
+import { html } from 'lit';
 
 // Import WeldUI tokens — relative paths avoid Rollup package resolution issues
 import '../../../packages/core/src/tokens/base.css';
@@ -49,7 +50,7 @@ const preview: Preview = {
   decorators: [
     (story, context) => {
       const theme = context.globals.theme || 'default';
-      return `<div data-theme="${theme}" style="padding: 1rem; background: var(--wu-color-background); min-height: 100vh;">${story()}</div>`;
+      return html`<div data-theme="${theme}" style="padding: 1rem; background: var(--wu-color-background); min-height: 100vh;">${story()}</div>`;
     },
   ],
 };
