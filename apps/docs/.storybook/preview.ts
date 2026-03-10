@@ -1,11 +1,12 @@
 import type { Preview } from '@storybook/web-components';
 
-// Import WeldUI tokens (base + semantic)
-import '@weldui/core/tokens';
+// Import WeldUI tokens — relative paths avoid Rollup package resolution issues
+import '../../../packages/core/src/tokens/base.css';
+import '../../../packages/core/src/tokens/semantic.css';
 
-// Import themes for the toolbar switcher
-import '@weldui/theme-default/light';
-import '@weldui/theme-default/dark';
+// Import default theme overrides
+import '../../../packages/themes/default/light.css';
+import '../../../packages/themes/default/dark.css';
 
 const preview: Preview = {
   parameters: {
