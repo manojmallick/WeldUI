@@ -7,7 +7,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./tokens": "./dist/tokens/index.css",
+    "./tokens/base.css": "./dist/tokens/base.css",
+    "./tokens/semantic.css": "./dist/tokens/semantic.css",
+    "./tokens": "./dist/tokens/base.css",
     "./themes/*": "./dist/themes/*"
   },
   "main": "./dist/index.cjs",
@@ -15,7 +17,7 @@
   "types": "./dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build": "vite build && tsc --emitDeclarationOnly && mkdir -p dist/tokens && cp src/tokens/*.css dist/tokens/",
     "dev": "vite build --watch",
     "test": "vitest run",
     "test:watch": "vitest",
