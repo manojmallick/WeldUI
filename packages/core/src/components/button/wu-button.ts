@@ -61,7 +61,7 @@ export class WuButton extends LitElement {
 
   /** Accessible label for icon-only buttons */
   @property({ attribute: 'aria-label' })
-  override ariaLabel?: string;
+  override ariaLabel: string | null = null;
 
   private _handleClick(event: MouseEvent): void {
     if (this.disabled || this.loading) {
@@ -86,7 +86,7 @@ export class WuButton extends LitElement {
         ?disabled=${this.disabled || this.loading}
         aria-disabled=${this.disabled || this.loading ? 'true' : 'false'}
         aria-busy=${this.loading ? 'true' : 'false'}
-        aria-label=${ifDefined(this.ariaLabel)}
+        aria-label=${ifDefined(this.ariaLabel ?? undefined)}
         @click=${this._handleClick}
       >
         ${this.loading ? html`<span class="spinner" aria-hidden="true"></span>` : ''}

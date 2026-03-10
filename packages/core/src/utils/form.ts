@@ -5,13 +5,16 @@
  * Usage:
  *   class WuInput extends FormAssociated(LitElement) { ... }
  */
-export function FormAssociated<T extends new (...args: unknown[]) => HTMLElement>(Base: T) {
-  abstract class FormAssociatedElement extends Base {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function FormAssociated<T extends new (...args: any[]) => HTMLElement>(Base: T) {
+  class FormAssociatedElement extends Base {
     static formAssociated = true;
 
-    protected _internals: ElementInternals;
+    // underscore prefix signals "internal use only" without TS protected restriction
+    _internals: ElementInternals;
 
-    constructor(...args: unknown[]) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    constructor(...args: any[]) {
       super(...args);
       this._internals = (this as unknown as HTMLElement).attachInternals();
     }
