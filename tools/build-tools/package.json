@@ -1,0 +1,9 @@
+{
+  "name": "@weldui/build-tools",
+  "version": "0.1.0",
+  "private": true,
+  "files": ["*.json", "*.ts", "*.js"],
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  }
+}

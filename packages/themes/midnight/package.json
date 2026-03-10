@@ -1,0 +1,8 @@
+{
+  "name": "@weldui/theme-midnight",
+  "version": "0.1.0",
+  "description": "WeldUI Midnight theme — purple palette for developer tools",
+  "files": ["*.css"],
+  "exports": { ".": "./theme.css" },
+  "keywords": ["weldui", "theme", "midnight", "dark"]
+}

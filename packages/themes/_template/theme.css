@@ -1,0 +1,40 @@
+/* WeldUI Theme Template
+   Copy this file to packages/themes/[your-theme-name]/theme.css
+   Replace the placeholder values with your brand colours.
+   Run: pnpm contrast-check packages/themes/[name]/theme.css
+   to validate WCAG AA compliance before publishing. */
+
+[data-theme="THEME_NAME"], [data-theme="THEME_NAME-light"] {
+  /* ── Brand ── */
+  --wu-color-primary:        #REPLACE_PRIMARY;
+  --wu-color-primary-hover:  #REPLACE_PRIMARY_HOVER;  /* darker shade */
+  --wu-color-primary-subtle: #REPLACE_PRIMARY_SUBTLE; /* very light tint */
+  --wu-color-primary-fg:     #ffffff;                 /* text on primary */
+
+  /* ── Surfaces ── */
+  --wu-color-background:     #ffffff;
+  --wu-color-surface:        #f8fafc;
+  --wu-color-surface-raised: #ffffff;
+
+  /* ── Text ── */
+  --wu-color-text:           #0f172a;  /* WCAG AA: 4.5:1 min on background */
+  --wu-color-text-secondary: #475569;  /* WCAG AA: 4.5:1 min on background */
+  --wu-color-text-disabled:  #94a3b8;
+  --wu-color-text-inverse:   #ffffff;
+
+  /* ── Borders ── */
+  --wu-color-border:         #e2e8f0;
+  --wu-color-border-strong:  #cbd5e1;
+  --wu-color-border-focus:   var(--wu-color-primary);
+
+  /* ── Status (keep defaults or override) ── */
+  --wu-color-success:        #16a34a;
+  --wu-color-success-subtle: #f0fdf4;
+  --wu-color-warning:        #d97706;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #dc2626;
+  --wu-color-danger-subtle:  #fef2f2;
+
+  /* ── Focus ring — match your brand ── */
+  --wu-focus-ring: 0 0 0 3px #REPLACE_FOCUS_RING_COLOR;
+}

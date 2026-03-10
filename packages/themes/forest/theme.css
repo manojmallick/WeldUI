@@ -1,0 +1,23 @@
+/* WeldUI Forest Theme — Green palette for Sustainability / ESG */
+
+[data-theme="forest"], [data-theme="forest-light"] {
+  --wu-color-primary:        #16a34a;
+  --wu-color-primary-hover:  #15803d;
+  --wu-color-primary-subtle: #f0fdf4;
+  --wu-color-primary-fg:     #ffffff;
+
+  --wu-color-background:     #f0fdf4;
+  --wu-color-surface:        #dcfce7;
+  --wu-color-surface-raised: #ffffff;
+
+  --wu-color-text:           #14532d;
+  --wu-color-text-secondary: #166534;
+  --wu-color-text-disabled:  #86efac;
+  --wu-color-text-inverse:   #ffffff;
+
+  --wu-color-border:         #bbf7d0;
+  --wu-color-border-strong:  #86efac;
+  --wu-color-border-focus:   #16a34a;
+
+  --wu-focus-ring: 0 0 0 3px #bbf7d0;
+}

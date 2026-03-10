@@ -1,0 +1,8 @@
+{
+  "name": "@weldui/theme-forest",
+  "version": "0.1.0",
+  "description": "WeldUI Forest theme — green palette for Sustainability / ESG",
+  "files": ["*.css"],
+  "exports": { ".": "./theme.css" },
+  "keywords": ["weldui", "theme", "forest", "sustainability"]
+}

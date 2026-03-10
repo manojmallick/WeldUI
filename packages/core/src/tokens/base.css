@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════════
+   WeldUI — Layer 1: Primitive Tokens
+   Raw values only. No semantic meaning. Full palette.
+   Never reference these directly in components — use
+   semantic tokens (semantic.css) instead.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Color Palette ── */
+  --wu-color-white: #ffffff;
+  --wu-color-black: #000000;
+
+  /* Gray */
+  --wu-color-gray-50:  #f8fafc;
+  --wu-color-gray-100: #f1f5f9;
+  --wu-color-gray-200: #e2e8f0;
+  --wu-color-gray-300: #cbd5e1;
+  --wu-color-gray-400: #94a3b8;
+  --wu-color-gray-500: #64748b;
+  --wu-color-gray-600: #475569;
+  --wu-color-gray-700: #334155;
+  --wu-color-gray-800: #1e293b;
+  --wu-color-gray-900: #0f172a;
+  --wu-color-gray-950: #020617;
+
+  /* Blue */
+  --wu-color-blue-50:  #eff6ff;
+  --wu-color-blue-100: #dbeafe;
+  --wu-color-blue-200: #bfdbfe;
+  --wu-color-blue-300: #93c5fd;
+  --wu-color-blue-400: #60a5fa;
+  --wu-color-blue-500: #3b82f6;
+  --wu-color-blue-600: #2563eb;
+  --wu-color-blue-700: #1d4ed8;
+  --wu-color-blue-800: #1e40af;
+  --wu-color-blue-900: #1e3a8a;
+
+  /* Green */
+  --wu-color-green-50:  #f0fdf4;
+  --wu-color-green-500: #22c55e;
+  --wu-color-green-600: #16a34a;
+  --wu-color-green-700: #15803d;
+
+  /* Red */
+  --wu-color-red-50:  #fef2f2;
+  --wu-color-red-500: #ef4444;
+  --wu-color-red-600: #dc2626;
+  --wu-color-red-700: #b91c1c;
+
+  /* Amber */
+  --wu-color-amber-50:  #fffbeb;
+  --wu-color-amber-500: #f59e0b;
+  --wu-color-amber-600: #d97706;
+
+  /* ── Spacing Scale (4px base) ── */
+  --wu-space-0:    0px;
+  --wu-space-1:    4px;
+  --wu-space-2:    8px;
+  --wu-space-3:    12px;
+  --wu-space-4:    16px;
+  --wu-space-5:    20px;
+  --wu-space-6:    24px;
+  --wu-space-8:    32px;
+  --wu-space-10:   40px;
+  --wu-space-12:   48px;
+  --wu-space-16:   64px;
+
+  /* ── Border Radius ── */
+  --wu-radius-none: 0px;
+  --wu-radius-sm:   4px;
+  --wu-radius-md:   6px;
+  --wu-radius-lg:   8px;
+  --wu-radius-xl:   12px;
+  --wu-radius-2xl:  16px;
+  --wu-radius-full: 9999px;
+
+  /* ── Typography ── */
+  --wu-font-sans:  system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --wu-font-mono:  'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  --wu-text-xs:   0.75rem;    /* 12px */
+  --wu-text-sm:   0.875rem;   /* 14px */
+  --wu-text-base: 1rem;       /* 16px */
+  --wu-text-lg:   1.125rem;   /* 18px */
+  --wu-text-xl:   1.25rem;    /* 20px */
+  --wu-text-2xl:  1.5rem;     /* 24px */
+
+  --wu-font-normal:   400;
+  --wu-font-medium:   500;
+  --wu-font-semibold: 600;
+  --wu-font-bold:     700;
+
+  --wu-leading-tight:   1.25;
+  --wu-leading-normal:  1.5;
+  --wu-leading-relaxed: 1.75;
+
+  /* ── Shadows ── */
+  --wu-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --wu-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --wu-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --wu-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* ── Transitions ── */
+  --wu-duration-fast:   100ms;
+  --wu-duration-normal: 200ms;
+  --wu-duration-slow:   300ms;
+  --wu-ease-default:    cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,45 @@
+/* WeldUI Midnight Theme — Purple palette for Developer tools */
+
+[data-theme="midnight"], [data-theme="midnight-dark"] {
+  --wu-color-primary:        #7c3aed;
+  --wu-color-primary-hover:  #6d28d9;
+  --wu-color-primary-subtle: color-mix(in srgb, #7c3aed 15%, transparent);
+  --wu-color-primary-fg:     #ffffff;
+
+  --wu-color-background:     #0a0010;
+  --wu-color-surface:        #13002a;
+  --wu-color-surface-raised: #1e0040;
+
+  --wu-color-text:           #ede9fe;
+  --wu-color-text-secondary: #c4b5fd;
+  --wu-color-text-disabled:  #5b21b6;
+  --wu-color-text-inverse:   #0a0010;
+
+  --wu-color-border:         #2e1065;
+  --wu-color-border-strong:  #4c1d95;
+  --wu-color-border-focus:   #7c3aed;
+
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #7c3aed 40%, transparent);
+}
+
+[data-theme="midnight-light"] {
+  --wu-color-primary:        #7c3aed;
+  --wu-color-primary-hover:  #6d28d9;
+  --wu-color-primary-subtle: #f5f3ff;
+  --wu-color-primary-fg:     #ffffff;
+
+  --wu-color-background:     #faf5ff;
+  --wu-color-surface:        #f3e8ff;
+  --wu-color-surface-raised: #ffffff;
+
+  --wu-color-text:           #2e1065;
+  --wu-color-text-secondary: #5b21b6;
+  --wu-color-text-disabled:  #c4b5fd;
+  --wu-color-text-inverse:   #ffffff;
+
+  --wu-color-border:         #ddd6fe;
+  --wu-color-border-strong:  #c4b5fd;
+  --wu-color-border-focus:   #7c3aed;
+
+  --wu-focus-ring: 0 0 0 3px #ddd6fe;
+}

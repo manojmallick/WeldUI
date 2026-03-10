@@ -1,0 +1,12 @@
+{
+  "name": "@weldui/theme-default",
+  "version": "0.1.0",
+  "description": "WeldUI default light and dark theme",
+  "files": ["*.css"],
+  "exports": {
+    "./light": "./light.css",
+    "./dark": "./dark.css",
+    ".": "./light.css"
+  },
+  "keywords": ["weldui", "theme", "design-system"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@weldui/theme-REPLACE_NAME",
+  "version": "1.0.0",
+  "description": "WeldUI REPLACE_NAME theme",
+  "files": ["*.css"],
+  "exports": { ".": "./theme.css" },
+  "peerDependencies": {
+    "@weldui/core": ">=0.1.0"
+  },
+  "keywords": ["weldui", "theme"]
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeldUI Playground</title>
+  <style>
+    /* Import WeldUI tokens */
+    @import '@weldui/core/tokens/base.css';
+    @import '@weldui/core/tokens/semantic.css';
+    /* Default theme */
+    @import '@weldui/theme-default/light';
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--wu-font-sans);
+      background: var(--wu-color-background);
+      color: var(--wu-color-text);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .toolbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--wu-color-surface);
+      border-bottom: 1px solid var(--wu-color-border);
+    }
+
+    .toolbar h1 {
+      margin: 0;
+      font-size: var(--wu-text-base);
+      font-weight: var(--wu-font-semibold);
+    }
+
+    .toolbar select {
+      margin-left: auto;
+      padding: 6px 10px;
+      border-radius: var(--wu-radius-md);
+      border: 1px solid var(--wu-color-border);
+      background: var(--wu-color-surface-raised);
+      color: var(--wu-color-text);
+      font-size: var(--wu-text-sm);
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px 48px;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: var(--wu-text-lg);
+      font-weight: var(--wu-font-semibold);
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--wu-color-border);
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+  </style>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+  <div class="toolbar">
+    <h1>🔨 WeldUI Playground</h1>
+    <select id="theme-picker" onchange="document.documentElement.dataset.theme = this.value">
+      <option value="default">Default Light</option>
+      <option value="default-dark">Default Dark</option>
+      <option value="ocean">Ocean</option>
+      <option value="ocean-dark">Ocean Dark</option>
+      <option value="forest">Forest</option>
+      <option value="midnight">Midnight</option>
+      <option value="midnight-light">Midnight Light</option>
+    </select>
+  </div>
+
+  <main>
+    <section>
+      <h2>Buttons</h2>
+      <div class="row">
+        <wu-button variant="primary">Primary</wu-button>
+        <wu-button variant="secondary">Secondary</wu-button>
+        <wu-button variant="ghost">Ghost</wu-button>
+        <wu-button variant="danger">Danger</wu-button>
+        <wu-button variant="success">Success</wu-button>
+        <wu-button disabled>Disabled</wu-button>
+        <wu-button loading>Loading</wu-button>
+      </div>
+      <div class="row">
+        <wu-button size="sm">Small</wu-button>
+        <wu-button size="md">Medium</wu-button>
+        <wu-button size="lg">Large</wu-button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

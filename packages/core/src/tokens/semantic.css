@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════════
+   WeldUI — Layer 2: Semantic Tokens
+   Maps primitives to meaning. Theme files ONLY override
+   this layer — never Layer 1 primitives directly.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── DEFAULT LIGHT THEME ── */
+[data-theme="light"], :root {
+  /* Surface colours */
+  --wu-color-background:      var(--wu-color-white);
+  --wu-color-surface:         var(--wu-color-gray-50);
+  --wu-color-surface-raised:  var(--wu-color-white);
+  --wu-color-surface-overlay: var(--wu-color-white);
+
+  /* Brand */
+  --wu-color-primary:        var(--wu-color-blue-600);
+  --wu-color-primary-hover:  var(--wu-color-blue-700);
+  --wu-color-primary-subtle: var(--wu-color-blue-50);
+  --wu-color-primary-fg:     var(--wu-color-white);
+
+  /* Text */
+  --wu-color-text:           var(--wu-color-gray-900);
+  --wu-color-text-secondary: var(--wu-color-gray-600);
+  --wu-color-text-disabled:  var(--wu-color-gray-400);
+  --wu-color-text-inverse:   var(--wu-color-white);
+
+  /* Border */
+  --wu-color-border:         var(--wu-color-gray-200);
+  --wu-color-border-strong:  var(--wu-color-gray-300);
+  --wu-color-border-focus:   var(--wu-color-blue-500);
+
+  /* Status */
+  --wu-color-success:        var(--wu-color-green-600);
+  --wu-color-success-subtle: var(--wu-color-green-50);
+  --wu-color-warning:        var(--wu-color-amber-600);
+  --wu-color-warning-subtle: var(--wu-color-amber-50);
+  --wu-color-danger:         var(--wu-color-red-600);
+  --wu-color-danger-subtle:  var(--wu-color-red-50);
+  --wu-color-info:           var(--wu-color-blue-600);
+  --wu-color-info-subtle:    var(--wu-color-blue-50);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px var(--wu-color-blue-200);
+}
+
+/* ── DEFAULT DARK THEME ── */
+[data-theme="dark"] {
+  --wu-color-background:      var(--wu-color-gray-950);
+  --wu-color-surface:         var(--wu-color-gray-900);
+  --wu-color-surface-raised:  var(--wu-color-gray-800);
+  --wu-color-surface-overlay: var(--wu-color-gray-800);
+
+  --wu-color-primary:        var(--wu-color-blue-400);
+  --wu-color-primary-hover:  var(--wu-color-blue-300);
+  --wu-color-primary-subtle: color-mix(in srgb, var(--wu-color-blue-500) 15%, transparent);
+  --wu-color-primary-fg:     var(--wu-color-gray-900);
+
+  --wu-color-text:           var(--wu-color-gray-50);
+  --wu-color-text-secondary: var(--wu-color-gray-400);
+  --wu-color-text-disabled:  var(--wu-color-gray-600);
+  --wu-color-text-inverse:   var(--wu-color-gray-900);
+
+  --wu-color-border:         var(--wu-color-gray-800);
+  --wu-color-border-strong:  var(--wu-color-gray-700);
+  --wu-color-border-focus:   var(--wu-color-blue-400);
+
+  --wu-color-success:        var(--wu-color-green-500);
+  --wu-color-success-subtle: color-mix(in srgb, var(--wu-color-green-500) 15%, transparent);
+  --wu-color-danger:         var(--wu-color-red-500);
+  --wu-color-danger-subtle:  color-mix(in srgb, var(--wu-color-red-500) 15%, transparent);
+  --wu-color-warning:        var(--wu-color-amber-500);
+  --wu-color-warning-subtle: color-mix(in srgb, var(--wu-color-amber-500) 15%, transparent);
+  --wu-color-info:           var(--wu-color-blue-400);
+  --wu-color-info-subtle:    color-mix(in srgb, var(--wu-color-blue-400) 15%, transparent);
+
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, var(--wu-color-blue-400) 30%, transparent);
+}

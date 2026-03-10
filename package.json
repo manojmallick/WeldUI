@@ -1,0 +1,27 @@
+{
+  "name": "weldui",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "storybook": "pnpm --filter docs storybook",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=!docs --filter=!playground && changeset publish",
+    "scaffold:component": "tsx tools/scripts/scaffold-component.ts",
+    "contrast-check": "tsx tools/scripts/contrast-check.ts"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "prettier": "^3.2.0",
+    "tsx": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}

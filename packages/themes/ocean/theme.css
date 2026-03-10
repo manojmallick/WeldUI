@@ -1,0 +1,54 @@
+/* WeldUI Ocean Theme — Blue-teal palette, professional B2B SaaS */
+
+[data-theme="ocean"], [data-theme="ocean-light"] {
+  --wu-color-primary:        #0ea5e9;
+  --wu-color-primary-hover:  #0284c7;
+  --wu-color-primary-subtle: #f0f9ff;
+  --wu-color-primary-fg:     #ffffff;
+
+  --wu-color-background:     #f0f9ff;
+  --wu-color-surface:        #e0f2fe;
+  --wu-color-surface-raised: #ffffff;
+
+  --wu-color-text:           #0c4a6e;
+  --wu-color-text-secondary: #0369a1;
+  --wu-color-text-disabled:  #7dd3fc;
+  --wu-color-text-inverse:   #ffffff;
+
+  --wu-color-border:         #bae6fd;
+  --wu-color-border-strong:  #7dd3fc;
+  --wu-color-border-focus:   #0ea5e9;
+
+  --wu-color-success:        #0d9488;
+  --wu-color-success-subtle: #f0fdfa;
+  --wu-color-warning:        #d97706;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #dc2626;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #0ea5e9;
+  --wu-color-info-subtle:    #f0f9ff;
+
+  --wu-focus-ring: 0 0 0 3px #bae6fd;
+}
+
+[data-theme="ocean-dark"] {
+  --wu-color-primary:        #38bdf8;
+  --wu-color-primary-hover:  #7dd3fc;
+  --wu-color-primary-subtle: color-mix(in srgb, #0ea5e9 15%, transparent);
+  --wu-color-primary-fg:     #0c4a6e;
+
+  --wu-color-background:     #082f49;
+  --wu-color-surface:        #0c4a6e;
+  --wu-color-surface-raised: #075985;
+
+  --wu-color-text:           #f0f9ff;
+  --wu-color-text-secondary: #7dd3fc;
+  --wu-color-text-disabled:  #0369a1;
+  --wu-color-text-inverse:   #082f49;
+
+  --wu-color-border:         #075985;
+  --wu-color-border-strong:  #0369a1;
+  --wu-color-border-focus:   #38bdf8;
+
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #38bdf8 30%, transparent);
+}

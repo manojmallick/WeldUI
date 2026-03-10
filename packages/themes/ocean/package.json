@@ -1,0 +1,8 @@
+{
+  "name": "@weldui/theme-ocean",
+  "version": "0.1.0",
+  "description": "WeldUI Ocean theme — blue-teal palette for B2B SaaS",
+  "files": ["*.css"],
+  "exports": { ".": "./theme.css" },
+  "keywords": ["weldui", "theme", "ocean"]
+}

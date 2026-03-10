@@ -1,0 +1,80 @@
+# ═══════════════════════════════════════════════════
+# WeldUI .gitignore
+# ═══════════════════════════════════════════════════
+
+# ── Build outputs ──
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+storybook-static/
+
+# ── Dependencies ──
+node_modules/
+.pnp
+.pnp.js
+
+# ── Environment & secrets ──
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ── Claude AI context files ──
+# Root CLAUDE.md IS committed (master implementation guide)
+# Module-level CLAUDE.md files are LOCAL ONLY — developer-specific context
+**/CLAUDE.md
+src/**/CLAUDE.md
+packages/**/CLAUDE.md
+apps/**/CLAUDE.md
+tools/**/CLAUDE.md
+
+# ── Claude Skills ──
+# SKILL.md files contain local/proprietary AI workflow instructions
+# They are NOT committed to the repository
+.claude/skills/**/SKILL.md
+
+# ── Claude settings ──
+# May contain local API keys, paths, or preferences
+.claude/settings.json
+
+# ── Marketplace & commercial ──
+# Paid theme packages are NOT in the public repo
+packages/themes/premium/
+packages/compliance/dist/
+
+# ── Test & coverage ──
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+*.snap
+
+# ── Logs ──
+*.log
+logs/
+npm-debug.log*
+pnpm-debug.log*
+docs/runbooks/release-history.log
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Misc ──
+*.tgz
+.cache/
+tmp/
+temp/

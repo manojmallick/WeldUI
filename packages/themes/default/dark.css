@@ -1,0 +1,32 @@
+/* WeldUI Default Dark Theme */
+
+[data-theme="default-dark"] {
+  --wu-color-primary:        #60a5fa;
+  --wu-color-primary-hover:  #93c5fd;
+  --wu-color-primary-subtle: color-mix(in srgb, #3b82f6 15%, transparent);
+  --wu-color-primary-fg:     #0f172a;
+
+  --wu-color-background:     #020617;
+  --wu-color-surface:        #0f172a;
+  --wu-color-surface-raised: #1e293b;
+
+  --wu-color-text:           #f8fafc;
+  --wu-color-text-secondary: #94a3b8;
+  --wu-color-text-disabled:  #475569;
+  --wu-color-text-inverse:   #0f172a;
+
+  --wu-color-border:         #1e293b;
+  --wu-color-border-strong:  #334155;
+  --wu-color-border-focus:   #60a5fa;
+
+  --wu-color-success:        #22c55e;
+  --wu-color-success-subtle: color-mix(in srgb, #22c55e 15%, transparent);
+  --wu-color-warning:        #f59e0b;
+  --wu-color-warning-subtle: color-mix(in srgb, #f59e0b 15%, transparent);
+  --wu-color-danger:         #ef4444;
+  --wu-color-danger-subtle:  color-mix(in srgb, #ef4444 15%, transparent);
+  --wu-color-info:           #60a5fa;
+  --wu-color-info-subtle:    color-mix(in srgb, #60a5fa 15%, transparent);
+
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #60a5fa 30%, transparent);
+}
