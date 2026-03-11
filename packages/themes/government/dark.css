@@ -1,0 +1,40 @@
+/* WeldUI Government Formal Theme — Dark
+   Authoritative gray palette, dark variant for public sector portals. */
+
+[data-theme="government-dark"] {
+  /* Brand — lighter gray for dark mode */
+  --wu-color-primary:        #d1d5db;
+  --wu-color-primary-hover:  #e5e7eb;
+  --wu-color-primary-subtle: color-mix(in srgb, #374151 15%, transparent);
+  --wu-color-primary-fg:     #111827;
+
+  /* Surface — deep neutral darks */
+  --wu-color-background:     #030712;
+  --wu-color-surface:        #111827;
+  --wu-color-surface-raised: #1f2937;
+  --wu-color-surface-overlay:#1f2937;
+
+  /* Text */
+  --wu-color-text:           #f9fafb;
+  --wu-color-text-secondary: #d1d5db;
+  --wu-color-text-disabled:  #374151;
+  --wu-color-text-inverse:   #111827;
+
+  /* Border */
+  --wu-color-border:         #1f2937;
+  --wu-color-border-strong:  #374151;
+  --wu-color-border-focus:   #d1d5db;
+
+  /* Status */
+  --wu-color-success:        #4ade80;
+  --wu-color-success-subtle: color-mix(in srgb, #166534 15%, transparent);
+  --wu-color-warning:        #fcd34d;
+  --wu-color-warning-subtle: color-mix(in srgb, #92400e 15%, transparent);
+  --wu-color-danger:         #f87171;
+  --wu-color-danger-subtle:  color-mix(in srgb, #991b1b 15%, transparent);
+  --wu-color-info:           #93c5fd;
+  --wu-color-info-subtle:    color-mix(in srgb, #1e40af 15%, transparent);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #d1d5db 30%, transparent);
+}

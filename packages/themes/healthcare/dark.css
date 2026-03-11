@@ -1,0 +1,40 @@
+/* WeldUI Healthcare Calm Theme — Dark
+   Calming teal palette, dark variant for medical dashboards. */
+
+[data-theme="healthcare-dark"] {
+  /* Brand — brighter teal for dark backgrounds */
+  --wu-color-primary:        #22d3ee;
+  --wu-color-primary-hover:  #67e8f9;
+  --wu-color-primary-subtle: color-mix(in srgb, #0891b2 15%, transparent);
+  --wu-color-primary-fg:     #083344;
+
+  /* Surface — deep teal-tinted darks */
+  --wu-color-background:     #021c24;
+  --wu-color-surface:        #052a36;
+  --wu-color-surface-raised: #0a3e4e;
+  --wu-color-surface-overlay:#0a3e4e;
+
+  /* Text */
+  --wu-color-text:           #ecfeff;
+  --wu-color-text-secondary: #67e8f9;
+  --wu-color-text-disabled:  #155e75;
+  --wu-color-text-inverse:   #083344;
+
+  /* Border */
+  --wu-color-border:         #083344;
+  --wu-color-border-strong:  #155e75;
+  --wu-color-border-focus:   #22d3ee;
+
+  /* Status */
+  --wu-color-success:        #34d399;
+  --wu-color-success-subtle: color-mix(in srgb, #059669 15%, transparent);
+  --wu-color-warning:        #fcd34d;
+  --wu-color-warning-subtle: color-mix(in srgb, #d97706 15%, transparent);
+  --wu-color-danger:         #f87171;
+  --wu-color-danger-subtle:  color-mix(in srgb, #dc2626 15%, transparent);
+  --wu-color-info:           #22d3ee;
+  --wu-color-info-subtle:    color-mix(in srgb, #0891b2 15%, transparent);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #22d3ee 30%, transparent);
+}

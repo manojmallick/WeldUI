@@ -1,0 +1,24 @@
+{
+  "name": "@weldui/theme-fintech",
+  "version": "1.0.0",
+  "description": "WeldUI FinTech Formal theme — deep blue/navy palette for banking and finance",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./light": "./light.css",
+    "./dark": "./dark.css"
+  },
+  "files": [
+    "light.css",
+    "dark.css",
+    "README.md"
+  ],
+  "keywords": [
+    "weldui",
+    "theme",
+    "fintech",
+    "finance",
+    "banking",
+    "navy"
+  ]
+}

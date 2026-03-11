@@ -1,0 +1,40 @@
+/* WeldUI Sunset Theme — Dark
+   Warm orange/coral palette, dark variant for consumer apps. */
+
+[data-theme="sunset-dark"] {
+  /* Brand — softened orange for dark */
+  --wu-color-primary:        #fb923c;
+  --wu-color-primary-hover:  #f97316;
+  --wu-color-primary-subtle: color-mix(in srgb, #ea580c 15%, transparent);
+  --wu-color-primary-fg:     #1c0a00;
+
+  /* Surface — deep warm charcoal */
+  --wu-color-background:     #1a0a00;
+  --wu-color-surface:        #1f0f05;
+  --wu-color-surface-raised: #2d1a0a;
+  --wu-color-surface-overlay:#2d1a0a;
+
+  /* Text */
+  --wu-color-text:           #fff7ed;
+  --wu-color-text-secondary: #fdba74;
+  --wu-color-text-disabled:  #92400e;
+  --wu-color-text-inverse:   #1c0a00;
+
+  /* Border */
+  --wu-color-border:         #431407;
+  --wu-color-border-strong:  #7c2d12;
+  --wu-color-border-focus:   #fb923c;
+
+  /* Status */
+  --wu-color-success:        #22c55e;
+  --wu-color-success-subtle: color-mix(in srgb, #16a34a 15%, transparent);
+  --wu-color-warning:        #fbbf24;
+  --wu-color-warning-subtle: color-mix(in srgb, #d97706 15%, transparent);
+  --wu-color-danger:         #f87171;
+  --wu-color-danger-subtle:  color-mix(in srgb, #dc2626 15%, transparent);
+  --wu-color-info:           #38bdf8;
+  --wu-color-info-subtle:    color-mix(in srgb, #0ea5e9 15%, transparent);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #fb923c 30%, transparent);
+}

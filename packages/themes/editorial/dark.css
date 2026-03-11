@@ -1,0 +1,40 @@
+/* WeldUI Editorial Theme — Dark
+   Dark journalism palette — print-like dark on cream. */
+
+[data-theme="editorial-dark"] {
+  /* Brand — warm cream on dark */
+  --wu-color-primary:        #e7e5e4;
+  --wu-color-primary-hover:  #fafaf9;
+  --wu-color-primary-subtle: color-mix(in srgb, #1c1917 20%, transparent);
+  --wu-color-primary-fg:     #1c1917;
+
+  /* Surface — near-black warm tones */
+  --wu-color-background:     #0c0a09;
+  --wu-color-surface:        #1c1917;
+  --wu-color-surface-raised: #292524;
+  --wu-color-surface-overlay:#292524;
+
+  /* Text */
+  --wu-color-text:           #fafaf9;
+  --wu-color-text-secondary: #d6d3d1;
+  --wu-color-text-disabled:  #57534e;
+  --wu-color-text-inverse:   #1c1917;
+
+  /* Border */
+  --wu-color-border:         #292524;
+  --wu-color-border-strong:  #44403c;
+  --wu-color-border-focus:   #e7e5e4;
+
+  /* Status */
+  --wu-color-success:        #4ade80;
+  --wu-color-success-subtle: color-mix(in srgb, #15803d 15%, transparent);
+  --wu-color-warning:        #fcd34d;
+  --wu-color-warning-subtle: color-mix(in srgb, #b45309 15%, transparent);
+  --wu-color-danger:         #f87171;
+  --wu-color-danger-subtle:  color-mix(in srgb, #b91c1c 15%, transparent);
+  --wu-color-info:           #e7e5e4;
+  --wu-color-info-subtle:    color-mix(in srgb, #44403c 30%, transparent);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 2px color-mix(in srgb, #e7e5e4 40%, transparent);
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@weldui/theme-startup",
+  "version": "1.0.0",
+  "description": "WeldUI Startup Bold theme — vibrant violet/purple for startups and landing pages",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./light": "./light.css",
+    "./dark": "./dark.css"
+  },
+  "files": [
+    "light.css",
+    "dark.css",
+    "README.md"
+  ],
+  "keywords": [
+    "weldui",
+    "theme",
+    "startup",
+    "bold",
+    "violet",
+    "purple"
+  ]
+}

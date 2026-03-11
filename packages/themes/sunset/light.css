@@ -1,0 +1,41 @@
+/* WeldUI Sunset Theme — Light
+   Warm orange/coral palette for consumer apps and lifestyle brands.
+   Import AFTER @weldui/core/tokens to activate. */
+
+[data-theme="sunset"], [data-theme="sunset-light"] {
+  /* Brand — warm orange */
+  --wu-color-primary:        #ea580c;
+  --wu-color-primary-hover:  #c2410c;
+  --wu-color-primary-subtle: #fff7ed;
+  --wu-color-primary-fg:     #ffffff;
+
+  /* Surface — warm whites */
+  --wu-color-background:     #fffbf5;
+  --wu-color-surface:        #fff7ed;
+  --wu-color-surface-raised: #ffffff;
+  --wu-color-surface-overlay:#ffffff;
+
+  /* Text */
+  --wu-color-text:           #1c0a00;
+  --wu-color-text-secondary: #7c3a10;
+  --wu-color-text-disabled:  #d97706;
+  --wu-color-text-inverse:   #ffffff;
+
+  /* Border */
+  --wu-color-border:         #fed7aa;
+  --wu-color-border-strong:  #fdba74;
+  --wu-color-border-focus:   #f97316;
+
+  /* Status */
+  --wu-color-success:        #16a34a;
+  --wu-color-success-subtle: #f0fdf4;
+  --wu-color-warning:        #d97706;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #dc2626;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #0ea5e9;
+  --wu-color-info-subtle:    #f0f9ff;
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px #fdba74;
+}

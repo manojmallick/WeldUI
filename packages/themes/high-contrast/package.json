@@ -1,0 +1,24 @@
+{
+  "name": "@weldui/theme-high-contrast",
+  "version": "1.0.0",
+  "description": "WeldUI High Contrast theme — WCAG AAA compliant, accessibility-first",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./light": "./light.css",
+    "./dark": "./dark.css"
+  },
+  "files": [
+    "light.css",
+    "dark.css",
+    "README.md"
+  ],
+  "keywords": [
+    "weldui",
+    "theme",
+    "high-contrast",
+    "accessibility",
+    "wcag",
+    "a11y"
+  ]
+}

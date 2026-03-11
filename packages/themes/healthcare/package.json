@@ -1,0 +1,24 @@
+{
+  "name": "@weldui/theme-healthcare",
+  "version": "1.0.0",
+  "description": "WeldUI Healthcare Calm theme — teal palette for medical and health apps",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./light": "./light.css",
+    "./dark": "./dark.css"
+  },
+  "files": [
+    "light.css",
+    "dark.css",
+    "README.md"
+  ],
+  "keywords": [
+    "weldui",
+    "theme",
+    "healthcare",
+    "medical",
+    "teal",
+    "calm"
+  ]
+}

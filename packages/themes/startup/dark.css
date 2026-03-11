@@ -1,0 +1,40 @@
+/* WeldUI Startup Bold Theme — Dark
+   Vibrant violet palette, dark variant for modern SaaS products. */
+
+[data-theme="startup-dark"] {
+  /* Brand — vivid violet on dark */
+  --wu-color-primary:        #a78bfa;
+  --wu-color-primary-hover:  #c4b5fd;
+  --wu-color-primary-subtle: color-mix(in srgb, #7c3aed 15%, transparent);
+  --wu-color-primary-fg:     #1e1b4b;
+
+  /* Surface — deep purple-tinted darks */
+  --wu-color-background:     #0d0a1e;
+  --wu-color-surface:        #130f2e;
+  --wu-color-surface-raised: #1e1b4b;
+  --wu-color-surface-overlay:#1e1b4b;
+
+  /* Text */
+  --wu-color-text:           #f5f3ff;
+  --wu-color-text-secondary: #c4b5fd;
+  --wu-color-text-disabled:  #3730a3;
+  --wu-color-text-inverse:   #1e1b4b;
+
+  /* Border */
+  --wu-color-border:         #1e1b4b;
+  --wu-color-border-strong:  #3730a3;
+  --wu-color-border-focus:   #a78bfa;
+
+  /* Status */
+  --wu-color-success:        #34d399;
+  --wu-color-success-subtle: color-mix(in srgb, #059669 15%, transparent);
+  --wu-color-warning:        #fcd34d;
+  --wu-color-warning-subtle: color-mix(in srgb, #d97706 15%, transparent);
+  --wu-color-danger:         #f87171;
+  --wu-color-danger-subtle:  color-mix(in srgb, #dc2626 15%, transparent);
+  --wu-color-info:           #a78bfa;
+  --wu-color-info-subtle:    color-mix(in srgb, #7c3aed 15%, transparent);
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, #a78bfa 30%, transparent);
+}

@@ -1,0 +1,40 @@
+/* WeldUI Startup Bold Theme — Light
+   Vibrant violet/purple palette for startups, SaaS landing pages, and tech brands. */
+
+[data-theme="startup"], [data-theme="startup-light"] {
+  /* Brand — energetic violet */
+  --wu-color-primary:        #7c3aed;
+  --wu-color-primary-hover:  #6d28d9;
+  --wu-color-primary-subtle: #f5f3ff;
+  --wu-color-primary-fg:     #ffffff;
+
+  /* Surface — cool off-white */
+  --wu-color-background:     #fafafa;
+  --wu-color-surface:        #f5f3ff;
+  --wu-color-surface-raised: #ffffff;
+  --wu-color-surface-overlay:#ffffff;
+
+  /* Text */
+  --wu-color-text:           #1e1b4b;
+  --wu-color-text-secondary: #4c1d95;
+  --wu-color-text-disabled:  #a78bfa;
+  --wu-color-text-inverse:   #ffffff;
+
+  /* Border */
+  --wu-color-border:         #ddd6fe;
+  --wu-color-border-strong:  #c4b5fd;
+  --wu-color-border-focus:   #8b5cf6;
+
+  /* Status */
+  --wu-color-success:        #059669;
+  --wu-color-success-subtle: #ecfdf5;
+  --wu-color-warning:        #d97706;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #dc2626;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #7c3aed;
+  --wu-color-info-subtle:    #f5f3ff;
+
+  /* Focus ring */
+  --wu-focus-ring: 0 0 0 3px #ddd6fe;
+}

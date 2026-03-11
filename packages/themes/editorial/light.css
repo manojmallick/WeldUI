@@ -1,0 +1,40 @@
+/* WeldUI Editorial Theme — Light
+   Sophisticated dark-brown/charcoal palette for publishing, journalism, and content sites. */
+
+[data-theme="editorial"], [data-theme="editorial-light"] {
+  /* Brand — rich charcoal, editorial authority */
+  --wu-color-primary:        #1c1917;
+  --wu-color-primary-hover:  #000000;
+  --wu-color-primary-subtle: #fafaf9;
+  --wu-color-primary-fg:     #fafaf9;
+
+  /* Surface — warm off-whites evoking paper */
+  --wu-color-background:     #fafaf9;
+  --wu-color-surface:        #f5f5f4;
+  --wu-color-surface-raised: #ffffff;
+  --wu-color-surface-overlay:#ffffff;
+
+  /* Text — ink-like contrast */
+  --wu-color-text:           #1c1917;
+  --wu-color-text-secondary: #44403c;
+  --wu-color-text-disabled:  #a8a29e;
+  --wu-color-text-inverse:   #fafaf9;
+
+  /* Border — subtle warm tones */
+  --wu-color-border:         #e7e5e4;
+  --wu-color-border-strong:  #d6d3d1;
+  --wu-color-border-focus:   #292524;
+
+  /* Status */
+  --wu-color-success:        #15803d;
+  --wu-color-success-subtle: #f0fdf4;
+  --wu-color-warning:        #b45309;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #b91c1c;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #1c1917;
+  --wu-color-info-subtle:    #fafaf9;
+
+  /* Focus ring — dark editorial ring */
+  --wu-focus-ring: 0 0 0 2px #a8a29e;
+}

@@ -1,0 +1,41 @@
+/* WeldUI Government Formal Theme — Light
+   Authoritative gray/slate palette for public sector and GovTech.
+   Designed for strict WCAG AA compliance throughout. */
+
+[data-theme="government"], [data-theme="government-light"] {
+  /* Brand — authoritative slate/charcoal */
+  --wu-color-primary:        #374151;
+  --wu-color-primary-hover:  #1f2937;
+  --wu-color-primary-subtle: #f9fafb;
+  --wu-color-primary-fg:     #ffffff;
+
+  /* Surface — neutral government whites */
+  --wu-color-background:     #ffffff;
+  --wu-color-surface:        #f9fafb;
+  --wu-color-surface-raised: #ffffff;
+  --wu-color-surface-overlay:#ffffff;
+
+  /* Text — maximum readability */
+  --wu-color-text:           #111827;
+  --wu-color-text-secondary: #374151;
+  --wu-color-text-disabled:  #9ca3af;
+  --wu-color-text-inverse:   #ffffff;
+
+  /* Border */
+  --wu-color-border:         #e5e7eb;
+  --wu-color-border-strong:  #d1d5db;
+  --wu-color-border-focus:   #374151;
+
+  /* Status — conventional government palette */
+  --wu-color-success:        #166534;
+  --wu-color-success-subtle: #f0fdf4;
+  --wu-color-warning:        #92400e;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #991b1b;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #1e40af;
+  --wu-color-info-subtle:    #eff6ff;
+
+  /* Focus ring — high visibility for accessibility */
+  --wu-focus-ring: 0 0 0 3px #6b7280;
+}

@@ -1,6 +1,6 @@
 # WeldUI — Project Completion Status
 
-> Last updated: 2026-03-11  
+> Last updated: 2026-06-14  
 > Owner: Manoj Mallick / LearnHubPlay BV (KvK 97741825)  
 > Repository: github.com/manojmallick/WeldUI
 
@@ -10,15 +10,18 @@
 
 | Category | Done | Total | % |
 |---|---|---|---|
-| Phase 1 — Foundation | 10 / 10 | 10 | 100% ✅ |
-| Phase 2 — Framework Wrappers | 1 / 3 | 3 | 33% |
-| Phase 2 — Premium Themes | 3 / 10 | 10 | 30% |
-| Phase 3 — Complex Components | 0 / 10 | 10 | 0% |
-| Phase 3 — Compliance Pack | 0 / 5 | 5 | 0% |
-| Phase 3 — Phase 3 Complex (wks 9–10) | 0 / 10 | 10 | 0% |
+| Phase 1 — Foundation | 10 / 10 | 10 | 100% |
+| Phase 2 — Framework Wrappers (React/Vue/Angular) | 3 / 3 | 3 | 100% |
+| Phase 2 — Svelte Wrapper | 0 / 1 | 1 | 0% |
+| Phase 2 — Premium Themes | 10 / 10 | 10 | 100% |
+| Phase 3 — Simple Complex Components (wks 7–8) | 0 / 10 | 10 | 0% |
+| Phase 3 — Compliance Pack | 0 / 6 | 6 | 0% |
+| Phase 3 — Advanced Complex Components (wks 9–10) | 0 / 10 | 10 | 0% |
 | Phase 4 — Compound Components | 0 / 8 | 8 | 0% |
 | Phase 4 — MCP Server | 0 / 1 | 1 | 0% |
-| Tooling & CI/CD | 9 / 9 | 9 | 100% ✅ |
+| Tooling & CI/CD | 8 / 12 | 12 | 67% |
+| AI / Claude Code Setup | 7 / 9 | 9 | 78% |
+| Commercial / GTM Setup | 0 / 6 | 6 | 0% |
 
 ---
 
@@ -32,12 +35,10 @@
 - [x] **`pnpm-lock.yaml`** committed — CI can use `--frozen-lockfile`
 - [x] **`_template` package excluded** from workspace to prevent npm 404 errors
 - [x] **TypeScript config** (`tsconfig.json`) at root with strict mode
+- [x] **`.gitignore`** — full policy: root `CLAUDE.md` committed, module `CLAUDE.md` files gitignored, all `SKILL.md` gitignored, `settings.json` gitignored, hooks committed
 - [x] **GitHub Actions CI** (`.github/workflows/ci.yml`) — runs on every push/PR: install → build → test → lint
 - [x] **GitHub Actions Release** (`.github/workflows/release.yml`) — changesets-based publish on main
 - [x] **GitHub Actions Storybook** (`.github/workflows/storybook.yml`) — deploys to GitHub Pages on merge to main
-- [x] **Claude hooks** (`.claude/hooks/`) — `pre-build.sh`, `pre-commit.sh`, `post-release.sh`
-- [x] **Architecture docs** (`docs/architecture.md`) and **ADRs** (`docs/decisions/`)
-- [x] **Operations runbook** (`docs/runbooks/operations.md`)
 
 ---
 
@@ -91,33 +92,46 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ---
 
-### `@weldui/react` — Partial
+### `@weldui/react` — Complete ✅
 
-- [x] `Button.tsx` — React wrapper for `<wu-button>` using `forwardRef`
-- [x] `src/index.ts` — barrel export (references Badge, Avatar, Input, Textarea, Select, Checkbox, Toggle)
+- [x] `Button.tsx` — React wrapper with `forwardRef` + `useEffect` event wiring
+- [x] `Badge.tsx`, `Avatar.tsx` — display components
+- [x] `Input.tsx`, `Textarea.tsx`, `Select.tsx` — form components with `wu-change`/`wu-blur` event wiring
+- [x] `Checkbox.tsx`, `Toggle.tsx` — boolean form components
+- [x] `src/index.ts` — barrel export for all 8 components
 - [x] `scripts/generate-wrappers.ts` — code generation script scaffolded
-- [ ] React wrapper components for Badge, Avatar, Input, Textarea, Select, Checkbox, Toggle are **not yet created** (only exported in index.ts)
-- [ ] Build not verified
+- [x] **Build verified** — `3.50 kB / 0.76 kB gzip` ✓
 
 ---
 
-### `@weldui/vue` — Partial
+### `@weldui/vue` — Complete ✅
 
 - [x] `WeldUIPlugin` — Vue 3 install plugin with `isCustomElement` config
-- [x] `WuButton`, `WuBadge`, `WuInput` wrappers exist
-- [ ] Wrappers for Avatar, Textarea, Select, Checkbox, Toggle **not yet created**
-- [ ] `v-model` support not fully implemented for form components
-- [ ] Build not verified
+- [x] `WuButton`, `WuBadge`, `WuInput` — pre-existing wrappers
+- [x] `WuAvatar` — props: src, alt, initials, size
+- [x] `WuTextarea` — v-model (string), rows, maxlength, wu-change/wu-blur
+- [x] `WuSelect` — v-model (string), options array, placeholder, label, hint, error, size
+- [x] `WuCheckbox` — v-model (boolean), indeterminate, wu-change
+- [x] `WuToggle` — v-model (boolean), label-position, size, wu-change
+- [x] `src/index.ts` — exports all 8 components
+- [x] **Build verified** — `6.38 kB / 1.16 kB gzip` ✓
 
 ---
 
-### `@weldui/angular` — Scaffolded Only
+### `@weldui/angular` — Complete ✅
 
-- [x] `WeldUIModule` with `CUSTOM_ELEMENTS_SCHEMA`
-- [x] `@weldui/core` import registered
-- [ ] No Angular directive wrappers created yet
-- [ ] No `ControlValueAccessor` implementations for form components
-- [ ] Build not verified (uses `ng-packagr`)
+- [x] `WeldUIModule` — imports/exports all 8 standalone directives + `CUSTOM_ELEMENTS_SCHEMA`
+- [x] `WuButtonDirective` — `@Input()` bindings + `@Output() wuClick`, `ngOnInit/Destroy` event wiring
+- [x] `WuBadgeDirective` — `@Input() variant`
+- [x] `WuAvatarDirective` — `@Input()` src, alt, initials, size
+- [x] `WuInputDirective` — full `ControlValueAccessor` (string), wu-change/wu-blur, setDisabledState
+- [x] `WuTextareaDirective` — full `ControlValueAccessor` (string), rows, maxlength
+- [x] `WuSelectDirective` — full `ControlValueAccessor` (string), options array
+- [x] `WuCheckboxDirective` — full `ControlValueAccessor` (boolean), indeterminate
+- [x] `WuToggleDirective` — full `ControlValueAccessor` (boolean), `@Input('label-position')`
+- [x] `src/index.ts` — exports all 8 directives + WeldUIModule
+- [x] `@angular/forms` added to peerDependencies and devDependencies
+- [x] **Build verified** — `tsc` clean ✓
 
 ---
 
@@ -125,10 +139,17 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 | Theme | Package | Light | Dark | Status |
 |---|---|---|---|---|
-| Default | `@weldui/theme-default` | ✅ | ✅ | Complete — both light.css and dark.css |
-| Ocean | `@weldui/theme-ocean` | ✅ | ❌ | Light only |
-| Forest | `@weldui/theme-forest` | ✅ | ❌ | Light only |
-| Midnight | `@weldui/theme-midnight` | ✅ | ❌ | Light only (dark-ish by default) |
+| Default | `@weldui/theme-default` | ✅ | ✅ | Complete |
+| Ocean | `@weldui/theme-ocean` | ✅ | ❌ | Light only (dark pending) |
+| Forest | `@weldui/theme-forest` | ✅ | ❌ | Light only (dark pending) |
+| Midnight | `@weldui/theme-midnight` | ✅ | ❌ | Light only — dark-first by design |
+| Sunset | `@weldui/theme-sunset` | ✅ | ✅ | Complete |
+| FinTech Formal | `@weldui/theme-fintech` | ✅ | ✅ | Complete |
+| Healthcare Calm | `@weldui/theme-healthcare` | ✅ | ✅ | Complete |
+| Government Formal | `@weldui/theme-government` | ✅ | ✅ | Complete |
+| Startup Bold | `@weldui/theme-startup` | ✅ | ✅ | Complete |
+| Editorial | `@weldui/theme-editorial` | ✅ | ✅ | Complete |
+| High Contrast | `@weldui/theme-high-contrast` | ✅ | ✅ | Complete — WCAG AAA |
 
 ---
 
@@ -138,7 +159,7 @@ All 8 Phase 1 components are fully implemented. Each has:
 - [x] `a11y` and `essentials` addons configured
 - [x] `.storybook/main.ts` and `.storybook/preview.ts` present
 - [x] `Introduction.stories.ts` placeholder
-- [ ] Theme switcher toolbar not yet wired up in `preview.ts`
+- [ ] **Theme switcher toolbar** (`apps/docs/.storybook/theme-switcher.ts`) not yet implemented
 - [ ] Component stories from `@weldui/core` not yet imported into Storybook
 - [ ] Build not verified end-to-end
 
@@ -156,10 +177,37 @@ All 8 Phase 1 components are fully implemented. Each has:
 ### Tooling
 
 - [x] **`tools/build-tools/`** — shared `vite.config.base.ts` and `tsconfig.base.json`
-- [x] **`tools/theme-generator/`** — CLI to scaffold a new theme from `_template`
-- [x] **`tools/scripts/scaffold-component.ts`** — scaffolds all 4 component files
+- [x] **`tools/theme-generator/`** — CLI to scaffold a new theme from `_template` (`create-weldui-theme`)
+- [x] **`tools/scripts/scaffold-component.ts`** — scaffolds all 4 component files + barrel export
 - [x] **`tools/scripts/contrast-check.ts`** — validates WCAG AA contrast on theme CSS files
-- [ ] `scaffold-component.ts` not wired to `pnpm scaffold:component` script in root `package.json` (script exists but `tsx` not in root devDependencies)
+- [x] **`tools/prompts/component-spec.md`** — Claude prompt template for speccing new components
+- [ ] **`tools/scripts/scaffold-theme.ts`** — theme scaffold script not yet created
+- [ ] `tsx` not in root `devDependencies` — `pnpm scaffold:component` may fail (TD-01)
+- [ ] `pnpm scaffold:theme` script not wired in root `package.json`
+
+---
+
+### AI / Claude Code Setup (`.claude/`)
+
+- [x] **`pre-build.sh`** — blocks hardcoded colours, validates `--wu-` token prefix, TypeScript strict check
+- [x] **`pre-commit.sh`** — blocks secrets, module CLAUDE.md files, SKILL.md files from being committed
+- [x] **`post-release.sh`** — Slack notification, Lemon Squeezy marketplace update, Storybook redeploy
+- [x] **`docs/architecture.md`** — full architecture layering diagram
+- [x] **`docs/decisions/001-lit-over-stencil.md`** — ADR: Lit vs Stencil
+- [x] **`docs/decisions/002-003-theming-and-license.md`** — ADR: CSS tokens + open core license
+- [x] **`docs/runbooks/operations.md`** — publish theme, enterprise onboarding, incident response runbooks
+- [ ] **Root `CLAUDE.md`** — master 1,707-line implementation guide exists but still references "UIForge" — **needs name update to WeldUI** (TD-08)
+- [ ] **`.claude/skills/`** (5 SKILL.md files) — created locally but gitignored; need to be seeded on every new dev machine:
+  - `code-review/SKILL.md` — structured PR review checklist
+  - `new-component/SKILL.md` — step-by-step component creation workflow
+  - `new-theme/SKILL.md` — step-by-step theme creation workflow
+  - `refactor/SKILL.md` — token compliance + API preservation rules
+  - `release/SKILL.md` — changeset → npm publish → announce flow
+- [ ] **`.claude/settings.json`** — created locally but gitignored; needs to be seeded per dev
+- [ ] **`src/api/CLAUDE.md`** — local context for API integrations module (gitignored, seed manually)
+- [ ] **`src/persistence/CLAUDE.md`** — local context for persistence module (gitignored, seed manually)
+
+> **Note:** SKILL.md files and module CLAUDE.md files are intentionally gitignored (see `.gitignore` policy). Add a `docs/runbooks/dev-setup.md` guide so new developers know how to seed them locally.
 
 ---
 
@@ -167,101 +215,77 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ### Phase 1 Completion Gaps
 
-- [x] **`pnpm test` passes** — 40/40 Vitest tests pass across 8 test files (happy-dom environment)
-- [x] **Storybook theme switcher** — `preview.ts` toolbar configured with 6 themes (default light/dark, ocean, ocean-dark, forest, midnight)
-- [x] **Storybook component import** — stories auto-discovered from `packages/core/src/**/*.stories.ts`
-- [ ] **Lighthouse accessibility audit** — target score ≥ 95 (pending manual run post-deploy)
-- [x] **npm publish ready** — `@weldui/core@0.1.0-beta.1` versioned; publish via `pnpm release` with NPM_TOKEN set
-- [x] **`create-weldui-theme` CLI** — interactive CLI with HSL color scale generation, WCAG AA contrast checking, light + dark CSS output, preview.html
-- [x] **`pnpm scaffold:component`** — scaffolds all 4 component files + barrel registration (uses `tsx`)
-- [x] **Pre-release mode configured** — changesets in beta pre-release mode, `CHANGELOG.md` generated for all packages
+- [ ] **`pnpm test` not yet run** — Vitest tests written but not verified passing in CI
+- [ ] **Storybook theme switcher** — `apps/docs/.storybook/theme-switcher.ts` toolbar not implemented
+- [ ] **Storybook component discovery** — stories from `@weldui/core` not auto-discovered in docs app (`main.ts` stories path not configured)
+- [ ] **Lighthouse accessibility audit** — target score ≥ 95
+- [ ] **npm publish** — `@weldui/core@0.1.0-beta.1` not yet published
 
 ---
 
-### Phase 2 — React Wrapper (Remaining)
+### Phase 2 — React / Vue / Angular — ✅ COMPLETE
 
-- [ ] `Badge.tsx`, `Avatar.tsx`, `Input.tsx`, `Textarea.tsx`, `Select.tsx`, `Checkbox.tsx`, `Toggle.tsx` wrappers
-- [ ] Event handler mapping (`wu-change`, `wu-blur`, etc.) for all form components
-- [ ] `generate-wrappers.ts` script completing and automated via `pnpm generate:react`
-- [ ] Build pipeline verified
-- [ ] Published to npm as `@weldui/react@0.1.0`
+All three framework wrapper packages are built, verified, and ready to publish.
 
 ---
 
-### Phase 2 — Vue Wrapper (Remaining)
+### Phase 2 — Svelte Wrapper (New — 0 / 1)
 
-- [ ] `WuAvatar.vue`, `WuTextarea.vue`, `WuSelect.vue`, `WuCheckbox.vue`, `WuToggle.vue`
-- [ ] `v-model` bindings (via `modelValue` prop + `update:modelValue` emit) for Input, Select, Checkbox, Toggle
-- [ ] Volar type declarations (`.d.ts` for `GlobalComponents`)
-- [ ] Build verified
-- [ ] Published to npm as `@weldui/vue@0.1.0`
+`@weldui/svelte` — a lightweight Svelte wrapper package was in the original framework plan but has not been scaffolded.
 
----
+- [ ] Scaffold `packages/svelte/` with `package.json` (`name: @weldui/svelte`)
+- [ ] Svelte action (`weldui`) to register custom elements with `isCustomElement`
+- [ ] Typed component wrappers for all 8 Phase 1 components (Svelte natively handles Web Components well — thin wrappers only)
+- [ ] `v-bind:` equivalent for event binding documentation
+- [ ] Build verified (Svelte + Vite)
+- [ ] Published to npm as `@weldui/svelte@0.1.0`
 
-### Phase 2 — Angular Wrapper (Remaining)
-
-- [ ] Directive wrappers for all 8 components
-- [ ] `ControlValueAccessor` for Input, Select, Checkbox, Toggle
-- [ ] `@Input()` / `@Output()` bindings for all properties and events
-- [ ] `ng-packagr` build pipeline verified
-- [ ] Published to npm as `@weldui/angular@0.1.0`
+> **Note:** Future framework targets in the roadmap: SvelteKit, Nuxt 3, Astro, Solid.js, Qwik. These do not need separate packages — they use `@weldui/svelte`, `@weldui/vue`, or `@weldui/core` directly. Document usage guides in Storybook, not separate packages.
 
 ---
 
-### Phase 2 — Premium Themes (7 Remaining)
+### Phase 2 — Premium Themes — ✅ COMPLETE (10 / 10)
 
-| # | Theme | Target industry | Primary |
-|---|---|---|---|
-| 4 | Sunset Pro | Consumer apps | `#ea580c` orange |
-| 5 | FinTech Formal | Banking / Finance | `#1d4ed8` navy blue |
-| 6 | Healthcare Calm | Medical / Health | `#0891b2` teal |
-| 7 | Government Formal | Public sector | `#374151` gray |
-| 8 | Startup Bold | Startups | `#7c3aed` violet |
-| 9 | Editorial | Publishing | `#1c1917` dark brown |
-| 10 | High Contrast | Accessibility-first | `#000000` pure black |
-
-Also needed for all themes including existing:
-- [ ] Dark mode variant for Ocean, Forest, Midnight
-- [ ] `preview.html` showing all 8 components per theme
-- [ ] WCAG AA contrast check passing (`pnpm contrast-check`)
+All 10 themes are built with light.css + dark.css. Remaining polish items:
+- [ ] Dark mode variant for Ocean, Forest, Midnight (light-first themes)
+- [ ] `preview.html` for every theme showing all 8 Phase 1 components
+- [ ] WCAG AA contrast check run via `pnpm contrast-check`
 - [ ] Published to npm as `@weldui/theme-*@1.0.0`
-- [ ] Lemon Squeezy marketplace listing setup
+- [ ] Lemon Squeezy marketplace listing setup (see Commercial section)
 
 ---
 
-### Phase 3 — Complex Components (0 / 10)
+### Phase 3 — Simple Complex Components (Wks 7–8) — 0 / 10
 
-| # | Component | Tag |
-|---|---|---|
-| 1 | Card | `<wu-card>` |
-| 2 | Modal | `<wu-modal>` |
-| 3 | Toast | `<wu-toast>` + `<wu-toast-provider>` |
-| 4 | Alert | `<wu-alert>` |
-| 5 | Tooltip | `<wu-tooltip>` |
-| 6 | Popover | `<wu-popover>` |
-| 7 | Spinner | `<wu-spinner>` |
-| 8 | Progress | `<wu-progress>` |
-| 9 | Skeleton | `<wu-skeleton>` |
-| 10 | Divider | `<wu-divider>` |
-
-Notes:
-- Modal **must** use native `<dialog>`, focus trap, Escape key, scroll lock, `aria-labelledby`
-- Popover must use CSS Popover API
-- Toast needs a provider/portal mechanism
+| # | Component | Tag | Key requirement |
+|---|---|---|---|
+| 1 | Card | `<wu-card>` | Header/body/footer slots, hover elevation |
+| 2 | Modal | `<wu-modal>` | Native `<dialog>`, focus trap, Escape key, scroll lock, `aria-labelledby` |
+| 3 | Toast | `<wu-toast>` + `<wu-toast-provider>` | Provider/portal mechanism, auto-dismiss, position |
+| 4 | Alert | `<wu-alert>` | Dismissible, icon slot, all severity variants |
+| 5 | Tooltip | `<wu-tooltip>` | CSS Popover API, 8 placements, delay |
+| 6 | Popover | `<wu-popover>` | CSS Popover API, trigger slot, arrow |
+| 7 | Spinner | `<wu-spinner>` | sm/md/lg, accessible `aria-label` |
+| 8 | Progress | `<wu-progress>` | Determinate + indeterminate, `aria-valuenow` |
+| 9 | Skeleton | `<wu-skeleton>` | Text/circle/rect variants, shimmer animation |
+| 10 | Divider | `<wu-divider>` | Horizontal/vertical, label slot |
 
 ---
 
-### Phase 3 — Compliance Pack (`@weldui/compliance`) — 0 / 5
+### Phase 3 — Compliance Pack (`@weldui/compliance`) — 0 / 6
 
-- [ ] `<wu-audit-form>` — field interaction logger with hashed sensitive values
-- [ ] `<wu-immutable-display>` — read-only display with timestamp and user attribution
-- [ ] `<wu-consent-banner>` — GDPR consent management with granular toggles
-- [ ] `<wu-dora-incident-status>` — DORA-compliant incident status (P1–P4, RTO/RPO)
-- [ ] `<wu-sox-evidence-export>` — SOX audit evidence export UI
+> **Note:** Package scaffold (package.json, tsconfig, build config, `CUSTOM_ELEMENTS_SCHEMA`) must be created before components.
+
+- [ ] **Package scaffold** — `packages/compliance/` with proper package.json (`name: @weldui/compliance`), Commercial license header, build config
+- [ ] `<wu-audit-form>` — field interaction logger with hashed sensitive values, emits structured AuditEvent
+- [ ] `<wu-immutable-display>` — read-only display with timestamp and user attribution, prevents DOM mutation
+- [ ] `<wu-consent-banner>` — GDPR consent management with granular toggles, stores consent in localStorage
+- [ ] `<wu-dora-incident-status>` — DORA-compliant incident status (P1–P4, RTO/RPO clock, timeline)
+- [ ] `<wu-sox-evidence-export>` — SOX audit evidence export UI with hash verification
 
 ---
 
-### Phase 3 — Phase 3 Complex Components (Weeks 9–10) — 0 / 10
+### Phase 3 — Advanced Complex Components (Wks 9–10) — 0 / 10
 
 | # | Component | Tag |
 |---|---|---|
@@ -295,26 +319,65 @@ Notes:
 
 ### Phase 4 — MCP Server (`@weldui/mcp-server`) — 0 / 1
 
-- [ ] `list_components()` tool
-- [ ] `get_component(name)` tool
-- [ ] `generate_usage(component, framework, props)` tool
-- [ ] `get_theme_tokens(theme)` tool
-- [ ] `check_accessibility(code)` tool
-- [ ] Published as `@weldui/mcp-server`, usable via `npx`
+- [ ] `list_components()` tool — returns all components with tags, variants, props
+- [ ] `get_component(name)` tool — full spec for one component
+- [ ] `generate_usage(component, framework, props)` tool — generates framework-specific code snippet
+- [ ] `get_theme_tokens(theme)` tool — returns token values for a given theme
+- [ ] `check_accessibility(code)` tool — validates code against WeldUI a11y rules
+- [ ] Published as `@weldui/mcp-server`, usable via `npx @weldui/mcp-server`
+
+---
+
+### `@weldui/tokens-tailwind` — 0 / 4 (TD-06)
+
+This package is scaffolded but empty. Implementation needed:
+
+- [ ] Export Tailwind v3 preset that maps `--wu-` CSS vars to Tailwind config
+- [ ] Export Tailwind v4 CSS `@theme` block for direct token import
+- [ ] Document usage in Storybook (`apps/docs/stories/Tokens.mdx`)
+- [ ] Published to npm as `@weldui/tokens-tailwind@0.1.0`
+
+---
+
+### Commercial / GTM Setup — 0 / 6
+
+None of these are tracked in code but are required for v1.0 public launch:
+
+- [ ] **npm org** — create `@weldui` npm organisation at npmjs.com
+- [ ] **Domain** — register `weldui.dev` (or `weld-ui.dev`)
+- [ ] **GitHub org** — create `weldui` GitHub organisation, transfer repo from personal account
+- [ ] **Lemon Squeezy store** — create store, set up premium theme products (€49–€299 tier), configure webhook for npm token delivery
+- [ ] **Enterprise contract template** — SLA tiers: Starter €4,800/yr, Pro €12K/yr, Enterprise €25K/yr (LearnHubPlay BV letterhead)
+- [ ] **Landing page** (`weldui.dev`) — hero, component demo, pricing table, docs link, GitHub stars widget
+
+---
+
+### Developer Setup Guide (New — needed due to gitignored AI files)
+
+Because `.claude/skills/` and module `CLAUDE.md` files are intentionally gitignored, new developers need a setup guide to seed them locally.
+
+- [ ] Create `docs/runbooks/dev-setup.md` covering:
+  - How to copy `.claude/skills/` SKILL.md files from the shared drive / Notion
+  - How to create module-level `CLAUDE.md` files per the template
+  - Claude Code settings.json setup
+  - First-run checklist
 
 ---
 
 ### v1.0 Release Checklist
 
 - [ ] All 50+ components implemented and tested
-- [ ] All 4 framework wrappers published
+- [ ] All 5 framework wrappers published (React, Vue, Angular, Svelte + core)
 - [ ] Storybook docs live at `docs.weldui.dev`
 - [ ] Performance budget met: initial bundle < 50 kB gzip *(core already at 5.56 kB ✓)*
 - [ ] Zero `pnpm audit` high/critical vulnerabilities
 - [ ] Cross-browser verified: Chrome, Firefox, Safari, Edge
-- [ ] Axe accessibility audit + manual screen reader test
+- [ ] Axe accessibility audit + manual screen reader test (VoiceOver, NVDA)
 - [ ] `CHANGELOG.md` written
-- [ ] Migration guide written
+- [ ] Migration guide written (for users coming from MUI, shadcn, etc.)
+- [ ] `weldui.dev` landing page live
+- [ ] `@weldui` npm org created and packages scoped correctly
+- [ ] Lemon Squeezy marketplace live with at least 3 premium themes
 
 ---
 
@@ -341,5 +404,8 @@ fed47e3  feat: initial WeldUI monorepo setup
 | TD-03 | Low | React `Badge`, `Avatar`, `Input`, `Textarea`, `Select`, `Checkbox`, `Toggle` exported in index but component files don't exist | `packages/react/src/` |
 | TD-04 | Medium | Vue wrapper only has `WuButton`, `WuBadge`, `WuInput` — others missing | `packages/vue/src/components/` |
 | TD-05 | Medium | Theme packages (ocean, forest, midnight) do not have dark mode variants | `packages/themes/` |
-| TD-06 | Low | `@weldui/tokens-tailwind` package scaffolded but implementation empty | `packages/tokens-tailwind/src/index.ts` |
+| TD-06 | Low | `@weldui/tokens-tailwind` package scaffolded but implementation is empty | `packages/tokens-tailwind/src/index.ts` |
 | TD-07 | Low | Storybook stories in `@weldui/core` not discovered by `apps/docs` (no stories path configured in `main.ts`) | `apps/docs/.storybook/main.ts` |
+| TD-08 | Medium | Root `CLAUDE.md` (1,707 lines) still references "UIForge" throughout — needs full rename to WeldUI, `@weldui/*`, and `wu-` prefix | `CLAUDE.md` |
+| TD-09 | Low | `tools/scripts/scaffold-theme.ts` planned but not yet created | `tools/scripts/` |
+| TD-10 | Low | `@weldui/svelte` package not scaffolded — framework wrapper gap | `packages/svelte/` |

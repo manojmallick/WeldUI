@@ -1,0 +1,40 @@
+/* WeldUI FinTech Formal Theme — Light
+   Deep navy/blue palette for banking, finance, and enterprise. */
+
+[data-theme="fintech"], [data-theme="fintech-light"] {
+  /* Brand — authoritative navy blue */
+  --wu-color-primary:        #1d4ed8;
+  --wu-color-primary-hover:  #1e40af;
+  --wu-color-primary-subtle: #eff6ff;
+  --wu-color-primary-fg:     #ffffff;
+
+  /* Surface — crisp neutral whites */
+  --wu-color-background:     #f8fafc;
+  --wu-color-surface:        #f1f5f9;
+  --wu-color-surface-raised: #ffffff;
+  --wu-color-surface-overlay:#ffffff;
+
+  /* Text — high contrast for compliance */
+  --wu-color-text:           #0f172a;
+  --wu-color-text-secondary: #334155;
+  --wu-color-text-disabled:  #94a3b8;
+  --wu-color-text-inverse:   #ffffff;
+
+  /* Border */
+  --wu-color-border:         #e2e8f0;
+  --wu-color-border-strong:  #cbd5e1;
+  --wu-color-border-focus:   #3b82f6;
+
+  /* Status */
+  --wu-color-success:        #15803d;
+  --wu-color-success-subtle: #f0fdf4;
+  --wu-color-warning:        #b45309;
+  --wu-color-warning-subtle: #fffbeb;
+  --wu-color-danger:         #b91c1c;
+  --wu-color-danger-subtle:  #fef2f2;
+  --wu-color-info:           #1d4ed8;
+  --wu-color-info-subtle:    #eff6ff;
+
+  /* Tighter focus ring for professional appearance */
+  --wu-focus-ring: 0 0 0 2px #93c5fd;
+}
