@@ -24,7 +24,9 @@ const preview: Preview = {
     backgrounds: { disable: true }, // We use data-theme instead
     controls: {
       matchers: {
-        color: /(background|color)$/i,
+        // Exclude CSS custom properties (--wu-*) from the color picker — they have no type.
+        // Only apply color picker to camelCase JS property names like backgroundColor.
+        color: /^(?!--).*?(background|[Cc]olor)$/,
         date: /Date$/i,
       },
     },

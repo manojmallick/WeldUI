@@ -111,16 +111,23 @@ function extractProperties(source) {
   return members;
 }
 
-/** Extract the custom element tag name from @customElement('wu-*'). */
-function extractTagName(source) {
-  const m = source.match(/@customElement\(['"]([^'"]+)['"]\)/);
-  return m ? m[1] : null;
-}
-
-/** Extract the class name (export class WuXxx). */
-function extractClassName(source) {
-  const m = source.match(/export\s+class\s+(\w+)\s+extends/);
-  return m ? m[1] : null;
+/**
+ * Extract ALL custom element definitions from a source file.
+ * Returns [{tagName, className, start, end}] — one entry per @customElement.
+ * Handles files that define multiple components (e.g. wu-accordion.ts).
+ */
+function extractAllComponents(source) {
+  const ceRegex = /@customElement\(['"]([^'"]+)['"]\)\s*\nexport\s+class\s+(\w+)/g;
+  const positions = [];
+  let m;
+  while ((m = ceRegex.exec(source)) !== null) {
+    positions.push({ tagName: m[1], className: m[2], start: m.index });
+  }
+  // Annotate each with its end (start of the next component, or EOF)
+  return positions.map((p, i) => ({
+    ...p,
+    end: i + 1 < positions.length ? positions[i + 1].start : source.length,
+  }));
 }
 
 // ---------------------------------------------------------------------------
@@ -207,25 +214,33 @@ async function main() {
       const filePath = join(dir, file);
       const source = await readFile(filePath, 'utf8');
 
-      const tagName = extractTagName(source);
-      const className = extractClassName(source);
-      if (!tagName || !className) continue;
-
-      const jsDoc = extractClassJsDoc(source);
-      const description = extractClassDescription(jsDoc);
-      const members = extractProperties(source);
-      const slots = parseJsDocTags(jsDoc, 'slot');
-      const events = parseJsDocTags(jsDoc, 'event');
-      const cssProperties = parseJsDocTags(jsDoc, 'cssprop');
-      const cssParts = parseJsDocTags(jsDoc, 'csspart');
+      const allComponents = extractAllComponents(source);
+      if (allComponents.length === 0) continue;
 
       const relPath = relative(join(ROOT, 'packages/core'), filePath);
 
-      modules.push(
-        buildModule(tagName, className, description, members, slots, events, cssProperties, cssParts, relPath)
-      );
+      for (const comp of allComponents) {
+        // The source slice covering this component (from its @customElement to the next)
+        const compSource = source.substring(comp.start, comp.end);
 
-      console.log(`  ✓ ${tagName} (${className})`);
+        // JSDoc immediately preceding this @customElement (look back up to 800 chars)
+        const preceding = source.substring(Math.max(0, comp.start - 800), comp.start);
+        const docMatch = preceding.match(/\/\*\*([\s\S]*?)\*\/\s*$/);
+        const jsDoc = docMatch ? docMatch[1] : '';
+
+        const description = extractClassDescription(jsDoc);
+        const members = extractProperties(compSource);
+        const slots = parseJsDocTags(jsDoc, 'slot');
+        const events = parseJsDocTags(jsDoc, 'event');
+        const cssProperties = parseJsDocTags(jsDoc, 'cssprop');
+        const cssParts = parseJsDocTags(jsDoc, 'csspart');
+
+        modules.push(
+          buildModule(comp.tagName, comp.className, description, members, slots, events, cssProperties, cssParts, relPath)
+        );
+
+        console.log(`  ✓ ${comp.tagName} (${comp.className})`);
+      }
     }
   }
 

@@ -62,6 +62,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/accordion/wu-accordion.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An accordion container. Optionally enforces single-open behaviour.",
+          "name": "WuAccordion",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Place `<wu-accordion-item>` elements here"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-accordion",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAccordion",
+          "declaration": {
+            "name": "WuAccordion",
+            "module": "src/components/accordion/wu-accordion.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-accordion",
+          "declaration": {
+            "name": "WuAccordion",
+            "module": "src/components/accordion/wu-accordion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/alert/wu-alert.ts",
       "declarations": [
         {
@@ -293,7 +339,7 @@
             {
               "kind": "field",
               "name": "variant",
-              "description": "A small status/label indicator component.  * @element wu-badge  * @slot - Badge label text  * @csspart base - The badge container element  * @cssprop --wu-badge-bg - Background colour @cssprop --wu-badge-color - Text colour @cssprop --wu-badge-border - Border colour /\n@customElement('wu-badge')\nexport class WuBadge extends LitElement {\n  static styles = styles;\n\n  /** Visual style variant",
+              "description": "Visual style variant",
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'warning' | 'danger' | 'outline'"
               },
@@ -306,7 +352,7 @@
           "attributes": [
             {
               "name": "variant",
-              "description": "A small status/label indicator component.  * @element wu-badge  * @slot - Badge label text  * @csspart base - The badge container element  * @cssprop --wu-badge-bg - Background colour @cssprop --wu-badge-color - Text colour @cssprop --wu-badge-border - Border colour /\n@customElement('wu-badge')\nexport class WuBadge extends LitElement {\n  static styles = styles;\n\n  /** Visual style variant",
+              "description": "Visual style variant",
               "type": {
                 "text": "'default' | 'primary' | 'success' | 'warning' | 'danger' | 'outline'"
               },
@@ -406,74 +452,11 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A button component that supports multiple visual variants and sizes.",
+          "description": "",
           "name": "WuButton",
-          "cssProperties": [
-            {
-              "name": "--wu-btn-bg",
-              "description": "Background colour"
-            },
-            {
-              "name": "--wu-btn-bg-hover",
-              "description": "Background colour on hover"
-            },
-            {
-              "name": "--wu-btn-color",
-              "description": "Text colour"
-            },
-            {
-              "name": "--wu-btn-border",
-              "description": "Border colour"
-            },
-            {
-              "name": "--wu-btn-radius",
-              "description": "Border radius"
-            },
-            {
-              "name": "--wu-btn-font-size",
-              "description": "Font size"
-            },
-            {
-              "name": "--wu-btn-font-weight",
-              "description": "Font weight"
-            },
-            {
-              "name": "--wu-btn-padding-x",
-              "description": "Horizontal padding"
-            },
-            {
-              "name": "--wu-btn-padding-y",
-              "description": "Vertical padding"
-            },
-            {
-              "name": "--wu-btn-height",
-              "description": "Button height"
-            }
-          ],
-          "cssParts": [
-            {
-              "name": "base",
-              "description": "The button's base wrapper element"
-            },
-            {
-              "name": "label",
-              "description": "The button's label span"
-            }
-          ],
-          "slots": [
-            {
-              "name": "",
-              "description": "Default slot for button label"
-            },
-            {
-              "name": "prefix",
-              "description": "Icon or content before the label"
-            },
-            {
-              "name": "suffix",
-              "description": "Icon or content after the label"
-            }
-          ],
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
           "members": [
             {
               "kind": "field",
@@ -509,15 +492,7 @@
               "reflects": false
             }
           ],
-          "events": [
-            {
-              "name": "wu-click",
-              "description": "Emitted when the button is clicked (not disabled or loading)",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
+          "events": [],
           "attributes": [
             {
               "name": "variant",
@@ -580,76 +555,13 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A flexible card container with header, body, and footer slots.",
+          "description": "",
           "name": "WuCard",
-          "cssProperties": [
-            {
-              "name": "--wu-card-bg",
-              "description": "Card background colour"
-            },
-            {
-              "name": "--wu-card-border",
-              "description": "Card border colour"
-            },
-            {
-              "name": "--wu-card-radius",
-              "description": "Card border radius"
-            },
-            {
-              "name": "--wu-card-shadow",
-              "description": "Card box shadow (default)"
-            },
-            {
-              "name": "--wu-card-shadow-hover",
-              "description": "Card box shadow on hover (interactive)"
-            },
-            {
-              "name": "--wu-card-padding",
-              "description": "Card internal padding"
-            }
-          ],
-          "cssParts": [
-            {
-              "name": "base",
-              "description": "The card's root element"
-            },
-            {
-              "name": "header",
-              "description": "The header section"
-            },
-            {
-              "name": "body",
-              "description": "The body section"
-            },
-            {
-              "name": "footer",
-              "description": "The footer section"
-            }
-          ],
-          "slots": [
-            {
-              "name": "",
-              "description": "Default slot for card body content"
-            },
-            {
-              "name": "header",
-              "description": "Card header content (hidden if empty)"
-            },
-            {
-              "name": "footer",
-              "description": "Card footer content (hidden if empty)"
-            }
-          ],
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
           "members": [],
-          "events": [
-            {
-              "name": "wu-click",
-              "description": "Emitted when the card is clicked (interactive mode only)",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
+          "events": [],
           "attributes": [],
           "superclass": {
             "name": "LitElement",
@@ -1790,7 +1702,7 @@
             {
               "kind": "field",
               "name": "variant",
-              "description": "A skeleton placeholder for loading states.  * @element wu-skeleton  * @cssprop --wu-skeleton-color - Base skeleton colour @cssprop --wu-skeleton-shimmer - Shimmer highlight colour @cssprop --wu-skeleton-speed - Animation duration /\n@customElement('wu-skeleton')\nexport class WuSkeleton extends LitElement {\n  static styles = styles;\n\n  /** Shape variant",
+              "description": "Shape variant",
               "type": {
                 "text": "'text' | 'circle' | 'rect'"
               },
@@ -1803,7 +1715,7 @@
           "attributes": [
             {
               "name": "variant",
-              "description": "A skeleton placeholder for loading states.  * @element wu-skeleton  * @cssprop --wu-skeleton-color - Base skeleton colour @cssprop --wu-skeleton-shimmer - Shimmer highlight colour @cssprop --wu-skeleton-speed - Animation duration /\n@customElement('wu-skeleton')\nexport class WuSkeleton extends LitElement {\n  static styles = styles;\n\n  /** Shape variant",
+              "description": "Shape variant",
               "type": {
                 "text": "'text' | 'circle' | 'rect'"
               },
@@ -1874,7 +1786,7 @@
             {
               "kind": "field",
               "name": "size",
-              "description": "An animated loading spinner.  * @element wu-spinner  * @cssprop --wu-spinner-size - Spinner diameter @cssprop --wu-spinner-color - Active arc colour @cssprop --wu-spinner-track - Track ring colour @cssprop --wu-spinner-thickness - Border/arc thickness @cssprop --wu-spinner-speed - Animation duration /\n@customElement('wu-spinner')\nexport class WuSpinner extends LitElement {\n  static styles = styles;\n\n  /** Size variant",
+              "description": "Size variant",
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
@@ -1887,7 +1799,7 @@
           "attributes": [
             {
               "name": "size",
-              "description": "An animated loading spinner.  * @element wu-spinner  * @cssprop --wu-spinner-size - Spinner diameter @cssprop --wu-spinner-color - Active arc colour @cssprop --wu-spinner-track - Track ring colour @cssprop --wu-spinner-thickness - Border/arc thickness @cssprop --wu-spinner-speed - Animation duration /\n@customElement('wu-spinner')\nexport class WuSpinner extends LitElement {\n  static styles = styles;\n\n  /** Size variant",
+              "description": "Size variant",
               "type": {
                 "text": "'sm' | 'md' | 'lg'"
               },
@@ -1942,7 +1854,7 @@
             {
               "kind": "field",
               "name": "status",
-              "description": "An individual step within a wu-stepper.  * @element wu-step  * @cssprop --wu-stepper-indicator-size - Size of the step indicator circle /\n@customElement('wu-step')\nexport class WuStep extends LitElement {\n  static styles = stepStyles;\n\n  /** Step label */\n  @property()\n  label = '';\n\n  /** Optional description text */\n  @property()\n  description = '';\n\n  /** Step status",
+              "description": "Step label */\n  @property()\n  label = '';\n\n  /** Optional description text */\n  @property()\n  description = '';\n\n  /** Step status",
               "type": {
                 "text": "'pending' | 'active' | 'complete' | 'error'"
               },
@@ -1955,7 +1867,7 @@
           "attributes": [
             {
               "name": "status",
-              "description": "An individual step within a wu-stepper.  * @element wu-step  * @cssprop --wu-stepper-indicator-size - Size of the step indicator circle /\n@customElement('wu-step')\nexport class WuStep extends LitElement {\n  static styles = stepStyles;\n\n  /** Step label */\n  @property()\n  label = '';\n\n  /** Optional description text */\n  @property()\n  description = '';\n\n  /** Step status",
+              "description": "Step label */\n  @property()\n  label = '';\n\n  /** Optional description text */\n  @property()\n  description = '';\n\n  /** Step status",
               "type": {
                 "text": "'pending' | 'active' | 'complete' | 'error'"
               },
@@ -1985,6 +1897,69 @@
           "name": "wu-step",
           "declaration": {
             "name": "WuStep",
+            "module": "src/components/stepper/wu-stepper.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/stepper/wu-stepper.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A stepper component for multi-step processes.",
+          "name": "WuStepper",
+          "cssProperties": [
+            {
+              "name": "--wu-stepper-connector-color",
+              "description": "Connector line color"
+            },
+            {
+              "name": "--wu-stepper-connector-active",
+              "description": "Active connector color"
+            }
+          ],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-step elements"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-step-change",
+              "description": "Emitted when the active step changes. Detail: `{ step: number }`",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-stepper",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuStepper",
+          "declaration": {
+            "name": "WuStepper",
+            "module": "src/components/stepper/wu-stepper.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-stepper",
+          "declaration": {
+            "name": "WuStepper",
             "module": "src/components/stepper/wu-stepper.ts"
           }
         }
@@ -2159,31 +2134,9 @@
               "description": "Tab label"
             }
           ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "orientation",
-              "description": "A tabbed navigation component. Contains `<wu-tab>` and `<wu-tab-panel>` elements.  * @element wu-tabs  * @slot - Place `<wu-tab>` and `<wu-tab-panel>` elements here  * @event wu-tab-change - Emitted when the active tab changes ({ panel: string })  * @cssprop --wu-tabs-border - Tab list border colour @cssprop --wu-tab-indicator - Active tab indicator colour /\n@customElement('wu-tabs')\nexport class WuTabs extends LitElement {\n  static styles = tabsStyles;\n\n  /** Orientation of the tab list",
-              "type": {
-                "text": "'horizontal' | 'vertical'"
-              },
-              "default": "horizontal",
-              "attribute": "orientation",
-              "reflects": true
-            }
-          ],
+          "members": [],
           "events": [],
-          "attributes": [
-            {
-              "name": "orientation",
-              "description": "A tabbed navigation component. Contains `<wu-tab>` and `<wu-tab-panel>` elements.  * @element wu-tabs  * @slot - Place `<wu-tab>` and `<wu-tab-panel>` elements here  * @event wu-tab-change - Emitted when the active tab changes ({ panel: string })  * @cssprop --wu-tabs-border - Tab list border colour @cssprop --wu-tab-indicator - Active tab indicator colour /\n@customElement('wu-tabs')\nexport class WuTabs extends LitElement {\n  static styles = tabsStyles;\n\n  /** Orientation of the tab list",
-              "type": {
-                "text": "'horizontal' | 'vertical'"
-              },
-              "default": "horizontal",
-              "fieldName": "orientation"
-            }
-          ],
+          "attributes": [],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
@@ -2206,6 +2159,137 @@
           "name": "wu-tab",
           "declaration": {
             "name": "WuTab",
+            "module": "src/components/tabs/wu-tabs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tabs/wu-tabs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Disabled state */",
+          "name": "WuTabPanel",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Panel content"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tab-panel",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTabPanel",
+          "declaration": {
+            "name": "WuTabPanel",
+            "module": "src/components/tabs/wu-tabs.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tab-panel",
+          "declaration": {
+            "name": "WuTabPanel",
+            "module": "src/components/tabs/wu-tabs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tabs/wu-tabs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "ID matching the `panel` attribute on `<wu-tab>` */",
+          "name": "WuTabs",
+          "cssProperties": [
+            {
+              "name": "--wu-tabs-border",
+              "description": "Tab list border colour"
+            },
+            {
+              "name": "--wu-tab-indicator",
+              "description": "Active tab indicator colour"
+            }
+          ],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Place `<wu-tab>` and `<wu-tab-panel>` elements here"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "orientation",
+              "description": "Orientation of the tab list",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "horizontal",
+              "attribute": "orientation",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-tab-change",
+              "description": "Emitted when the active tab changes ({ panel: string })",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "orientation",
+              "description": "Orientation of the tab list",
+              "type": {
+                "text": "'horizontal' | 'vertical'"
+              },
+              "default": "horizontal",
+              "fieldName": "orientation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tabs",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTabs",
+          "declaration": {
+            "name": "WuTabs",
+            "module": "src/components/tabs/wu-tabs.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tabs",
+          "declaration": {
+            "name": "WuTabs",
             "module": "src/components/tabs/wu-tabs.ts"
           }
         }
@@ -2326,7 +2410,7 @@
             {
               "kind": "field",
               "name": "variant",
-              "description": "A single toast notification.  * @element wu-toast  * @slot - Toast message content @slot action - Optional action button/link  * @event wu-close - Emitted when the toast is dismissed  * @cssprop --wu-toast-bg - Toast background colour @cssprop --wu-toast-min-width - Minimum toast width /\n@customElement('wu-toast')\nexport class WuToast extends LitElement {\n  static styles = styles;\n\n  /** Visual severity variant",
+              "description": "Visual severity variant",
               "type": {
                 "text": "'default' | 'info' | 'success' | 'warning' | 'danger'"
               },
@@ -2347,7 +2431,7 @@
           "attributes": [
             {
               "name": "variant",
-              "description": "A single toast notification.  * @element wu-toast  * @slot - Toast message content @slot action - Optional action button/link  * @event wu-close - Emitted when the toast is dismissed  * @cssprop --wu-toast-bg - Toast background colour @cssprop --wu-toast-min-width - Minimum toast width /\n@customElement('wu-toast')\nexport class WuToast extends LitElement {\n  static styles = styles;\n\n  /** Visual severity variant",
+              "description": "Visual severity variant",
               "type": {
                 "text": "'default' | 'info' | 'success' | 'warning' | 'danger'"
               },
@@ -2377,6 +2461,47 @@
           "name": "wu-toast",
           "declaration": {
             "name": "WuToast",
+            "module": "src/components/toast/wu-toast.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/toast/wu-toast.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A container that manages toast stack position and dismissal.",
+          "name": "WuToastProvider",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-toast-provider",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuToastProvider",
+          "declaration": {
+            "name": "WuToastProvider",
+            "module": "src/components/toast/wu-toast.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-toast-provider",
+          "declaration": {
+            "name": "WuToastProvider",
             "module": "src/components/toast/wu-toast.ts"
           }
         }
@@ -2548,7 +2673,7 @@
             {
               "kind": "field",
               "name": "placement",
-              "description": "A tooltip that displays contextual text on hover or focus.  * @element wu-tooltip  * @slot - The trigger element that activates the tooltip  * @cssprop --wu-tooltip-bg - Tooltip background colour @cssprop --wu-tooltip-color - Tooltip text colour @cssprop --wu-tooltip-delay - Opening delay @cssprop --wu-tooltip-max-width - Max tooltip width /\n@customElement('wu-tooltip')\nexport class WuTooltip extends LitElement {\n  static styles = styles;\n\n  /** Tooltip text content */\n  @property()\n  content = '';\n\n  /** Placement relative to trigger",
+              "description": "Tooltip text content */\n  @property()\n  content = '';\n\n  /** Placement relative to trigger",
               "type": {
                 "text": "'top' | 'bottom' | 'left' | 'right'"
               },
@@ -2561,7 +2686,7 @@
           "attributes": [
             {
               "name": "placement",
-              "description": "A tooltip that displays contextual text on hover or focus.  * @element wu-tooltip  * @slot - The trigger element that activates the tooltip  * @cssprop --wu-tooltip-bg - Tooltip background colour @cssprop --wu-tooltip-color - Tooltip text colour @cssprop --wu-tooltip-delay - Opening delay @cssprop --wu-tooltip-max-width - Max tooltip width /\n@customElement('wu-tooltip')\nexport class WuTooltip extends LitElement {\n  static styles = styles;\n\n  /** Tooltip text content */\n  @property()\n  content = '';\n\n  /** Placement relative to trigger",
+              "description": "Tooltip text content */\n  @property()\n  content = '';\n\n  /** Placement relative to trigger",
               "type": {
                 "text": "'top' | 'bottom' | 'left' | 'right'"
               },
