@@ -1,11 +1,11 @@
-import{b as s}from"./lit-element-CTfEKIed.js";import"./index-B0i-QSD2.js";const k={title:"Components/Checkbox",component:"wu-checkbox",tags:["autodocs"],argTypes:{checked:{control:"boolean"},indeterminate:{control:"boolean"},disabled:{control:"boolean"}}},e={args:{label:"Accept terms",checked:!1},render:o=>s`<wu-checkbox label=${o.label} ?checked=${o.checked}></wu-checkbox>`},c={render:()=>s`
+import{b as s}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const k={title:"Components/Checkbox",component:"wu-checkbox",tags:["autodocs"],argTypes:{checked:{control:"boolean"},indeterminate:{control:"boolean"},disabled:{control:"boolean"}}},e={args:{label:"Accept terms",checked:!1},render:a=>s`<wu-checkbox label=${a.label} ?checked=${a.checked}></wu-checkbox>`},c={render:()=>s`
     <div style="display:flex;flex-direction:column;gap:12px">
       <wu-checkbox label="Unchecked"></wu-checkbox>
       <wu-checkbox label="Checked" checked></wu-checkbox>
       <wu-checkbox label="Indeterminate" indeterminate></wu-checkbox>
       <wu-checkbox label="Disabled" disabled></wu-checkbox>
     </div>
-  `};var a,l,r;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  `};var o,l,r;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`{
   args: {
     label: 'Accept terms',
     checked: false

@@ -1,4 +1,4 @@
-import{b as r}from"./lit-element-CTfEKIed.js";const i={title:"Introduction",parameters:{docs:{description:{component:`
+import{b as o}from"./lit-element-9a6qN07w.js";const i={title:"Introduction",parameters:{docs:{description:{component:`
 # WeldUI Design System
 
 **One component library. Any framework. Any brand. Compliance-ready.**
@@ -35,7 +35,7 @@ Apply themes via the \`data-theme\` attribute. No JavaScript required.
 | Vue 3     | \`@weldui/vue\` |
 | Angular   | \`@weldui/angular\` |
 | Vanilla   | \`@weldui/core\` |
-        `}}}},t=()=>r`
+        `}}}},t=()=>o`
   <div style="font-family: var(--wu-font-sans); padding: 2rem; max-width: 800px;">
     <h1>WeldUI Components</h1>
     <p style="color: var(--wu-color-text-secondary)">
@@ -50,7 +50,7 @@ Apply themes via the \`data-theme\` attribute. No JavaScript required.
       <wu-button disabled>Disabled</wu-button>
     </div>
   </div>
-`;var e,n,o;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`() => html\`
+`;var e,n,a;t.parameters={...t.parameters,docs:{...(e=t.parameters)==null?void 0:e.docs,source:{originalSource:`() => html\`
   <div style="font-family: var(--wu-font-sans); padding: 2rem; max-width: 800px;">
     <h1>WeldUI Components</h1>
     <p style="color: var(--wu-color-text-secondary)">
@@ -65,4 +65,4 @@ Apply themes via the \`data-theme\` attribute. No JavaScript required.
       <wu-button disabled>Disabled</wu-button>
     </div>
   </div>
-\``,...(o=(n=t.parameters)==null?void 0:n.docs)==null?void 0:o.source}}};const s=["Overview"];export{t as Overview,s as __namedExportsOrder,i as default};
+\``,...(a=(n=t.parameters)==null?void 0:n.docs)==null?void 0:a.source}}};const s=["Overview"];export{t as Overview,s as __namedExportsOrder,i as default};
