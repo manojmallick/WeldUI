@@ -9,6 +9,13 @@ const meta: Meta = {
     variant: { control: 'select', options: ['info', 'success', 'warning', 'danger', 'neutral'] },
     dismissible: { control: 'boolean' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Contextual status messages for info, success, warning and danger feedback. Supports a dismissible mode and `title` / `icon` slots.',
+      },
+    },
+  },
 };
 
 export default meta;

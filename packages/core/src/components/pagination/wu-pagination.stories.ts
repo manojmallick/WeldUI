@@ -12,6 +12,13 @@ const meta: Meta = {
     totalItems: { control: 'number' },
     pageSize: { control: 'number' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Page navigation for large data sets. Emits `wu-page-change` with the selected page number. Configure sibling page count and optional item-count display.',
+      },
+    },
+  },
 };
 
 export default meta;

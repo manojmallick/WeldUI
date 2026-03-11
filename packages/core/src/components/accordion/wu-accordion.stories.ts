@@ -5,6 +5,13 @@ const meta: Meta = {
   title: 'Components/Accordion',
   component: 'wu-accordion',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Collapsible disclosure panels. Set `multiple` to allow more than one panel open at a time. Compose with `<wu-accordion-item>` elements.',
+      },
+    },
+  },
 };
 
 export default meta;

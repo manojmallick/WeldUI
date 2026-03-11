@@ -4,6 +4,13 @@ const meta: Meta = {
   title: 'Components/DataGrid',
   component: 'wu-data-grid',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A high-performance data grid with virtual scrolling, inline cell editing, resizable columns and multi-column sort. Pass `columns` and `rows` as JavaScript properties.',
+      },
+    },
+  },
 };
 
 export default meta;

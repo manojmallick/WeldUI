@@ -5,6 +5,13 @@ const meta: Meta = {
   title: 'Components/Stepper',
   component: 'wu-stepper',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A multi-step wizard composed of `<wu-stepper>` and `<wu-step>` elements. Supports horizontal and vertical orientation, linear and non-linear navigation, and `pending` / `active` / `complete` / `error` step states.',
+      },
+    },
+  },
 };
 
 export default meta;

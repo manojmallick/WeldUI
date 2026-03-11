@@ -1,6 +1,9 @@
 import type { Preview } from '@storybook/web-components';
 import { html } from 'lit';
 
+// Register all WeldUI custom elements globally for all stories
+import '@weldui/core';
+
 // Import WeldUI tokens — relative paths avoid Rollup package resolution issues
 import '../../../packages/core/src/tokens/base.css';
 import '../../../packages/core/src/tokens/semantic.css';

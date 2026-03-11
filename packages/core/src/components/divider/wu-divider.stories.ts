@@ -8,6 +8,13 @@ const meta: Meta = {
   argTypes: {
     vertical: { control: 'boolean' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'A thin separator between sections. Supports horizontal (default) and vertical orientation. Accepts an optional label via the default slot.',
+      },
+    },
+  },
 };
 
 export default meta;

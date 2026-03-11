@@ -8,6 +8,13 @@ const meta: Meta = {
   argTypes: {
     separator: { control: 'text' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Hierarchical navigation trail. Compose `<wu-breadcrumb>` with `<wu-breadcrumb-item>` elements. The last item without an `href` is treated as the current page.',
+      },
+    },
+  },
 };
 
 export default meta;

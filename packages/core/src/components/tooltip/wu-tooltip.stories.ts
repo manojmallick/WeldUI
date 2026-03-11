@@ -10,6 +10,13 @@ const meta: Meta = {
     placement: { control: 'select', options: ['top', 'bottom', 'left', 'right'] },
     delay: { control: 'number' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'A lightweight hint that appears on hover or focus. Wraps any trigger element in the default slot. Supports `top`, `bottom`, `left` and `right` placements with a configurable show delay.',
+      },
+    },
+  },
 };
 
 export default meta;

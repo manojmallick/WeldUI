@@ -5,6 +5,13 @@ const meta: Meta = {
   title: 'Components/Command',
   component: 'wu-command',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A command palette overlay with fuzzy search, keyboard navigation (↑ ↓ Enter Escape), grouped items and shortcut key display.',
+      },
+    },
+  },
 };
 
 export default meta;

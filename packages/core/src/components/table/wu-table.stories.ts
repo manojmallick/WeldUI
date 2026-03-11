@@ -5,6 +5,13 @@ const meta: Meta = {
   title: 'Components/Table',
   component: 'wu-table',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A data table with sortable columns, sticky header and optional row-selection checkboxes. Pass `columns` and `rows` as JavaScript properties. Emits `wu-sort` and `wu-select` events.',
+      },
+    },
+  },
 };
 
 export default meta;

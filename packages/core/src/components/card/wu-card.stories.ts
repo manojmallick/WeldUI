@@ -8,6 +8,13 @@ const meta: Meta = {
   argTypes: {
     interactive: { control: 'boolean' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'A surface container with `header`, `body` and `footer` slots. Set `interactive` for a hover elevation effect.',
+      },
+    },
+  },
 };
 
 export default meta;

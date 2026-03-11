@@ -11,6 +11,13 @@ const meta: Meta = {
     showLabel: { control: 'boolean' },
     size: { control: 'radio', options: ['sm', 'md', 'lg'] },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Tracks completion of a task as a horizontal bar. Set `value` and `max` for determinate mode, or add `indeterminate` for an animated shimmer. Uses `aria-valuenow` / `aria-valuemin` / `aria-valuemax`.',
+      },
+    },
+  },
 };
 
 export default meta;

@@ -10,6 +10,13 @@ const meta: Meta = {
     heading: { control: 'text' },
     duration: { control: 'number' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Non-blocking notification messages. Place `<wu-toast-provider>` once in your app shell; toast items are appended to it programmatically or declaratively. Supports auto-dismiss, action slots and five severity variants.',
+      },
+    },
+  },
 };
 
 export default meta;

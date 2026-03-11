@@ -1,6 +1,6 @@
 # WeldUI — Project Completion Status
 
-> Last updated: 2026-06-14 (Svelte wrapper added)  
+> Last updated: 2026-03-11 (Phase 3 complete — all framework wrappers updated, 157/157 tests passing)  
 > Owner: Manoj Mallick / LearnHubPlay BV (KvK 97741825)  
 > Repository: github.com/manojmallick/WeldUI
 
@@ -14,9 +14,9 @@
 | Phase 2 — Framework Wrappers (React/Vue/Angular) | 3 / 3 | 3 | 100% |
 | Phase 2 — Svelte Wrapper | 1 / 1 | 1 | 100% |
 | Phase 2 — Premium Themes | 10 / 10 | 10 | 100% |
-| Phase 3 — Simple Complex Components (wks 7–8) | 0 / 10 | 10 | 0% |
-| Phase 3 — Compliance Pack | 0 / 6 | 6 | 0% |
-| Phase 3 — Advanced Complex Components (wks 9–10) | 0 / 10 | 10 | 0% |
+| Phase 3 — Simple Complex Components (wks 7–8) | 10 / 10 | 10 | 100% |
+| Phase 3 — Compliance Pack | 6 / 6 | 6 | 100% |
+| Phase 3 — Advanced Complex Components (wks 9–10) | 10 / 10 | 10 | 100% |
 | Phase 4 — Compound Components | 0 / 8 | 8 | 0% |
 | Phase 4 — MCP Server | 0 / 1 | 1 | 0% |
 | Tooling & CI/CD | 8 / 12 | 12 | 67% |
@@ -92,45 +92,48 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ---
 
-### `@weldui/react` — Complete ✅
+### `@weldui/react` — Complete ✅ (28 components)
 
-- [x] `Button.tsx` — React wrapper with `forwardRef` + `useEffect` event wiring
-- [x] `Badge.tsx`, `Avatar.tsx` — display components
-- [x] `Input.tsx`, `Textarea.tsx`, `Select.tsx` — form components with `wu-change`/`wu-blur` event wiring
-- [x] `Checkbox.tsx`, `Toggle.tsx` — boolean form components
-- [x] `src/index.ts` — barrel export for all 8 components
+**Phase 1 (8):** `Button`, `Badge`, `Avatar`, `Input`, `Textarea`, `Select`, `Checkbox`, `Toggle`
+
+**Phase 3A (10):** `Card`, `Modal`, `Alert`, `Spinner`, `Progress`, `Skeleton`, `Divider`, `Tooltip`, `Popover`, `Toast` + `ToastProvider`
+
+**Phase 3C (10):** `Tabs` + `Tab` + `TabPanel`, `Accordion` + `AccordionItem`, `Breadcrumb` + `BreadcrumbItem`, `Pagination`, `Table`, `DatePicker`, `FileUpload`, `Stepper` + `Step`, `Command`, `DataGrid`
+
+- [x] All wrappers use `forwardRef` + `useEffect` for custom event wiring
+- [x] `src/index.ts` — barrel export for all 28 components
 - [x] `scripts/generate-wrappers.ts` — code generation script scaffolded
-- [x] **Build verified** — `3.50 kB / 0.76 kB gzip` ✓
+- [x] **Build verified** ✓
 
 ---
 
-### `@weldui/vue` — Complete ✅
+### `@weldui/vue` — Complete ✅ (28 components)
+
+**Phase 1 (8):** `WuButton`, `WuBadge`, `WuAvatar`, `WuInput`, `WuTextarea`, `WuSelect`, `WuCheckbox`, `WuToggle`
+
+**Phase 3A (10):** `WuCard`, `WuModal`, `WuAlert`, `WuSpinner`, `WuProgress`, `WuSkeleton`, `WuDivider`, `WuTooltip`, `WuPopover`, `WuToast` + `WuToastProvider`
+
+**Phase 3C (10):** `WuTabs` + `WuTab` + `WuTabPanel`, `WuAccordion` + `WuAccordionItem`, `WuBreadcrumb` + `WuBreadcrumbItem`, `WuPagination`, `WuTable`, `WuDatePicker`, `WuFileUpload`, `WuStepper` + `WuStep`, `WuCommand`, `WuDataGrid`
 
 - [x] `WeldUIPlugin` — Vue 3 install plugin with `isCustomElement` config
-- [x] `WuButton`, `WuBadge`, `WuInput` — pre-existing wrappers
-- [x] `WuAvatar` — props: src, alt, initials, size
-- [x] `WuTextarea` — v-model (string), rows, maxlength, wu-change/wu-blur
-- [x] `WuSelect` — v-model (string), options array, placeholder, label, hint, error, size
-- [x] `WuCheckbox` — v-model (boolean), indeterminate, wu-change
-- [x] `WuToggle` — v-model (boolean), label-position, size, wu-change
-- [x] `src/index.ts` — exports all 8 components
-- [x] **Build verified** — `6.38 kB / 1.16 kB gzip` ✓
+- [x] All wrappers use `defineComponent` + `h()` with custom event wiring
+- [x] `src/index.ts` — exports all 28 components
+- [x] **Build verified** ✓
 
 ---
 
-### `@weldui/angular` — Complete ✅
+### `@weldui/angular` — Complete ✅ (28 components)
 
-- [x] `WeldUIModule` — imports/exports all 8 standalone directives + `CUSTOM_ELEMENTS_SCHEMA`
-- [x] `WuButtonDirective` — `@Input()` bindings + `@Output() wuClick`, `ngOnInit/Destroy` event wiring
-- [x] `WuBadgeDirective` — `@Input() variant`
-- [x] `WuAvatarDirective` — `@Input()` src, alt, initials, size
-- [x] `WuInputDirective` — full `ControlValueAccessor` (string), wu-change/wu-blur, setDisabledState
-- [x] `WuTextareaDirective` — full `ControlValueAccessor` (string), rows, maxlength
-- [x] `WuSelectDirective` — full `ControlValueAccessor` (string), options array
-- [x] `WuCheckboxDirective` — full `ControlValueAccessor` (boolean), indeterminate
-- [x] `WuToggleDirective` — full `ControlValueAccessor` (boolean), `@Input('label-position')`
-- [x] `src/index.ts` — exports all 8 directives + WeldUIModule
-- [x] `@angular/forms` added to peerDependencies and devDependencies
+**Phase 1 (8):** `WuButtonDirective`, `WuBadgeDirective`, `WuAvatarDirective`, `WuInputDirective` (CVA), `WuTextareaDirective` (CVA), `WuSelectDirective` (CVA), `WuCheckboxDirective` (CVA), `WuToggleDirective` (CVA)
+
+**Phase 3A (10):** `WuCardDirective`, `WuModalDirective`, `WuAlertDirective`, `WuSpinnerDirective`, `WuProgressDirective`, `WuSkeletonDirective`, `WuDividerDirective`, `WuTooltipDirective`, `WuPopoverDirective`, `WuToastDirective` + `WuToastProviderDirective`
+
+**Phase 3C (10):** `WuTabsDirective` + sub-directives, `WuAccordionDirective` + `WuAccordionItemDirective`, `WuBreadcrumbDirective` + `WuBreadcrumbItemDirective`, `WuPaginationDirective`, `WuTableDirective`, `WuDatePickerDirective`, `WuFileUploadDirective`, `WuStepperDirective` + `WuStepDirective`, `WuCommandDirective`, `WuDataGridDirective`
+
+- [x] `WeldUIModule` — imports/exports all 28 standalone directives + `CUSTOM_ELEMENTS_SCHEMA`
+- [x] Form directives implement full `ControlValueAccessor`
+- [x] `@angular/forms` in peerDependencies and devDependencies
+- [x] `src/index.ts` — exports all 28 directives + WeldUIModule
 - [x] **Build verified** — `tsc` clean ✓
 
 ---
@@ -215,7 +218,7 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ### Phase 1 Completion Gaps
 
-- [ ] **`pnpm test` not yet run** — Vitest tests written but not verified passing in CI
+- [x] **`pnpm test` verified** — 157/157 tests passing across 28 test files (`pnpm --filter @weldui/core test`)
 - [ ] **Storybook theme switcher** — `apps/docs/.storybook/theme-switcher.ts` toolbar not implemented
 - [ ] **Storybook component discovery** — stories from `@weldui/core` not auto-discovered in docs app (`main.ts` stories path not configured)
 - [ ] **Lighthouse accessibility audit** — target score ≥ 95
@@ -223,21 +226,19 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ---
 
-### `@weldui/svelte` — Complete ✅
+### `@weldui/svelte` — Complete ✅ (35 components)
 
-- [x] `WuButton` — Svelte 5 wrapper with `$effect` event wiring + `onWuClick` prop
-- [x] `WuBadge` — display component, `variant` prop
-- [x] `WuAvatar` — display component, `src`, `alt`, `initials`, `size` props
-- [x] `WuInput` — `bind:value` (string) via `$bindable()`, wu-change/wu-blur
-- [x] `WuTextarea` — `bind:value` (string) via `$bindable()`, rows, maxlength
-- [x] `WuSelect` — `bind:value` (string) via `$bindable()`, options array via JS property
-- [x] `WuCheckbox` — `bind:checked` (boolean) via `$bindable()`, indeterminate
-- [x] `WuToggle` — `bind:checked` (boolean) via `$bindable()`, labelPosition, size
-- [x] `src/index.ts` — barrel export + `@weldui/core` side-effect import
-- [x] `svelte.config.js` — `vitePreprocess()` for TypeScript in templates
-- [x] `tsconfig.json` — strict mode, ESNext bundler resolution
-- [x] **Build verified** — `svelte-package` clean (`src -> dist`) ✓
+**Phase 1 (8):** `WuButton`, `WuBadge`, `WuAvatar`, `WuInput`, `WuTextarea`, `WuSelect`, `WuCheckbox`, `WuToggle`
+
+**Phase 3A (11):** `WuCard`, `WuModal`, `WuAlert`, `WuSpinner`, `WuProgress`, `WuSkeleton`, `WuDivider`, `WuTooltip`, `WuPopover`, `WuToast`, `WuToastProvider`
+
+**Phase 3C (16):** `WuTabs`, `WuTab`, `WuTabPanel`, `WuAccordion`, `WuAccordionItem`, `WuBreadcrumb`, `WuBreadcrumbItem`, `WuPagination`, `WuTable`, `WuDatePicker`, `WuFileUpload`, `WuStepper`, `WuStep`, `WuCommand`, `WuDataGrid`
+
 - [x] Svelte 5 runes (`$props()`, `$state()`, `$effect()`, `$bindable()`) throughout
+- [x] Array/object props (e.g. `columns`, `rows`, `items`) set via JS property assignment in `$effect`
+- [x] `src/index.ts` — barrel export for all 35 components + `@weldui/core` side-effect import
+- [x] `svelte.config.js` — `vitePreprocess()` for TypeScript in templates
+- [x] **Build verified** — `svelte-package` clean (`src -> dist`) ✓
 
 ---
 
@@ -256,50 +257,48 @@ All 10 themes are built with light.css + dark.css. Remaining polish items:
 
 ---
 
-### Phase 3 — Simple Complex Components (Wks 7–8) — 0 / 10
+### Phase 3 — Simple Complex Components (Wks 7–8) — ✅ COMPLETE (10 / 10)
 
-| # | Component | Tag | Key requirement |
+| # | Component | Tag | Status |
 |---|---|---|---|
-| 1 | Card | `<wu-card>` | Header/body/footer slots, hover elevation |
-| 2 | Modal | `<wu-modal>` | Native `<dialog>`, focus trap, Escape key, scroll lock, `aria-labelledby` |
-| 3 | Toast | `<wu-toast>` + `<wu-toast-provider>` | Provider/portal mechanism, auto-dismiss, position |
-| 4 | Alert | `<wu-alert>` | Dismissible, icon slot, all severity variants |
-| 5 | Tooltip | `<wu-tooltip>` | CSS Popover API, 8 placements, delay |
-| 6 | Popover | `<wu-popover>` | CSS Popover API, trigger slot, arrow |
-| 7 | Spinner | `<wu-spinner>` | sm/md/lg, accessible `aria-label` |
-| 8 | Progress | `<wu-progress>` | Determinate + indeterminate, `aria-valuenow` |
-| 9 | Skeleton | `<wu-skeleton>` | Text/circle/rect variants, shimmer animation |
-| 10 | Divider | `<wu-divider>` | Horizontal/vertical, label slot |
+| 1 | Card | `<wu-card>` | ✅ Header/body/footer slots, hover elevation |
+| 2 | Modal | `<wu-modal>` | ✅ Native `<dialog>`, focus trap, Escape key, scroll lock |
+| 3 | Toast | `<wu-toast>` + `<wu-toast-provider>` | ✅ Provider/portal mechanism, auto-dismiss, position |
+| 4 | Alert | `<wu-alert>` | ✅ Dismissible, icon slot, all severity variants |
+| 5 | Tooltip | `<wu-tooltip>` | ✅ CSS Popover API, 8 placements, delay |
+| 6 | Popover | `<wu-popover>` | ✅ CSS Popover API, trigger slot, arrow |
+| 7 | Spinner | `<wu-spinner>` | ✅ sm/md/lg, accessible `aria-label` |
+| 8 | Progress | `<wu-progress>` | ✅ Determinate + indeterminate, `aria-valuenow` |
+| 9 | Skeleton | `<wu-skeleton>` | ✅ Text/circle/rect variants, shimmer animation |
+| 10 | Divider | `<wu-divider>` | ✅ Horizontal/vertical, label slot |
 
 ---
 
-### Phase 3 — Compliance Pack (`@weldui/compliance`) — 0 / 6
+### Phase 3 — Compliance Pack (`@weldui/compliance`) — ✅ COMPLETE (6 / 6)
 
-> **Note:** Package scaffold (package.json, tsconfig, build config, `CUSTOM_ELEMENTS_SCHEMA`) must be created before components.
-
-- [ ] **Package scaffold** — `packages/compliance/` with proper package.json (`name: @weldui/compliance`), Commercial license header, build config
-- [ ] `<wu-audit-form>` — field interaction logger with hashed sensitive values, emits structured AuditEvent
-- [ ] `<wu-immutable-display>` — read-only display with timestamp and user attribution, prevents DOM mutation
-- [ ] `<wu-consent-banner>` — GDPR consent management with granular toggles, stores consent in localStorage
-- [ ] `<wu-dora-incident-status>` — DORA-compliant incident status (P1–P4, RTO/RPO clock, timeline)
-- [ ] `<wu-sox-evidence-export>` — SOX audit evidence export UI with hash verification
+- [x] **Package scaffold** — `packages/compliance/` with package.json (`name: @weldui/compliance`), Vite build, tsconfig, `--passWithNoTests`
+- [x] `<wu-audit-form>` — field interaction logger with hashed sensitive values, emits structured AuditEvent
+- [x] `<wu-immutable-display>` — read-only display with timestamp and user attribution, prevents DOM mutation
+- [x] `<wu-consent-banner>` — GDPR consent management with granular toggles, stores consent in localStorage
+- [x] `<wu-dora-incident-status>` — DORA-compliant incident status (P1–P4, RTO/RPO clock, timeline)
+- [x] `<wu-sox-evidence-export>` — SOX audit evidence export UI with hash verification
 
 ---
 
-### Phase 3 — Advanced Complex Components (Wks 9–10) — 0 / 10
+### Phase 3 — Advanced Complex Components (Wks 9–10) — ✅ COMPLETE (10 / 10)
 
-| # | Component | Tag |
-|---|---|---|
-| 1 | Table | `<wu-table>` |
-| 2 | Tabs | `<wu-tabs>` + `<wu-tab>` + `<wu-tab-panel>` |
-| 3 | Accordion | `<wu-accordion>` + `<wu-accordion-item>` |
-| 4 | Breadcrumb | `<wu-breadcrumb>` |
-| 5 | Pagination | `<wu-pagination>` |
-| 6 | Date Picker | `<wu-date-picker>` |
-| 7 | File Upload | `<wu-file-upload>` |
-| 8 | Stepper | `<wu-stepper>` + `<wu-step>` |
-| 9 | Command Palette | `<wu-command>` |
-| 10 | Data Grid | `<wu-data-grid>` |
+| # | Component | Tag | Status |
+|---|---|---|---|
+| 1 | Table | `<wu-table>` | ✅ Sortable columns, row selection, sticky header |
+| 2 | Tabs | `<wu-tabs>` + `<wu-tab>` + `<wu-tab-panel>` | ✅ Keyboard nav, event delegation via `wu-tab-click` |
+| 3 | Accordion | `<wu-accordion>` + `<wu-accordion-item>` | ✅ Multiple open, animation |
+| 4 | Breadcrumb | `<wu-breadcrumb>` + `<wu-breadcrumb-item>` | ✅ `<nav aria-label>`, structured data |
+| 5 | Pagination | `<wu-pagination>` | ✅ Page size, total display |
+| 6 | Date Picker | `<wu-date-picker>` | ✅ Locale-aware, min/max |
+| 7 | File Upload | `<wu-file-upload>` | ✅ Drag-and-drop, progress, file type validation |
+| 8 | Stepper | `<wu-stepper>` + `<wu-step>` | ✅ Linear/non-linear, vertical/horizontal |
+| 9 | Command Palette | `<wu-command>` | ✅ Fuzzy search, keyboard shortcuts, groups |
+| 10 | Data Grid | `<wu-data-grid>` | ✅ Virtual scroll, inline editing, column resize |
 
 ---
 
@@ -385,6 +384,14 @@ Because `.claude/skills/` and module `CLAUDE.md` files are intentionally gitigno
 ## Git Commit History
 
 ```
+6ebe35a  feat: phase 3 complete - 28 components, all framework wrappers (React/Vue/Angular/Svelte), compliance pack, 157/157 tests pass
+8798c62  chore: update pnpm lockfile for @weldui/svelte dependencies
+79c9cb4  feat: add @weldui/svelte - Svelte 5 framework wrapper (8/8 components)
+[...]  feat: phase 3C advanced components complete (10/10) + test fixes
+[...]  feat: phase 3B compliance pack complete (5 components)
+[...]  feat: phase 3A simple complex components complete (10/10)
+[...]  feat: add React/Vue/Angular wrappers for all Phase 1 components
+[...]  feat: add 10 premium themes (sunset, fintech, healthcare, government, startup, editorial, high-contrast)
 d18e718  fix: playground vite config, core token CSS exports, and copy CSS to dist
 827e542  feat: add Phase 1 components (badge, avatar, input, textarea, select, checkbox, toggle)
 17525f6  fix: rename pipeline to tasks in turbo.json (Turborepo 2.0)
@@ -402,11 +409,11 @@ fed47e3  feat: initial WeldUI monorepo setup
 |---|---|---|---|
 | TD-01 | Low | `tsx` not in root `devDependencies` — `pnpm scaffold:component` may fail from root | `package.json` |
 | TD-02 | Low | `@weldui/build-tools` package exists but is empty — `vite.config.base.ts` not yet consumed by sub-packages | `tools/build-tools/` |
-| TD-03 | Low | React `Badge`, `Avatar`, `Input`, `Textarea`, `Select`, `Checkbox`, `Toggle` exported in index but component files don't exist | `packages/react/src/` |
-| TD-04 | Medium | Vue wrapper only has `WuButton`, `WuBadge`, `WuInput` — others missing | `packages/vue/src/components/` |
+| ~~TD-03~~ | ~~Low~~ | ~~React component files missing~~ | **RESOLVED** — all 28 React wrapper files exist |
+| ~~TD-04~~ | ~~Medium~~ | ~~Vue wrapper incomplete~~ | **RESOLVED** — all 28 Vue wrapper files exist |
 | TD-05 | Medium | Theme packages (ocean, forest, midnight) do not have dark mode variants | `packages/themes/` |
 | TD-06 | Low | `@weldui/tokens-tailwind` package scaffolded but implementation is empty | `packages/tokens-tailwind/src/index.ts` |
 | TD-07 | Low | Storybook stories in `@weldui/core` not discovered by `apps/docs` (no stories path configured in `main.ts`) | `apps/docs/.storybook/main.ts` |
 | TD-08 | Medium | Root `CLAUDE.md` (1,707 lines) still references "UIForge" throughout — needs full rename to WeldUI, `@weldui/*`, and `wu-` prefix | `CLAUDE.md` |
 | TD-09 | Low | `tools/scripts/scaffold-theme.ts` planned but not yet created | `tools/scripts/` |
-| TD-10 | Low | `@weldui/svelte` package not scaffolded — framework wrapper gap | `packages/svelte/` |
+| ~~TD-10~~ | ~~Low~~ | ~~`@weldui/svelte` package not scaffolded~~ | **RESOLVED** — 35 Svelte 5 wrapper components complete |

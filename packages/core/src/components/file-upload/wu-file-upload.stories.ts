@@ -11,6 +11,13 @@ const meta: Meta = {
     disabled: { control: 'boolean' },
     hint: { control: 'text' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Drag-and-drop file input with a file list preview, per-file removal, progress indicators and configurable file-type and size validation.',
+      },
+    },
+  },
 };
 
 export default meta;

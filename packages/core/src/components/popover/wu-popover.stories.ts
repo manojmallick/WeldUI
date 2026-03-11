@@ -8,6 +8,13 @@ const meta: Meta = {
   argTypes: {
     placement: { control: 'radio', options: ['top', 'bottom'] },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'An anchored overlay panel built on the CSS Popover API. Use the `trigger` slot for the activator and the default slot for panel content. Supports arrow and placement options.',
+      },
+    },
+  },
 };
 
 export default meta;

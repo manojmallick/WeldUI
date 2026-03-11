@@ -10,6 +10,13 @@ const meta: Meta = {
     width: { control: 'text' },
     height: { control: 'text' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Content placeholder shapes that reduce perceived load time — text line, rectangle, or circle variants. Add shimmer animation via the `animated` prop.',
+      },
+    },
+  },
 };
 
 export default meta;

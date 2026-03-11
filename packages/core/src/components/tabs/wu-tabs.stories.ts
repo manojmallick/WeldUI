@@ -8,6 +8,13 @@ const meta: Meta = {
   argTypes: {
     orientation: { control: 'radio', options: ['horizontal', 'vertical'] },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'Tab navigation with associated panels. Three composable elements: `<wu-tabs>` (container), `<wu-tab>` (trigger) and `<wu-tab-panel>` (content). Full keyboard navigation included.',
+      },
+    },
+  },
 };
 
 export default meta;

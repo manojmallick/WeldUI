@@ -11,6 +11,13 @@ const meta: Meta = {
     hideClose: { control: 'boolean' },
     closeOnBackdrop: { control: 'boolean' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'A dialog overlay built on the native `<dialog>` element. Implements a focus trap, scroll lock and Escape-to-close. Declare content with `header`, default and `footer` slots.',
+      },
+    },
+  },
 };
 
 export default meta;

@@ -11,6 +11,13 @@ const meta: Meta = {
     min: { control: 'text' },
     max: { control: 'text' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'A locale-aware date input with a calendar popup. Supports `min`/`max` constraints, range mode and full keyboard accessibility.',
+      },
+    },
+  },
 };
 
 export default meta;

@@ -9,6 +9,13 @@ const meta: Meta = {
     size: { control: 'radio', options: ['sm', 'md', 'lg'] },
     label: { control: 'text' },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: 'An animated circular loading indicator available in `sm`, `md` and `lg` sizes. Set `label` for an accessible screen-reader announcement.',
+      },
+    },
+  },
 };
 
 export default meta;
