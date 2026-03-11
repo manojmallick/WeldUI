@@ -1,4 +1,4 @@
-import{b as d}from"./lit-element-9a6qN07w.js";const m={title:"Components/Modal",component:"wu-modal",tags:["autodocs"],argTypes:{open:{control:"boolean"},label:{control:"text"},hideClose:{control:"boolean"},closeOnBackdrop:{control:"boolean"}}},o={render:()=>d`
+import{b as d}from"./lit-element-9a6qN07w.js";const m={title:"Components/Modal",component:"wu-modal",tags:["autodocs"],argTypes:{open:{control:"boolean"},label:{control:"text"},hideClose:{control:"boolean"},closeOnBackdrop:{control:"boolean"}},parameters:{docs:{description:{component:"A dialog overlay built on the native `<dialog>` element. Implements a focus trap, scroll lock and Escape-to-close. Declare content with `header`, default and `footer` slots."}}}},o={render:()=>d`
     <wu-button id="open-btn" @wu-click=${()=>{document.querySelector("#demo-modal").open=!0}}>Open Modal</wu-button>
     <wu-modal id="demo-modal" label="Confirm Action">
       <p style="margin:0">Are you sure you want to delete this item? This action cannot be undone.</p>

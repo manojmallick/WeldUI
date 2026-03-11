@@ -1,4 +1,4 @@
-import{b as i}from"./lit-element-9a6qN07w.js";const u={title:"Components/Tabs",component:"wu-tabs",tags:["autodocs"],argTypes:{orientation:{control:"radio",options:["horizontal","vertical"]}}},t={render:()=>i`
+import{b as i}from"./lit-element-9a6qN07w.js";const u={title:"Components/Tabs",component:"wu-tabs",tags:["autodocs"],argTypes:{orientation:{control:"radio",options:["horizontal","vertical"]}},parameters:{docs:{description:{component:"Tab navigation with associated panels. Three composable elements: `<wu-tabs>` (container), `<wu-tab>` (trigger) and `<wu-tab-panel>` (content). Full keyboard navigation included."}}}},t={render:()=>i`
     <wu-tabs style="max-width:600px">
       <wu-tab slot="tabs" panel="overview">Overview</wu-tab>
       <wu-tab slot="tabs" panel="activity">Activity</wu-tab>

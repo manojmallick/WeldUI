@@ -1,4 +1,4 @@
-import{b as s}from"./lit-element-9a6qN07w.js";const i={title:"Components/Popover",component:"wu-popover",tags:["autodocs"],argTypes:{placement:{control:"radio",options:["top","bottom"]}}},t={render:()=>s`
+import{b as r}from"./lit-element-9a6qN07w.js";const a={title:"Components/Popover",component:"wu-popover",tags:["autodocs"],argTypes:{placement:{control:"radio",options:["top","bottom"]}},parameters:{docs:{description:{component:"An anchored overlay panel built on the CSS Popover API. Use the `trigger` slot for the activator and the default slot for panel content. Supports arrow and placement options."}}}},t={render:()=>r`
     <div style="padding:80px;display:flex;justify-content:center">
       <wu-popover>
         <wu-button slot="trigger" variant="secondary">Options ▾</wu-button>
@@ -24,4 +24,4 @@ import{b as s}from"./lit-element-9a6qN07w.js";const i={title:"Components/Popover
       </wu-popover>
     </div>
   \`
-}`,...(n=(o=t.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};const u=["Default"];export{t as Default,u as __namedExportsOrder,i as default};
+}`,...(n=(o=t.parameters)==null?void 0:o.docs)==null?void 0:n.source}}};const i=["Default"];export{t as Default,i as __namedExportsOrder,a as default};

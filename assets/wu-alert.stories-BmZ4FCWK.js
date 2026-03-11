@@ -1,9 +1,9 @@
-import{b as t}from"./lit-element-9a6qN07w.js";const g={title:"Components/Alert",component:"wu-alert",tags:["autodocs"],argTypes:{variant:{control:"select",options:["info","success","warning","danger","neutral"]},dismissible:{control:"boolean"}}},e={args:{variant:"info",dismissible:!1},render:n=>t`
+import{b as t}from"./lit-element-9a6qN07w.js";const g={title:"Components/Alert",component:"wu-alert",tags:["autodocs"],argTypes:{variant:{control:"select",options:["info","success","warning","danger","neutral"]},dismissible:{control:"boolean"}},parameters:{docs:{description:{component:"Contextual status messages for info, success, warning and danger feedback. Supports a dismissible mode and `title` / `icon` slots."}}}},e={args:{variant:"info",dismissible:!1},render:n=>t`
     <wu-alert variant=${n.variant} ?dismissible=${n.dismissible}>
       <span slot="title">Heads up</span>
       This is an informational message for the user.
     </wu-alert>
-  `},a={render:()=>t`
+  `},s={render:()=>t`
     <div style="display:flex;flex-direction:column;gap:12px;max-width:480px">
       <wu-alert variant="info">
         <span slot="title">Info</span>
@@ -25,7 +25,7 @@ import{b as t}from"./lit-element-9a6qN07w.js";const g={title:"Components/Alert",
         No new notifications at this time.
       </wu-alert>
     </div>
-  `},s={render:()=>t`
+  `},a={render:()=>t`
     <wu-alert variant="info" dismissible style="max-width:480px">
       <span slot="title">Dismissible Alert</span>
       Click the × button to dismiss this alert.
@@ -41,7 +41,7 @@ import{b as t}from"./lit-element-9a6qN07w.js";const g={title:"Components/Alert",
       This is an informational message for the user.
     </wu-alert>
   \`
-}`,...(l=(i=e.parameters)==null?void 0:i.docs)==null?void 0:l.source}}};var o,u,p;a.parameters={...a.parameters,docs:{...(o=a.parameters)==null?void 0:o.docs,source:{originalSource:`{
+}`,...(l=(i=e.parameters)==null?void 0:i.docs)==null?void 0:l.source}}};var o,u,c;s.parameters={...s.parameters,docs:{...(o=s.parameters)==null?void 0:o.docs,source:{originalSource:`{
   render: () => html\`
     <div style="display:flex;flex-direction:column;gap:12px;max-width:480px">
       <wu-alert variant="info">
@@ -65,11 +65,11 @@ import{b as t}from"./lit-element-9a6qN07w.js";const g={title:"Components/Alert",
       </wu-alert>
     </div>
   \`
-}`,...(p=(u=a.parameters)==null?void 0:u.docs)==null?void 0:p.source}}};var c,d,m;s.parameters={...s.parameters,docs:{...(c=s.parameters)==null?void 0:c.docs,source:{originalSource:`{
+}`,...(c=(u=s.parameters)==null?void 0:u.docs)==null?void 0:c.source}}};var p,d,m;a.parameters={...a.parameters,docs:{...(p=a.parameters)==null?void 0:p.docs,source:{originalSource:`{
   render: () => html\`
     <wu-alert variant="info" dismissible style="max-width:480px">
       <span slot="title">Dismissible Alert</span>
       Click the × button to dismiss this alert.
     </wu-alert>
   \`
-}`,...(m=(d=s.parameters)==null?void 0:d.docs)==null?void 0:m.source}}};const f=["Default","AllVariants","Dismissible"];export{a as AllVariants,e as Default,s as Dismissible,f as __namedExportsOrder,g as default};
+}`,...(m=(d=a.parameters)==null?void 0:d.docs)==null?void 0:m.source}}};const f=["Default","AllVariants","Dismissible"];export{s as AllVariants,e as Default,a as Dismissible,f as __namedExportsOrder,g as default};

@@ -1,4 +1,4 @@
-import{b as r}from"./lit-element-9a6qN07w.js";const m={title:"Components/Toast",component:"wu-toast",tags:["autodocs"],argTypes:{variant:{control:"select",options:["default","info","success","warning","danger"]},heading:{control:"text"},duration:{control:"number"}}},t={render:()=>r`
+import{b as r}from"./lit-element-9a6qN07w.js";const w={title:"Components/Toast",component:"wu-toast",tags:["autodocs"],argTypes:{variant:{control:"select",options:["default","info","success","warning","danger"]},heading:{control:"text"},duration:{control:"number"}},parameters:{docs:{description:{component:"Non-blocking notification messages. Place `<wu-toast-provider>` once in your app shell; toast items are appended to it programmatically or declaratively. Supports auto-dismiss, action slots and five severity variants."}}}},t={render:()=>r`
     <wu-toast heading="File saved" variant="success" duration="0">
       Your changes have been saved successfully.
     </wu-toast>
@@ -54,4 +54,4 @@ import{b as r}from"./lit-element-9a6qN07w.js";const m={title:"Components/Toast",
   }}>Add Error</wu-button>
     </div>
   \`
-}`,...(l=(p=e.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const v=["Default","AllVariants","WithProvider"];export{a as AllVariants,t as Default,e as WithProvider,v as __namedExportsOrder,m as default};
+}`,...(l=(p=e.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const v=["Default","AllVariants","WithProvider"];export{a as AllVariants,t as Default,e as WithProvider,v as __namedExportsOrder,w as default};

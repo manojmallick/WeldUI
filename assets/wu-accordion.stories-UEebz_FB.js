@@ -1,4 +1,4 @@
-import{b as r}from"./lit-element-9a6qN07w.js";const d={title:"Components/Accordion",component:"wu-accordion",tags:["autodocs"]},n={render:()=>r`
+import{b as r}from"./lit-element-9a6qN07w.js";const d={title:"Components/Accordion",component:"wu-accordion",tags:["autodocs"],parameters:{docs:{description:{component:"Collapsible disclosure panels. Set `multiple` to allow more than one panel open at a time. Compose with `<wu-accordion-item>` elements."}}}},n={render:()=>r`
     <wu-accordion style="max-width:560px">
       <wu-accordion-item>
         <span slot="summary">What is WeldUI?</span>
@@ -64,4 +64,4 @@ import{b as r}from"./lit-element-9a6qN07w.js";const d={title:"Components/Accordi
       </wu-accordion-item>
     </wu-accordion>
   \`
-}`,...(c=(s=o.parameters)==null?void 0:s.docs)==null?void 0:c.source}}};const u=["Default","SingleOpen"];export{n as Default,o as SingleOpen,u as __namedExportsOrder,d as default};
+}`,...(c=(s=o.parameters)==null?void 0:s.docs)==null?void 0:c.source}}};const l=["Default","SingleOpen"];export{n as Default,o as SingleOpen,l as __namedExportsOrder,d as default};
