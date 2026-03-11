@@ -1,0 +1,429 @@
+import{s as a}from"./chunk-L4EGOTBX-CXKPrdrY.js";import"./entry-preview-Do_KSy0H.js";import{b as o}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";import"./index-DrFu-skq.js";const s="1.0.0",i="",r=[{kind:"javascript-module",path:"src/components/accordion/wu-accordion.ts",declarations:[{kind:"class",description:"An individual accordion item with a toggle header.",name:"WuAccordionItem",cssProperties:[],cssParts:[],slots:[{name:"",description:"Accordion item body content"},{name:"summary",description:"The clickable header text"}],members:[],events:[{name:"wu-toggle",description:"Emitted when the item is opened or closed",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-accordion-item",customElement:!0}],exports:[{kind:"js",name:"WuAccordionItem",declaration:{name:"WuAccordionItem",module:"src/components/accordion/wu-accordion.ts"}},{kind:"custom-element-definition",name:"wu-accordion-item",declaration:{name:"WuAccordionItem",module:"src/components/accordion/wu-accordion.ts"}}]},{kind:"javascript-module",path:"src/components/alert/wu-alert.ts",declarations:[{kind:"class",description:"An alert component for inline status messages.",name:"WuAlert",cssProperties:[{name:"--wu-alert-bg",description:"Alert background colour"},{name:"--wu-alert-border",description:"Alert border / accent colour"},{name:"--wu-alert-color",description:"Text and icon colour"}],cssParts:[{name:"base",description:"The alert container"},{name:"icon",description:"The icon area"},{name:"content",description:"The text content area"}],slots:[{name:"",description:"Alert body/description text"},{name:"title",description:"Bold title at the top of the alert"},{name:"icon",description:"Custom icon (replaces default variant icon)"}],members:[{kind:"field",name:"variant",description:"Visual severity variant",type:{text:"'info' | 'success' | 'warning' | 'danger' | 'neutral'"},default:"info",attribute:"variant",reflects:!0}],events:[{name:"wu-dismiss",description:"Emitted when the dismiss button is clicked",type:{text:"CustomEvent"}}],attributes:[{name:"variant",description:"Visual severity variant",type:{text:"'info' | 'success' | 'warning' | 'danger' | 'neutral'"},default:"info",fieldName:"variant"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-alert",customElement:!0}],exports:[{kind:"js",name:"WuAlert",declaration:{name:"WuAlert",module:"src/components/alert/wu-alert.ts"}},{kind:"custom-element-definition",name:"wu-alert",declaration:{name:"WuAlert",module:"src/components/alert/wu-alert.ts"}}]},{kind:"javascript-module",path:"src/components/avatar/wu-avatar.ts",declarations:[{kind:"class",description:"An avatar component that displays a user image or initials fallback.",name:"WuAvatar",cssProperties:[{name:"--wu-avatar-size",description:"Width and height of the avatar"},{name:"--wu-avatar-radius",description:"Border radius"},{name:"--wu-avatar-bg",description:"Background colour (shown when no image)"},{name:"--wu-avatar-color",description:"Text colour for initials"}],cssParts:[{name:"base",description:"The avatar container element"}],slots:[],members:[{kind:"field",name:"size",description:`Image source URL */
+  @property()
+  src?: string;
+
+  /** Alt text for the image */
+  @property()
+  alt?: string;
+
+  /** Initials to display when no image is available */
+  @property()
+  initials?: string;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg' | 'xl'"},default:"md",attribute:"size",reflects:!0}],events:[],attributes:[{name:"size",description:`Image source URL */
+  @property()
+  src?: string;
+
+  /** Alt text for the image */
+  @property()
+  alt?: string;
+
+  /** Initials to display when no image is available */
+  @property()
+  initials?: string;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg' | 'xl'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-avatar",customElement:!0}],exports:[{kind:"js",name:"WuAvatar",declaration:{name:"WuAvatar",module:"src/components/avatar/wu-avatar.ts"}},{kind:"custom-element-definition",name:"wu-avatar",declaration:{name:"WuAvatar",module:"src/components/avatar/wu-avatar.ts"}}]},{kind:"javascript-module",path:"src/components/badge/wu-badge.ts",declarations:[{kind:"class",description:"A small status/label indicator component.",name:"WuBadge",cssProperties:[{name:"--wu-badge-bg",description:"Background colour"},{name:"--wu-badge-color",description:"Text colour"},{name:"--wu-badge-border",description:"Border colour"}],cssParts:[{name:"base",description:"The badge container element"}],slots:[{name:"",description:"Badge label text"}],members:[{kind:"field",name:"variant",description:`A small status/label indicator component.  * @element wu-badge  * @slot - Badge label text  * @csspart base - The badge container element  * @cssprop --wu-badge-bg - Background colour @cssprop --wu-badge-color - Text colour @cssprop --wu-badge-border - Border colour /
+@customElement('wu-badge')
+export class WuBadge extends LitElement {
+  static styles = styles;
+
+  /** Visual style variant`,type:{text:"'default' | 'primary' | 'success' | 'warning' | 'danger' | 'outline'"},default:"default",attribute:"variant",reflects:!0}],events:[],attributes:[{name:"variant",description:`A small status/label indicator component.  * @element wu-badge  * @slot - Badge label text  * @csspart base - The badge container element  * @cssprop --wu-badge-bg - Background colour @cssprop --wu-badge-color - Text colour @cssprop --wu-badge-border - Border colour /
+@customElement('wu-badge')
+export class WuBadge extends LitElement {
+  static styles = styles;
+
+  /** Visual style variant`,type:{text:"'default' | 'primary' | 'success' | 'warning' | 'danger' | 'outline'"},default:"default",fieldName:"variant"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-badge",customElement:!0}],exports:[{kind:"js",name:"WuBadge",declaration:{name:"WuBadge",module:"src/components/badge/wu-badge.ts"}},{kind:"custom-element-definition",name:"wu-badge",declaration:{name:"WuBadge",module:"src/components/badge/wu-badge.ts"}}]},{kind:"javascript-module",path:"src/components/breadcrumb/wu-breadcrumb.ts",declarations:[{kind:"class",description:"A breadcrumb navigation component with structured data markup.",name:"WuBreadcrumb",cssProperties:[{name:"--wu-breadcrumb-color",description:"Item link colour"},{name:"--wu-breadcrumb-color-active",description:"Current page colour"},{name:"--wu-breadcrumb-color-hover",description:"Hover colour"}],cssParts:[],slots:[{name:"",description:"Place `<a>` or `<span>` elements for each breadcrumb item"}],members:[],events:[],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-breadcrumb",customElement:!0}],exports:[{kind:"js",name:"WuBreadcrumb",declaration:{name:"WuBreadcrumb",module:"src/components/breadcrumb/wu-breadcrumb.ts"}},{kind:"custom-element-definition",name:"wu-breadcrumb",declaration:{name:"WuBreadcrumb",module:"src/components/breadcrumb/wu-breadcrumb.ts"}}]},{kind:"javascript-module",path:"src/components/button/wu-button.ts",declarations:[{kind:"class",description:"A button component that supports multiple visual variants and sizes.",name:"WuButton",cssProperties:[{name:"--wu-btn-bg",description:"Background colour"},{name:"--wu-btn-bg-hover",description:"Background colour on hover"},{name:"--wu-btn-color",description:"Text colour"},{name:"--wu-btn-border",description:"Border colour"},{name:"--wu-btn-radius",description:"Border radius"},{name:"--wu-btn-font-size",description:"Font size"},{name:"--wu-btn-font-weight",description:"Font weight"},{name:"--wu-btn-padding-x",description:"Horizontal padding"},{name:"--wu-btn-padding-y",description:"Vertical padding"},{name:"--wu-btn-height",description:"Button height"}],cssParts:[{name:"base",description:"The button's base wrapper element"},{name:"label",description:"The button's label span"}],slots:[{name:"",description:"Default slot for button label"},{name:"prefix",description:"Icon or content before the label"},{name:"suffix",description:"Icon or content after the label"}],members:[{kind:"field",name:"variant",description:"Visual style variant",type:{text:"'primary' | 'secondary' | 'ghost' | 'danger' | 'success'"},default:"primary",attribute:"variant",reflects:!0},{kind:"field",name:"size",description:`Visual style variant */
+  @property({ reflect: true })
+  variant: 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' = 'primary';
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0},{kind:"field",name:"type",description:`Visual style variant */
+  @property({ reflect: true })
+  variant: 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' = 'primary';
+
+  /** Size variant */
+  @property({ reflect: true })
+  size: 'sm' | 'md' | 'lg' = 'md';
+
+  /** Disabled state — prevents interaction */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Loading state — shows spinner and prevents interaction */
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
+  /** Native button type attribute`,type:{text:"'button' | 'submit' | 'reset'"},default:"button",attribute:"type",reflects:!1}],events:[{name:"wu-click",description:"Emitted when the button is clicked (not disabled or loading)",type:{text:"CustomEvent"}}],attributes:[{name:"variant",description:"Visual style variant",type:{text:"'primary' | 'secondary' | 'ghost' | 'danger' | 'success'"},default:"primary",fieldName:"variant"},{name:"size",description:`Visual style variant */
+  @property({ reflect: true })
+  variant: 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' = 'primary';
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"},{name:"type",description:`Visual style variant */
+  @property({ reflect: true })
+  variant: 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' = 'primary';
+
+  /** Size variant */
+  @property({ reflect: true })
+  size: 'sm' | 'md' | 'lg' = 'md';
+
+  /** Disabled state — prevents interaction */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Loading state — shows spinner and prevents interaction */
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
+  /** Native button type attribute`,type:{text:"'button' | 'submit' | 'reset'"},default:"button",fieldName:"type"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-button",customElement:!0}],exports:[{kind:"js",name:"WuButton",declaration:{name:"WuButton",module:"src/components/button/wu-button.ts"}},{kind:"custom-element-definition",name:"wu-button",declaration:{name:"WuButton",module:"src/components/button/wu-button.ts"}}]},{kind:"javascript-module",path:"src/components/card/wu-card.ts",declarations:[{kind:"class",description:"A flexible card container with header, body, and footer slots.",name:"WuCard",cssProperties:[{name:"--wu-card-bg",description:"Card background colour"},{name:"--wu-card-border",description:"Card border colour"},{name:"--wu-card-radius",description:"Card border radius"},{name:"--wu-card-shadow",description:"Card box shadow (default)"},{name:"--wu-card-shadow-hover",description:"Card box shadow on hover (interactive)"},{name:"--wu-card-padding",description:"Card internal padding"}],cssParts:[{name:"base",description:"The card's root element"},{name:"header",description:"The header section"},{name:"body",description:"The body section"},{name:"footer",description:"The footer section"}],slots:[{name:"",description:"Default slot for card body content"},{name:"header",description:"Card header content (hidden if empty)"},{name:"footer",description:"Card footer content (hidden if empty)"}],members:[],events:[{name:"wu-click",description:"Emitted when the card is clicked (interactive mode only)",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-card",customElement:!0}],exports:[{kind:"js",name:"WuCard",declaration:{name:"WuCard",module:"src/components/card/wu-card.ts"}},{kind:"custom-element-definition",name:"wu-card",declaration:{name:"WuCard",module:"src/components/card/wu-card.ts"}}]},{kind:"javascript-module",path:"src/components/checkbox/wu-checkbox.ts",declarations:[{kind:"class",description:"A checkbox component with checked, indeterminate, and disabled states.",name:"WuCheckbox",cssProperties:[{name:"--wu-checkbox-size",description:"Width and height of the checkbox"},{name:"--wu-checkbox-checked-bg",description:"Background when checked"},{name:"--wu-checkbox-border",description:"Default border colour"}],cssParts:[{name:"base",description:"The outer wrapper"},{name:"input",description:"The native checkbox input"},{name:"label",description:"The label element"}],slots:[],members:[],events:[{name:"wu-change",description:"Emitted when the checked state changes",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-checkbox",customElement:!0}],exports:[{kind:"js",name:"WuCheckbox",declaration:{name:"WuCheckbox",module:"src/components/checkbox/wu-checkbox.ts"}},{kind:"custom-element-definition",name:"wu-checkbox",declaration:{name:"WuCheckbox",module:"src/components/checkbox/wu-checkbox.ts"}}]},{kind:"javascript-module",path:"src/components/command/wu-command.ts",declarations:[{kind:"class",description:"A command palette component with fuzzy search, grouped results, and keyboard navigation.",name:"WuCommand",cssProperties:[{name:"--wu-cmd-bg",description:"Panel background color"},{name:"--wu-cmd-shadow",description:"Panel shadow"},{name:"--wu-cmd-max-height",description:"Max height of the results list"}],cssParts:[{name:"backdrop",description:"The modal backdrop"},{name:"panel",description:"The command panel"}],slots:[],members:[{kind:"field",name:"items",description:`Whether the palette is open */
+  @property({ type: Boolean, reflect: true })
+  open = false;
+
+  /** Command items to display`,type:{text:"WuCommandItem[]"},default:"[]",attribute:"items",reflects:!1}],events:[{name:"wu-select",description:"Emitted when a command is selected. Detail: `{ item: WuCommandItem }`",type:{text:"CustomEvent"}},{name:"wu-close",description:"Emitted when the palette is closed.",type:{text:"CustomEvent"}}],attributes:[{name:"items",description:`Whether the palette is open */
+  @property({ type: Boolean, reflect: true })
+  open = false;
+
+  /** Command items to display`,type:{text:"WuCommandItem[]"},default:"[]",fieldName:"items"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-command",customElement:!0}],exports:[{kind:"js",name:"WuCommand",declaration:{name:"WuCommand",module:"src/components/command/wu-command.ts"}},{kind:"custom-element-definition",name:"wu-command",declaration:{name:"WuCommand",module:"src/components/command/wu-command.ts"}}]},{kind:"javascript-module",path:"src/components/data-grid/wu-data-grid.ts",declarations:[{kind:"class",description:"A data grid component with filtering, sorting, and server-side pagination.",name:"WuDataGrid",cssProperties:[{name:"--wu-dg-border",description:"Border color"},{name:"--wu-dg-header-bg",description:"Header background"},{name:"--wu-dg-row-hover",description:"Row hover background"},{name:"--wu-dg-row-height",description:"Row height"}],cssParts:[{name:"grid",description:"Root grid container"}],slots:[],members:[{kind:"field",name:"columns",description:"Column definitions",type:{text:"WuDataGridColumn[]"},default:"[]",attribute:"columns",reflects:!1},{kind:"field",name:"data",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuDataGridColumn[] = [];
+
+  /** Row data — each item should have an \`id\` field`,type:{text:"Record<string, unknown>[]"},default:"[]",attribute:"data",reflects:!1}],events:[{name:"wu-sort-change",description:"Emitted when sort changes. Detail: `{ key, direction }`",type:{text:"CustomEvent"}},{name:"wu-filter-change",description:"Emitted when global filter changes. Detail: `{ query }`",type:{text:"CustomEvent"}},{name:"wu-page-change",description:"Emitted when page changes. Detail: `{ page, pageSize }`",type:{text:"CustomEvent"}}],attributes:[{name:"columns",description:"Column definitions",type:{text:"WuDataGridColumn[]"},default:"[]",fieldName:"columns"},{name:"data",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuDataGridColumn[] = [];
+
+  /** Row data — each item should have an \`id\` field`,type:{text:"Record<string, unknown>[]"},default:"[]",fieldName:"data"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-data-grid",customElement:!0}],exports:[{kind:"js",name:"WuDataGrid",declaration:{name:"WuDataGrid",module:"src/components/data-grid/wu-data-grid.ts"}},{kind:"custom-element-definition",name:"wu-data-grid",declaration:{name:"WuDataGrid",module:"src/components/data-grid/wu-data-grid.ts"}}]},{kind:"javascript-module",path:"src/components/date-picker/wu-date-picker.ts",declarations:[{kind:"class",description:"A date picker component with a calendar grid and keyboard navigation.",name:"WuDatePicker",cssProperties:[{name:"--wu-dp-border",description:"Border color"},{name:"--wu-dp-bg",description:"Calendar background"},{name:"--wu-dp-shadow",description:"Calendar shadow"},{name:"--wu-dp-cell-size",description:"Size of each day cell"}],cssParts:[{name:"trigger",description:"The trigger button"},{name:"calendar",description:"The calendar popup"}],slots:[],members:[],events:[{name:"wu-date-change",description:"Emitted when the user selects a date. Detail: `{ value: string }` (ISO YYYY-MM-DD)",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-date-picker",customElement:!0}],exports:[{kind:"js",name:"WuDatePicker",declaration:{name:"WuDatePicker",module:"src/components/date-picker/wu-date-picker.ts"}},{kind:"custom-element-definition",name:"wu-date-picker",declaration:{name:"WuDatePicker",module:"src/components/date-picker/wu-date-picker.ts"}}]},{kind:"javascript-module",path:"src/components/divider/wu-divider.ts",declarations:[{kind:"class",description:"A horizontal or vertical divider line with an optional label.",name:"WuDivider",cssProperties:[{name:"--wu-divider-color",description:"Line colour"},{name:"--wu-divider-thickness",description:"Line thickness"},{name:"--wu-divider-spacing",description:"Margin around the divider"}],cssParts:[],slots:[{name:"",description:"Optional label content displayed in the centre of the divider"}],members:[],events:[],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-divider",customElement:!0}],exports:[{kind:"js",name:"WuDivider",declaration:{name:"WuDivider",module:"src/components/divider/wu-divider.ts"}},{kind:"custom-element-definition",name:"wu-divider",declaration:{name:"WuDivider",module:"src/components/divider/wu-divider.ts"}}]},{kind:"javascript-module",path:"src/components/file-upload/wu-file-upload.ts",declarations:[{kind:"class",description:"A file upload component with drag-and-drop support, file list, and validation.",name:"WuFileUpload",cssProperties:[{name:"--wu-fu-border",description:"Default border color"},{name:"--wu-fu-border-active",description:"Active/hover border color"},{name:"--wu-fu-bg",description:"Background color"}],cssParts:[{name:"drop-zone",description:"The drop/click target area"},{name:"file-list",description:"The list of selected files"}],slots:[],members:[],events:[{name:"wu-file-select",description:"Emitted when files are selected. Detail: `{ files: File[] }`",type:{text:"CustomEvent"}},{name:"wu-file-remove",description:"Emitted when a file is removed. Detail: `{ file: File }`",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-file-upload",customElement:!0}],exports:[{kind:"js",name:"WuFileUpload",declaration:{name:"WuFileUpload",module:"src/components/file-upload/wu-file-upload.ts"}},{kind:"custom-element-definition",name:"wu-file-upload",declaration:{name:"WuFileUpload",module:"src/components/file-upload/wu-file-upload.ts"}}]},{kind:"javascript-module",path:"src/components/input/wu-input.ts",declarations:[{kind:"class",description:"A text input component with label, hint, and error support.",name:"WuInput",cssProperties:[{name:"--wu-input-bg",description:"Background colour"},{name:"--wu-input-border",description:"Border colour"},{name:"--wu-input-border-focus",description:"Border colour when focused"},{name:"--wu-input-radius",description:"Border radius"}],cssParts:[{name:"base",description:"The outer wrapper"},{name:"input",description:"The native input element"}],slots:[],members:[{kind:"field",name:"type",description:"Input type",type:{text:"'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url'"},default:"text",attribute:"type",reflects:!1},{kind:"field",name:"size",description:`Current value */
+  @property()
+  value = '';
+
+  /** Placeholder text */
+  @property()
+  placeholder?: string;
+
+  /** Visible label */
+  @property()
+  label?: string;
+
+  /** Hint text shown below the input */
+  @property()
+  hint?: string;
+
+  /** Error message — also sets invalid state */
+  @property()
+  error?: string;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Required field */
+  @property({ type: Boolean })
+  required = false;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0}],events:[{name:"wu-change",description:"Emitted when the value changes (on input)",type:{text:"CustomEvent"}},{name:"wu-blur",description:"Emitted when the input loses focus",type:{text:"CustomEvent"}}],attributes:[{name:"type",description:"Input type",type:{text:"'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url'"},default:"text",fieldName:"type"},{name:"size",description:`Current value */
+  @property()
+  value = '';
+
+  /** Placeholder text */
+  @property()
+  placeholder?: string;
+
+  /** Visible label */
+  @property()
+  label?: string;
+
+  /** Hint text shown below the input */
+  @property()
+  hint?: string;
+
+  /** Error message — also sets invalid state */
+  @property()
+  error?: string;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Required field */
+  @property({ type: Boolean })
+  required = false;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-input",customElement:!0}],exports:[{kind:"js",name:"WuInput",declaration:{name:"WuInput",module:"src/components/input/wu-input.ts"}},{kind:"custom-element-definition",name:"wu-input",declaration:{name:"WuInput",module:"src/components/input/wu-input.ts"}}]},{kind:"javascript-module",path:"src/components/modal/wu-modal.ts",declarations:[{kind:"class",description:"A modal dialog built on the native HTML `<dialog>` element with focus trap and scroll lock.",name:"WuModal",cssProperties:[{name:"--wu-modal-bg",description:"Modal background colour"},{name:"--wu-modal-width",description:"Modal max width"},{name:"--wu-modal-radius",description:"Modal border radius"},{name:"--wu-modal-backdrop",description:"Backdrop overlay colour"}],cssParts:[{name:"base",description:"The native dialog element"},{name:"header",description:"The modal header section"},{name:"body",description:"The modal body section"},{name:"footer",description:"The modal footer section"}],slots:[{name:"",description:"Default slot for modal body content"},{name:"footer",description:"Action buttons or custom footer content"}],members:[],events:[{name:"wu-open",description:"Emitted when the modal opens",type:{text:"CustomEvent"}},{name:"wu-close",description:"Emitted when the modal closes (reason: 'escape' | 'backdrop' | 'button' | 'api')",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-modal",customElement:!0}],exports:[{kind:"js",name:"WuModal",declaration:{name:"WuModal",module:"src/components/modal/wu-modal.ts"}},{kind:"custom-element-definition",name:"wu-modal",declaration:{name:"WuModal",module:"src/components/modal/wu-modal.ts"}}]},{kind:"javascript-module",path:"src/components/pagination/wu-pagination.ts",declarations:[{kind:"class",description:"A pagination control for navigating paged data.",name:"WuPagination",cssProperties:[{name:"--wu-pagination-bg-active",description:"Active page button background"},{name:"--wu-pagination-btn-size",description:"Page button size"}],cssParts:[],slots:[],members:[],events:[{name:"wu-page-change",description:"Emitted when the page changes ({ page: number })",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-pagination",customElement:!0}],exports:[{kind:"js",name:"WuPagination",declaration:{name:"WuPagination",module:"src/components/pagination/wu-pagination.ts"}},{kind:"custom-element-definition",name:"wu-pagination",declaration:{name:"WuPagination",module:"src/components/pagination/wu-pagination.ts"}}]},{kind:"javascript-module",path:"src/components/popover/wu-popover.ts",declarations:[{kind:"class",description:"A floating popover panel with a trigger slot and content slot.",name:"WuPopover",cssProperties:[{name:"--wu-popover-bg",description:"Popover background colour"},{name:"--wu-popover-shadow",description:"Popover shadow"},{name:"--wu-popover-width",description:"Popover width"}],cssParts:[],slots:[{name:"trigger",description:"The element that toggles the popover"},{name:"",description:"Default slot for popover content"}],members:[{kind:"field",name:"placement",description:`Whether the popover is open */
+  @property({ type: Boolean, reflect: true })
+  open = false;
+
+  /** Placement relative to trigger`,type:{text:"'top' | 'bottom'"},default:"bottom",attribute:"placement",reflects:!0}],events:[{name:"wu-open",description:"Emitted when the popover opens",type:{text:"CustomEvent"}},{name:"wu-close",description:"Emitted when the popover closes",type:{text:"CustomEvent"}}],attributes:[{name:"placement",description:`Whether the popover is open */
+  @property({ type: Boolean, reflect: true })
+  open = false;
+
+  /** Placement relative to trigger`,type:{text:"'top' | 'bottom'"},default:"bottom",fieldName:"placement"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-popover",customElement:!0}],exports:[{kind:"js",name:"WuPopover",declaration:{name:"WuPopover",module:"src/components/popover/wu-popover.ts"}},{kind:"custom-element-definition",name:"wu-popover",declaration:{name:"WuPopover",module:"src/components/popover/wu-popover.ts"}}]},{kind:"javascript-module",path:"src/components/progress/wu-progress.ts",declarations:[{kind:"class",description:"A progress bar for determinate or indeterminate loading states.",name:"WuProgress",cssProperties:[{name:"--wu-progress-height",description:"Bar height"},{name:"--wu-progress-track",description:"Track background colour"},{name:"--wu-progress-fill",description:"Fill/active colour"}],cssParts:[],slots:[],members:[{kind:"field",name:"size",description:`Current value (0–100) */
+  @property({ type: Number })
+  value = 0;
+
+  /** Minimum value */
+  @property({ type: Number })
+  min = 0;
+
+  /** Maximum value */
+  @property({ type: Number })
+  max = 100;
+
+  /** Indeterminate state — animates continuously */
+  @property({ type: Boolean, reflect: true })
+  indeterminate = false;
+
+  /** Show percentage label */
+  @property({ type: Boolean })
+  showLabel = false;
+
+  /** Visual size`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0}],events:[],attributes:[{name:"size",description:`Current value (0–100) */
+  @property({ type: Number })
+  value = 0;
+
+  /** Minimum value */
+  @property({ type: Number })
+  min = 0;
+
+  /** Maximum value */
+  @property({ type: Number })
+  max = 100;
+
+  /** Indeterminate state — animates continuously */
+  @property({ type: Boolean, reflect: true })
+  indeterminate = false;
+
+  /** Show percentage label */
+  @property({ type: Boolean })
+  showLabel = false;
+
+  /** Visual size`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-progress",customElement:!0}],exports:[{kind:"js",name:"WuProgress",declaration:{name:"WuProgress",module:"src/components/progress/wu-progress.ts"}},{kind:"custom-element-definition",name:"wu-progress",declaration:{name:"WuProgress",module:"src/components/progress/wu-progress.ts"}}]},{kind:"javascript-module",path:"src/components/select/wu-select.ts",declarations:[{kind:"class",description:"A single-select dropdown component.",name:"WuSelect",cssProperties:[{name:"--wu-select-bg",description:"Background colour"},{name:"--wu-select-border",description:"Border colour"},{name:"--wu-select-border-focus",description:"Border colour when focused"}],cssParts:[{name:"base",description:"The outer wrapper"},{name:"select",description:"The native select element"}],slots:[],members:[{kind:"field",name:"options",description:`Currently selected value */
+  @property()
+  value = '';
+
+  /** Array of options to render`,type:{text:"SelectOption[]"},default:"[]",attribute:"options",reflects:!1},{kind:"field",name:"size",description:`Array of options to render */
+  @property({ type: Array })
+  options: SelectOption[] = [];
+
+  /** Placeholder option shown when no value is selected */
+  @property()
+  placeholder?: string;
+
+  /** Visible label */
+  @property()
+  label?: string;
+
+  /** Hint text */
+  @property()
+  hint?: string;
+
+  /** Error message */
+  @property()
+  error?: string;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Required field */
+  @property({ type: Boolean })
+  required = false;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0}],events:[{name:"wu-change",description:"Emitted when the selected value changes",type:{text:"CustomEvent"}}],attributes:[{name:"options",description:`Currently selected value */
+  @property()
+  value = '';
+
+  /** Array of options to render`,type:{text:"SelectOption[]"},default:"[]",fieldName:"options"},{name:"size",description:`Array of options to render */
+  @property({ type: Array })
+  options: SelectOption[] = [];
+
+  /** Placeholder option shown when no value is selected */
+  @property()
+  placeholder?: string;
+
+  /** Visible label */
+  @property()
+  label?: string;
+
+  /** Hint text */
+  @property()
+  hint?: string;
+
+  /** Error message */
+  @property()
+  error?: string;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Required field */
+  @property({ type: Boolean })
+  required = false;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-select",customElement:!0}],exports:[{kind:"js",name:"WuSelect",declaration:{name:"WuSelect",module:"src/components/select/wu-select.ts"}},{kind:"custom-element-definition",name:"wu-select",declaration:{name:"WuSelect",module:"src/components/select/wu-select.ts"}}]},{kind:"javascript-module",path:"src/components/skeleton/wu-skeleton.ts",declarations:[{kind:"class",description:"A skeleton placeholder for loading states.",name:"WuSkeleton",cssProperties:[{name:"--wu-skeleton-color",description:"Base skeleton colour"},{name:"--wu-skeleton-shimmer",description:"Shimmer highlight colour"},{name:"--wu-skeleton-speed",description:"Animation duration"}],cssParts:[],slots:[],members:[{kind:"field",name:"variant",description:`A skeleton placeholder for loading states.  * @element wu-skeleton  * @cssprop --wu-skeleton-color - Base skeleton colour @cssprop --wu-skeleton-shimmer - Shimmer highlight colour @cssprop --wu-skeleton-speed - Animation duration /
+@customElement('wu-skeleton')
+export class WuSkeleton extends LitElement {
+  static styles = styles;
+
+  /** Shape variant`,type:{text:"'text' | 'circle' | 'rect'"},default:"text",attribute:"variant",reflects:!0}],events:[],attributes:[{name:"variant",description:`A skeleton placeholder for loading states.  * @element wu-skeleton  * @cssprop --wu-skeleton-color - Base skeleton colour @cssprop --wu-skeleton-shimmer - Shimmer highlight colour @cssprop --wu-skeleton-speed - Animation duration /
+@customElement('wu-skeleton')
+export class WuSkeleton extends LitElement {
+  static styles = styles;
+
+  /** Shape variant`,type:{text:"'text' | 'circle' | 'rect'"},default:"text",fieldName:"variant"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-skeleton",customElement:!0}],exports:[{kind:"js",name:"WuSkeleton",declaration:{name:"WuSkeleton",module:"src/components/skeleton/wu-skeleton.ts"}},{kind:"custom-element-definition",name:"wu-skeleton",declaration:{name:"WuSkeleton",module:"src/components/skeleton/wu-skeleton.ts"}}]},{kind:"javascript-module",path:"src/components/spinner/wu-spinner.ts",declarations:[{kind:"class",description:"An animated loading spinner.",name:"WuSpinner",cssProperties:[{name:"--wu-spinner-size",description:"Spinner diameter"},{name:"--wu-spinner-color",description:"Active arc colour"},{name:"--wu-spinner-track",description:"Track ring colour"},{name:"--wu-spinner-thickness",description:"Border/arc thickness"},{name:"--wu-spinner-speed",description:"Animation duration"}],cssParts:[],slots:[],members:[{kind:"field",name:"size",description:`An animated loading spinner.  * @element wu-spinner  * @cssprop --wu-spinner-size - Spinner diameter @cssprop --wu-spinner-color - Active arc colour @cssprop --wu-spinner-track - Track ring colour @cssprop --wu-spinner-thickness - Border/arc thickness @cssprop --wu-spinner-speed - Animation duration /
+@customElement('wu-spinner')
+export class WuSpinner extends LitElement {
+  static styles = styles;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0}],events:[],attributes:[{name:"size",description:`An animated loading spinner.  * @element wu-spinner  * @cssprop --wu-spinner-size - Spinner diameter @cssprop --wu-spinner-color - Active arc colour @cssprop --wu-spinner-track - Track ring colour @cssprop --wu-spinner-thickness - Border/arc thickness @cssprop --wu-spinner-speed - Animation duration /
+@customElement('wu-spinner')
+export class WuSpinner extends LitElement {
+  static styles = styles;
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-spinner",customElement:!0}],exports:[{kind:"js",name:"WuSpinner",declaration:{name:"WuSpinner",module:"src/components/spinner/wu-spinner.ts"}},{kind:"custom-element-definition",name:"wu-spinner",declaration:{name:"WuSpinner",module:"src/components/spinner/wu-spinner.ts"}}]},{kind:"javascript-module",path:"src/components/stepper/wu-stepper.ts",declarations:[{kind:"class",description:"An individual step within a wu-stepper.",name:"WuStep",cssProperties:[{name:"--wu-stepper-indicator-size",description:"Size of the step indicator circle"}],cssParts:[],slots:[],members:[{kind:"field",name:"status",description:`An individual step within a wu-stepper.  * @element wu-step  * @cssprop --wu-stepper-indicator-size - Size of the step indicator circle /
+@customElement('wu-step')
+export class WuStep extends LitElement {
+  static styles = stepStyles;
+
+  /** Step label */
+  @property()
+  label = '';
+
+  /** Optional description text */
+  @property()
+  description = '';
+
+  /** Step status`,type:{text:"'pending' | 'active' | 'complete' | 'error'"},default:"pending",attribute:"status",reflects:!0}],events:[],attributes:[{name:"status",description:`An individual step within a wu-stepper.  * @element wu-step  * @cssprop --wu-stepper-indicator-size - Size of the step indicator circle /
+@customElement('wu-step')
+export class WuStep extends LitElement {
+  static styles = stepStyles;
+
+  /** Step label */
+  @property()
+  label = '';
+
+  /** Optional description text */
+  @property()
+  description = '';
+
+  /** Step status`,type:{text:"'pending' | 'active' | 'complete' | 'error'"},default:"pending",fieldName:"status"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-step",customElement:!0}],exports:[{kind:"js",name:"WuStep",declaration:{name:"WuStep",module:"src/components/stepper/wu-stepper.ts"}},{kind:"custom-element-definition",name:"wu-step",declaration:{name:"WuStep",module:"src/components/stepper/wu-stepper.ts"}}]},{kind:"javascript-module",path:"src/components/table/wu-table.ts",declarations:[{kind:"class",description:"A data table component with sortable columns, row selection, and sticky header.",name:"WuTable",cssProperties:[{name:"--wu-table-border",description:"Border color"},{name:"--wu-table-header-bg",description:"Header background color"},{name:"--wu-table-row-hover-bg",description:"Row hover background"},{name:"--wu-table-row-selected-bg",description:"Selected row background"}],cssParts:[{name:"base",description:"The scrollable wrapper"},{name:"table",description:"The table element"}],slots:[],members:[{kind:"field",name:"columns",description:"Column definitions",type:{text:"WuTableColumn[]"},default:"[]",attribute:"columns",reflects:!1},{kind:"field",name:"data",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuTableColumn[] = [];
+
+  /** Row data — each item must have a unique \`id\` field`,type:{text:"Record<string, unknown>[]"},default:"[]",attribute:"data",reflects:!1},{kind:"field",name:"sortDirection",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuTableColumn[] = [];
+
+  /** Row data — each item must have a unique \`id\` field */
+  @property({ type: Array })
+  data: Record<string, unknown>[] = [];
+
+  /** Allow row selection via checkboxes */
+  @property({ type: Boolean, attribute: 'selectable' })
+  selectable = false;
+
+  /** Currently sorted column key */
+  @property({ attribute: 'sort-key' })
+  sortKey = '';
+
+  /** Current sort direction`,type:{text:"'asc' | 'desc'"},default:"asc",attribute:"sort-direction",reflects:!1}],events:[{name:"wu-sort",description:"Emitted when a sortable column header is clicked. Detail: `{ key, direction }`",type:{text:"CustomEvent"}},{name:"wu-select",description:"Emitted when row selection changes. Detail: `{ selected: string[] }`",type:{text:"CustomEvent"}}],attributes:[{name:"columns",description:"Column definitions",type:{text:"WuTableColumn[]"},default:"[]",fieldName:"columns"},{name:"data",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuTableColumn[] = [];
+
+  /** Row data — each item must have a unique \`id\` field`,type:{text:"Record<string, unknown>[]"},default:"[]",fieldName:"data"},{name:"sort-direction",description:`Column definitions */
+  @property({ type: Array })
+  columns: WuTableColumn[] = [];
+
+  /** Row data — each item must have a unique \`id\` field */
+  @property({ type: Array })
+  data: Record<string, unknown>[] = [];
+
+  /** Allow row selection via checkboxes */
+  @property({ type: Boolean, attribute: 'selectable' })
+  selectable = false;
+
+  /** Currently sorted column key */
+  @property({ attribute: 'sort-key' })
+  sortKey = '';
+
+  /** Current sort direction`,type:{text:"'asc' | 'desc'"},default:"asc",fieldName:"sortDirection"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-table",customElement:!0}],exports:[{kind:"js",name:"WuTable",declaration:{name:"WuTable",module:"src/components/table/wu-table.ts"}},{kind:"custom-element-definition",name:"wu-table",declaration:{name:"WuTable",module:"src/components/table/wu-table.ts"}}]},{kind:"javascript-module",path:"src/components/tabs/wu-tabs.ts",declarations:[{kind:"class",description:"A single tab button inside `<wu-tabs>`.",name:"WuTab",cssProperties:[{name:"--wu-tab-color",description:"Tab text colour"},{name:"--wu-tab-color-active",description:"Active tab colour"}],cssParts:[],slots:[{name:"",description:"Tab label"}],members:[{kind:"field",name:"orientation",description:"A tabbed navigation component. Contains `<wu-tab>` and `<wu-tab-panel>` elements.  * @element wu-tabs  * @slot - Place `<wu-tab>` and `<wu-tab-panel>` elements here  * @event wu-tab-change - Emitted when the active tab changes ({ panel: string })  * @cssprop --wu-tabs-border - Tab list border colour @cssprop --wu-tab-indicator - Active tab indicator colour /\n@customElement('wu-tabs')\nexport class WuTabs extends LitElement {\n  static styles = tabsStyles;\n\n  /** Orientation of the tab list",type:{text:"'horizontal' | 'vertical'"},default:"horizontal",attribute:"orientation",reflects:!0}],events:[],attributes:[{name:"orientation",description:"A tabbed navigation component. Contains `<wu-tab>` and `<wu-tab-panel>` elements.  * @element wu-tabs  * @slot - Place `<wu-tab>` and `<wu-tab-panel>` elements here  * @event wu-tab-change - Emitted when the active tab changes ({ panel: string })  * @cssprop --wu-tabs-border - Tab list border colour @cssprop --wu-tab-indicator - Active tab indicator colour /\n@customElement('wu-tabs')\nexport class WuTabs extends LitElement {\n  static styles = tabsStyles;\n\n  /** Orientation of the tab list",type:{text:"'horizontal' | 'vertical'"},default:"horizontal",fieldName:"orientation"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-tab",customElement:!0}],exports:[{kind:"js",name:"WuTab",declaration:{name:"WuTab",module:"src/components/tabs/wu-tabs.ts"}},{kind:"custom-element-definition",name:"wu-tab",declaration:{name:"WuTab",module:"src/components/tabs/wu-tabs.ts"}}]},{kind:"javascript-module",path:"src/components/textarea/wu-textarea.ts",declarations:[{kind:"class",description:"A multi-line text input component.",name:"WuTextarea",cssProperties:[{name:"--wu-textarea-bg",description:"Background colour"},{name:"--wu-textarea-border",description:"Border colour"},{name:"--wu-textarea-border-focus",description:"Border colour when focused"},{name:"--wu-textarea-min-height",description:"Minimum height"}],cssParts:[{name:"base",description:"The outer wrapper"},{name:"textarea",description:"The native textarea element"}],slots:[],members:[],events:[{name:"wu-change",description:"Emitted when the value changes",type:{text:"CustomEvent"}},{name:"wu-blur",description:"Emitted when the textarea loses focus",type:{text:"CustomEvent"}}],attributes:[],superclass:{name:"LitElement",package:"lit"},tagName:"wu-textarea",customElement:!0}],exports:[{kind:"js",name:"WuTextarea",declaration:{name:"WuTextarea",module:"src/components/textarea/wu-textarea.ts"}},{kind:"custom-element-definition",name:"wu-textarea",declaration:{name:"WuTextarea",module:"src/components/textarea/wu-textarea.ts"}}]},{kind:"javascript-module",path:"src/components/toast/wu-toast.ts",declarations:[{kind:"class",description:"A single toast notification.",name:"WuToast",cssProperties:[{name:"--wu-toast-bg",description:"Toast background colour"},{name:"--wu-toast-min-width",description:"Minimum toast width"}],cssParts:[],slots:[{name:"",description:"Toast message content"},{name:"action",description:"Optional action button/link"}],members:[{kind:"field",name:"variant",description:`A single toast notification.  * @element wu-toast  * @slot - Toast message content @slot action - Optional action button/link  * @event wu-close - Emitted when the toast is dismissed  * @cssprop --wu-toast-bg - Toast background colour @cssprop --wu-toast-min-width - Minimum toast width /
+@customElement('wu-toast')
+export class WuToast extends LitElement {
+  static styles = styles;
+
+  /** Visual severity variant`,type:{text:"'default' | 'info' | 'success' | 'warning' | 'danger'"},default:"default",attribute:"variant",reflects:!0}],events:[{name:"wu-close",description:"Emitted when the toast is dismissed",type:{text:"CustomEvent"}}],attributes:[{name:"variant",description:`A single toast notification.  * @element wu-toast  * @slot - Toast message content @slot action - Optional action button/link  * @event wu-close - Emitted when the toast is dismissed  * @cssprop --wu-toast-bg - Toast background colour @cssprop --wu-toast-min-width - Minimum toast width /
+@customElement('wu-toast')
+export class WuToast extends LitElement {
+  static styles = styles;
+
+  /** Visual severity variant`,type:{text:"'default' | 'info' | 'success' | 'warning' | 'danger'"},default:"default",fieldName:"variant"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-toast",customElement:!0}],exports:[{kind:"js",name:"WuToast",declaration:{name:"WuToast",module:"src/components/toast/wu-toast.ts"}},{kind:"custom-element-definition",name:"wu-toast",declaration:{name:"WuToast",module:"src/components/toast/wu-toast.ts"}}]},{kind:"javascript-module",path:"src/components/toggle/wu-toggle.ts",declarations:[{kind:"class",description:"A toggle switch component for boolean on/off states.",name:"WuToggle",cssProperties:[{name:"--wu-toggle-width",description:"Track width"},{name:"--wu-toggle-height",description:"Track height"},{name:"--wu-toggle-on-bg",description:"Track colour when on"},{name:"--wu-toggle-off-bg",description:"Track colour when off"},{name:"--wu-toggle-thumb-size",description:"Thumb diameter"}],cssParts:[{name:"base",description:"The outer wrapper"},{name:"track",description:"The toggle track element"},{name:"thumb",description:"The toggle thumb (knob)"},{name:"label",description:"The label element"}],slots:[],members:[{kind:"field",name:"labelPosition",description:`Whether the toggle is on */
+  @property({ type: Boolean, reflect: true })
+  checked = false;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Label text */
+  @property()
+  label?: string;
+
+  /** Label position`,type:{text:"'start' | 'end'"},default:"end",attribute:"label-position",reflects:!1},{kind:"field",name:"size",description:`Whether the toggle is on */
+  @property({ type: Boolean, reflect: true })
+  checked = false;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Label text */
+  @property()
+  label?: string;
+
+  /** Label position */
+  @property({ attribute: 'label-position' })
+  labelPosition: 'start' | 'end' = 'end';
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",attribute:"size",reflects:!0}],events:[{name:"wu-change",description:"Emitted when the toggle state changes",type:{text:"CustomEvent"}}],attributes:[{name:"label-position",description:`Whether the toggle is on */
+  @property({ type: Boolean, reflect: true })
+  checked = false;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Label text */
+  @property()
+  label?: string;
+
+  /** Label position`,type:{text:"'start' | 'end'"},default:"end",fieldName:"labelPosition"},{name:"size",description:`Whether the toggle is on */
+  @property({ type: Boolean, reflect: true })
+  checked = false;
+
+  /** Disabled state */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /** Label text */
+  @property()
+  label?: string;
+
+  /** Label position */
+  @property({ attribute: 'label-position' })
+  labelPosition: 'start' | 'end' = 'end';
+
+  /** Size variant`,type:{text:"'sm' | 'md' | 'lg'"},default:"md",fieldName:"size"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-toggle",customElement:!0}],exports:[{kind:"js",name:"WuToggle",declaration:{name:"WuToggle",module:"src/components/toggle/wu-toggle.ts"}},{kind:"custom-element-definition",name:"wu-toggle",declaration:{name:"WuToggle",module:"src/components/toggle/wu-toggle.ts"}}]},{kind:"javascript-module",path:"src/components/tooltip/wu-tooltip.ts",declarations:[{kind:"class",description:"A tooltip that displays contextual text on hover or focus.",name:"WuTooltip",cssProperties:[{name:"--wu-tooltip-bg",description:"Tooltip background colour"},{name:"--wu-tooltip-color",description:"Tooltip text colour"},{name:"--wu-tooltip-delay",description:"Opening delay"},{name:"--wu-tooltip-max-width",description:"Max tooltip width"}],cssParts:[],slots:[{name:"",description:"The trigger element that activates the tooltip"}],members:[{kind:"field",name:"placement",description:`A tooltip that displays contextual text on hover or focus.  * @element wu-tooltip  * @slot - The trigger element that activates the tooltip  * @cssprop --wu-tooltip-bg - Tooltip background colour @cssprop --wu-tooltip-color - Tooltip text colour @cssprop --wu-tooltip-delay - Opening delay @cssprop --wu-tooltip-max-width - Max tooltip width /
+@customElement('wu-tooltip')
+export class WuTooltip extends LitElement {
+  static styles = styles;
+
+  /** Tooltip text content */
+  @property()
+  content = '';
+
+  /** Placement relative to trigger`,type:{text:"'top' | 'bottom' | 'left' | 'right'"},default:"top",attribute:"placement",reflects:!0}],events:[],attributes:[{name:"placement",description:`A tooltip that displays contextual text on hover or focus.  * @element wu-tooltip  * @slot - The trigger element that activates the tooltip  * @cssprop --wu-tooltip-bg - Tooltip background colour @cssprop --wu-tooltip-color - Tooltip text colour @cssprop --wu-tooltip-delay - Opening delay @cssprop --wu-tooltip-max-width - Max tooltip width /
+@customElement('wu-tooltip')
+export class WuTooltip extends LitElement {
+  static styles = styles;
+
+  /** Tooltip text content */
+  @property()
+  content = '';
+
+  /** Placement relative to trigger`,type:{text:"'top' | 'bottom' | 'left' | 'right'"},default:"top",fieldName:"placement"}],superclass:{name:"LitElement",package:"lit"},tagName:"wu-tooltip",customElement:!0}],exports:[{kind:"js",name:"WuTooltip",declaration:{name:"WuTooltip",module:"src/components/tooltip/wu-tooltip.ts"}},{kind:"custom-element-definition",name:"wu-tooltip",declaration:{name:"WuTooltip",module:"src/components/tooltip/wu-tooltip.ts"}}]}],l={schemaVersion:s,readme:i,modules:r};a(l);const b={parameters:{backgrounds:{disable:!0},controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}},docs:{story:{inline:!0}},a11y:{element:"#storybook-root",config:{},options:{},manual:!1}},globalTypes:{theme:{name:"Theme",description:"WeldUI theme",defaultValue:"default",toolbar:{icon:"paintbrush",items:[{value:"default",title:"Default Light"},{value:"default-dark",title:"Default Dark"},{value:"ocean",title:"Ocean"},{value:"ocean-dark",title:"Ocean Dark"},{value:"forest",title:"Forest"},{value:"midnight",title:"Midnight"}],showName:!0}}},decorators:[(e,t)=>{const n=t.globals.theme||"default";return o`<div data-theme="${n}" style="padding: 1rem; background: var(--wu-color-background); min-height: 100vh;">${e()}</div>`}]};export{b as default};
