@@ -19,8 +19,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly && mkdir -p dist/tokens && cp src/tokens/*.css dist/tokens/",
+    "build": "node ../../tools/scripts/generate-cem.mjs && vite build && tsc --emitDeclarationOnly && mkdir -p dist/tokens && cp src/tokens/*.css dist/tokens/",
     "dev": "vite build --watch",
+    "analyze": "node ../../tools/scripts/generate-cem.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src --ext .ts"
