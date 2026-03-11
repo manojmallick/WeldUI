@@ -1,6 +1,6 @@
 # WeldUI — Project Completion Status
 
-> Last updated: 2026-06-14  
+> Last updated: 2026-06-14 (Svelte wrapper added)  
 > Owner: Manoj Mallick / LearnHubPlay BV (KvK 97741825)  
 > Repository: github.com/manojmallick/WeldUI
 
@@ -12,7 +12,7 @@
 |---|---|---|---|
 | Phase 1 — Foundation | 10 / 10 | 10 | 100% |
 | Phase 2 — Framework Wrappers (React/Vue/Angular) | 3 / 3 | 3 | 100% |
-| Phase 2 — Svelte Wrapper | 0 / 1 | 1 | 0% |
+| Phase 2 — Svelte Wrapper | 1 / 1 | 1 | 100% |
 | Phase 2 — Premium Themes | 10 / 10 | 10 | 100% |
 | Phase 3 — Simple Complex Components (wks 7–8) | 0 / 10 | 10 | 0% |
 | Phase 3 — Compliance Pack | 0 / 6 | 6 | 0% |
@@ -223,24 +223,25 @@ All 8 Phase 1 components are fully implemented. Each has:
 
 ---
 
-### Phase 2 — React / Vue / Angular — ✅ COMPLETE
+### `@weldui/svelte` — Complete ✅
 
-All three framework wrapper packages are built, verified, and ready to publish.
+- [x] `WuButton` — Svelte 5 wrapper with `$effect` event wiring + `onWuClick` prop
+- [x] `WuBadge` — display component, `variant` prop
+- [x] `WuAvatar` — display component, `src`, `alt`, `initials`, `size` props
+- [x] `WuInput` — `bind:value` (string) via `$bindable()`, wu-change/wu-blur
+- [x] `WuTextarea` — `bind:value` (string) via `$bindable()`, rows, maxlength
+- [x] `WuSelect` — `bind:value` (string) via `$bindable()`, options array via JS property
+- [x] `WuCheckbox` — `bind:checked` (boolean) via `$bindable()`, indeterminate
+- [x] `WuToggle` — `bind:checked` (boolean) via `$bindable()`, labelPosition, size
+- [x] `src/index.ts` — barrel export + `@weldui/core` side-effect import
+- [x] `svelte.config.js` — `vitePreprocess()` for TypeScript in templates
+- [x] `tsconfig.json` — strict mode, ESNext bundler resolution
+- [x] **Build verified** — `svelte-package` clean (`src -> dist`) ✓
+- [x] Svelte 5 runes (`$props()`, `$state()`, `$effect()`, `$bindable()`) throughout
 
 ---
 
-### Phase 2 — Svelte Wrapper (New — 0 / 1)
-
-`@weldui/svelte` — a lightweight Svelte wrapper package was in the original framework plan but has not been scaffolded.
-
-- [ ] Scaffold `packages/svelte/` with `package.json` (`name: @weldui/svelte`)
-- [ ] Svelte action (`weldui`) to register custom elements with `isCustomElement`
-- [ ] Typed component wrappers for all 8 Phase 1 components (Svelte natively handles Web Components well — thin wrappers only)
-- [ ] `v-bind:` equivalent for event binding documentation
-- [ ] Build verified (Svelte + Vite)
-- [ ] Published to npm as `@weldui/svelte@0.1.0`
-
-> **Note:** Future framework targets in the roadmap: SvelteKit, Nuxt 3, Astro, Solid.js, Qwik. These do not need separate packages — they use `@weldui/svelte`, `@weldui/vue`, or `@weldui/core` directly. Document usage guides in Storybook, not separate packages.
+### Phase 2 — Svelte Wrapper — ✅ COMPLETE
 
 ---
 

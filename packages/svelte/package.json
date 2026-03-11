@@ -1,0 +1,34 @@
+{
+  "name": "@weldui/svelte",
+  "version": "0.1.0-beta.1",
+  "type": "module",
+  "svelte": "./src/index.ts",
+  "exports": {
+    ".": {
+      "svelte": "./src/index.ts",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "svelte-package -i src -o dist",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@weldui/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "svelte": ">=4"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.3.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "svelte2tsx": "^0.7.0",
+    "typescript": "^5.4.0"
+  }
+}
