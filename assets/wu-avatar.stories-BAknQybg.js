@@ -1,4 +1,4 @@
-import{b as u}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const v={title:"Components/Avatar",component:"wu-avatar",tags:["autodocs"],argTypes:{size:{control:"radio",options:["sm","md","lg","xl"]}}},a={args:{initials:"MM",size:"md"},render:s=>u`<wu-avatar initials=${s.initials} size=${s.size}></wu-avatar>`},i={render:()=>u`
+import{b as u}from"./lit-element-9a6qN07w.js";import"./index-BBwBPgaY.js";const v={title:"Components/Avatar",component:"wu-avatar",tags:["autodocs"],argTypes:{size:{control:"radio",options:["sm","md","lg","xl"]}}},a={args:{initials:"MM",size:"md"},render:s=>u`<wu-avatar initials=${s.initials} size=${s.size}></wu-avatar>`},i={render:()=>u`
     <div style="display:flex;gap:12px;align-items:center">
       <wu-avatar initials="SM" size="sm"></wu-avatar>
       <wu-avatar initials="MD" size="md"></wu-avatar>

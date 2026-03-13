@@ -1,4 +1,4 @@
-import{b as a}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const w={title:"Components/Toggle",component:"wu-toggle",tags:["autodocs"],argTypes:{checked:{control:"boolean"},disabled:{control:"boolean"},size:{control:"radio",options:["sm","md","lg"]}}},e={args:{label:"Enable notifications",checked:!1},render:t=>a`<wu-toggle label=${t.label} ?checked=${t.checked}></wu-toggle>`},l={render:()=>a`
+import{b as a}from"./lit-element-9a6qN07w.js";import"./index-BBwBPgaY.js";const w={title:"Components/Toggle",component:"wu-toggle",tags:["autodocs"],argTypes:{checked:{control:"boolean"},disabled:{control:"boolean"},size:{control:"radio",options:["sm","md","lg"]}}},e={args:{label:"Enable notifications",checked:!1},render:t=>a`<wu-toggle label=${t.label} ?checked=${t.checked}></wu-toggle>`},l={render:()=>a`
     <div style="display:flex;flex-direction:column;gap:16px">
       <wu-toggle size="sm" label="Small" checked></wu-toggle>
       <wu-toggle size="md" label="Medium" checked></wu-toggle>

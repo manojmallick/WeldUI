@@ -1,4 +1,4 @@
-import{b as g}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const w={title:"Components/Badge",component:"wu-badge",tags:["autodocs"],argTypes:{variant:{control:"select",options:["default","primary","success","warning","danger","outline"]}}},a={args:{variant:"default"},render:i=>g`<wu-badge variant=${i.variant}>Badge</wu-badge>`},e={render:()=>g`
+import{b as g}from"./lit-element-9a6qN07w.js";import"./index-BBwBPgaY.js";const w={title:"Components/Badge",component:"wu-badge",tags:["autodocs"],argTypes:{variant:{control:"select",options:["default","primary","success","warning","danger","outline"]}}},a={args:{variant:"default"},render:i=>g`<wu-badge variant=${i.variant}>Badge</wu-badge>`},e={render:()=>g`
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <wu-badge variant="default">Default</wu-badge>
       <wu-badge variant="primary">Primary</wu-badge>

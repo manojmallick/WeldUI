@@ -1,4 +1,4 @@
-import{b as l}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const c={title:"Components/Select",component:"wu-select",tags:["autodocs"]},r=[{value:"react",label:"React"},{value:"vue",label:"Vue"},{value:"angular",label:"Angular"},{value:"svelte",label:"Svelte"}],e={render:()=>l`
+import{b as l}from"./lit-element-9a6qN07w.js";import"./index-BBwBPgaY.js";const c={title:"Components/Select",component:"wu-select",tags:["autodocs"]},r=[{value:"react",label:"React"},{value:"vue",label:"Vue"},{value:"angular",label:"Angular"},{value:"svelte",label:"Svelte"}],e={render:()=>l`
     <wu-select
       label="Framework"
       placeholder="Choose a framework"

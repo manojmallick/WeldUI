@@ -1,4 +1,4 @@
-import{b as s}from"./lit-element-9a6qN07w.js";import"./index-DBx46iaY.js";const k={title:"Components/Checkbox",component:"wu-checkbox",tags:["autodocs"],argTypes:{checked:{control:"boolean"},indeterminate:{control:"boolean"},disabled:{control:"boolean"}}},e={args:{label:"Accept terms",checked:!1},render:a=>s`<wu-checkbox label=${a.label} ?checked=${a.checked}></wu-checkbox>`},c={render:()=>s`
+import{b as s}from"./lit-element-9a6qN07w.js";import"./index-BBwBPgaY.js";const k={title:"Components/Checkbox",component:"wu-checkbox",tags:["autodocs"],argTypes:{checked:{control:"boolean"},indeterminate:{control:"boolean"},disabled:{control:"boolean"}}},e={args:{label:"Accept terms",checked:!1},render:a=>s`<wu-checkbox label=${a.label} ?checked=${a.checked}></wu-checkbox>`},c={render:()=>s`
     <div style="display:flex;flex-direction:column;gap:12px">
       <wu-checkbox label="Unchecked"></wu-checkbox>
       <wu-checkbox label="Checked" checked></wu-checkbox>
