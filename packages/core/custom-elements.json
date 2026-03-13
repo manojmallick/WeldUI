@@ -8,10 +8,44 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An individual accordion item with a toggle header.",
+          "description": "An individual accordion item with an animated toggle panel.",
           "name": "WuAccordionItem",
-          "cssProperties": [],
-          "cssParts": [],
+          "cssProperties": [
+            {
+              "name": "--wu-accordion-header-bg",
+              "description": "Header background colour"
+            },
+            {
+              "name": "--wu-accordion-header-bg-hover",
+              "description": "Header background on hover"
+            },
+            {
+              "name": "--wu-accordion-header-color",
+              "description": "Header text colour"
+            },
+            {
+              "name": "--wu-accordion-padding-x",
+              "description": "Horizontal padding"
+            },
+            {
+              "name": "--wu-accordion-padding-y",
+              "description": "Vertical padding"
+            },
+            {
+              "name": "--wu-accordion-content-color",
+              "description": "Body text colour"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "header",
+              "description": "The trigger button"
+            },
+            {
+              "name": "panel",
+              "description": "The collapsible content panel"
+            }
+          ],
           "slots": [
             {
               "name": "",
@@ -26,7 +60,7 @@
           "events": [
             {
               "name": "wu-toggle",
-              "description": "Emitted when the item is opened or closed",
+              "description": "Emitted when the item is opened or closed. Detail: `{ open: boolean }`",
               "type": {
                 "text": "CustomEvent"
               }
@@ -66,9 +100,18 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An accordion container. Optionally enforces single-open behaviour.",
+          "description": "An accordion container that groups `<wu-accordion-item>` elements. Add the `single` attribute to restrict to one open item at a time.",
           "name": "WuAccordion",
-          "cssProperties": [],
+          "cssProperties": [
+            {
+              "name": "--wu-accordion-border",
+              "description": "Border colour around the group"
+            },
+            {
+              "name": "--wu-accordion-radius",
+              "description": "Border radius of the group"
+            }
+          ],
           "cssParts": [],
           "slots": [
             {

@@ -32,6 +32,7 @@ export const itemStyles = css`
     --wu-accordion-content-color:   var(--wu-color-text-secondary);
   }
 
+  /* ── Trigger button ─────────────────────────────────── */
   .header {
     display: flex;
     align-items: center;
@@ -50,39 +51,64 @@ export const itemStyles = css`
     gap: var(--wu-space-4);
   }
 
-  .header:hover { background: var(--wu-accordion-header-bg-hover); }
+  .header:hover:not(:disabled) { background: var(--wu-accordion-header-bg-hover); }
 
   .header:focus-visible {
     outline: none;
     box-shadow: inset var(--wu-focus-ring);
   }
 
+  .header:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  /* ── Chevron SVG ────────────────────────────────────── */
   .chevron {
     display: inline-flex;
     flex-shrink: 0;
-    transition: transform var(--wu-duration-fast) var(--wu-ease-default);
     color: var(--wu-color-text-secondary);
+    transition: transform var(--wu-duration-normal) var(--wu-ease-default);
   }
 
   :host([open]) .chevron {
     transform: rotate(180deg);
   }
 
+  :host([disabled]) .chevron {
+    opacity: 0.45;
+  }
+
+  /* ── Panel — CSS grid height animation ──────────────── */
+  /*
+   * Using the grid 0fr → 1fr trick:
+   * - .body transitions grid-template-rows for a smooth height animation
+   * - .content has overflow:hidden so it clips while .body "grows"
+   * - No fixed max-height needed — works for any content length
+   */
   .body {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height var(--wu-duration-normal) var(--wu-ease-default);
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--wu-duration-normal) var(--wu-ease-default);
   }
 
   :host([open]) .body {
-    max-height: 1000px;
+    grid-template-rows: 1fr;
   }
 
   .content {
-    padding: 0 var(--wu-accordion-padding-x) var(--wu-accordion-padding-y);
+    overflow: hidden;
+    padding: 0 var(--wu-accordion-padding-x);
     font-family: var(--wu-font-sans);
     font-size: var(--wu-text-sm);
     color: var(--wu-accordion-content-color);
     line-height: var(--wu-leading-normal);
+    /* Animate padding so content doesn't jump at the end of the transition */
+    transition: padding var(--wu-duration-normal) var(--wu-ease-default);
+  }
+
+  :host([open]) .content {
+    padding: 0 var(--wu-accordion-padding-x) var(--wu-accordion-padding-y);
   }
 `;
+
