@@ -33,6 +33,15 @@ import { WuFileUploadDirective } from './components/wu-file-upload.directive.js'
 import { WuStepperDirective, WuStepDirective } from './components/wu-stepper.directive.js';
 import { WuCommandDirective } from './components/wu-command.directive.js';
 import { WuDataGridDirective } from './components/wu-data-grid.directive.js';
+// Phase 4
+import { WuNavbarDirective } from './components/wu-navbar.directive.js';
+import { WuSidebarDirective, WuSidebarItemDirective } from './components/wu-sidebar.directive.js';
+import { WuFormDirective } from './components/wu-form.directive.js';
+import { WuDashboardDirective } from './components/wu-dashboard.directive.js';
+import { WuEmptyStateDirective } from './components/wu-empty-state.directive.js';
+import { WuErrorPageDirective } from './components/wu-error-page.directive.js';
+import { WuSearchDirective } from './components/wu-search.directive.js';
+import { WuDataTableDirective } from './components/wu-data-table.directive.js';
 
 const DIRECTIVES = [
   // Phase 1
@@ -49,6 +58,10 @@ const DIRECTIVES = [
   WuPaginationDirective, WuTableDirective, WuDatePickerDirective,
   WuFileUploadDirective, WuStepperDirective, WuStepDirective,
   WuCommandDirective, WuDataGridDirective,
+  // Phase 4
+  WuNavbarDirective, WuSidebarDirective, WuSidebarItemDirective,
+  WuFormDirective, WuDashboardDirective, WuEmptyStateDirective,
+  WuErrorPageDirective, WuSearchDirective, WuDataTableDirective,
 ];
 
 /**

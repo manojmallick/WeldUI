@@ -35,3 +35,13 @@ export { FileUpload } from './components/FileUpload.js';
 export { Stepper, Step } from './components/Stepper.js';
 export { Command } from './components/Command.js';
 export { DataGrid } from './components/DataGrid.js';
+
+// Phase 4 — Compound components
+export { Navbar } from './components/Navbar.js';
+export { Sidebar, SidebarItem } from './components/Sidebar.js';
+export { Form } from './components/Form.js';
+export { Dashboard } from './components/Dashboard.js';
+export { EmptyState } from './components/EmptyState.js';
+export { ErrorPage } from './components/ErrorPage.js';
+export { Search } from './components/Search.js';
+export { DataTable } from './components/DataTable.js';

@@ -39,6 +39,16 @@ export { WuStepper, WuStep } from './components/WuStepper.js';
 export { default as WuCommand } from './components/WuCommand.js';
 export { default as WuDataGrid } from './components/WuDataGrid.js';
 
+// Phase 4 — Compound components
+export { default as WuNavbar } from './components/WuNavbar.js';
+export { WuSidebar, WuSidebarItem } from './components/WuSidebar.js';
+export { default as WuForm } from './components/WuForm.js';
+export { default as WuDashboard } from './components/WuDashboard.js';
+export { default as WuEmptyState } from './components/WuEmptyState.js';
+export { default as WuErrorPage } from './components/WuErrorPage.js';
+export { default as WuSearch } from './components/WuSearch.js';
+export { default as WuDataTable } from './components/WuDataTable.js';
+
 // Plugin for installing all components globally
 export const WeldUIPlugin = {
   install(app: App) {

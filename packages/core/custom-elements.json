@@ -810,6 +810,47 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/dashboard/wu-dashboard.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuDashboard",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-dashboard",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDashboard",
+          "declaration": {
+            "name": "WuDashboard",
+            "module": "src/components/dashboard/wu-dashboard.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-dashboard",
+          "declaration": {
+            "name": "WuDashboard",
+            "module": "src/components/dashboard/wu-dashboard.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/data-grid/wu-data-grid.ts",
       "declarations": [
         {
@@ -931,6 +972,89 @@
           "declaration": {
             "name": "WuDataGrid",
             "module": "src/components/data-grid/wu-data-grid.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/data-table/wu-data-table.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuDataTable",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "columns",
+              "description": "Column definitions",
+              "type": {
+                "text": "WuDataTableColumn[]"
+              },
+              "default": "[]",
+              "attribute": "columns",
+              "reflects": false
+            },
+            {
+              "kind": "field",
+              "name": "rows",
+              "description": "Column definitions */\n  @property({ type: Array })\n  columns: WuDataTableColumn[] = [];\n\n  /** Row data — plain objects whose keys match `column.key` values",
+              "type": {
+                "text": "Record<string, unknown>[]"
+              },
+              "default": "[]",
+              "attribute": "rows",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "columns",
+              "description": "Column definitions",
+              "type": {
+                "text": "WuDataTableColumn[]"
+              },
+              "default": "[]",
+              "fieldName": "columns"
+            },
+            {
+              "name": "rows",
+              "description": "Column definitions */\n  @property({ type: Array })\n  columns: WuDataTableColumn[] = [];\n\n  /** Row data — plain objects whose keys match `column.key` values",
+              "type": {
+                "text": "Record<string, unknown>[]"
+              },
+              "default": "[]",
+              "fieldName": "rows"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-data-table",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDataTable",
+          "declaration": {
+            "name": "WuDataTable",
+            "module": "src/components/data-table/wu-data-table.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-data-table",
+          "declaration": {
+            "name": "WuDataTable",
+            "module": "src/components/data-table/wu-data-table.ts"
           }
         }
       ]
@@ -1071,6 +1195,88 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/empty-state/wu-empty-state.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuEmptyState",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-empty-state",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuEmptyState",
+          "declaration": {
+            "name": "WuEmptyState",
+            "module": "src/components/empty-state/wu-empty-state.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-empty-state",
+          "declaration": {
+            "name": "WuEmptyState",
+            "module": "src/components/empty-state/wu-empty-state.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/error-page/wu-error-page.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuErrorPage",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-error-page",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuErrorPage",
+          "declaration": {
+            "name": "WuErrorPage",
+            "module": "src/components/error-page/wu-error-page.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-error-page",
+          "declaration": {
+            "name": "WuErrorPage",
+            "module": "src/components/error-page/wu-error-page.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/file-upload/wu-file-upload.ts",
       "declarations": [
         {
@@ -1143,6 +1349,47 @@
           "declaration": {
             "name": "WuFileUpload",
             "module": "src/components/file-upload/wu-file-upload.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/form/wu-form.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuForm",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuForm",
+          "declaration": {
+            "name": "WuForm",
+            "module": "src/components/form/wu-form.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-form",
+          "declaration": {
+            "name": "WuForm",
+            "module": "src/components/form/wu-form.ts"
           }
         }
       ]
@@ -1366,6 +1613,47 @@
           "declaration": {
             "name": "WuModal",
             "module": "src/components/modal/wu-modal.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/navbar/wu-navbar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuNavbar",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-navbar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNavbar",
+          "declaration": {
+            "name": "WuNavbar",
+            "module": "src/components/navbar/wu-navbar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-navbar",
+          "declaration": {
+            "name": "WuNavbar",
+            "module": "src/components/navbar/wu-navbar.ts"
           }
         }
       ]
@@ -1606,6 +1894,47 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/search/wu-search.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuSearch",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-search",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSearch",
+          "declaration": {
+            "name": "WuSearch",
+            "module": "src/components/search/wu-search.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-search",
+          "declaration": {
+            "name": "WuSearch",
+            "module": "src/components/search/wu-search.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/select/wu-select.ts",
       "declarations": [
         {
@@ -1713,6 +2042,106 @@
           "declaration": {
             "name": "WuSelect",
             "module": "src/components/select/wu-select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sidebar/wu-sidebar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A single navigation item inside `<wu-sidebar>`.",
+          "name": "WuSidebarItem",
+          "cssProperties": [
+            {
+              "name": "--wu-sidebar-item-bg-active",
+              "description": "Background when active"
+            },
+            {
+              "name": "--wu-sidebar-item-color-active",
+              "description": "Text/icon colour when active"
+            }
+          ],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "icon",
+              "description": "Icon (SVG or img, 20×20)"
+            },
+            {
+              "name": "",
+              "description": "Item label text"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sidebar-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSidebarItem",
+          "declaration": {
+            "name": "WuSidebarItem",
+            "module": "src/components/sidebar/wu-sidebar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sidebar-item",
+          "declaration": {
+            "name": "WuSidebarItem",
+            "module": "src/components/sidebar/wu-sidebar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sidebar/wu-sidebar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuSidebar",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sidebar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSidebar",
+          "declaration": {
+            "name": "WuSidebar",
+            "module": "src/components/sidebar/wu-sidebar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sidebar",
+          "declaration": {
+            "name": "WuSidebar",
+            "module": "src/components/sidebar/wu-sidebar.ts"
           }
         }
       ]

@@ -36,3 +36,13 @@ export { WuFileUploadDirective } from './components/wu-file-upload.directive.js'
 export { WuStepperDirective, WuStepDirective } from './components/wu-stepper.directive.js';
 export { WuCommandDirective } from './components/wu-command.directive.js';
 export { WuDataGridDirective } from './components/wu-data-grid.directive.js';
+
+// Phase 4 — Compound components
+export { WuNavbarDirective } from './components/wu-navbar.directive.js';
+export { WuSidebarDirective, WuSidebarItemDirective } from './components/wu-sidebar.directive.js';
+export { WuFormDirective } from './components/wu-form.directive.js';
+export { WuDashboardDirective } from './components/wu-dashboard.directive.js';
+export { WuEmptyStateDirective } from './components/wu-empty-state.directive.js';
+export { WuErrorPageDirective } from './components/wu-error-page.directive.js';
+export { WuSearchDirective } from './components/wu-search.directive.js';
+export { WuDataTableDirective } from './components/wu-data-table.directive.js';

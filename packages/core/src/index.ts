@@ -35,6 +35,17 @@ export type { WuCommandItem } from './components/command/wu-command.js';
 export { WuDataGrid } from './components/data-grid/wu-data-grid.js';
 export type { WuDataGridColumn } from './components/data-grid/wu-data-grid.js';
 
+// ── Phase 4: Compound Components ────────────────────────────────────────────
+export { WuNavbar } from './components/navbar/wu-navbar.js';
+export { WuSidebar, WuSidebarItem } from './components/sidebar/wu-sidebar.js';
+export { WuForm } from './components/form/wu-form.js';
+export { WuDashboard } from './components/dashboard/wu-dashboard.js';
+export { WuEmptyState } from './components/empty-state/wu-empty-state.js';
+export { WuErrorPage } from './components/error-page/wu-error-page.js';
+export { WuSearch } from './components/search/wu-search.js';
+export { WuDataTable } from './components/data-table/wu-data-table.js';
+export type { WuDataTableColumn } from './components/data-table/wu-data-table.js';
+
 // Types
 export type * from './types/index.js';
 
@@ -70,3 +81,13 @@ import './components/file-upload/wu-file-upload.js';
 import './components/stepper/wu-stepper.js';
 import './components/command/wu-command.js';
 import './components/data-grid/wu-data-grid.js';
+// Phase 4
+import './components/navbar/wu-navbar.js';
+import './components/sidebar/wu-sidebar.js';
+import './components/form/wu-form.js';
+import './components/dashboard/wu-dashboard.js';
+import './components/empty-state/wu-empty-state.js';
+import './components/error-page/wu-error-page.js';
+import './components/search/wu-search.js';
+import './components/data-table/wu-data-table.js';
+
