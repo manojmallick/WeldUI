@@ -21,7 +21,7 @@ The architecture is designed for three primary goals:
                        │ uses
 ┌──────────────────────▼──────────────────────────────────────┐
 │                 FRAMEWORK WRAPPER LAYER                      │
-│  @weldui/react │ @weldui/angular │ @weldui/vue           │
+│  @weldui/react │ @weldui/angular │ @weldui/vue │ @weldui/svelte │
 │  (auto-generated, thin, event-mapping only)                 │
 └──────────────────────┬──────────────────────────────────────┘
                        │ wraps
@@ -197,6 +197,7 @@ WeldUI only provides the UI structure.
 @weldui/react                    @weldui/compliance
 @weldui/vue
 @weldui/angular
+@weldui/svelte
          ▲
          │ devDependency
       apps/docs

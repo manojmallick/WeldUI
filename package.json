@@ -12,6 +12,7 @@
     "version-packages": "changeset version",
     "release": "turbo build --filter=!docs --filter=!playground && changeset publish",
     "scaffold:component": "tsx tools/scripts/scaffold-component.ts",
+    "scaffold:theme": "tsx tools/scripts/scaffold-theme.ts",
     "contrast-check": "tsx tools/scripts/contrast-check.ts"
   },
   "devDependencies": {

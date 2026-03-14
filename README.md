@@ -12,13 +12,13 @@ WeldUI is a framework-agnostic component library built on **Web Components (Lit)
 
 ## Features
 
-- **28 production-ready components** — Phase 1 foundations + Phase 3 complex + compliance pack
+- **36 production-ready components** — Phase 1 foundations + Phase 3 complex + Phase 4 compound components + compliance pack
 - **Framework wrappers** — React, Vue 3, Angular, Svelte 5
 - **3-layer token theming** — primitive → semantic → component; theme with one CSS file
 - **11 themes** — default, ocean, forest, midnight, sunset, fintech, healthcare, government, startup, editorial, high-contrast (WCAG AAA)
 - **Compliance pack** — `@weldui/compliance` with GDPR, DORA, SOX components
 - **Zero JavaScript theming** — 100% CSS custom properties
-- **157 passing unit tests** — Vitest + happy-dom
+- **230 passing unit tests** — Vitest + happy-dom
 - **WCAG 2.1 AA** minimum on every component
 
 ---
@@ -28,10 +28,10 @@ WeldUI is a framework-agnostic component library built on **Web Components (Lit)
 | Package | Description | Version |
 |---|---|---|
 | `@weldui/core` | Web Components (Lit) — the source of truth | `0.1.0` |
-| `@weldui/react` | React wrappers (28 components) | `0.1.0` |
-| `@weldui/vue` | Vue 3 wrappers (28 components) | `0.1.0` |
-| `@weldui/angular` | Angular directives (28 components) | `0.1.0` |
-| `@weldui/svelte` | Svelte 5 wrappers (35 components) | `0.1.0` |
+| `@weldui/react` | React wrappers (36 components) | `0.1.0` |
+| `@weldui/vue` | Vue 3 wrappers (36 components) | `0.1.0` |
+| `@weldui/angular` | Angular directives (36 components) | `0.1.0` |
+| `@weldui/svelte` | Svelte 5 wrappers (43 components) | `0.1.0` |
 | `@weldui/theme-default` | Default light + dark theme | `1.0.0` |
 | `@weldui/compliance` | Compliance-grade form & audit components | `0.1.0` |
 
@@ -181,6 +181,19 @@ pnpm add @weldui/svelte @weldui/core @weldui/theme-default
 | Command | `<wu-command>` | Fuzzy search · keyboard nav · groups · shortcuts |
 | Data Grid | `<wu-data-grid>` | Virtual scroll · inline editing · column resize |
 
+### Phase 4 — Compound Components
+
+| Component | Tag | Description |
+|---|---|---|
+| Navbar | `<wu-navbar>` | Sticky/fixed top bar · mobile drawer · logo, nav, and actions slots |
+| Sidebar | `<wu-sidebar>` + `<wu-sidebar-item>` | Collapsible navigation · active/disabled items · icon-only mode |
+| Form | `<wu-form>` | Slot-based form wrapper · submit/invalid events · loading state |
+| Dashboard | `<wu-dashboard>` | Shell layout combining navbar, sidebar, and main content area |
+| Empty State | `<wu-empty-state>` | Placeholder for empty content · icon, title, description, actions slots |
+| Error Page | `<wu-error-page>` | 400/401/403/404/408/500/502/503/504 error pages · branded variant |
+| Search | `<wu-search>` | Debounced search input · clearable · loading indicator |
+| Data Table | `<wu-data-table>` | Server-side pagination · sortable columns · row selection · inline search |
+
 ---
 
 ## Theming
@@ -255,7 +268,7 @@ pnpm build
 
 ```bash
 pnpm build          # Build all packages
-pnpm test           # Run all tests (157 tests)
+pnpm test           # Run all tests (230 tests)
 pnpm dev            # Watch mode for all packages
 pnpm storybook      # Start Storybook docs locally
 

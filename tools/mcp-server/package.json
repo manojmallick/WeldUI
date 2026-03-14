@@ -1,0 +1,37 @@
+{
+  "name": "@weldui/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for WeldUI — exposes component docs and code generation to AI coding tools (Claude, Cursor, GitHub Copilot)",
+  "type": "module",
+  "bin": {
+    "weldui-mcp": "./dist/index.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "weldui",
+    "web-components",
+    "design-system",
+    "ai"
+  ]
+}

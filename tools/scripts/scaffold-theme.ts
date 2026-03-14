@@ -1,0 +1,315 @@
+#!/usr/bin/env tsx
+// tools/scripts/scaffold-theme.ts
+// Usage: pnpm scaffold:theme <name> <primary-hex>
+// Example: pnpm scaffold:theme acme-corp "#e11d48"
+
+import fs from 'fs';
+import path from 'path';
+
+const [, , themeName, primaryHex] = process.argv;
+
+if (!themeName) {
+  console.error('❌ Usage: pnpm scaffold:theme <name> <primary-hex>');
+  console.error('   Example: pnpm scaffold:theme acme-corp "#e11d48"');
+  process.exit(1);
+}
+
+if (!/^[a-z][a-z0-9-]*$/.test(themeName)) {
+  console.error('❌ Theme name must be lowercase kebab-case: acme-corp, not AcmeCorp');
+  process.exit(1);
+}
+
+const hex = (primaryHex ?? '#3b82f6').replace(/^#/, '');
+
+if (!/^[0-9a-fA-F]{6}$/.test(hex)) {
+  console.error(`❌ Invalid hex colour: "${primaryHex}". Expected 6-digit hex like #3b82f6`);
+  process.exit(1);
+}
+
+const displayName = themeName
+  .split('-')
+  .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+  .join(' ');
+
+const dir = path.join(process.cwd(), 'packages/themes', themeName);
+
+if (fs.existsSync(dir)) {
+  console.error(`❌ Theme already exists: ${dir}`);
+  process.exit(1);
+}
+
+console.log(`\n🎨 Scaffolding WeldUI theme: ${displayName} (#${hex})\n`);
+
+fs.mkdirSync(dir, { recursive: true });
+
+// ── Colour scale generation (HSL-based) ─────────────────────────────────
+
+function hexToHsl(hexStr: string): [number, number, number] {
+  const r = parseInt(hexStr.slice(0, 2), 16) / 255;
+  const g = parseInt(hexStr.slice(2, 4), 16) / 255;
+  const b = parseInt(hexStr.slice(4, 6), 16) / 255;
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  if (max === min) return [0, 0, Math.round(l * 100)];
+  const d = max - min;
+  const s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+  let h = 0;
+  switch (max) {
+    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+    case g: h = ((b - r) / d + 2) / 6; break;
+    case b: h = ((r - g) / d + 4) / 6; break;
+  }
+  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+}
+
+function hslToHex(h: number, s: number, l: number): string {
+  const hn = h / 360;
+  const sn = s / 100;
+  const ln = l / 100;
+  const hue2rgb = (p: number, q: number, t: number) => {
+    let tt = t;
+    if (tt < 0) tt += 1;
+    if (tt > 1) tt -= 1;
+    if (tt < 1 / 6) return p + (q - p) * 6 * tt;
+    if (tt < 1 / 2) return q;
+    if (tt < 2 / 3) return p + (q - p) * (2 / 3 - tt) * 6;
+    return p;
+  };
+  let r: number, g: number, b: number;
+  if (sn === 0) {
+    r = g = b = ln;
+  } else {
+    const q = ln < 0.5 ? ln * (1 + sn) : ln + sn - ln * sn;
+    const p = 2 * ln - q;
+    r = hue2rgb(p, q, hn + 1 / 3);
+    g = hue2rgb(p, q, hn);
+    b = hue2rgb(p, q, hn - 1 / 3);
+  }
+  const toHex = (x: number) => Math.round(x * 255).toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
+const [h, s] = hexToHsl(hex);
+
+// Generate a 9-stop scale: 50 10 through 900 from very light to very dark
+const LIGHTNESS_MAP: Record<string, number> = {
+  50:  95, 100: 90, 200: 82, 300: 70, 400: 58,
+  500: 48, 600: 40, 700: 32, 800: 24, 900: 16,
+};
+const scale: Record<string, string> = {};
+for (const [step, l] of Object.entries(LIGHTNESS_MAP)) {
+  scale[step] = hslToHex(h, Math.min(s + 5, 100), l);
+}
+// Snap the closest stop to the input colour
+scale['500'] = `#${hex}`;
+
+// ── Contrast check (WCAG AA: text 4.5:1, large text 3:1) ──────────────
+
+function relativeLuminance(hexStr: string): number {
+  const rawHex = hexStr.replace(/^#/, '');
+  const rsRGB = parseInt(rawHex.slice(0, 2), 16) / 255;
+  const gsRGB = parseInt(rawHex.slice(2, 4), 16) / 255;
+  const bsRGB = parseInt(rawHex.slice(4, 6), 16) / 255;
+  const lin = (c: number) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+  return 0.2126 * lin(rsRGB) + 0.7152 * lin(gsRGB) + 0.0722 * lin(bsRGB);
+}
+
+function contrastRatio(c1: string, c2: string): number {
+  const l1 = relativeLuminance(c1);
+  const l2 = relativeLuminance(c2);
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+// Decide foreground (white or dark) based on contrast with primary-500
+const contrastWhite = contrastRatio(`#${hex}`, '#ffffff');
+const contrastDark  = contrastRatio(`#${hex}`, '#1e293b');
+const primaryFg = contrastWhite >= 4.5 ? '#ffffff' : (contrastDark >= 4.5 ? '#1e293b' : '#ffffff');
+
+// Text on surface: use 900 stop
+const bgSurface = scale['50'];
+const textOnSurface = contrastRatio(scale['900'], bgSurface) >= 4.5 ? scale['900'] : '#0f172a';
+
+// Warnings
+if (contrastWhite < 3 && contrastDark < 3) {
+  console.warn(`⚠️  Warning: Primary colour #${hex} has low contrast with both white and dark text. Review the output CSS and adjust manually.`);
+}
+
+// ── light.css ────────────────────────────────────────────────────────────
+
+const lightCss = `/* ${displayName} Theme — Light
+ * Generated by pnpm scaffold:theme
+ * Primary: #${hex}
+ * Package: @weldui/theme-${themeName}
+ *
+ * Contrast check (primary-500):
+ *   vs white: ${contrastRatio(`#${hex}`, '#ffffff').toFixed(2)}:1 ${contrastRatio(`#${hex}`, '#ffffff') >= 4.5 ? '✓ AA' : '✗ fails AA'}
+ *   vs dark:  ${contrastRatio(`#${hex}`, '#1e293b').toFixed(2)}:1 ${contrastRatio(`#${hex}`, '#1e293b') >= 4.5 ? '✓ AA' : '✗ fails AA'}
+ */
+
+[data-theme="${themeName}"],
+[data-theme="${themeName}-light"] {
+  /* ── Brand ── */
+  --wu-color-primary:        ${scale['600']};
+  --wu-color-primary-hover:  ${scale['700']};
+  --wu-color-primary-subtle: ${scale['50']};
+  --wu-color-primary-fg:     ${primaryFg};
+
+  /* ── Surface ── */
+  --wu-color-background:      ${scale['50']};
+  --wu-color-surface:         ${scale['100']};
+  --wu-color-surface-raised:  #ffffff;
+  --wu-color-surface-overlay: #ffffff;
+
+  /* ── Text ── */
+  --wu-color-text:            ${textOnSurface};
+  --wu-color-text-secondary:  ${scale['700']};
+  --wu-color-text-disabled:   ${scale['400']};
+  --wu-color-text-inverse:    #ffffff;
+
+  /* ── Border ── */
+  --wu-color-border:          ${scale['200']};
+  --wu-color-border-strong:   ${scale['300']};
+  --wu-color-border-focus:    ${scale['500']};
+
+  /* ── Focus ring ── */
+  --wu-focus-ring: 0 0 0 3px ${scale['200']};
+
+  /* ── Status (inherit defaults if your brand doesn't override these) ── */
+  /* --wu-color-success: var(--wu-color-green-600); */
+  /* --wu-color-warning: var(--wu-color-amber-600); */
+  /* --wu-color-danger:  var(--wu-color-red-600);   */
+}
+`;
+
+// ── dark.css ─────────────────────────────────────────────────────────────
+
+const darkCss = `/* ${displayName} Theme — Dark
+ * Generated by pnpm scaffold:theme
+ * Package: @weldui/theme-${themeName}
+ */
+
+[data-theme="${themeName}-dark"] {
+  /* ── Brand ── */
+  --wu-color-primary:        ${scale['400']};
+  --wu-color-primary-hover:  ${scale['300']};
+  --wu-color-primary-subtle: color-mix(in srgb, ${scale['500']} 15%, transparent);
+  --wu-color-primary-fg:     #0f172a;
+
+  /* ── Surface ── */
+  --wu-color-background:      #0a0f1a;
+  --wu-color-surface:         #111827;
+  --wu-color-surface-raised:  #1e293b;
+  --wu-color-surface-overlay: #1e293b;
+
+  /* ── Text ── */
+  --wu-color-text:            #f1f5f9;
+  --wu-color-text-secondary:  #94a3b8;
+  --wu-color-text-disabled:   #475569;
+  --wu-color-text-inverse:    #0f172a;
+
+  /* ── Border ── */
+  --wu-color-border:          #1e293b;
+  --wu-color-border-strong:   #334155;
+  --wu-color-border-focus:    ${scale['400']};
+
+  /* ── Focus ring ── */
+  --wu-focus-ring: 0 0 0 3px color-mix(in srgb, ${scale['400']} 30%, transparent);
+}
+`;
+
+// ── package.json ──────────────────────────────────────────────────────────
+
+const packageJson = {
+  name: `@weldui/theme-${themeName}`,
+  version: '1.0.0',
+  description: `${displayName} theme for WeldUI`,
+  keywords: ['weldui', 'theme', 'design-system', themeName],
+  exports: {
+    './light.css': './light.css',
+    './dark.css': './dark.css',
+  },
+  files: ['light.css', 'dark.css', 'README.md'],
+  license: 'UNLICENSED',
+};
+
+// ── README.md ─────────────────────────────────────────────────────────────
+
+const readme = `# @weldui/theme-${themeName}
+
+> ${displayName} theme for [WeldUI](https://github.com/manojmallick/WeldUI).  
+> Primary colour: \`#${hex}\`
+
+## Installation
+
+\`\`\`bash
+pnpm add @weldui/theme-${themeName} @weldui/core
+\`\`\`
+
+## Usage
+
+\`\`\`html
+<link rel="stylesheet" href="node_modules/@weldui/core/dist/tokens/base.css" />
+<link rel="stylesheet" href="node_modules/@weldui/core/dist/tokens/semantic.css" />
+
+<!-- Light theme -->
+<link rel="stylesheet" href="node_modules/@weldui/theme-${themeName}/light.css" />
+
+<!-- Dark theme -->
+<link rel="stylesheet" href="node_modules/@weldui/theme-${themeName}/dark.css" />
+\`\`\`
+
+Then apply to the root element:
+
+\`\`\`html
+<body data-theme="${themeName}">
+  <wu-button variant="primary">Hello ${displayName}</wu-button>
+</body>
+\`\`\`
+
+## Colour Scale
+
+| Stop | Hex | Notes |
+|------|-----|-------|
+${Object.entries(scale)
+  .map(([stop, color]) => `| ${stop} | \`${color}\` | ${stop === '500' ? '← input colour' : stop === '600' ? '← primary (light mode)' : stop === '400' ? '← primary (dark mode)' : ''} |`)
+  .join('\n')}
+
+## Customisation
+
+Override any token in your own CSS:
+
+\`\`\`css
+[data-theme="${themeName}"] {
+  /* Override primary to a lighter shade */
+  --wu-color-primary: ${scale['500']};
+  --wu-color-primary-hover: ${scale['600']};
+}
+\`\`\`
+
+---
+*Generated with \`pnpm scaffold:theme ${themeName} #${hex}\`*
+`;
+
+// ── Write files ───────────────────────────────────────────────────────────
+
+fs.writeFileSync(path.join(dir, 'light.css'), lightCss);
+fs.writeFileSync(path.join(dir, 'dark.css'), darkCss);
+fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(packageJson, null, 2) + '\n');
+fs.writeFileSync(path.join(dir, 'README.md'), readme);
+
+// ── Done ─────────────────────────────────────────────────────────────────
+
+console.log(`✅ Created packages/themes/${themeName}/`);
+console.log(`   light.css   — [data-theme="${themeName}"]`);
+console.log(`   dark.css    — [data-theme="${themeName}-dark"]`);
+console.log(`   package.json`);
+console.log(`   README.md`);
+console.log('');
+console.log(`📋 Next steps:`);
+console.log(`   1. Run: pnpm contrast-check packages/themes/${themeName}/light.css`);
+console.log(`   2. Add to Storybook toolbar in apps/docs/.storybook/preview.ts`);
+console.log(`   3. Build preview: open packages/themes/${themeName}/README.md`);
+console.log(`   4. Publish: pnpm --filter @weldui/theme-${themeName} publish`);
