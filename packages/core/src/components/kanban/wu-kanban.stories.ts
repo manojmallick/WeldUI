@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-kanban.js';
 
 const meta: Meta = { title: 'Media/Kanban', component: 'wu-kanban', tags: ['autodocs'] };
 export default meta;

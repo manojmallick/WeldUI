@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-lightbox.js';
 
 const meta: Meta = { title: 'Media/Lightbox', component: 'wu-lightbox', tags: ['autodocs'] };
 export default meta;

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-scroll-area.js';
 
 const meta: Meta = { title: 'Layout/ScrollArea', component: 'wu-scroll-area', tags: ['autodocs'] };
 export default meta;

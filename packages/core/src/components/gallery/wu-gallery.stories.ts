@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-gallery.js';
 
 const meta: Meta = { title: 'Media/Gallery', component: 'wu-gallery', tags: ['autodocs'] };
 export default meta;

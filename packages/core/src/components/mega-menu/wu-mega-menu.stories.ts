@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-mega-menu.js';
 
 const meta: Meta = { title: 'Navigation/MegaMenu', component: 'wu-mega-menu', tags: ['autodocs'] };
 export default meta;

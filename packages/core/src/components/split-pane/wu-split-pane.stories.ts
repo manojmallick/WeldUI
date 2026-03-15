@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-split-pane.js';
 
 const meta: Meta = { title: 'Layout/SplitPane', component: 'wu-split-pane', tags: ['autodocs'] };
 export default meta;

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-mention.js';
 
 const meta: Meta = { title: 'Media/Mention', component: 'wu-mention', tags: ['autodocs'] };
 export default meta;

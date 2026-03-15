@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-dropdown.js';
 
 const meta: Meta = { title: 'Navigation/Dropdown', component: 'wu-dropdown', tags: ['autodocs'] };
 export default meta;

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-speed-dial.js';
 
 const meta: Meta = { title: 'Navigation/SpeedDial', component: 'wu-speed-dial', tags: ['autodocs'] };
 export default meta;

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-sortable.js';
 
 const meta: Meta = { title: 'Media/Sortable', component: 'wu-sortable', tags: ['autodocs'] };
 export default meta;

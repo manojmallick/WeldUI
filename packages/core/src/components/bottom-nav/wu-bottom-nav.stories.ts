@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-bottom-nav.js';
 
 const meta: Meta = { title: 'Navigation/BottomNav', component: 'wu-bottom-nav', tags: ['autodocs'] };
 export default meta;

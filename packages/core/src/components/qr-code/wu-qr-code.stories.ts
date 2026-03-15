@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { html } from 'lit';
-import './wu-qr-code.js';
 
 const meta: Meta = { title: 'Media/QRCode', component: 'wu-qr-code', tags: ['autodocs'] };
 export default meta;
