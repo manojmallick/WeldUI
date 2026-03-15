@@ -2220,7 +2220,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A dropdown menu triggered by a slotted element.",
+          "description": "Emoji or single character icon */ icon?: string; /** Optional group/section header above this item */ group?: string; /** Show a checkmark to indicate selected state */ checked?: boolean; /** Secondary description line */ description?: string; } /** A dropdown menu triggered by a slotted element.",
           "name": "WuDropdown",
           "cssProperties": [],
           "cssParts": [],
@@ -4773,25 +4773,39 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A resizable split panel layout.",
+          "description": "A resizable split-panel layout. Supports mouse drag, touch/pointer drag, keyboard resize (arrow keys), snap-to-collapse, and an optional collapse button.",
           "name": "WuSplitPane",
           "cssProperties": [],
           "cssParts": [],
           "slots": [
             {
               "name": "primary",
-              "description": "Primary (fixed) panel"
+              "description": "Primary (sized) panel"
             },
             {
               "name": "secondary",
-              "description": "Secondary (flex) panel"
+              "description": "Secondary (flex fills remaining space) panel"
             }
           ],
           "members": [],
           "events": [
             {
               "name": "wu-resize",
-              "description": "Fires during drag, detail: { position: number }",
+              "description": "Fires during drag. detail: { position: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-collapse",
+              "description": "Fires when panel collapses. detail: { panel: 'primary' }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-expand",
+              "description": "Fires when collapsed panel re-expands. detail: { panel: 'primary' }",
               "type": {
                 "text": "CustomEvent"
               }

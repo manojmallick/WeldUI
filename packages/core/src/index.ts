@@ -43,6 +43,7 @@ export { WuDashboard } from './components/dashboard/wu-dashboard.js';
 export { WuEmptyState } from './components/empty-state/wu-empty-state.js';
 export { WuErrorPage } from './components/error-page/wu-error-page.js';
 export { WuSearch } from './components/search/wu-search.js';
+export type { SuggestionItem } from './components/search/wu-search.js';
 export { WuDataTable } from './components/data-table/wu-data-table.js';
 export type { WuDataTableColumn } from './components/data-table/wu-data-table.js';
 
