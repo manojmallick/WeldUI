@@ -42,13 +42,13 @@
 | **Phase 7 — Navigation & Overlays** | **10 / 10** | **10** | **100%** |
 | **Phase 8 — Charts & Data Visualization** | **8 / 8** | **8** | **100%** |
 | **Phase 9 — Rich Media & Layout** | **8 / 8** | **8** | **100%** |
-| **Phase 10 — Enterprise & Developer Tools** | **0 / 12** | **12** | **0%** |
-| **v3.0 — Layout & Structure (§3.1)** | **0 / 10** | **10** | **0%** |
-| **v3.0 — Typography & Content (§3.2)** | **0 / 8** | **8** | **0%** |
-| **v3.0 — Feedback & Validation (§3.3)** | **0 / 8** | **8** | **0%** |
-| **v3.0 — Auth & Security (§3.4)** | **0 / 8** | **8** | **0%** |
-| **v3.0 — E-Commerce (§3.5)** | **0 / 10** | **10** | **0%** |
-| **v3.0 — SaaS / App Shell (§3.6)** | **0 / 10** | **10** | **0%** |
+| **Phase 10 — Enterprise & Developer Tools** | **12 / 12** | **12** | **100%** |
+| **v3.0 — Layout & Structure (§3.1)** | **10 / 10** | **10** | **100%** |
+| **v3.0 — Typography & Content (§3.2)** | **8 / 8** | **8** | **100%** |
+| **v3.0 — Feedback & Validation (§3.3)** | **8 / 8** | **8** | **100%** |
+| **v3.0 — Auth & Security (§3.4)** | **8 / 8** | **8** | **100%** |
+| **v3.0 — E-Commerce (§3.5)** | **10 / 10** | **10** | **100%** |
+| **v3.0 — SaaS / App Shell (§3.6)** | **10 / 10** | **10** | **100%** |
 | **v3.0 — AI / LLM-Native (§3.7)** | **0 / 12** | **12** | **0%** |
 | **v3.0 — Real-Time & Collab (§3.8)** | **0 / 8** | **8** | **0%** |
 | **v3.0 — Charts Extensions (§3.9)** | **0 / 8** | **8** | **0%** |
@@ -255,6 +255,19 @@ All 8 Phase 1 components are fully implemented. Each has:
 - [x] **`src/api/CLAUDE.md`** — local context for API integrations module updated (gitignored, seed manually)
 - [x] **`src/persistence/CLAUDE.md`** — local context for persistence module updated (gitignored, seed manually)
 - [x] **`docs/runbooks/dev-setup.md`** — new developer setup guide covering gitignored AI files, env vars, scaffold commands, and MCP server
+
+---
+
+### `@weldui/core` — v3.0 Layout & Structure (§3.1) Started (4 / 10)
+
+The first four layout primitives are now implemented with component files, stories, tests, and barrel exports.
+
+| Component | Tag | Status | Notes |
+|---|---|---|---|
+| **Container** | `<wu-container>` | ✅ | Centered content wrapper with width presets and flush mode |
+| **Stack** | `<wu-stack>` | ✅ | One-dimensional flex layout with direction, gap, align, and justify controls |
+| **Cluster** | `<wu-cluster>` | ✅ | Wrapping flex group for badges, chips, filters, and actions |
+| **Grid** | `<wu-grid>` | ✅ | Explicit-column and auto-fit grid primitive with min item width |
 
 ---
 

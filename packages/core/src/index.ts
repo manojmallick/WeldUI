@@ -150,6 +150,12 @@ export type { MentionUser } from './components/mention/wu-mention.js';
 export { WuQrCode } from './components/qr-code/wu-qr-code.js';
 export { WuVideo } from './components/video/wu-video.js';
 
+// ── v3.0: Layout & Structure (§3.1) ────────────────────────────────────────
+export { WuContainer } from './components/container/wu-container.js';
+export { WuStack } from './components/stack/wu-stack.js';
+export { WuCluster } from './components/cluster/wu-cluster.js';
+export { WuGrid } from './components/grid/wu-grid.js';
+
 // Phase 5 side-effects
 import './components/radio/wu-radio.js';
 import './components/slider/wu-slider.js';
@@ -194,3 +200,163 @@ import './components/kanban/wu-kanban.js';
 import './components/mention/wu-mention.js';
 import './components/qr-code/wu-qr-code.js';
 import './components/video/wu-video.js';
+// v3.0 Layout side-effects
+import './components/container/wu-container.js';
+import './components/stack/wu-stack.js';
+import './components/cluster/wu-cluster.js';
+import './components/grid/wu-grid.js';
+
+// ── v3.0: Layout remaining (§3.1) ─────────────────────────────────────────
+export { WuMasonry } from './components/masonry/wu-masonry.js';
+export { WuAspectRatio } from './components/aspect-ratio/wu-aspect-ratio.js';
+export { WuSticky } from './components/sticky/wu-sticky.js';
+export { WuSpacer } from './components/spacer/wu-spacer.js';
+export { WuVisuallyHidden } from './components/visually-hidden/wu-visually-hidden.js';
+export { WuPrintArea } from './components/print-area/wu-print-area.js';
+
+// ── v3.0: Typography (§3.2) ────────────────────────────────────────────────
+export { WuProse } from './components/prose/wu-prose.js';
+export { WuHeading } from './components/heading/wu-heading.js';
+export { WuText } from './components/text/wu-text.js';
+export { WuLabel } from './components/label/wu-label.js';
+export { WuLink } from './components/link/wu-link.js';
+export { WuMark } from './components/mark/wu-mark.js';
+export { WuBlockquote } from './components/blockquote/wu-blockquote.js';
+export { WuAbbr } from './components/abbr/wu-abbr.js';
+
+// ── v3.0: Feedback (§3.3) ──────────────────────────────────────────────────
+export { WuBanner } from './components/banner/wu-banner.js';
+export { WuInlineMessage } from './components/inline-message/wu-inline-message.js';
+export { WuValidationSummary } from './components/validation-summary/wu-validation-summary.js';
+export { WuProgressSteps } from './components/progress-steps/wu-progress-steps.js';
+export { WuFeedback } from './components/feedback/wu-feedback.js';
+export { WuSurvey } from './components/survey/wu-survey.js';
+export { WuSupportBubble } from './components/support-bubble/wu-support-bubble.js';
+export { WuOnboardingChecklist } from './components/onboarding-checklist/wu-onboarding-checklist.js';
+
+// ── v3.0: Auth (§3.4) ──────────────────────────────────────────────────────
+export { WuLoginForm } from './components/login-form/wu-login-form.js';
+export { WuSignupForm } from './components/signup-form/wu-signup-form.js';
+export { WuOtpVerify } from './components/otp-verify/wu-otp-verify.js';
+export { WuPasswordStrength } from './components/password-strength/wu-password-strength.js';
+export { WuSocialLogin } from './components/social-login/wu-social-login.js';
+export { WuApiKeyDisplay } from './components/api-key-display/wu-api-key-display.js';
+export { WuSessionTimeout } from './components/session-timeout/wu-session-timeout.js';
+export { WuCaptcha } from './components/captcha/wu-captcha.js';
+
+// ── v3.0: E-Commerce (§3.5) ────────────────────────────────────────────────
+export { WuPrice } from './components/price/wu-price.js';
+export { WuQuantityPicker } from './components/quantity-picker/wu-quantity-picker.js';
+export { WuCartIcon } from './components/cart-icon/wu-cart-icon.js';
+export { WuProductCard } from './components/product-card/wu-product-card.js';
+export { WuProductGallery } from './components/product-gallery/wu-product-gallery.js';
+export { WuCartLineItem } from './components/cart-line-item/wu-cart-line-item.js';
+export { WuCheckoutSteps } from './components/checkout-steps/wu-checkout-steps.js';
+export { WuPaymentForm } from './components/payment-form/wu-payment-form.js';
+export { WuOrderStatus } from './components/order-status/wu-order-status.js';
+export type { OrderStatusStep } from './components/order-status/wu-order-status.js';
+export { WuWishlistButton } from './components/wishlist-button/wu-wishlist-button.js';
+
+// ── v3.0: SaaS/App Shell (§3.6) ────────────────────────────────────────────
+export { WuAppShell } from './components/app-shell/wu-app-shell.js';
+export { WuAppHeader } from './components/app-header/wu-app-header.js';
+export { WuCommandBar } from './components/command-bar/wu-command-bar.js';
+export { WuActivityFeed } from './components/activity-feed/wu-activity-feed.js';
+export type { ActivityItem } from './components/activity-feed/wu-activity-feed.js';
+export { WuMentionInput } from './components/mention-input/wu-mention-input.js';
+export { WuReactionBar } from './components/reaction-bar/wu-reaction-bar.js';
+export type { Reaction } from './components/reaction-bar/wu-reaction-bar.js';
+export { WuRichTextViewer } from './components/rich-text-viewer/wu-rich-text-viewer.js';
+export { WuChangelog } from './components/changelog/wu-changelog.js';
+export type { ChangelogEntry } from './components/changelog/wu-changelog.js';
+export { WuKeyboardShortcuts } from './components/keyboard-shortcuts/wu-keyboard-shortcuts.js';
+export type { ShortcutEntry } from './components/keyboard-shortcuts/wu-keyboard-shortcuts.js';
+export { WuFeatureFlagBadge } from './components/feature-flag-badge/wu-feature-flag-badge.js';
+
+// ── Phase 10: Enterprise ────────────────────────────────────────────────────
+export { WuTour } from './components/tour/wu-tour.js';
+export type { TourStep } from './components/tour/wu-tour.js';
+export { WuJsonViewer, WuJsonNode } from './components/json-viewer/wu-json-viewer.js';
+export { WuLogViewer } from './components/log-viewer/wu-log-viewer.js';
+export type { LogLine } from './components/log-viewer/wu-log-viewer.js';
+export { WuDiffViewer } from './components/diff-viewer/wu-diff-viewer.js';
+export type { DiffLine } from './components/diff-viewer/wu-diff-viewer.js';
+export { WuQueryBuilder } from './components/query-builder/wu-query-builder.js';
+export type { QueryField, QueryRule } from './components/query-builder/wu-query-builder.js';
+export { WuChat, WuChatBubble } from './components/chat/wu-chat.js';
+export { WuSignature } from './components/signature/wu-signature.js';
+export { WuAudio } from './components/audio/wu-audio.js';
+export { WuEventCalendar } from './components/event-calendar/wu-event-calendar.js';
+export type { CalendarEvent } from './components/event-calendar/wu-event-calendar.js';
+export { WuReportBuilder } from './components/report-builder/wu-report-builder.js';
+export type { ReportColumn } from './components/report-builder/wu-report-builder.js';
+export { WuEmojiPicker } from './components/emoji-picker/wu-emoji-picker.js';
+
+// v3.0 §3.1 remaining side-effects
+import './components/masonry/wu-masonry.js';
+import './components/aspect-ratio/wu-aspect-ratio.js';
+import './components/sticky/wu-sticky.js';
+import './components/spacer/wu-spacer.js';
+import './components/visually-hidden/wu-visually-hidden.js';
+import './components/print-area/wu-print-area.js';
+// v3.0 §3.2 side-effects
+import './components/prose/wu-prose.js';
+import './components/heading/wu-heading.js';
+import './components/text/wu-text.js';
+import './components/label/wu-label.js';
+import './components/link/wu-link.js';
+import './components/mark/wu-mark.js';
+import './components/blockquote/wu-blockquote.js';
+import './components/abbr/wu-abbr.js';
+// v3.0 §3.3 side-effects
+import './components/banner/wu-banner.js';
+import './components/inline-message/wu-inline-message.js';
+import './components/validation-summary/wu-validation-summary.js';
+import './components/progress-steps/wu-progress-steps.js';
+import './components/feedback/wu-feedback.js';
+import './components/survey/wu-survey.js';
+import './components/support-bubble/wu-support-bubble.js';
+import './components/onboarding-checklist/wu-onboarding-checklist.js';
+// v3.0 §3.4 side-effects
+import './components/login-form/wu-login-form.js';
+import './components/signup-form/wu-signup-form.js';
+import './components/otp-verify/wu-otp-verify.js';
+import './components/password-strength/wu-password-strength.js';
+import './components/social-login/wu-social-login.js';
+import './components/api-key-display/wu-api-key-display.js';
+import './components/session-timeout/wu-session-timeout.js';
+import './components/captcha/wu-captcha.js';
+// v3.0 §3.5 side-effects
+import './components/price/wu-price.js';
+import './components/quantity-picker/wu-quantity-picker.js';
+import './components/cart-icon/wu-cart-icon.js';
+import './components/product-card/wu-product-card.js';
+import './components/product-gallery/wu-product-gallery.js';
+import './components/cart-line-item/wu-cart-line-item.js';
+import './components/checkout-steps/wu-checkout-steps.js';
+import './components/payment-form/wu-payment-form.js';
+import './components/order-status/wu-order-status.js';
+import './components/wishlist-button/wu-wishlist-button.js';
+// v3.0 §3.6 side-effects
+import './components/app-shell/wu-app-shell.js';
+import './components/app-header/wu-app-header.js';
+import './components/command-bar/wu-command-bar.js';
+import './components/activity-feed/wu-activity-feed.js';
+import './components/mention-input/wu-mention-input.js';
+import './components/reaction-bar/wu-reaction-bar.js';
+import './components/rich-text-viewer/wu-rich-text-viewer.js';
+import './components/changelog/wu-changelog.js';
+import './components/keyboard-shortcuts/wu-keyboard-shortcuts.js';
+import './components/feature-flag-badge/wu-feature-flag-badge.js';
+// Phase 10 Enterprise side-effects
+import './components/tour/wu-tour.js';
+import './components/json-viewer/wu-json-viewer.js';
+import './components/log-viewer/wu-log-viewer.js';
+import './components/diff-viewer/wu-diff-viewer.js';
+import './components/query-builder/wu-query-builder.js';
+import './components/chat/wu-chat.js';
+import './components/signature/wu-signature.js';
+import './components/audio/wu-audio.js';
+import './components/event-calendar/wu-event-calendar.js';
+import './components/report-builder/wu-report-builder.js';
+import './components/emoji-picker/wu-emoji-picker.js';
