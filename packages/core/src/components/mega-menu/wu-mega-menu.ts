@@ -43,7 +43,7 @@ export class WuMegaMenu extends LitElement {
       <div class="trigger-slot" @click=${() => this.open ? this._close() : this._open()}>
         <slot name="trigger"></slot>
       </div>
-      ${this.open ? html`<div class="backdrop" @click=${this._close}></div>` : ''}
+      <div class="backdrop" ?hidden=${!this.open} @click=${this._close}></div>
       <div class="overlay" ?hidden=${!this.open} role="dialog" aria-label="Navigation menu">
         <slot></slot>
       </div>`;

@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-slider.styles.js';
 
 /**
@@ -67,12 +66,6 @@ export class WuSlider extends LitElement {
   @state()
   private _currentValue: number = this.value;
 
-  override updated(changed: Map<string, unknown>) {
-    if (changed.has('value')) {
-      this._currentValue = this.value;
-    }
-  }
-
   private _handleInput(e: Event) {
     const input = e.target as HTMLInputElement;
     this._currentValue = Number(input.value);
@@ -98,17 +91,28 @@ export class WuSlider extends LitElement {
     );
   }
 
+  override willUpdate(changed: Map<string, unknown>) {
+    if (changed.has('value')) {
+      this._currentValue = this.value;
+    }
+  }
+
+  override updated(changed: Map<string, unknown>) {
+    // Set the input's value via DOM to avoid happy-dom EventPart timing issue
+    // (property binding .value=${} triggers synthetic input events before @input is committed)
+    if (changed.has('_currentValue') || changed.has('value')) {
+      const input = this.shadowRoot?.querySelector<HTMLInputElement>('input[type="range"]');
+      if (input) input.value = String(this._currentValue);
+    }
+  }
+
   override render() {
     const pct = ((this._currentValue - this.min) / (this.max - this.min)) * 100;
     return html`
-      ${this.label
-        ? html`
-          <div class="label-row">
-            <label>${this.label}</label>
-            ${this.showValue ? html`<span class="value">${this._currentValue}</span>` : ''}
-          </div>
-        `
-        : ''}
+      <div class="label-row" ?hidden=${!this.label && !this.showValue}>
+        <label ?hidden=${!this.label}>${this.label}</label>
+        <span class="value" ?hidden=${!this.showValue}>${this._currentValue}</span>
+      </div>
       <div class="track-container">
         <input
           part="base"
@@ -116,9 +120,8 @@ export class WuSlider extends LitElement {
           min=${this.min}
           max=${this.max}
           step=${this.step}
-          .value=${String(this._currentValue)}
           ?disabled=${this.disabled}
-          aria-label=${ifDefined(this.label || undefined)}
+          aria-label=${this.label}
           aria-valuemin=${this.min}
           aria-valuemax=${this.max}
           aria-valuenow=${this._currentValue}
@@ -127,14 +130,10 @@ export class WuSlider extends LitElement {
           @change=${this._handleChange}
         />
       </div>
-      ${this.ticks.length
-        ? html`
-          <div class="tick-marks" aria-hidden="true">
-            ${this.ticks.map((t) => html`<span class="tick">${t}</span>`)}
-          </div>
-        `
-        : ''}
-      ${this.hint ? html`<span class="hint">${this.hint}</span>` : ''}
+      <div class="tick-marks" aria-hidden="true" ?hidden=${!this.ticks.length}>
+        ${this.ticks.map((t) => html`<span class="tick">${t}</span>`)}
+      </div>
+      <span class="hint" ?hidden=${!this.hint}>${this.hint}</span>
     `;
   }
 }

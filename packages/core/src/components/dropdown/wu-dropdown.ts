@@ -76,30 +76,19 @@ export class WuDropdown extends LitElement {
       : this.items;
 
     let lastGroup = '';
-    const rows = filtered.map(item => {
-      if (item.separator) return html`<div class="separator" role="separator"></div>`;
+    const rows = filtered.flatMap(item => {
+      if (item.separator) return [html`<div class="separator" role="separator"></div>`];
 
-      const groupHdr = (item.group && item.group !== lastGroup)
-        ? ((lastGroup = item.group), html`<div class="group-header">${item.group}</div>`)
-        : (item.group ? (lastGroup = item.group, nothing) : nothing);
+      const showGroup = !!(item.group && item.group !== lastGroup);
+      if (showGroup) lastGroup = item.group!;
 
-      return html`
-        ${groupHdr}
-        <button
-          class="item ${item.danger ? 'danger' : ''} ${item.checked ? 'checked' : ''}"
-          role="menuitem"
-          ?disabled=${item.disabled}
-          @click=${() => this._select(item)}
-        >
-          <span class="item-icon">${item.icon ?? ''}</span>
-          <span class="item-body">
-            <span class="item-label">${item.label}</span>
-            ${item.description ? html`<span class="item-desc">${item.description}</span>` : nothing}
-          </span>
-          ${item.checked ? html`<span class="checkmark" aria-hidden="true">
-            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </span>` : nothing}
-        </button>`;
+      const itemClass = 'item' + (item.danger ? ' danger' : '') + (item.checked ? ' checked' : '');
+      const isDisabled = item.disabled === true;
+      const btnTpl = html`<button role="menuitem" class=${itemClass} ?disabled=${isDisabled} @click=${() => this._select(item)}><span class="item-label">${item.label}</span></button>`;
+
+      return showGroup
+        ? [html`<div class="group-header">${item.group}</div>`, btnTpl]
+        : [btnTpl];
     });
 
     return html`
@@ -117,7 +106,6 @@ export class WuDropdown extends LitElement {
               class="search-input"
               type="text"
               placeholder="Search…"
-              .value=${this._query}
               @input=${(e: Event) => { this._query = (e.target as HTMLInputElement).value; }}
               @click=${(e: Event) => e.stopPropagation()}
               @keydown=${(e: KeyboardEvent) => { if (e.key === 'Escape') { this.open = false; } }}

@@ -65,32 +65,33 @@ export class WuTimePicker extends LitElement {
   }
 
   render() {
+    const dis = this.disabled;
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="time-wrap">
         <div class="drum">
           <span class="drum-label">HH</span>
-          <select class="drum-select" .value=${String(this._hours)} @change=${this._onHour} ?disabled=${this.disabled} aria-label="Hour">
+          <select class="drum-select" aria-label="Hour" ?disabled=${dis} @change=${this._onHour}>
             ${this._hourOptions().map(h => html`<option value=${h} ?selected=${h === this._hours}>${String(h).padStart(2,'0')}</option>`)}
           </select>
         </div>
         <span class="sep">:</span>
         <div class="drum">
           <span class="drum-label">MM</span>
-          <select class="drum-select" .value=${String(this._minutes)} @change=${this._onMinute} ?disabled=${this.disabled} aria-label="Minute">
+          <select class="drum-select" aria-label="Minute" ?disabled=${dis} @change=${this._onMinute}>
             ${Array.from({ length: 60 }, (_, i) => i).map(m => html`<option value=${m} ?selected=${m === this._minutes}>${String(m).padStart(2,'0')}</option>`)}
           </select>
         </div>
         ${this.hour12 ? html`
           <div class="drum">
             <span class="drum-label">AM/PM</span>
-            <select class="drum-select" .value=${this._period} @change=${this._onPeriod} ?disabled=${this.disabled} aria-label="Period">
+            <select class="drum-select" aria-label="Period" ?disabled=${dis} @change=${this._onPeriod}>
               <option value="AM" ?selected=${this._period === 'AM'}>AM</option>
               <option value="PM" ?selected=${this._period === 'PM'}>PM</option>
             </select>
           </div>` : ''}
       </div>
-      ${this.error ? html`<p class="error-msg" role="alert">${this.error}</p>` : ''}
+      <p class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</p>
     `;
   }
 }

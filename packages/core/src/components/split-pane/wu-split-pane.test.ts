@@ -35,9 +35,9 @@ describe('wu-split-pane', () => {
     const handler = vi.fn();
     el.addEventListener('wu-resize', handler);
     const divider = el.shadowRoot!.querySelector('.divider') as HTMLElement;
-    divider.dispatchEvent(new MouseEvent('mousedown', { clientX: 250, bubbles: true }));
-    document.dispatchEvent(new MouseEvent('mousemove', { clientX: 350 }));
-    document.dispatchEvent(new MouseEvent('mouseup'));
+    divider.dispatchEvent(new PointerEvent('pointerdown', { pointerId: 1, clientX: 250, bubbles: true }));
+    divider.dispatchEvent(new PointerEvent('pointermove', { pointerId: 1, clientX: 350, bubbles: true }));
+    divider.dispatchEvent(new PointerEvent('pointerup', { pointerId: 1, bubbles: true }));
     expect(handler).toHaveBeenCalled();
   });
 });

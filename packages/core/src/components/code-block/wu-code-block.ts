@@ -11,7 +11,7 @@ export class WuCodeBlock extends LitElement {
   static styles = styles;
   @property() language = 'text';
   @property() code = '';
-  @property({ type: Boolean }) hideCopy = false;
+  @property({ type: Boolean, attribute: 'hide-copy' }) hideCopy = false;
   @state() private _copied = false;
 
   private async _copy() {

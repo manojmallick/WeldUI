@@ -30,7 +30,7 @@ export class WuCalendar extends LitElement {
     for (let i = 0; i < offset; i++) cells.push(html`<span></span>`);
     for (let d = 1; d <= days; d++) {
       const ds = `${this._year}-${String(this._month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      cells.push(html`<button class="day ${ds === today ? 'today' : ''} ${ds === this.value ? 'selected' : ''}" ?disabled=${!!(this.min && ds < this.min) || !!(this.max && ds > this.max)} @click=${() => this._select(ds)} aria-label=${ds} aria-pressed=${ds === this.value}>${d}</button>`);
+      cells.push(html`<button class=${'day' + (ds === today ? ' today' : '') + (ds === this.value ? ' selected' : '')} ?disabled=${!!(this.min && ds < this.min) || !!(this.max && ds > this.max)} @click=${() => this._select(ds)} aria-label=${ds} aria-pressed=${ds === this.value}>${d}</button>`);
     }
     return html`
       <div class="cal" role="application" aria-label="Calendar">

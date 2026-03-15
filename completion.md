@@ -1,8 +1,24 @@
 # WeldUI — Project Completion Status
 
-> Last updated: 2026-03-14 (Phases 5–9 complete — 48 new components across form primitives, data display, nav/overlays, charts package, and rich media; all framework wrappers and MCP manifest updated)
+> Last updated: 2026-03-15 (v3.0 roadmap added — ROADMAP-V3.md: deep enhancement plan for all 37 existing components + 130 new components across 17 domains = **~236 component grand total**; 8-gate Definition of Done added)
 > Owner: Manoj Mallick / LearnHubPlay BV (KvK 97741825)
 > Repository: github.com/manojmallick/WeldUI
+
+---
+
+## v3.0 Roadmap
+
+> Full detail in **[ROADMAP-V3.md](./ROADMAP-V3.md)**
+
+| Milestone | Components | Package | Timeline |
+|---|---|---|---|
+| **v1.0** — Phases 1–4 polish + tests | 46 | `@weldui/core` | 2026 Q2 |
+| **v2.0** — Phases 5–10 complete | +60 → ~106 | + `@weldui/charts` `@weldui/enterprise` | 2026 Q3 |
+| **v2.1** — Component enhancements (Section 2 of ROADMAP-V3) | existing enhanced | all | 2026 Q3–Q4 |
+| **v2.2** — Layout, Typography, Feedback, Auth (Sections 3.1–3.4) | +34 | `@weldui/core` `@weldui/auth` | 2026 Q4 |
+| **v2.3** — E-Commerce, SaaS Shell, AI/LLM (Sections 3.5–3.7) | +32 | `@weldui/commerce` `@weldui/ai` | 2027 Q1 |
+| **v2.4** — Collab, Media, Developer, Analytics (Sections 3.8–3.14) | +42 | `@weldui/collab` `@weldui/maps` `@weldui/print` | 2027 Q2–Q3 |
+| **v3.0** — A11y utilities, PWA, Web3, full audit | +20 → **~236 total** | `@weldui/a11y` `@weldui/web3` | 2028 |
 
 ---
 
@@ -27,10 +43,29 @@
 | **Phase 8 — Charts & Data Visualization** | **8 / 8** | **8** | **100%** |
 | **Phase 9 — Rich Media & Layout** | **8 / 8** | **8** | **100%** |
 | **Phase 10 — Enterprise & Developer Tools** | **0 / 12** | **12** | **0%** |
+| **v3.0 — Layout & Structure (§3.1)** | **0 / 10** | **10** | **0%** |
+| **v3.0 — Typography & Content (§3.2)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Feedback & Validation (§3.3)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Auth & Security (§3.4)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — E-Commerce (§3.5)** | **0 / 10** | **10** | **0%** |
+| **v3.0 — SaaS / App Shell (§3.6)** | **0 / 10** | **10** | **0%** |
+| **v3.0 — AI / LLM-Native (§3.7)** | **0 / 12** | **12** | **0%** |
+| **v3.0 — Real-Time & Collab (§3.8)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Charts Extensions (§3.9)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Media & Creative (§3.10)** | **0 / 10** | **10** | **0%** |
+| **v3.0 — Maps & Location (§3.11)** | **0 / 6** | **6** | **0%** |
+| **v3.0 — Print & Documents (§3.12)** | **0 / 6** | **6** | **0%** |
+| **v3.0 — Developer Experience (§3.13)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Analytics & Monitoring (§3.14)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Accessibility & Utility (§3.15)** | **0 / 8** | **8** | **0%** |
+| **v3.0 — Web3 & Emerging (§3.16)** | **0 / 6** | **6** | **0%** |
+| **v3.0 — PWA & Device (§3.17)** | **0 / 6** | **6** | **0%** |
 | Commercial / GTM Setup | 0 / 6 | 6 | 0% |
 
-> **Component total (Phases 1–9):** 94 core + 8 charts components = **~102 components**
-> **Component total (planned):** 102 + 12 Phase 10 = **~114 components** at full v2.0 completion
+> **Component total (Phases 1–9):** ~102 components currently implemented
+> **Component total (v2.0):** ~114 components (incl. Phase 10)
+> **Component total (v3.0):** **~236 components** (incl. all ROADMAP-V3 new additions)
+> **Existing components enhanced:** all 37 core components gain deeper props, slots, and sub-components per ROADMAP-V3 §2
 
 ---
 

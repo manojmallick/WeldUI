@@ -1,4 +1,4 @@
-import { LitElement, html, svg } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './wu-qr-code.styles.js';
 
@@ -60,14 +60,22 @@ export class WuQrCode extends LitElement {
     if (!matrix) return html`<div style="font-size:12px;color:red">Value too long</div>`;
     const n = matrix.length;
     const cell = this.size / n;
-    const cells = matrix.flatMap((row, r) =>
-      row.map((on, c) => on ? svg`<rect x=${c * cell} y=${r * cell} width=${cell} height=${cell} fill=${this.color}></rect>` : '')
-    );
+    // Build an SVG string for all cells and inject as unsafeHTML to avoid
+    // lit-html svg/html namespace mixing issues in test environments.
+    const rects = matrix.flatMap((row, r) =>
+      row.map((on, c) => on
+        ? `<rect x="${c * cell}" y="${r * cell}" width="${cell}" height="${cell}" fill="${this.color}"/>`
+        : ''
+      )
+    ).join('');
+    const svgContent = `<rect width="100%" height="100%" fill="${this.background}"/>${rects}`;
     return html`
-      <svg width=${this.size} height=${this.size} viewBox="0 0 ${this.size} ${this.size}" aria-label="QR code for: ${this.value}" role="img">
-        <rect width="100%" height="100%" fill=${this.background}></rect>
-        ${cells}
-      </svg>`;
+      <svg width=${this.size} height=${this.size}
+        viewBox="0 0 ${this.size} ${this.size}"
+        aria-label="QR code for: ${this.value}"
+        role="img"
+        .innerHTML=${svgContent}
+      ></svg>`;
   }
 }
 

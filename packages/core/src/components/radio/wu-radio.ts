@@ -133,6 +133,15 @@ export class WuRadioGroup extends LitElement {
     this.addEventListener('wu-change', this._handleRadioChange as EventListener);
   }
 
+  override firstUpdated() {
+    // Sync immediately after first render in case slotchange hasn't fired
+    const radios = Array.from(this.querySelectorAll<WuRadio>('wu-radio'));
+    if (radios.length) {
+      this._radios = radios;
+      this._syncRadios();
+    }
+  }
+
   override disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener('wu-change', this._handleRadioChange as EventListener);
@@ -155,6 +164,7 @@ export class WuRadioGroup extends LitElement {
   }
 
   private _handleRadioChange = (e: CustomEvent<{ value: string }>) => {
+    if (e.target === this) return; // prevent infinite loop from self-dispatched event
     this.value = e.detail.value;
     this._syncRadios();
     this.dispatchEvent(
@@ -164,7 +174,7 @@ export class WuRadioGroup extends LitElement {
         detail: { value: this.value },
       })
     );
-    e.stopPropagation();
+    e.stopImmediatePropagation();
   };
 
   override updated(changed: Map<string, unknown>) {
@@ -175,7 +185,7 @@ export class WuRadioGroup extends LitElement {
 
   override render() {
     return html`
-      ${this.label ? html`<span class="legend">${this.label}</span>` : ''}
+      <span class="legend" ?hidden=${!this.label}>${this.label}</span>
       <div
         part="group"
         class="group"
@@ -185,7 +195,7 @@ export class WuRadioGroup extends LitElement {
       >
         <slot @slotchange=${this._handleSlotChange}></slot>
       </div>
-      ${this.error ? html`<span class="error" role="alert">${this.error}</span>` : ''}
+      <span class="error" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

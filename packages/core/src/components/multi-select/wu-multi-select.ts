@@ -104,6 +104,11 @@ export class WuMultiSelect extends LitElement {
     this._search = (e.target as HTMLInputElement).value;
   }
 
+  override updated() {
+    const input = this.shadowRoot?.querySelector<HTMLInputElement>('.search-input');
+    if (input) input.value = this._search;
+  }
+
   override render() {
     const chips = this.values
       .map((v) => this.options.find((o) => o.value === v))
@@ -111,7 +116,7 @@ export class WuMultiSelect extends LitElement {
     const allSelected = this.options.every((o) => o.disabled || this.values.includes(o.value));
 
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="wrapper">
         <div
           class="chips-input"
@@ -133,7 +138,6 @@ export class WuMultiSelect extends LitElement {
           <input
             class="search-input"
             placeholder=${chips.length === 0 ? this.placeholder : ''}
-            .value=${this._search}
             aria-label=${this.label || 'Select options'}
             @input=${this._handleSearchInput}
             @focus=${() => { this._open = true; }}
@@ -169,7 +173,7 @@ export class WuMultiSelect extends LitElement {
           )}
         </ul>
       </div>
-      ${this.error ? html`<span class="error-msg" role="alert">${this.error}</span>` : ''}
+      <span class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

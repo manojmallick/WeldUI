@@ -66,9 +66,14 @@ export class WuTagInput extends LitElement {
     this.shadowRoot?.querySelector<HTMLInputElement>('.tag-input')?.focus();
   }
 
+  override updated() {
+    const input = this.shadowRoot?.querySelector<HTMLInputElement>('.tag-input');
+    if (input && input.value !== this._inputValue) input.value = this._inputValue;
+  }
+
   render() {
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="tag-container" @click=${this._focusInput}>
         ${this.values.map(v => html`
           <span class="tag">
@@ -78,7 +83,6 @@ export class WuTagInput extends LitElement {
         `)}
         <input
           class="tag-input"
-          .value=${this._inputValue}
           placeholder=${this.values.length ? '' : this.placeholder}
           ?disabled=${this.disabled}
           @keydown=${this._onKeyDown}
@@ -86,7 +90,8 @@ export class WuTagInput extends LitElement {
           aria-label=${this.label || 'Tag input'}
         />
       </div>
-      ${this.error ? html`<p class="error-msg" role="alert">${this.error}</p>` : html`<p class="hint">Press Enter or comma to add tags</p>`}
+      <p class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</p>
+      <p class="hint" ?hidden=${!!this.error}>Press Enter or comma to add tags</p>
     `;
   }
 }

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './wu-date-range-picker.styles.js';
 
 function isoToDate(s: string): Date | null {
@@ -105,8 +106,9 @@ export class WuDateRangePicker extends LitElement {
       const isEnd = ds === this._pendingEnd;
       const inRange = this._isInRange(ds);
       const disabled = (this.min && ds < this.min) || (this.max && ds > this.max);
+      const dayClass = classMap({ day: true, start: isStart, end: isEnd, 'in-range': inRange });
       cells.push(html`
-        <button class="day ${isStart ? 'start' : ''} ${isEnd ? 'end' : ''} ${inRange ? 'in-range' : ''}"
+        <button class=${dayClass}
           ?disabled=${disabled}
           @click=${() => this._onDayClick(ds)}
           @mouseenter=${() => { this._hoverDate = ds; }}
@@ -136,8 +138,8 @@ export class WuDateRangePicker extends LitElement {
 
   render() {
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
-      <button class="trigger" @click=${() => { this._open = !this._open; }} ?disabled=${this.disabled} aria-haspopup="true" aria-expanded=${this._open}>
+      <label ?hidden=${!this.label}>${this.label}</label>
+      <button class="trigger" aria-haspopup="true" aria-expanded=${this._open} ?disabled=${this.disabled} @click=${(e: Event) => { e.stopPropagation(); this._open = !this._open; }}>
         <span class="trigger-icon">📅</span>
         <span>${this._formatRange()}</span>
       </button>
@@ -151,7 +153,7 @@ export class WuDateRangePicker extends LitElement {
           </div>
         </div>
       </div>
-      ${this.error ? html`<p class="error-msg" role="alert">${this.error}</p>` : ''}
+      <p class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</p>
     `;
   }
 }

@@ -141,11 +141,16 @@ export class WuCombobox extends LitElement {
     );
   }
 
+  override updated() {
+    const input = this.shadowRoot?.querySelector<HTMLInputElement>('input[part="base"]');
+    if (input && input.value !== this._inputValue) input.value = this._inputValue;
+  }
+
   override render() {
     const filtered = this._filtered;
     const listId = 'combobox-list';
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="wrapper">
         <input
           part="base"
@@ -159,21 +164,19 @@ export class WuCombobox extends LitElement {
             this._highlighted >= 0 ? `option-${filtered[this._highlighted]?.value}` : ''
           }
           placeholder=${this.placeholder}
-          .value=${this._inputValue}
           ?disabled=${this.disabled}
           @input=${this._handleInput}
           @focus=${() => { if (this._inputValue.length >= this.minChars) this._open = true; }}
           @keydown=${this._handleKeydown}
         />
-        ${this.loading
-          ? html`<span class="loading-indicator" aria-hidden="true"></span>`
-          : html`<span class="chevron" aria-hidden="true">▼</span>`}
+        <span class="loading-indicator" aria-hidden="true" ?hidden=${!this.loading}></span>
+        <span class="chevron" aria-hidden="true" ?hidden=${this.loading}>▼</span>
         <ul
           id=${listId}
           part="dropdown"
           class="dropdown"
           role="listbox"
-          ?hidden=${!this._open || filtered.length === 0}
+          ?hidden=${!this._open}
         >
           ${filtered.length === 0 && this._query && !this.loading
             ? html`<li class="empty">No options found</li>`
@@ -186,14 +189,12 @@ export class WuCombobox extends LitElement {
                     aria-selected=${opt.value === this.value ? 'true' : 'false'}
                     aria-disabled=${opt.disabled ? 'true' : 'false'}
                     @click=${() => this._select(opt)}
-                  >
-                    ${opt.label}
-                  </li>
+                  >${opt.label}</li>
                 `
               )}
         </ul>
       </div>
-      ${this.error ? html`<span class="error-msg" role="alert">${this.error}</span>` : ''}
+      <span class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

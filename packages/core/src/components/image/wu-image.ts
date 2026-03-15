@@ -24,7 +24,7 @@ export class WuImage extends LitElement {
       <div class="image-wrap" style=${style}>
         ${this._error || !this.src
           ? html`<div class="placeholder" role="img" aria-label=${this.alt || 'Image'}>${this.alt || '🖼'}</div>`
-          : html`<img src=${this.src} alt=${this.alt} loading=${this.lazy ? 'lazy' : 'eager'} @error=${() => { this._error = true; }} />`
+          : html`<img src=${this.src} alt=${this.alt} .loading=${this.lazy ? 'lazy' : 'eager'} @error=${() => { this._error = true; }} />`
         }
       </div>`;
   }

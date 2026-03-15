@@ -33,6 +33,12 @@ export class WuColorPicker extends LitElement {
 
   @query('canvas') private _canvas!: HTMLCanvasElement;
 
+  override willUpdate(changed: Map<string, unknown>) {
+    if (changed.has('value')) {
+      this._hexInput = this.value;
+    }
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this._hexInput = this.value;
@@ -45,7 +51,8 @@ export class WuColorPicker extends LitElement {
   private _drawCanvas() {
     const canvas = this._canvas;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d')!;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return; // not supported in test environments (happy-dom)
     const W = canvas.width, H = canvas.height;
     const hueColor = `hsl(${this._hue}, 100%, 50%)`;
     const whiteGrad = ctx.createLinearGradient(0, 0, W, 0);
@@ -67,7 +74,8 @@ export class WuColorPicker extends LitElement {
     const y = Math.round(((e.clientY - rect.top) / rect.height) * canvas.height);
     this._cursorX = (e.clientX - rect.left);
     this._cursorY = (e.clientY - rect.top);
-    const ctx = canvas.getContext('2d')!;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
     const px = ctx.getImageData(x, y, 1, 1).data;
     this._hexInput = `#${px[0].toString(16).padStart(2,'0')}${px[1].toString(16).padStart(2,'0')}${px[2].toString(16).padStart(2,'0')}`;
     this.value = this._hexInput;
@@ -96,23 +104,30 @@ export class WuColorPicker extends LitElement {
     this.dispatchEvent(new CustomEvent('wu-change', { bubbles: true, composed: true, detail: { value: this.value } }));
   }
 
+  override updated() {
+    const hue = this.shadowRoot?.querySelector<HTMLInputElement>('.hue-slider');
+    if (hue && hue.value !== String(this._hue)) hue.value = String(this._hue);
+    const hex = this.shadowRoot?.querySelector<HTMLInputElement>('.hex-input');
+    if (hex && hex.value !== this._hexInput) hex.value = this._hexInput;
+  }
+
   render() {
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="picker-wrap">
         <div class="canvas-area" @click=${this._onCanvasClick}>
           <canvas width="240" height="160"></canvas>
           <div class="cursor" style="left:${this._cursorX}px;top:${this._cursorY}px"></div>
         </div>
         <div class="hue-row">
-          <input type="range" class="hue-slider" min="0" max="360" .value=${String(this._hue)} @input=${this._onHueChange} aria-label="Hue" />
+          <input type="range" class="hue-slider" min="0" max="360" @input=${this._onHueChange} aria-label="Hue" />
           <div class="swatch" style="background:${this.value}"></div>
         </div>
         <div class="inputs">
-          <input type="text" class="hex-input" .value=${this._hexInput} @input=${this._onHexInput} placeholder="#000000" aria-label="Hex colour value" />
+          <input type="text" class="hex-input" @input=${this._onHexInput} placeholder="#000000" aria-label="Hex colour value" />
         </div>
       </div>
-      ${this.error ? html`<p class="error-msg" role="alert">${this.error}</p>` : ''}
+      <p class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</p>
     `;
   }
 }

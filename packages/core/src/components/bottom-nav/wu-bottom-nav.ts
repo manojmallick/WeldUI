@@ -14,6 +14,16 @@ export class WuBottomNav extends LitElement {
 
   @property() value = '';
 
+  override connectedCallback() {
+    super.connectedCallback();
+    this.addEventListener('wu-item-click', this._handleSelect as EventListener);
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback();
+    this.removeEventListener('wu-item-click', this._handleSelect as EventListener);
+  }
+
   private _handleSelect(e: CustomEvent) {
     const val = e.detail.value;
     const items = this.querySelectorAll('wu-bottom-nav-item') as NodeListOf<WuBottomNavItem>;
@@ -23,7 +33,7 @@ export class WuBottomNav extends LitElement {
   }
 
   render() {
-    return html`<nav @wu-item-click=${this._handleSelect}><slot></slot></nav>`;
+    return html`<nav><slot></slot></nav>`;
   }
 }
 

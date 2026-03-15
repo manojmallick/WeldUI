@@ -135,7 +135,7 @@ importers:
         version: 3.9.1(@types/node@25.4.0)(rollup@4.59.0)(typescript@5.9.3)(vite@5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3))
       vitest:
         specifier: ^1.4.0
-        version: 1.6.1(@types/node@25.4.0)(happy-dom@12.10.3)(less@4.6.2)(sass@1.97.3)
+        version: 1.6.1(@types/node@25.4.0)(happy-dom@15.11.7)(less@4.6.2)(sass@1.97.3)
 
   packages/compliance:
     dependencies:
@@ -157,7 +157,7 @@ importers:
         version: 3.9.1(@types/node@25.4.0)(rollup@4.59.0)(typescript@5.9.3)(vite@5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3))
       vitest:
         specifier: ^1.4.0
-        version: 1.6.1(@types/node@25.4.0)(happy-dom@12.10.3)(less@4.6.2)(sass@1.97.3)
+        version: 1.6.1(@types/node@25.4.0)(happy-dom@15.11.7)(less@4.6.2)(sass@1.97.3)
 
   packages/core:
     dependencies:
@@ -172,8 +172,8 @@ importers:
         specifier: workspace:*
         version: link:../../tools/build-tools
       happy-dom:
-        specifier: ^12.0.0
-        version: 12.10.3
+        specifier: ^15.0.0
+        version: 15.11.7
       typescript:
         specifier: ^5.4.0
         version: 5.9.3
@@ -185,7 +185,7 @@ importers:
         version: 3.9.1(@types/node@25.4.0)(rollup@4.59.0)(typescript@5.9.3)(vite@5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3))
       vitest:
         specifier: ^1.4.0
-        version: 1.6.1(@types/node@25.4.0)(happy-dom@12.10.3)(less@4.6.2)(sass@1.97.3)
+        version: 1.6.1(@types/node@25.4.0)(happy-dom@15.11.7)(less@4.6.2)(sass@1.97.3)
 
   packages/react:
     dependencies:
@@ -2335,8 +2335,9 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@12.10.3:
-    resolution: {integrity: sha512-JzUXOh0wdNGY54oKng5hliuBkq/+aT1V3YpTM+lrN/GoLQTANZsMaIvmHiHe612rauHvPJnDZkZ+5GZR++1Abg==}
+  happy-dom@15.11.7:
+    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
+    engines: {node: '>=18.0.0'}
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -3686,11 +3687,6 @@ packages:
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
-
-  whatwg-encoding@2.0.0:
-    resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
-    engines: {node: '>=12'}
-    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -5882,13 +5878,10 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@12.10.3:
+  happy-dom@15.11.7:
     dependencies:
-      css.escape: 1.5.1
       entities: 4.5.0
-      iconv-lite: 0.6.3
       webidl-conversions: 7.0.0
-      whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
 
   has-flag@4.0.0: {}
@@ -5954,6 +5947,7 @@ snapshots:
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
+    optional: true
 
   iconv-lite@0.7.2:
     dependencies:
@@ -7154,7 +7148,7 @@ snapshots:
     optionalDependencies:
       vite: 5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3)
 
-  vitest@1.6.1(@types/node@25.4.0)(happy-dom@12.10.3)(less@4.6.2)(sass@1.97.3):
+  vitest@1.6.1(@types/node@25.4.0)(happy-dom@15.11.7)(less@4.6.2)(sass@1.97.3):
     dependencies:
       '@vitest/expect': 1.6.1
       '@vitest/runner': 1.6.1
@@ -7178,7 +7172,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.4.0
-      happy-dom: 12.10.3
+      happy-dom: 15.11.7
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -7214,10 +7208,6 @@ snapshots:
   webidl-conversions@7.0.0: {}
 
   webpack-virtual-modules@0.6.2: {}
-
-  whatwg-encoding@2.0.0:
-    dependencies:
-      iconv-lite: 0.6.3
 
   whatwg-mimetype@3.0.0: {}
 

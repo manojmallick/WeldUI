@@ -36,7 +36,7 @@ export class WuPinInput extends LitElement {
 
   @state() private _digits: string[] = [];
 
-  override updated(changed: Map<string, unknown>) {
+  override willUpdate(changed: Map<string, unknown>) {
     if (changed.has('length') || changed.has('value')) {
       const arr = (this.value || '').split('').slice(0, this.length);
       this._digits = Array.from({ length: this.length }, (_, i) => arr[i] ?? '');
@@ -98,9 +98,17 @@ export class WuPinInput extends LitElement {
     inputs[index]?.select();
   }
 
+  override updated() {
+    const inputs = this.shadowRoot?.querySelectorAll<HTMLInputElement>('input');
+    inputs?.forEach((inp, i) => {
+      const val = this._digits[i] ?? '';
+      if (inp.value !== val) inp.value = val;
+    });
+  }
+
   override render() {
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="pin-row" role="group" aria-label=${this.label || 'PIN input'}>
         ${Array.from({ length: this.length }, (_, i) => html`
           <input
@@ -108,7 +116,6 @@ export class WuPinInput extends LitElement {
             inputmode="numeric"
             maxlength="1"
             pattern="[0-9]"
-            .value=${this._digits[i] ?? ''}
             ?disabled=${this.disabled}
             class=${this._digits[i] ? 'filled' : ''}
             aria-label="Digit ${i + 1} of ${this.length}"
@@ -118,7 +125,7 @@ export class WuPinInput extends LitElement {
           />
         `)}
       </div>
-      ${this.error ? html`<span class="error-msg" role="alert">${this.error}</span>` : ''}
+      <span class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state, query } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { styles } from './wu-rich-text.styles.js';
 
 type Format = 'bold' | 'italic' | 'underline' | 'insertUnorderedList' | 'insertOrderedList';
@@ -68,20 +69,25 @@ export class WuRichText extends LitElement {
   private _isActive(fmt: string) { return this._activeFmts.has(fmt); }
 
   render() {
+    const bold = this._isActive('bold');
+    const italic = this._isActive('italic');
+    const underline = this._isActive('underline');
+    const ul = this._isActive('insertUnorderedList');
+    const ol = this._isActive('insertOrderedList');
     return html`
-      ${this.label ? html`<label>${this.label}</label>` : ''}
+      <label ?hidden=${!this.label}>${this.label}</label>
       <div class="wrapper">
         ${!this.readonly ? html`
           <div class="toolbar" @mousedown=${(e: Event) => e.preventDefault()}>
-            <button class="tb-btn ${this._isActive('bold') ? 'active' : ''}" @click=${() => this._exec('bold')} aria-label="Bold" title="Bold"><b>B</b></button>
-            <button class="tb-btn ${this._isActive('italic') ? 'active' : ''}" @click=${() => this._exec('italic')} aria-label="Italic" title="Italic"><i>I</i></button>
-            <button class="tb-btn ${this._isActive('underline') ? 'active' : ''}" @click=${() => this._exec('underline')} aria-label="Underline" title="Underline"><u>U</u></button>
+            <button class=${classMap({'tb-btn': true, 'active': bold})} @click=${() => this._exec('bold')} aria-label="Bold" title="Bold"><b>B</b></button>
+            <button class=${classMap({'tb-btn': true, 'active': italic})} @click=${() => this._exec('italic')} aria-label="Italic" title="Italic"><i>I</i></button>
+            <button class=${classMap({'tb-btn': true, 'active': underline})} @click=${() => this._exec('underline')} aria-label="Underline" title="Underline"><u>U</u></button>
             <span class="tb-sep"></span>
             <button class="tb-btn" @click=${() => this._execBlock('h1')} aria-label="H1" title="Heading 1">H1</button>
             <button class="tb-btn" @click=${() => this._execBlock('h2')} aria-label="H2" title="Heading 2">H2</button>
             <span class="tb-sep"></span>
-            <button class="tb-btn ${this._isActive('insertUnorderedList') ? 'active' : ''}" @click=${() => this._exec('insertUnorderedList')} aria-label="Unordered list" title="Bullet list">• List</button>
-            <button class="tb-btn ${this._isActive('insertOrderedList') ? 'active' : ''}" @click=${() => this._exec('insertOrderedList')} aria-label="Ordered list" title="Numbered list">1. List</button>
+            <button class=${classMap({'tb-btn': true, 'active': ul})} @click=${() => this._exec('insertUnorderedList')} aria-label="Unordered list" title="Bullet list">• List</button>
+            <button class=${classMap({'tb-btn': true, 'active': ol})} @click=${() => this._exec('insertOrderedList')} aria-label="Ordered list" title="Numbered list">1. List</button>
             <span class="tb-sep"></span>
             <button class="tb-btn" @click=${this._onLinkClick} aria-label="Insert link" title="Link">🔗</button>
           </div>` : ''}
@@ -99,7 +105,7 @@ export class WuRichText extends LitElement {
           aria-label=${this.label || 'Rich text editor'}
         ></div>
       </div>
-      ${this.error ? html`<p class="error-msg" role="alert">${this.error}</p>` : ''}
+      <p class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</p>
     `;
   }
 }

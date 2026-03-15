@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { styles } from './wu-split-pane.styles.js';
 
@@ -19,13 +20,13 @@ export class WuSplitPane extends LitElement {
   static styles = styles;
 
   @property({ reflect: true }) orientation: 'horizontal' | 'vertical' = 'horizontal';
-  @property({ type: Number }) initialSize = 250;
-  @property({ type: Number }) minSize = 60;
-  @property({ type: Number }) maxSize = 800;
+  @property({ type: Number, attribute: 'initial-size' }) initialSize = 250;
+  @property({ type: Number, attribute: 'min-size' }) minSize = 60;
+  @property({ type: Number, attribute: 'max-size' }) maxSize = 800;
   /** Snap to min/max boundary when within this many px */
-  @property({ type: Number }) snapThreshold = 20;
+  @property({ type: Number, attribute: 'snap-threshold' }) snapThreshold = 20;
   /** Arrow-key step size in px (Shift multiplies by 5) */
-  @property({ type: Number }) keyStep = 8;
+  @property({ type: Number, attribute: 'key-step' }) keyStep = 8;
   /** Show a collapse/expand toggle button on the divider */
   @property({ type: Boolean }) collapsible = false;
 
@@ -34,10 +35,29 @@ export class WuSplitPane extends LitElement {
   @state() private _collapsed = false;
   private _sizeBeforeCollapse = 0;
 
+  override willUpdate(changed: Map<string, unknown>) {
+    // Sync _size from initialSize whenever it changes (handles attribute
+    // processing timing differences in test environments like happy-dom).
+    if (changed.has('initialSize') && !this._dragging) {
+      this._size = this.initialSize;
+      this._sizeBeforeCollapse = this.initialSize;
+    }
+  }
+
+  override firstUpdated() {
+    // Ensure _size reflects initialSize after first render (attribute timing safety).
+    if (!this._dragging) {
+      this._size = this.initialSize;
+      this._sizeBeforeCollapse = this.initialSize;
+    }
+  }
+
   connectedCallback() {
     super.connectedCallback();
-    this._size = this.initialSize;
-    this._sizeBeforeCollapse = this.initialSize;
+    if (this._size === 0) {
+      this._size = this.initialSize;
+      this._sizeBeforeCollapse = this.initialSize;
+    }
   }
 
   // ── Pointer events (mouse, touch, pen) ────────────────────────────────
@@ -45,7 +65,7 @@ export class WuSplitPane extends LitElement {
     if ((e.target as HTMLElement).closest('.collapse-btn')) return;
     e.preventDefault();
     this._dragging = true;
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch { /* not supported in test env */ }
   }
 
   private _onPointerMove(e: PointerEvent) {
@@ -67,7 +87,7 @@ export class WuSplitPane extends LitElement {
   private _onPointerUp(e: PointerEvent) {
     if (!this._dragging) return;
     this._dragging = false;
-    (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    try { (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId); } catch { /* not supported in test env */ }
     if (!this._collapsed) this._sizeBeforeCollapse = this._size;
   }
 
@@ -118,7 +138,7 @@ export class WuSplitPane extends LitElement {
       </div>
 
       <div
-        class="divider ${this._dragging ? 'active' : ''} ${this._collapsed ? 'is-collapsed' : ''}"
+        class=${classMap({'divider': true, 'active': this._dragging, 'is-collapsed': this._collapsed})}
         part="divider"
         role="separator"
         tabindex="0"
