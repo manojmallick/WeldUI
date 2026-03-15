@@ -31,16 +31,12 @@ export class WuGauge extends LitElement {
     const arcStart = -210 * (Math.PI / 180);
     const arcEnd = 30 * (Math.PI / 180);
     const fullArc = arcEnd - arcStart;
-    const circ = r * Math.abs(fullArc);
-    const dash = circ;
-    const offset = circ * (1 - pct);
     const x1 = cx + r * Math.cos(arcStart);
     const y1 = cy + r * Math.sin(arcStart);
     const x2 = cx + r * Math.cos(arcEnd);
     const y2 = cy + r * Math.sin(arcEnd);
     const cx2 = cx + r * Math.cos(arcStart + fullArc * pct);
     const cy2 = cy + r * Math.sin(arcStart + fullArc * pct);
-    const large = fullArc > Math.PI ? 1 : 0;
     const trackD = `M${x1},${y1} A${r},${r} 0 1,1 ${x2},${y2}`;
     const fillD = `M${x1},${y1} A${r},${r} 0 ${pct > 0.5 ? 1 : 0},1 ${cx2},${cy2}`;
     return html`
