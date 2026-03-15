@@ -112,6 +112,31 @@ importers:
         specifier: ^5.4.0
         version: 5.9.3
 
+  packages/charts:
+    dependencies:
+      '@weldui/core':
+        specifier: workspace:*
+        version: link:../core
+      lit:
+        specifier: ^3.1.0
+        version: 3.3.2
+    devDependencies:
+      '@weldui/build-tools':
+        specifier: workspace:*
+        version: link:../../tools/build-tools
+      typescript:
+        specifier: ^5.4.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.2.0
+        version: 5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3)
+      vite-plugin-dts:
+        specifier: ^3.8.0
+        version: 3.9.1(@types/node@25.4.0)(rollup@4.59.0)(typescript@5.9.3)(vite@5.4.21(@types/node@25.4.0)(less@4.6.2)(sass@1.97.3))
+      vitest:
+        specifier: ^1.4.0
+        version: 1.6.1(@types/node@25.4.0)(happy-dom@12.10.3)(less@4.6.2)(sass@1.97.3)
+
   packages/compliance:
     dependencies:
       '@weldui/core':
