@@ -12,13 +12,13 @@ WeldUI is a framework-agnostic component library built on **Web Components (Lit)
 
 ## Features
 
-- **36 production-ready components** — Phase 1 foundations + Phase 3 complex + Phase 4 compound components + compliance pack
+- **102 production-ready components** — 9 phases covering foundations, complex, compound, form primitives, data display, nav/overlays, charts, and rich media
 - **Framework wrappers** — React, Vue 3, Angular, Svelte 5
 - **3-layer token theming** — primitive → semantic → component; theme with one CSS file
-- **11 themes** — default, ocean, forest, midnight, sunset, fintech, healthcare, government, startup, editorial, high-contrast (WCAG AAA)
+- **12 themes** — default, ocean, forest, midnight, sunset, fintech, healthcare, government, startup, editorial, high-contrast (WCAG AAA)
 - **Compliance pack** — `@weldui/compliance` with GDPR, DORA, SOX components
+- **`@weldui/charts`** — 8 SVG chart components (bar, line, pie, gauge, sparkline, heatmap, area, scatter)
 - **Zero JavaScript theming** — 100% CSS custom properties
-- **230 passing unit tests** — Vitest + happy-dom
 - **WCAG 2.1 AA** minimum on every component
 
 ---
@@ -28,10 +28,11 @@ WeldUI is a framework-agnostic component library built on **Web Components (Lit)
 | Package | Description | Version |
 |---|---|---|
 | `@weldui/core` | Web Components (Lit) — the source of truth | `0.1.0` |
-| `@weldui/react` | React wrappers (36 components) | `0.1.0` |
-| `@weldui/vue` | Vue 3 wrappers (36 components) | `0.1.0` |
-| `@weldui/angular` | Angular directives (36 components) | `0.1.0` |
-| `@weldui/svelte` | Svelte 5 wrappers (43 components) | `0.1.0` |
+| `@weldui/charts` | SVG chart components (bar, line, pie, gauge, sparkline, heatmap, area, scatter) | `0.1.0` |
+| `@weldui/react` | React wrappers (94 components) | `0.1.0` |
+| `@weldui/vue` | Vue 3 wrappers (94 components) | `0.1.0` |
+| `@weldui/angular` | Angular directives (94 components) | `0.1.0` |
+| `@weldui/svelte` | Svelte 5 wrappers (94 components) | `0.1.0` |
 | `@weldui/theme-default` | Default light + dark theme | `1.0.0` |
 | `@weldui/compliance` | Compliance-grade form & audit components | `0.1.0` |
 
@@ -194,6 +195,81 @@ pnpm add @weldui/svelte @weldui/core @weldui/theme-default
 | Search | `<wu-search>` | Debounced search input · clearable · loading indicator |
 | Data Table | `<wu-data-table>` | Server-side pagination · sortable columns · row selection · inline search |
 
+### Phase 5 — Form Primitives
+
+| Component | Tag | Description |
+|---|---|---|
+| Radio | `<wu-radio>` + `<wu-radio-group>` | Mutually exclusive radio group · keyboard navigation |
+| Slider | `<wu-slider>` | Range slider · min/max/step · aria-valuenow |
+| Color Picker | `<wu-color-picker>` | Hex color input with swatch preview |
+| Rating | `<wu-rating>` | Interactive star rating · read-only mode |
+| Switch | `<wu-switch>` | Accessible on/off switch · `role="switch"` |
+| Pin Input | `<wu-pin-input>` | OTP/verification code · 4–8 split digit cells · paste support |
+| Combobox | `<wu-combobox>` | Autocomplete with filtered dropdown · async option loading |
+| Tag Input | `<wu-tag-input>` | Free-form chip creation · duplicate prevention |
+| Number Input | `<wu-number-input>` | Stepper buttons · min/max/step · keyboard increment |
+| Multi Select | `<wu-multi-select>` | Multi-value select with chip display · searchable |
+
+### Phase 6 — Data Display
+
+| Component | Tag | Description |
+|---|---|---|
+| Stat | `<wu-stat>` | KPI card · value, label, trend indicator, icon slot |
+| Timeline | `<wu-timeline>` + `<wu-timeline-item>` | Vertical/horizontal event timeline · icon variants |
+| Tag / Chip | `<wu-tag>` | Dismissible label chip · status color variants |
+| Kbd | `<wu-kbd>` | Keyboard key display — `⌘K`, `Ctrl+S` |
+| Code | `<wu-code>` | Inline or block code display · language hint |
+| Copy Button | `<wu-copy-button>` | Clipboard copy with success feedback |
+| Carousel | `<wu-carousel>` | Touch/swipe content slider · auto-play · loop |
+| List | `<wu-list>` + `<wu-list-item>` | Styled list with icons, descriptions, and actions |
+| Description List | `<wu-description-list>` | Accessible key/value pairs · horizontal/vertical layout |
+| Callout | `<wu-callout>` | Prominent info/warning/danger/success block |
+| Meter | `<wu-meter>` | Semantic `<meter>` wrapper · colour-coded ranges |
+| Collapse | `<wu-collapse>` | Animated expand/collapse content region |
+
+### Phase 7 — Navigation & Overlays
+
+| Component | Tag | Description |
+|---|---|---|
+| Drawer | `<wu-drawer>` | Slide-in panel (left/right/top/bottom) · focus trap |
+| Context Menu | `<wu-context-menu>` | Right-click / long-press trigger · nested sub-menus |
+| Dropdown | `<wu-dropdown>` | Button-triggered menu list · keyboard navigation |
+| Tree | `<wu-tree>` + `<wu-tree-item>` | Hierarchical file/folder tree · expand/collapse |
+| Bottom Nav | `<wu-bottom-nav>` | Mobile tab bar · active state · badge support |
+| Mega Menu | `<wu-mega-menu>` | Full-width nav panel with multi-column slot layout |
+| Notification Center | `<wu-notification-center>` | Bell icon + popover list · mark-read · mark-all-read |
+| Scroll Area | `<wu-scroll-area>` | Custom scrollbar skin · horizontal/vertical |
+| Split Pane | `<wu-split-pane>` | Drag-resizable two-panel layout · collapse to min size |
+| Speed Dial | `<wu-speed-dial>` | Floating action button with expandable action list |
+
+### Phase 8 — Charts (`@weldui/charts`)
+
+> Install separately: `pnpm add @weldui/charts`
+
+| Component | Tag | Description |
+|---|---|---|
+| Bar Chart | `<wu-bar-chart>` | Vertical bar chart · labelled axes · click events |
+| Line Chart | `<wu-line-chart>` | Multi-point line · optional area fill |
+| Pie / Donut | `<wu-pie-chart>` | Pie and donut variants · optional legend |
+| Gauge | `<wu-gauge>` | Radial arc gauge for dashboard KPIs |
+| Sparkline | `<wu-sparkline>` | Compact inline trend line — no axes |
+| Heatmap | `<wu-heatmap>` | GitHub-style contribution grid |
+| Area Chart | `<wu-area-chart>` | Filled area chart with gradient |
+| Scatter Plot | `<wu-scatter-plot>` | X/Y dot plot · labeled points · click events |
+
+### Phase 9 — Rich Media
+
+| Component | Tag | Description |
+|---|---|---|
+| Lightbox | `<wu-lightbox>` | Full-screen image viewer · prev/next · caption · Escape close |
+| Gallery | `<wu-gallery>` | Responsive CSS-grid photo grid · opens Lightbox on click |
+| Virtual List | `<wu-virtual-list>` | Windowed renderer for 10 000+ rows — fixed-height |
+| Sortable | `<wu-sortable>` | Drag-and-drop list reorder · HTML5 drag API · handle icon |
+| Kanban | `<wu-kanban>` + `<wu-kanban-column>` | Drag-and-drop card board · card move events |
+| Mention Input | `<wu-mention>` | `@user` trigger with autocomplete dropdown · keyboard nav |
+| QR Code | `<wu-qr-code>` | Pure-SVG QR code generator · size and color props |
+| Video Player | `<wu-video>` | HTML5 `<video>` wrapper with custom overlay controls |
+
 ---
 
 ## Theming
@@ -283,12 +359,13 @@ pnpm --filter docs storybook
 ```
 weldui/
 ├── packages/
-│   ├── core/           @weldui/core          — Web Components (Lit)
-│   ├── react/          @weldui/react         — React wrappers
-│   ├── vue/            @weldui/vue           — Vue 3 wrappers
-│   ├── angular/        @weldui/angular       — Angular directives
-│   ├── svelte/         @weldui/svelte        — Svelte 5 wrappers
-│   ├── themes/         @weldui/theme-*       — CSS theme packages
+│   ├── core/           @weldui/core          — Web Components (Lit, 94 components)
+│   ├── charts/         @weldui/charts        — SVG chart components (8 charts)
+│   ├── react/          @weldui/react         — React wrappers (94 components)
+│   ├── vue/            @weldui/vue           — Vue 3 wrappers (94 components)
+│   ├── angular/        @weldui/angular       — Angular directives (94 components)
+│   ├── svelte/         @weldui/svelte        — Svelte 5 wrappers (94 components)
+│   ├── themes/         @weldui/theme-*       — CSS theme packages (12 themes)
 │   ├── compliance/     @weldui/compliance    — Compliance components
 │   └── tokens-tailwind/ @weldui/tokens-tailwind
 ├── apps/
@@ -308,6 +385,23 @@ pnpm scaffold:component <name>
 ```
 
 This creates all 4 files (`wu-*.ts`, `.styles.ts`, `.stories.ts`, `.test.ts`) and registers the component in `packages/core/src/index.ts`.
+
+### Using `@weldui/charts`
+
+```bash
+pnpm add @weldui/charts @weldui/core
+```
+
+```html
+<script type="module" src="node_modules/@weldui/charts/dist/index.js"></script>
+
+<wu-bar-chart
+  .data=${[120, 200, 150, 80, 240]}
+  .labels=${['Jan', 'Feb', 'Mar', 'Apr', 'May']}
+  height="200"
+  show-values
+></wu-bar-chart>
+```
 
 ---
 

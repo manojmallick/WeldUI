@@ -32,7 +32,7 @@ The architecture is designed for three primary goals:
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
 │  │wu-button │ │wu-input  │ │wu-modal  │ │wu-table  │ ...  │
 │  └──────────┘ └──────────┘ └──────────┘ └──────────┘      │
-│                                                             │
+│  94 components across 9 phases                              │
 │  All styles reference CSS Custom Properties only            │
 └──────────────────────┬──────────────────────────────────────┘
                        │ reads
@@ -202,4 +202,26 @@ WeldUI only provides the UI structure.
          │ devDependency
       apps/docs
       apps/playground
+
+@weldui/charts  (peer: @weldui/core)
+         ▲
+         │ peerDependency
+      Consumer apps that need charts
 ```
+
+---
+
+## Component Library Phases
+
+| Phase | Package | Count | Focus |
+|---|---|---|---|
+| 1 | `@weldui/core` | 8 | Foundation primitives: button, badge, avatar, input, textarea, select, checkbox, toggle |
+| 3A | `@weldui/core` | 10 | Simple complex: card, modal, alert, spinner, progress, skeleton, divider, tooltip, popover, toast |
+| 3C | `@weldui/core` | 10 | Advanced: tabs, accordion, breadcrumb, pagination, table, date-picker, file-upload, stepper, command, data-grid |
+| 4 | `@weldui/core` | 8 | Compound: navbar, sidebar, form, dashboard, empty-state, error-page, search, data-table |
+| 5 | `@weldui/core` | 10 | Form primitives: radio, slider, color-picker, rating, switch, pin-input, combobox, tag-input, number-input, multi-select |
+| 6 | `@weldui/core` | 12 | Data display: stat, timeline, tag, kbd, code, copy-button, carousel, list, description-list, callout, meter, collapse |
+| 7 | `@weldui/core` | 10 | Nav & overlays: drawer, context-menu, dropdown, tree, bottom-nav, mega-menu, notification-center, scroll-area, split-pane, speed-dial |
+| 8 | `@weldui/charts` | 8 | SVG charts: bar, line, pie, gauge, sparkline, heatmap, area, scatter |
+| 9 | `@weldui/core` | 8 | Rich media: lightbox, gallery, virtual-list, sortable, kanban, mention, qr-code, video |
+| — | `@weldui/compliance` | 6 | Compliance: audit-form, immutable-display, consent-banner, dora-incident-status, sox-evidence-export |

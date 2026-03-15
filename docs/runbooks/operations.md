@@ -85,6 +85,41 @@ Enterprise contract signed. Client needs WeldUI access.
 
 ---
 
+# Runbook: Publishing `@weldui/charts`
+
+## Trigger
+A new chart component is ready or a bugfix to the charts package.
+
+## Steps
+
+1. **Build and verify**
+   ```bash
+   pnpm --filter @weldui/charts build
+   pnpm --filter @weldui/charts test
+   ```
+
+2. **Check bundle size** — must stay under 40 KB gzip
+   ```bash
+   ls -lh packages/charts/dist/index.js
+   ```
+
+3. **Bump version** using changesets
+   ```bash
+   pnpm changeset
+   # Select: @weldui/charts — patch / minor / major
+   ```
+
+4. **Publish**
+   ```bash
+   pnpm --filter @weldui/charts publish --access public
+   ```
+
+5. **Update MCP manifest** if new components were added
+   - Edit `tools/mcp-server/src/manifest.ts`
+   - Add `ComponentSpec` entries for each new chart tag
+
+---
+
 # Runbook: Incident Response (Production Issue)
 
 ## Severity Levels
