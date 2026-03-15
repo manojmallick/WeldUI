@@ -12,7 +12,9 @@
  */
 import { LitElement } from 'lit';
 
-const _origGetUpdateComplete = LitElement.prototype.getUpdateComplete as () => Promise<boolean>;
+const _origGetUpdateComplete = (LitElement.prototype as unknown as {
+  getUpdateComplete: () => Promise<boolean>;
+}).getUpdateComplete;
 
 (LitElement.prototype as any).getUpdateComplete = async function (
   this: LitElement & { isUpdatePending?: boolean }

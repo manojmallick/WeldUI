@@ -1,6 +1,8 @@
 import { LitElement } from 'lit';
 console.log('[setup] patching getUpdateComplete');
-const _orig = LitElement.prototype.getUpdateComplete as () => Promise<boolean>;
+const _orig = (LitElement.prototype as unknown as {
+  getUpdateComplete: () => Promise<boolean>;
+}).getUpdateComplete;
 let callCount = 0;
 (LitElement.prototype as any).getUpdateComplete = async function() {
   callCount++;
