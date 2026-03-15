@@ -219,5 +219,5 @@ export const InsideToolbar: Story = {
       Click the search bar to open the suggestion panel.
     </div>
   `,
-},
+};
 
