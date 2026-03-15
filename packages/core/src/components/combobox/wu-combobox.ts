@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-combobox.styles.js';
 
 export interface ComboboxOption {

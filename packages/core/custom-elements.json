@@ -346,6 +346,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/avatar-group/wu-avatar-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Stacks avatar components with an overflow count badge.",
+          "name": "WuAvatarGroup",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-avatar elements"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-avatar-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAvatarGroup",
+          "declaration": {
+            "name": "WuAvatarGroup",
+            "module": "src/components/avatar-group/wu-avatar-group.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-avatar-group",
+          "declaration": {
+            "name": "WuAvatarGroup",
+            "module": "src/components/avatar-group/wu-avatar-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/badge/wu-badge.ts",
       "declarations": [
         {
@@ -426,6 +472,101 @@
           "declaration": {
             "name": "WuBadge",
             "module": "src/components/badge/wu-badge.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bottom-nav/wu-bottom-nav.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Mobile bottom navigation bar.",
+          "name": "WuBottomNav",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-bottom-nav-item children"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on item activate, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-bottom-nav",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuBottomNav",
+          "declaration": {
+            "name": "WuBottomNav",
+            "module": "src/components/bottom-nav/wu-bottom-nav.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-bottom-nav",
+          "declaration": {
+            "name": "WuBottomNav",
+            "module": "src/components/bottom-nav/wu-bottom-nav.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/bottom-nav/wu-bottom-nav.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An item inside wu-bottom-nav.",
+          "name": "WuBottomNavItem",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-bottom-nav-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuBottomNavItem",
+          "declaration": {
+            "name": "WuBottomNavItem",
+            "module": "src/components/bottom-nav/wu-bottom-nav.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-bottom-nav-item",
+          "declaration": {
+            "name": "WuBottomNavItem",
+            "module": "src/components/bottom-nav/wu-bottom-nav.ts"
           }
         }
       ]
@@ -594,6 +735,136 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/calendar/wu-calendar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A standalone calendar for date selection.",
+          "name": "WuCalendar",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on date select, detail: { value: string (ISO date) }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-calendar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCalendar",
+          "declaration": {
+            "name": "WuCalendar",
+            "module": "src/components/calendar/wu-calendar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-calendar",
+          "declaration": {
+            "name": "WuCalendar",
+            "module": "src/components/calendar/wu-calendar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/callout/wu-callout.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A callout box for drawing attention to important content. Less urgent than `<wu-alert>` — no dismiss action.",
+          "name": "WuCallout",
+          "cssProperties": [
+            {
+              "name": "--wu-callout-bg",
+              "description": "Background colour"
+            },
+            {
+              "name": "--wu-callout-border",
+              "description": "Left accent border colour"
+            },
+            {
+              "name": "--wu-callout-color",
+              "description": "Icon and title colour"
+            }
+          ],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Callout body content"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "description": "Visual variant",
+              "type": {
+                "text": "'info' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "info",
+              "attribute": "variant",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "Visual variant",
+              "type": {
+                "text": "'info' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "info",
+              "fieldName": "variant"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-callout",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCallout",
+          "declaration": {
+            "name": "WuCallout",
+            "module": "src/components/callout/wu-callout.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-callout",
+          "declaration": {
+            "name": "WuCallout",
+            "module": "src/components/callout/wu-callout.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/card/wu-card.ts",
       "declarations": [
         {
@@ -629,6 +900,60 @@
           "declaration": {
             "name": "WuCard",
             "module": "src/components/card/wu-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/carousel/wu-carousel.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A carousel/slider component.",
+          "name": "WuCarousel",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Slide content (any elements)"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-slide-change",
+              "description": "Fires on slide change, detail: { index: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-carousel",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCarousel",
+          "declaration": {
+            "name": "WuCarousel",
+            "module": "src/components/carousel/wu-carousel.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-carousel",
+          "declaration": {
+            "name": "WuCarousel",
+            "module": "src/components/carousel/wu-carousel.ts"
           }
         }
       ]
@@ -704,6 +1029,306 @@
           "declaration": {
             "name": "WuCheckbox",
             "module": "src/components/checkbox/wu-checkbox.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code/wu-code.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Inline code snippet. For multi-line syntax-highlighted blocks use `<wu-code-block>`.",
+          "name": "WuCode",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "The code string to display inline"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-code",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCode",
+          "declaration": {
+            "name": "WuCode",
+            "module": "src/components/code/wu-code.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-code",
+          "declaration": {
+            "name": "WuCode",
+            "module": "src/components/code/wu-code.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/code-block/wu-code-block.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A syntax-highlighted code display block with copy button.",
+          "name": "WuCodeBlock",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-code-block",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCodeBlock",
+          "declaration": {
+            "name": "WuCodeBlock",
+            "module": "src/components/code-block/wu-code-block.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-code-block",
+          "declaration": {
+            "name": "WuCodeBlock",
+            "module": "src/components/code-block/wu-code-block.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/collapse/wu-collapse.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A single collapsible panel with a toggle trigger. For multi-panel grouped accordions use `<wu-accordion>`.",
+          "name": "WuCollapse",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "The content to show/hide"
+            },
+            {
+              "name": "trigger",
+              "description": "Custom trigger content (defaults to the `label` property)"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-open",
+              "description": "Emitted when the panel opens",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-close",
+              "description": "Emitted when the panel closes",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-collapse",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCollapse",
+          "declaration": {
+            "name": "WuCollapse",
+            "module": "src/components/collapse/wu-collapse.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-collapse",
+          "declaration": {
+            "name": "WuCollapse",
+            "module": "src/components/collapse/wu-collapse.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/color-picker/wu-color-picker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Utility: hsl → hex */ function hslToHex(h: number, s: number, l: number): string { s /= 100; l /= 100; const a = s * Math.min(l, 1 - l); const f = (n: number) => { const k = (n + h / 30) % 12; const c = l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)); return Math.round(255 * c).toString(16).padStart(2, '0'); }; return `#${f(0)}${f(8)}${f(4)}`; } /** A canvas-based colour picker with hue slider and hex input.",
+          "name": "WuColorPicker",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on colour change, detail: { value: string (hex) }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-color-picker",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuColorPicker",
+          "declaration": {
+            "name": "WuColorPicker",
+            "module": "src/components/color-picker/wu-color-picker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-color-picker",
+          "declaration": {
+            "name": "WuColorPicker",
+            "module": "src/components/color-picker/wu-color-picker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/combobox/wu-combobox.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An autocomplete / combobox input with dropdown suggestions. Supports static options or async loading.",
+          "name": "WuCombobox",
+          "cssProperties": [
+            {
+              "name": "--wu-cmb-height",
+              "description": "Input height"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "base",
+              "description": "The text input element"
+            },
+            {
+              "name": "dropdown",
+              "description": "The suggestions list"
+            }
+          ],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "options",
+              "description": "Input label */\n  @property()\n  label = '';\n\n  /** Placeholder text */\n  @property()\n  placeholder = 'Search…';\n\n  /** Currently selected value */\n  @property()\n  value = '';\n\n  /** Static options array",
+              "type": {
+                "text": "ComboboxOption[]"
+              },
+              "default": "[]",
+              "attribute": "options",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted when a value is selected. Detail: { value: string, label: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-input",
+              "description": "Emitted on every keystroke. Detail: { query: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-clear",
+              "description": "Emitted when the value is cleared.",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "options",
+              "description": "Input label */\n  @property()\n  label = '';\n\n  /** Placeholder text */\n  @property()\n  placeholder = 'Search…';\n\n  /** Currently selected value */\n  @property()\n  value = '';\n\n  /** Static options array",
+              "type": {
+                "text": "ComboboxOption[]"
+              },
+              "default": "[]",
+              "fieldName": "options"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-combobox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCombobox",
+          "declaration": {
+            "name": "WuCombobox",
+            "module": "src/components/combobox/wu-combobox.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-combobox",
+          "declaration": {
+            "name": "WuCombobox",
+            "module": "src/components/combobox/wu-combobox.ts"
           }
         }
       ]
@@ -804,6 +1429,172 @@
           "declaration": {
             "name": "WuCommand",
             "module": "src/components/command/wu-command.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/context-menu/wu-context-menu.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A right-click context menu component.",
+          "name": "WuContextMenu",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-select",
+              "description": "Fires when item selected, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-close",
+              "description": "Fires when menu is closed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-context-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuContextMenu",
+          "declaration": {
+            "name": "WuContextMenu",
+            "module": "src/components/context-menu/wu-context-menu.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-context-menu",
+          "declaration": {
+            "name": "WuContextMenu",
+            "module": "src/components/context-menu/wu-context-menu.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/copy-button/wu-copy-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A button that copies the given text to the clipboard.",
+          "name": "WuCopyButton",
+          "cssProperties": [
+            {
+              "name": "--wu-copy-button-*",
+              "description": "Inherits from button styles"
+            }
+          ],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-copy",
+              "description": "Emitted after a successful copy. Detail: `{ value: string }`",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-error",
+              "description": "Emitted when the clipboard API fails.",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-copy-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCopyButton",
+          "declaration": {
+            "name": "WuCopyButton",
+            "module": "src/components/copy-button/wu-copy-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-copy-button",
+          "declaration": {
+            "name": "WuCopyButton",
+            "module": "src/components/copy-button/wu-copy-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/countdown/wu-countdown.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A countdown timer that counts down to a target ISO date/time.",
+          "name": "WuCountdown",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-expire",
+              "description": "Fires when countdown reaches zero",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-countdown",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCountdown",
+          "declaration": {
+            "name": "WuCountdown",
+            "module": "src/components/countdown/wu-countdown.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-countdown",
+          "declaration": {
+            "name": "WuCountdown",
+            "module": "src/components/countdown/wu-countdown.ts"
           }
         }
       ]
@@ -1136,6 +1927,178 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/date-range-picker/wu-date-range-picker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A two-calendar date range picker.",
+          "name": "WuDateRangePicker",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on range confirmed, detail: { start: string, end: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-date-range-picker",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDateRangePicker",
+          "declaration": {
+            "name": "WuDateRangePicker",
+            "module": "src/components/date-range-picker/wu-date-range-picker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-date-range-picker",
+          "declaration": {
+            "name": "WuDateRangePicker",
+            "module": "src/components/date-range-picker/wu-date-range-picker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/description-list/wu-dl.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Description list container.",
+          "name": "WuDl",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-dl",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDl",
+          "declaration": {
+            "name": "WuDl",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-dl",
+          "declaration": {
+            "name": "WuDl",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/description-list/wu-dl.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Description list container.",
+          "name": "WuDt",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-dt",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDt",
+          "declaration": {
+            "name": "WuDt",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-dt",
+          "declaration": {
+            "name": "WuDt",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/description-list/wu-dl.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Description list container.",
+          "name": "WuDd",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-dd",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDd",
+          "declaration": {
+            "name": "WuDd",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-dd",
+          "declaration": {
+            "name": "WuDd",
+            "module": "src/components/description-list/wu-dl.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/divider/wu-divider.ts",
       "declarations": [
         {
@@ -1189,6 +2152,122 @@
           "declaration": {
             "name": "WuDivider",
             "module": "src/components/divider/wu-divider.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/drawer/wu-drawer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A sliding drawer/panel component with backdrop.",
+          "name": "WuDrawer",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Drawer body content"
+            },
+            {
+              "name": "footer",
+              "description": "Footer actions"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-close",
+              "description": "Fires when drawer requests close",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-drawer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDrawer",
+          "declaration": {
+            "name": "WuDrawer",
+            "module": "src/components/drawer/wu-drawer.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-drawer",
+          "declaration": {
+            "name": "WuDrawer",
+            "module": "src/components/drawer/wu-drawer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/dropdown/wu-dropdown.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A dropdown menu triggered by a slotted element.",
+          "name": "WuDropdown",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "trigger",
+              "description": "The element that triggers the dropdown"
+            },
+            {
+              "name": "",
+              "description": "Custom menu content (use .item class for styling)"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-select",
+              "description": "Fires on item select, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-dropdown",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDropdown",
+          "declaration": {
+            "name": "WuDropdown",
+            "module": "src/components/dropdown/wu-dropdown.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-dropdown",
+          "declaration": {
+            "name": "WuDropdown",
+            "module": "src/components/dropdown/wu-dropdown.ts"
           }
         }
       ]
@@ -1396,6 +2475,96 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/gallery/wu-gallery.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Image gallery grid with optional lightbox integration.",
+          "name": "WuGallery",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-image-click",
+              "description": "Fires on thumbnail click, detail: { index: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-gallery",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuGallery",
+          "declaration": {
+            "name": "WuGallery",
+            "module": "src/components/gallery/wu-gallery.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-gallery",
+          "declaration": {
+            "name": "WuGallery",
+            "module": "src/components/gallery/wu-gallery.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/image/wu-image.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An image component with fallback placeholder and lazy loading.",
+          "name": "WuImage",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-image",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuImage",
+          "declaration": {
+            "name": "WuImage",
+            "module": "src/components/image/wu-image.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-image",
+          "declaration": {
+            "name": "WuImage",
+            "module": "src/components/image/wu-image.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/input/wu-input.ts",
       "declarations": [
         {
@@ -1520,6 +2689,525 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/kanban/wu-kanban.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Kanban board container.",
+          "name": "WuKanban",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-kanban-column children"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-card-move",
+              "description": "Card moved, detail: { cardId, fromColumn, toColumn }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-kanban",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuKanban",
+          "declaration": {
+            "name": "WuKanban",
+            "module": "src/components/kanban/wu-kanban.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-kanban",
+          "declaration": {
+            "name": "WuKanban",
+            "module": "src/components/kanban/wu-kanban.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/kanban/wu-kanban.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Kanban board container.",
+          "name": "WuKanbanColumn",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-kanban-column children"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-card-move",
+              "description": "Card moved, detail: { cardId, fromColumn, toColumn }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-kanban-column",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuKanbanColumn",
+          "declaration": {
+            "name": "WuKanbanColumn",
+            "module": "src/components/kanban/wu-kanban.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-kanban-column",
+          "declaration": {
+            "name": "WuKanbanColumn",
+            "module": "src/components/kanban/wu-kanban.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/kbd/wu-kbd.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Renders a keyboard shortcut or key name with platform-native styling.",
+          "name": "WuKbd",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "The key name (e.g., \"Ctrl\", \"⌘\", \"Enter\")"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-kbd",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuKbd",
+          "declaration": {
+            "name": "WuKbd",
+            "module": "src/components/kbd/wu-kbd.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-kbd",
+          "declaration": {
+            "name": "WuKbd",
+            "module": "src/components/kbd/wu-kbd.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/lightbox/wu-lightbox.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Fullscreen image lightbox with navigation.",
+          "name": "WuLightbox",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-close",
+              "description": "Fires when the lightbox closes",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-lightbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLightbox",
+          "declaration": {
+            "name": "WuLightbox",
+            "module": "src/components/lightbox/wu-lightbox.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-lightbox",
+          "declaration": {
+            "name": "WuLightbox",
+            "module": "src/components/lightbox/wu-lightbox.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/list/wu-list.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A semantic list container. Pair with `<wu-list-item>` for each item.",
+          "name": "WuList",
+          "cssProperties": [
+            {
+              "name": "--wu-list-*",
+              "description": "Inherits font tokens"
+            }
+          ],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "One or more `<wu-list-item>` elements"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "description": "List style type",
+              "type": {
+                "text": "'unordered' | 'ordered' | 'none'"
+              },
+              "default": "unordered",
+              "attribute": "type",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "type",
+              "description": "List style type",
+              "type": {
+                "text": "'unordered' | 'ordered' | 'none'"
+              },
+              "default": "unordered",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuList",
+          "declaration": {
+            "name": "WuList",
+            "module": "src/components/list/wu-list.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-list",
+          "declaration": {
+            "name": "WuList",
+            "module": "src/components/list/wu-list.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/list/wu-list.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "List style type */",
+          "name": "WuListItem",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Item content"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-list-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuListItem",
+          "declaration": {
+            "name": "WuListItem",
+            "module": "src/components/list/wu-list.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-list-item",
+          "declaration": {
+            "name": "WuListItem",
+            "module": "src/components/list/wu-list.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/mega-menu/wu-mega-menu.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A multi-column flyout menu for navigation.",
+          "name": "WuMegaMenu",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "trigger",
+              "description": "The element that opens the menu"
+            },
+            {
+              "name": "",
+              "description": "Column content"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-open",
+              "description": "Fires when the menu opens",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-close",
+              "description": "Fires when the menu closes",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-mega-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMegaMenu",
+          "declaration": {
+            "name": "WuMegaMenu",
+            "module": "src/components/mega-menu/wu-mega-menu.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-mega-menu",
+          "declaration": {
+            "name": "WuMegaMenu",
+            "module": "src/components/mega-menu/wu-mega-menu.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/mention/wu-mention.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Text input with @ mention autocomplete.",
+          "name": "WuMention",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-mention",
+              "description": "Fires when user is mentioned, detail: { user: MentionUser }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-change",
+              "description": "Fires on input change, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-mention",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMention",
+          "declaration": {
+            "name": "WuMention",
+            "module": "src/components/mention/wu-mention.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-mention",
+          "declaration": {
+            "name": "WuMention",
+            "module": "src/components/mention/wu-mention.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/meter/wu-meter.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A measurement bar (like the native `<meter>` element) with a label and value display.",
+          "name": "WuMeter",
+          "cssProperties": [
+            {
+              "name": "--wu-meter-fill-bg",
+              "description": "Fill colour (overridden by variant)"
+            },
+            {
+              "name": "--wu-meter-track-bg",
+              "description": "Track background colour"
+            },
+            {
+              "name": "--wu-meter-height",
+              "description": "Bar height"
+            }
+          ],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "description": "Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Unit suffix (e.g. '%', 'GB') */\n  @property()\n  unit = '';\n\n  /** Visual variant",
+              "type": {
+                "text": "'default' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "default",
+              "attribute": "variant",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "variant",
+              "description": "Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Unit suffix (e.g. '%', 'GB') */\n  @property()\n  unit = '';\n\n  /** Visual variant",
+              "type": {
+                "text": "'default' | 'success' | 'warning' | 'danger'"
+              },
+              "default": "default",
+              "fieldName": "variant"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-meter",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMeter",
+          "declaration": {
+            "name": "WuMeter",
+            "module": "src/components/meter/wu-meter.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-meter",
+          "declaration": {
+            "name": "WuMeter",
+            "module": "src/components/meter/wu-meter.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/modal/wu-modal.ts",
       "declarations": [
         {
@@ -1619,6 +3307,69 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/multi-select/wu-multi-select.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A multi-selection dropdown with chip display, search, and select-all.",
+          "name": "WuMultiSelect",
+          "cssProperties": [
+            {
+              "name": "--wu-ms-height",
+              "description": "Minimum input height"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "chips-input",
+              "description": "The chips + search input container"
+            },
+            {
+              "name": "dropdown",
+              "description": "The options list"
+            }
+          ],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted when selection changes. Detail: { values: string[] }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-multi-select",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMultiSelect",
+          "declaration": {
+            "name": "WuMultiSelect",
+            "module": "src/components/multi-select/wu-multi-select.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-multi-select",
+          "declaration": {
+            "name": "WuMultiSelect",
+            "module": "src/components/multi-select/wu-multi-select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/navbar/wu-navbar.ts",
       "declarations": [
         {
@@ -1654,6 +3405,96 @@
           "declaration": {
             "name": "WuNavbar",
             "module": "src/components/navbar/wu-navbar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/notification-center/wu-notification-center.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Notification center with bell icon.",
+          "name": "WuNotificationCenter",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-notification-click",
+              "description": "Fires on notification click, detail: { id: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-notification-center",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNotificationCenter",
+          "declaration": {
+            "name": "WuNotificationCenter",
+            "module": "src/components/notification-center/wu-notification-center.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-notification-center",
+          "declaration": {
+            "name": "WuNotificationCenter",
+            "module": "src/components/notification-center/wu-notification-center.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/number/wu-number.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Formats a number with locale-aware formatting (currency, percentage, decimal).",
+          "name": "WuNumber",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-number",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNumber",
+          "declaration": {
+            "name": "WuNumber",
+            "module": "src/components/number/wu-number.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-number",
+          "declaration": {
+            "name": "WuNumber",
+            "module": "src/components/number/wu-number.ts"
           }
         }
       ]
@@ -1712,6 +3553,67 @@
           "declaration": {
             "name": "WuPagination",
             "module": "src/components/pagination/wu-pagination.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/pin-input/wu-pin-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "OTP / verification code input — splits into individual digit fields.",
+          "name": "WuPinInput",
+          "cssProperties": [
+            {
+              "name": "-",
+              "description": "inherited from input styling"
+            }
+          ],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted when a digit changes. Detail: { value: string, complete: boolean }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-complete",
+              "description": "Emitted when all digits are filled. Detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-pin-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuPinInput",
+          "declaration": {
+            "name": "WuPinInput",
+            "module": "src/components/pin-input/wu-pin-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-pin-input",
+          "declaration": {
+            "name": "WuPinInput",
+            "module": "src/components/pin-input/wu-pin-input.ts"
           }
         }
       ]
@@ -1888,6 +3790,363 @@
           "declaration": {
             "name": "WuProgress",
             "module": "src/components/progress/wu-progress.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/qr-code/wu-qr-code.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "QR code generator using pure SVG path encoding. Uses a compact Reed-Solomon QR implementation for short strings. For production use, swap _encode() with a full QR library.",
+          "name": "WuQrCode",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-qr-code",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuQrCode",
+          "declaration": {
+            "name": "WuQrCode",
+            "module": "src/components/qr-code/wu-qr-code.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-qr-code",
+          "declaration": {
+            "name": "WuQrCode",
+            "module": "src/components/qr-code/wu-qr-code.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/radio/wu-radio.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A single radio button within a radio group.",
+          "name": "WuRadio",
+          "cssProperties": [
+            {
+              "name": "--wu-radio-size",
+              "description": "Size of the radio circle (default 18px)"
+            },
+            {
+              "name": "--wu-radio-color",
+              "description": "Selected state colour"
+            },
+            {
+              "name": "--wu-radio-border",
+              "description": "Unselected border colour"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "base",
+              "description": "Host input element wrapper"
+            }
+          ],
+          "slots": [
+            {
+              "name": "",
+              "description": "Label text for the radio button"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted when this radio is selected",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-radio",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRadio",
+          "declaration": {
+            "name": "WuRadio",
+            "module": "src/components/radio/wu-radio.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-radio",
+          "declaration": {
+            "name": "WuRadio",
+            "module": "src/components/radio/wu-radio.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/radio/wu-radio.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A group of radio buttons — manages selection state and keyboard navigation.",
+          "name": "WuRadioGroup",
+          "cssProperties": [
+            {
+              "name": "--wu-radio-group-gap",
+              "description": "Gap between radio items"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "group",
+              "description": "The flex container holding radio items"
+            }
+          ],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-radio elements"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "orientation",
+              "description": "The name attribute applied to all child wu-radio elements */\n  @property()\n  name = '';\n\n  /** Currently selected value */\n  @property()\n  value = '';\n\n  /** Legend / label for the group */\n  @property()\n  label = '';\n\n  /** Layout direction",
+              "type": {
+                "text": "'vertical' | 'horizontal'"
+              },
+              "default": "vertical",
+              "attribute": "orientation",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emits when selected value changes. Detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "orientation",
+              "description": "The name attribute applied to all child wu-radio elements */\n  @property()\n  name = '';\n\n  /** Currently selected value */\n  @property()\n  value = '';\n\n  /** Legend / label for the group */\n  @property()\n  label = '';\n\n  /** Layout direction",
+              "type": {
+                "text": "'vertical' | 'horizontal'"
+              },
+              "default": "vertical",
+              "fieldName": "orientation"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-radio-group",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRadioGroup",
+          "declaration": {
+            "name": "WuRadioGroup",
+            "module": "src/components/radio/wu-radio.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-radio-group",
+          "declaration": {
+            "name": "WuRadioGroup",
+            "module": "src/components/radio/wu-radio.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/rating/wu-rating.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A star rating input/display component.",
+          "name": "WuRating",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on rating change, detail: { value: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-rating",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRating",
+          "declaration": {
+            "name": "WuRating",
+            "module": "src/components/rating/wu-rating.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-rating",
+          "declaration": {
+            "name": "WuRating",
+            "module": "src/components/rating/wu-rating.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/rich-text/wu-rich-text.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A contenteditable rich text editor with a formatting toolbar.",
+          "name": "WuRichText",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on content change, detail: { value: string (HTML), text: string (plain) }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-focus",
+              "description": "Fires when editor gains focus",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-blur",
+              "description": "Fires when editor loses focus",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-rich-text",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRichText",
+          "declaration": {
+            "name": "WuRichText",
+            "module": "src/components/rich-text/wu-rich-text.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-rich-text",
+          "declaration": {
+            "name": "WuRichText",
+            "module": "src/components/rich-text/wu-rich-text.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/scroll-area/wu-scroll-area.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A scroll container with styled custom scrollbars.",
+          "name": "WuScrollArea",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Scrollable content"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-scroll-area",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuScrollArea",
+          "declaration": {
+            "name": "WuScrollArea",
+            "module": "src/components/scroll-area/wu-scroll-area.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-scroll-area",
+          "declaration": {
+            "name": "WuScrollArea",
+            "module": "src/components/scroll-area/wu-scroll-area.ts"
           }
         }
       ]
@@ -2224,6 +4483,208 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/slider/wu-slider.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A range slider for selecting numeric values.",
+          "name": "WuSlider",
+          "cssProperties": [
+            {
+              "name": "--wu-slider-track-height",
+              "description": "Height of the track"
+            },
+            {
+              "name": "--wu-slider-thumb-size",
+              "description": "Size of the thumb"
+            },
+            {
+              "name": "--wu-slider-thumb-color",
+              "description": "Colour of the thumb"
+            },
+            {
+              "name": "--wu-slider-track-color",
+              "description": "Colour of the unfilled track"
+            },
+            {
+              "name": "--wu-slider-fill-color",
+              "description": "Colour of the filled track"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "base",
+              "description": "The input range element"
+            }
+          ],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "ticks",
+              "description": "Slider label */\n  @property()\n  label = '';\n\n  /** Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "attribute": "ticks",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted on value change. Detail: { value: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-input",
+              "description": "Emitted on every input (during drag). Detail: { value: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "ticks",
+              "description": "Slider label */\n  @property()\n  label = '';\n\n  /** Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
+              "type": {
+                "text": "number[]"
+              },
+              "default": "[]",
+              "fieldName": "ticks"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-slider",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSlider",
+          "declaration": {
+            "name": "WuSlider",
+            "module": "src/components/slider/wu-slider.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-slider",
+          "declaration": {
+            "name": "WuSlider",
+            "module": "src/components/slider/wu-slider.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sortable/wu-sortable.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Drag-and-drop sortable list.",
+          "name": "WuSortable",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-sort",
+              "description": "Fires after reorder, detail: { items: unknown[], from: number, to: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sortable",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSortable",
+          "declaration": {
+            "name": "WuSortable",
+            "module": "src/components/sortable/wu-sortable.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sortable",
+          "declaration": {
+            "name": "WuSortable",
+            "module": "src/components/sortable/wu-sortable.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/speed-dial/wu-speed-dial.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A FAB with expanding action buttons (speed dial).",
+          "name": "WuSpeedDial",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-action-click",
+              "description": "Fires on action click, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-speed-dial",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSpeedDial",
+          "declaration": {
+            "name": "WuSpeedDial",
+            "module": "src/components/speed-dial/wu-speed-dial.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-speed-dial",
+          "declaration": {
+            "name": "WuSpeedDial",
+            "module": "src/components/speed-dial/wu-speed-dial.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/spinner/wu-spinner.ts",
       "declarations": [
         {
@@ -2302,6 +4763,105 @@
           "declaration": {
             "name": "WuSpinner",
             "module": "src/components/spinner/wu-spinner.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/split-pane/wu-split-pane.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A resizable split panel layout.",
+          "name": "WuSplitPane",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "primary",
+              "description": "Primary (fixed) panel"
+            },
+            {
+              "name": "secondary",
+              "description": "Secondary (flex) panel"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-resize",
+              "description": "Fires during drag, detail: { position: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-split-pane",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSplitPane",
+          "declaration": {
+            "name": "WuSplitPane",
+            "module": "src/components/split-pane/wu-split-pane.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-split-pane",
+          "declaration": {
+            "name": "WuSplitPane",
+            "module": "src/components/split-pane/wu-split-pane.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/stat/wu-stat.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A metric/KPI display card.",
+          "name": "WuStat",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-stat",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuStat",
+          "declaration": {
+            "name": "WuStat",
+            "module": "src/components/stat/wu-stat.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-stat",
+          "declaration": {
+            "name": "WuStat",
+            "module": "src/components/stat/wu-stat.ts"
           }
         }
       ]
@@ -2433,6 +4993,89 @@
           "declaration": {
             "name": "WuStepper",
             "module": "src/components/stepper/wu-stepper.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/switch/wu-switch.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WuSwitch",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "labelPosition",
+              "description": "Whether the switch is on */\n  @property({ type: Boolean, reflect: true })\n  checked = false;\n\n  /** Disabled state */\n  @property({ type: Boolean, reflect: true })\n  disabled = false;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Label position relative to the track",
+              "type": {
+                "text": "'start' | 'end'"
+              },
+              "default": "end",
+              "attribute": "label-position",
+              "reflects": false
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "description": "Whether the switch is on */\n  @property({ type: Boolean, reflect: true })\n  checked = false;\n\n  /** Disabled state */\n  @property({ type: Boolean, reflect: true })\n  disabled = false;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Label position relative to the track */\n  @property({ attribute: 'label-position' })\n  labelPosition: 'start' | 'end' = 'end';\n\n  /** Size variant",
+              "type": {
+                "text": "'sm' | 'md' | 'lg'"
+              },
+              "default": "md",
+              "attribute": "size",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "label-position",
+              "description": "Whether the switch is on */\n  @property({ type: Boolean, reflect: true })\n  checked = false;\n\n  /** Disabled state */\n  @property({ type: Boolean, reflect: true })\n  disabled = false;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Label position relative to the track",
+              "type": {
+                "text": "'start' | 'end'"
+              },
+              "default": "end",
+              "fieldName": "labelPosition"
+            },
+            {
+              "name": "size",
+              "description": "Whether the switch is on */\n  @property({ type: Boolean, reflect: true })\n  checked = false;\n\n  /** Disabled state */\n  @property({ type: Boolean, reflect: true })\n  disabled = false;\n\n  /** Label text */\n  @property()\n  label?: string;\n\n  /** Label position relative to the track */\n  @property({ attribute: 'label-position' })\n  labelPosition: 'start' | 'end' = 'end';\n\n  /** Size variant",
+              "type": {
+                "text": "'sm' | 'md' | 'lg'"
+              },
+              "default": "md",
+              "fieldName": "size"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-switch",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSwitch",
+          "declaration": {
+            "name": "WuSwitch",
+            "module": "src/components/switch/wu-switch.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-switch",
+          "declaration": {
+            "name": "WuSwitch",
+            "module": "src/components/switch/wu-switch.ts"
           }
         }
       ]
@@ -2769,6 +5412,128 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/tag/wu-tag.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A dismissible tag/chip for labelling.",
+          "name": "WuTag",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Tag label content"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-dismiss",
+              "description": "Fires when dismiss button clicked",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tag",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTag",
+          "declaration": {
+            "name": "WuTag",
+            "module": "src/components/tag/wu-tag.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tag",
+          "declaration": {
+            "name": "WuTag",
+            "module": "src/components/tag/wu-tag.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tag-input/wu-tag-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A tag/chip input field that allows creating tags by pressing Enter or comma.",
+          "name": "WuTagInput",
+          "cssProperties": [
+            {
+              "name": "--wu-tag-input-bg",
+              "description": "Container background"
+            }
+          ],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires when tags change, detail: { values: string[] }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-add",
+              "description": "Fires when a tag is added, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-remove",
+              "description": "Fires when a tag is removed, detail: { value: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tag-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTagInput",
+          "declaration": {
+            "name": "WuTagInput",
+            "module": "src/components/tag-input/wu-tag-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tag-input",
+          "declaration": {
+            "name": "WuTagInput",
+            "module": "src/components/tag-input/wu-tag-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/textarea/wu-textarea.ts",
       "declarations": [
         {
@@ -2845,6 +5610,151 @@
           "declaration": {
             "name": "WuTextarea",
             "module": "src/components/textarea/wu-textarea.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/time-picker/wu-time-picker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A time picker with hour/minute dropdowns and optional AM/PM.",
+          "name": "WuTimePicker",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Fires on time change, detail: { value: string (HH:MM) }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-time-picker",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTimePicker",
+          "declaration": {
+            "name": "WuTimePicker",
+            "module": "src/components/time-picker/wu-time-picker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-time-picker",
+          "declaration": {
+            "name": "WuTimePicker",
+            "module": "src/components/time-picker/wu-time-picker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/timeline/wu-timeline.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Timeline container.",
+          "name": "WuTimeline",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-timeline-item elements"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-timeline",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTimeline",
+          "declaration": {
+            "name": "WuTimeline",
+            "module": "src/components/timeline/wu-timeline.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-timeline",
+          "declaration": {
+            "name": "WuTimeline",
+            "module": "src/components/timeline/wu-timeline.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/timeline/wu-timeline.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Timeline container.",
+          "name": "WuTimelineItem",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-timeline-item elements"
+            },
+            {
+              "name": "",
+              "description": "Body content"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-timeline-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTimelineItem",
+          "declaration": {
+            "name": "WuTimelineItem",
+            "module": "src/components/timeline/wu-timeline.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-timeline-item",
+          "declaration": {
+            "name": "WuTimelineItem",
+            "module": "src/components/timeline/wu-timeline.ts"
           }
         }
       ]
@@ -3189,6 +6099,222 @@
           "declaration": {
             "name": "WuTooltip",
             "module": "src/components/tooltip/wu-tooltip.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tree/wu-tree.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Tree container component.",
+          "name": "WuTree",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-tree-item children"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tree",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTree",
+          "declaration": {
+            "name": "WuTree",
+            "module": "src/components/tree/wu-tree.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tree",
+          "declaration": {
+            "name": "WuTree",
+            "module": "src/components/tree/wu-tree.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tree/wu-tree.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Tree container component.",
+          "name": "WuTreeItem",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "wu-tree-item children"
+            },
+            {
+              "name": "",
+              "description": "Child wu-tree-item elements"
+            }
+          ],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-select",
+              "description": "Fires when selected, detail: { label: string }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tree-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTreeItem",
+          "declaration": {
+            "name": "WuTreeItem",
+            "module": "src/components/tree/wu-tree.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tree-item",
+          "declaration": {
+            "name": "WuTreeItem",
+            "module": "src/components/tree/wu-tree.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/video/wu-video.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Video player with custom controls.",
+          "name": "WuVideo",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-play",
+              "description": "Fires when video starts playing",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-pause",
+              "description": "Fires when video pauses",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-ended",
+              "description": "Fires when video ends",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-video",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuVideo",
+          "declaration": {
+            "name": "WuVideo",
+            "module": "src/components/video/wu-video.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-video",
+          "declaration": {
+            "name": "WuVideo",
+            "module": "src/components/video/wu-video.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/virtual-list/wu-virtual-list.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Virtual scrolling list — only renders visible items.",
+          "name": "WuVirtualList",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-visible-change",
+              "description": "Fires when visible range changes, detail: { start: number, end: number }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-virtual-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuVirtualList",
+          "declaration": {
+            "name": "WuVirtualList",
+            "module": "src/components/virtual-list/wu-virtual-list.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-virtual-list",
+          "declaration": {
+            "name": "WuVirtualList",
+            "module": "src/components/virtual-list/wu-virtual-list.ts"
           }
         }
       ]

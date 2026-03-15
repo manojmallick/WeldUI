@@ -6,9 +6,6 @@ function isoToDate(s: string): Date | null {
   const d = new Date(s);
   return isNaN(d.getTime()) ? null : d;
 }
-function dateToIso(d: Date): string {
-  return d.toISOString().split('T')[0];
-}
 function daysInMonth(year: number, month: number): number {
   return new Date(year, month + 1, 0).getDate();
 }
