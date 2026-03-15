@@ -723,6 +723,162 @@ export const COMPONENTS: ComponentSpec[] = [
     ],
     example: '<wu-data-table searchable selectable></wu-data-table>',
   },
+
+  // ── Phase 5: Form Primitives ─────────────────────────────────────────────
+
+  { tag: 'wu-radio-group', class: 'WuRadioGroup', description: 'A radio group container managing mutual exclusion.', phase: 5 as any,
+    properties: [{ name: 'value', type: 'string', description: 'Selected radio value' }, { name: 'name', type: 'string', description: 'Name attribute for all radios' }, { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables all radios' }],
+    slots: [{ name: '', description: 'wu-radio elements' }], events: [{ name: 'wu-change', detail: '{ value: string }', description: 'Fires when selection changes' }],
+    example: '<wu-radio-group name="g"><wu-radio value="a">Option A</wu-radio><wu-radio value="b">Option B</wu-radio></wu-radio-group>' },
+
+  { tag: 'wu-slider', class: 'WuSlider', description: 'A range slider input with optional labels.', phase: 5 as any,
+    properties: [{ name: 'min', type: 'number', default: '0', description: 'Minimum value' }, { name: 'max', type: 'number', default: '100', description: 'Maximum value' }, { name: 'step', type: 'number', default: '1', description: 'Step increment' }, { name: 'value', type: 'number', default: '0', description: 'Current value' }, { name: 'disabled', type: 'boolean', default: 'false', description: 'Disabled state' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: number }', description: 'Fires when value changes' }],
+    example: '<wu-slider min="0" max="100" value="50"></wu-slider>' },
+
+  { tag: 'wu-rating', class: 'WuRating', description: 'A star-rating input.', phase: 5 as any,
+    properties: [{ name: 'value', type: 'number', default: '0', description: 'Current rating' }, { name: 'max', type: 'number', default: '5', description: 'Maximum stars' }, { name: 'readonly', type: 'boolean', default: 'false', description: 'Read-only star display' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: number }', description: 'Fires when rating changes' }],
+    example: '<wu-rating value="3" max="5"></wu-rating>' },
+
+  { tag: 'wu-color-picker', class: 'WuColorPicker', description: 'Inline hex color picker with swatch preview.', phase: 5 as any,
+    properties: [{ name: 'value', type: 'string', default: '#000000', description: 'Current hex color' }, { name: 'disabled', type: 'boolean', default: 'false', description: 'Disabled state' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: string }', description: 'Fires when color changes' }],
+    example: '<wu-color-picker value="#3b82f6"></wu-color-picker>' },
+
+  { tag: 'wu-switch', class: 'WuSwitch', description: 'An accessible on/off toggle switch (ARIA role=switch).', phase: 5 as any,
+    properties: [{ name: 'checked', type: 'boolean', default: 'false', description: 'Checked state' }, { name: 'disabled', type: 'boolean', default: 'false', description: 'Disabled state' }, { name: 'label', type: 'string', description: 'Visible label text' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ checked: boolean }', description: 'Fires when toggled' }],
+    example: '<wu-switch label="Dark mode" checked></wu-switch>' },
+
+  { tag: 'wu-pin-input', class: 'WuPinInput', description: 'A PIN/OTP input with N separate digit cells.', phase: 5 as any,
+    properties: [{ name: 'length', type: 'number', default: '4', description: 'Number of digit cells' }, { name: 'type', type: "'number'|'text'", default: 'number', description: 'Input type' }, { name: 'disabled', type: 'boolean', default: 'false', description: 'Disabled state' }],
+    slots: [], events: [{ name: 'wu-complete', detail: '{ value: string }', description: 'Fires when all cells are filled' }, { name: 'wu-change', detail: '{ value: string }', description: 'Fires on each keystroke' }],
+    example: '<wu-pin-input length="6"></wu-pin-input>' },
+
+  { tag: 'wu-combobox', class: 'WuCombobox', description: 'An autocomplete combobox with filtered dropdown.', phase: 5 as any,
+    properties: [{ name: 'options', type: 'ComboboxOption[]', description: 'Array of {value, label} options (JS property)' }, { name: 'value', type: 'string', description: 'Selected value' }, { name: 'placeholder', type: 'string', description: 'Input placeholder' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: string, label: string }', description: 'Fires when option selected' }],
+    example: '<wu-combobox placeholder="Search countries…"></wu-combobox>' },
+
+  { tag: 'wu-tag-input', class: 'WuTagInput', description: 'A multi-value tag/chip input.', phase: 5 as any,
+    properties: [{ name: 'tags', type: 'string[]', description: 'Current tags (JS property)' }, { name: 'placeholder', type: 'string', description: 'Placeholder text' }, { name: 'max', type: 'number', description: 'Maximum number of tags' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ tags: string[] }', description: 'Fires when tags change' }],
+    example: '<wu-tag-input></wu-tag-input>' },
+
+  { tag: 'wu-number-input', class: 'WuNumberInput', description: 'A number input with increment/decrement stepper buttons.', phase: 5 as any,
+    properties: [{ name: 'value', type: 'number', default: '0', description: 'Current value' }, { name: 'min', type: 'number', description: 'Minimum value' }, { name: 'max', type: 'number', description: 'Maximum value' }, { name: 'step', type: 'number', default: '1', description: 'Step increment' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: number }', description: 'Fires when value changes' }],
+    example: '<wu-number-input value="5" min="0" max="10"></wu-number-input>' },
+
+  { tag: 'wu-multi-select', class: 'WuMultiSelect', description: 'A multi-value select dropdown with tag chips.', phase: 5 as any,
+    properties: [{ name: 'options', type: 'MultiSelectOption[]', description: 'Array of {value, label} options' }, { name: 'value', type: 'string[]', description: 'Selected values array' }, { name: 'placeholder', type: 'string', description: 'Placeholder text' }],
+    slots: [], events: [{ name: 'wu-change', detail: '{ value: string[] }', description: 'Fires when selection changes' }],
+    example: '<wu-multi-select placeholder="Select tags…"></wu-multi-select>' },
+
+  // ── Phase 6: Data Display ────────────────────────────────────────────────
+
+  { tag: 'wu-stat', class: 'WuStat', description: 'A KPI stat card with value, label, trend indicator, and icon slot.', phase: 6 as any,
+    properties: [{ name: 'value', type: 'string', description: 'Primary numeric value' }, { name: 'label', type: 'string', description: 'Descriptive label' }, { name: 'delta', type: 'string', description: 'Change value (e.g. "+12%")' }, { name: 'trend', type: "'up'|'down'|'neutral'", description: 'Trend direction' }],
+    slots: [{ name: 'icon', description: 'Icon for the stat' }], events: [],
+    example: '<wu-stat value="42,000" label="Revenue" delta="+12%" trend="up"></wu-stat>' },
+
+  { tag: 'wu-tag', class: 'WuTag', description: 'A label/chip tag with variant and optional dismiss button.', phase: 6 as any,
+    properties: [{ name: 'variant', type: "'default'|'primary'|'success'|'warning'|'danger'", default: 'default', description: 'Color variant' }, { name: 'dismissible', type: 'boolean', default: 'false', description: 'Shows a dismiss × button' }],
+    slots: [{ name: '', description: 'Tag label text' }], events: [{ name: 'wu-dismiss', description: 'Fires when dismissible tag is removed' }],
+    example: '<wu-tag variant="success">Approved</wu-tag>' },
+
+  { tag: 'wu-code', class: 'WuCode', description: 'A syntax-highlighted inline or block code display.', phase: 6 as any,
+    properties: [{ name: 'language', type: 'string', description: 'Language for highlighting hint' }, { name: 'block', type: 'boolean', default: 'false', description: 'Block vs inline display' }],
+    slots: [{ name: '', description: 'Code content' }], events: [],
+    example: "<wu-code language=\"ts\">const x = 42;</wu-code>" },
+
+  { tag: 'wu-copy-button', class: 'WuCopyButton', description: 'A button that copies text to the clipboard.', phase: 6 as any,
+    properties: [{ name: 'value', type: 'string', description: 'Text to copy' }, { name: 'label', type: 'string', default: 'Copy', description: 'Button label' }],
+    slots: [], events: [{ name: 'wu-copy', description: 'Fires after successful copy' }],
+    example: '<wu-copy-button value="npm install @weldui/core"></wu-copy-button>' },
+
+  { tag: 'wu-carousel', class: 'WuCarousel', description: 'A touch/swipe-enabled image/content carousel.', phase: 6 as any,
+    properties: [{ name: 'index', type: 'number', default: '0', description: 'Active slide index' }, { name: 'autoplay', type: 'boolean', default: 'false', description: 'Auto-advance slides' }, { name: 'loop', type: 'boolean', default: 'false', description: 'Loop back to first after last' }],
+    slots: [{ name: '', description: 'Slide elements' }], events: [{ name: 'wu-change', detail: '{ index: number }', description: 'Fires when active slide changes' }],
+    example: '<wu-carousel><img src="a.jpg"><img src="b.jpg"></wu-carousel>' },
+
+  { tag: 'wu-collapse', class: 'WuCollapse', description: 'An animated expandable/collapsible content region.', phase: 6 as any,
+    properties: [{ name: 'open', type: 'boolean', default: 'false', description: 'Expanded state' }, { name: 'label', type: 'string', description: 'Trigger label' }],
+    slots: [{ name: '', description: 'Collapsible content' }], events: [{ name: 'wu-toggle', detail: '{ open: boolean }', description: 'Fires when open state changes' }],
+    example: '<wu-collapse label="Details"><p>Content here</p></wu-collapse>' },
+
+  // ── Phase 7: Nav & Overlays ──────────────────────────────────────────────
+
+  { tag: 'wu-drawer', class: 'WuDrawer', description: 'A slide-in panel from any edge with focus trap.', phase: 7 as any,
+    properties: [{ name: 'open', type: 'boolean', default: 'false', description: 'Open state' }, { name: 'placement', type: "'left'|'right'|'top'|'bottom'", default: 'right', description: 'Slide direction' }, { name: 'size', type: 'string', default: '320px', description: 'Panel size' }],
+    slots: [{ name: '', description: 'Drawer content' }, { name: 'header', description: 'Custom header' }, { name: 'footer', description: 'Action buttons' }],
+    events: [{ name: 'wu-close', description: 'Fires when drawer closes' }],
+    example: '<wu-drawer open placement="right"><p>Content</p></wu-drawer>' },
+
+  { tag: 'wu-dropdown', class: 'WuDropdown', description: 'A trigger-activated dropdown menu with keyboard navigation.', phase: 7 as any,
+    properties: [{ name: 'items', type: 'DropdownItem[]', description: 'Menu items array (JS property)' }, { name: 'placement', type: "'bottom-start'|'bottom-end'|'top-start'|'top-end'", default: 'bottom-start', description: 'Dropdown placement' }],
+    slots: [{ name: 'trigger', description: 'Trigger element (button, icon, etc.)' }],
+    events: [{ name: 'wu-select', detail: '{ value: string }', description: 'Fires when item is selected' }, { name: 'wu-open', description: 'Fires when dropdown opens' }, { name: 'wu-close', description: 'Fires when dropdown closes' }],
+    example: '<wu-dropdown><wu-button slot="trigger">Options</wu-button></wu-dropdown>' },
+
+  { tag: 'wu-scroll-area', class: 'WuScrollArea', description: 'A styled scroll container with thin custom scrollbars.', phase: 7 as any,
+    properties: [{ name: 'orientation', type: "'vertical'|'horizontal'|'both'", default: 'vertical', description: 'Scroll orientation' }, { name: 'max-height', type: 'string', description: 'Max height CSS value' }, { name: 'max-width', type: 'string', description: 'Max width CSS value' }],
+    slots: [{ name: '', description: 'Scrollable content' }], events: [],
+    example: '<wu-scroll-area max-height="300px"><p>Long content…</p></wu-scroll-area>' },
+
+  { tag: 'wu-split-pane', class: 'WuSplitPane', description: 'A resizable split panel with draggable divider.', phase: 7 as any,
+    properties: [{ name: 'orientation', type: "'horizontal'|'vertical'", default: 'horizontal', description: 'Split direction' }, { name: 'initial-size', type: 'number', default: '50', description: 'Initial primary pane % size' }],
+    slots: [{ name: 'primary', description: 'Primary pane content' }, { name: 'secondary', description: 'Secondary pane content' }],
+    events: [{ name: 'wu-resize', detail: '{ position: number }', description: 'Fires continuously while dragging' }],
+    example: '<wu-split-pane><div slot="primary">Left</div><div slot="secondary">Right</div></wu-split-pane>' },
+
+  { tag: 'wu-speed-dial', class: 'WuSpeedDial', description: 'A floating action button that expands into multiple action buttons.', phase: 7 as any,
+    properties: [{ name: 'actions', type: 'SpeedDialAction[]', description: 'Array of {label, value, icon?} actions' }, { name: 'direction', type: "'up'|'left'", default: 'up', description: 'Expansion direction' }, { name: 'icon', type: 'string', default: '+', description: 'FAB icon character' }],
+    slots: [], events: [{ name: 'wu-action-click', detail: '{ value: string }', description: 'Fires when an action is clicked' }],
+    example: '<wu-speed-dial></wu-speed-dial>' },
+
+  // ── Phase 9: Rich Media ──────────────────────────────────────────────────
+
+  { tag: 'wu-lightbox', class: 'WuLightbox', description: 'A full-screen image viewer with prev/next navigation.', phase: 9 as any,
+    properties: [{ name: 'open', type: 'boolean', default: 'false', description: 'Open state' }, { name: 'images', type: 'LightboxImage[]', description: 'Array of {src, alt?, caption?} images' }, { name: 'index', type: 'number', default: '0', description: 'Currently displayed image index' }],
+    slots: [], events: [{ name: 'wu-close', description: 'Fires when lightbox closes' }],
+    example: '<wu-lightbox open></wu-lightbox>' },
+
+  { tag: 'wu-gallery', class: 'WuGallery', description: 'A responsive CSS-grid photo gallery with click-to-lightbox.', phase: 9 as any,
+    properties: [{ name: 'images', type: 'GalleryImage[]', description: 'Array of {src, alt?, caption?} images' }, { name: 'cols', type: 'number', default: '3', description: 'Number of grid columns' }],
+    slots: [], events: [{ name: 'wu-image-click', detail: '{ index: number }', description: 'Fires when thumbnail is clicked' }],
+    example: '<wu-gallery cols="3"></wu-gallery>' },
+
+  { tag: 'wu-virtual-list', class: 'WuVirtualList', description: 'A virtual/windowed list renderer for large datasets.', phase: 9 as any,
+    properties: [{ name: 'items', type: 'unknown[]', description: 'Full data array (JS property)' }, { name: 'item-height', type: 'number', default: '48', description: 'Fixed row height in px' }, { name: 'viewport-height', type: 'number', default: '400', description: 'Visible scroll area height in px' }, { name: 'render-item', type: 'Function', description: 'JS function: (item, index) => TemplateResult' }],
+    slots: [], events: [{ name: 'wu-visible-change', detail: '{ start: number, end: number }', description: 'Fires when visible window changes' }],
+    example: '<wu-virtual-list></wu-virtual-list>' },
+
+  { tag: 'wu-sortable', class: 'WuSortable', description: 'A drag-and-drop sortable list with HTML5 drag API.', phase: 9 as any,
+    properties: [{ name: 'items', type: 'Array<{id:string,label:string}>', description: 'Items array (JS property)' }],
+    slots: [], events: [{ name: 'wu-sort', detail: '{ items: array, from: number, to: number }', description: 'Fires after successful reorder' }],
+    example: '<wu-sortable></wu-sortable>' },
+
+  { tag: 'wu-kanban', class: 'WuKanban', description: 'A kanban board container for wu-kanban-column elements.', phase: 9 as any,
+    subElements: ['wu-kanban-column'],
+    properties: [], slots: [{ name: '', description: 'wu-kanban-column elements' }], events: [],
+    example: '<wu-kanban><wu-kanban-column column-id="todo" label="To Do"></wu-kanban-column></wu-kanban>' },
+
+  { tag: 'wu-mention', class: 'WuMention', description: 'A text input with @ mention detection and user autocomplete.', phase: 9 as any,
+    properties: [{ name: 'users', type: 'MentionUser[]', description: 'Array of {id, name, avatar?} users' }, { name: 'multiline', type: 'boolean', default: 'false', description: 'Use textarea instead of input' }, { name: 'placeholder', type: 'string', description: 'Placeholder text' }],
+    slots: [], events: [{ name: 'wu-mention', detail: '{ user: MentionUser }', description: 'Fires when user is selected' }, { name: 'wu-change', detail: '{ value: string }', description: 'Fires on input change' }],
+    example: '<wu-mention placeholder="Write something, use @ to mention…"></wu-mention>' },
+
+  { tag: 'wu-qr-code', class: 'WuQrCode', description: 'Renders a QR code as inline SVG.', phase: 9 as any,
+    properties: [{ name: 'value', type: 'string', description: 'Text/URL to encode' }, { name: 'size', type: 'number', default: '200', description: 'SVG pixel size' }, { name: 'color', type: 'string', default: '#000000', description: 'Module fill color' }, { name: 'background', type: 'string', default: '#ffffff', description: 'Background fill color' }],
+    slots: [], events: [],
+    example: '<wu-qr-code value="https://weldui.dev" size="200"></wu-qr-code>' },
+
+  { tag: 'wu-video', class: 'WuVideo', description: 'An HTML5 video player with custom overlay controls.', phase: 9 as any,
+    properties: [{ name: 'src', type: 'string', description: 'Video source URL' }, { name: 'poster', type: 'string', description: 'Poster image URL' }, { name: 'autoplay', type: 'boolean', default: 'false', description: 'Auto-play on load' }, { name: 'muted', type: 'boolean', default: 'false', description: 'Start muted' }, { name: 'loop', type: 'boolean', default: 'false', description: 'Loop playback' }],
+    slots: [], events: [{ name: 'wu-play', description: 'Fires when video starts' }, { name: 'wu-pause', description: 'Fires when video pauses' }, { name: 'wu-ended', description: 'Fires when video ends' }],
+    example: '<wu-video src="/video.mp4" poster="/thumb.jpg"></wu-video>' },
 ];
 
 /** Lookup a component by tag name (e.g. "wu-button"). */

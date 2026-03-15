@@ -49,6 +49,54 @@ export { default as WuErrorPage } from './components/WuErrorPage.js';
 export { default as WuSearch } from './components/WuSearch.js';
 export { default as WuDataTable } from './components/WuDataTable.js';
 
+// Phase 5 — Form primitives
+export { default as WuRadioGroup } from './components/WuRadioGroup.js';
+export { default as WuSlider } from './components/WuSlider.js';
+export { default as WuColorPicker } from './components/WuColorPicker.js';
+export { default as WuRating } from './components/WuRating.js';
+export { default as WuSwitch } from './components/WuSwitch.js';
+export { default as WuPinInput } from './components/WuPinInput.js';
+export { default as WuCombobox } from './components/WuCombobox.js';
+export { default as WuTagInput } from './components/WuTagInput.js';
+export { default as WuNumberInput } from './components/WuNumberInput.js';
+export { default as WuMultiSelect } from './components/WuMultiSelect.js';
+
+// Phase 6 — Data display
+export { default as WuStat } from './components/WuStat.js';
+export { WuTimeline, WuTimelineItem } from './components/WuTimeline.js';
+export { default as WuTag } from './components/WuTag.js';
+export { default as WuKbd } from './components/WuKbd.js';
+export { default as WuCode } from './components/WuCode.js';
+export { default as WuCopyButton } from './components/WuCopyButton.js';
+export { default as WuCarousel } from './components/WuCarousel.js';
+export { WuList, WuListItem } from './components/WuList.js';
+export { default as WuDescriptionList } from './components/WuDescriptionList.js';
+export { default as WuCallout } from './components/WuCallout.js';
+export { default as WuMeter } from './components/WuMeter.js';
+export { default as WuCollapse } from './components/WuCollapse.js';
+
+// Phase 7 — Nav & overlays
+export { default as WuDrawer } from './components/WuDrawer.js';
+export { default as WuContextMenu } from './components/WuContextMenu.js';
+export { default as WuDropdown } from './components/WuDropdown.js';
+export { WuTree, WuTreeItem } from './components/WuTree.js';
+export { WuBottomNav, WuBottomNavItem } from './components/WuBottomNav.js';
+export { default as WuMegaMenu } from './components/WuMegaMenu.js';
+export { default as WuNotificationCenter } from './components/WuNotificationCenter.js';
+export { default as WuScrollArea } from './components/WuScrollArea.js';
+export { default as WuSplitPane } from './components/WuSplitPane.js';
+export { default as WuSpeedDial } from './components/WuSpeedDial.js';
+
+// Phase 9 — Rich media
+export { default as WuLightbox } from './components/WuLightbox.js';
+export { default as WuGallery } from './components/WuGallery.js';
+export { default as WuVirtualList } from './components/WuVirtualList.js';
+export { default as WuSortable } from './components/WuSortable.js';
+export { WuKanban, WuKanbanColumn } from './components/WuKanban.js';
+export { default as WuMention } from './components/WuMention.js';
+export { default as WuQrCode } from './components/WuQrCode.js';
+export { default as WuVideo } from './components/WuVideo.js';
+
 // Plugin for installing all components globally
 export const WeldUIPlugin = {
   install(app: App) {

@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { html } from 'lit';
+const meta: Meta = { title: 'Components/DateRangePicker', component: 'wu-date-range-picker', tags: ['autodocs'] };
+export default meta;
+type Story = StoryObj;
+export const Default: Story = { render: () => html`<wu-date-range-picker label="Book dates"></wu-date-range-picker>` };
+export const PreFilled: Story = { render: () => html`<wu-date-range-picker label="Contract period" start="2024-01-01" end="2024-12-31"></wu-date-range-picker>` };
+export const WithMin: Story = { render: () => html`<wu-date-range-picker label="Future only" min="2024-06-01"></wu-date-range-picker>` };
+export const WithError: Story = { render: () => html`<wu-date-range-picker label="Dates" error="End must be after start"></wu-date-range-picker>` };
+export const Disabled: Story = { render: () => html`<wu-date-range-picker label="Fixed period" disabled start="2024-01-01" end="2024-03-31"></wu-date-range-picker>` };

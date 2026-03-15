@@ -45,3 +45,51 @@ export { EmptyState } from './components/EmptyState.js';
 export { ErrorPage } from './components/ErrorPage.js';
 export { Search } from './components/Search.js';
 export { DataTable } from './components/DataTable.js';
+
+// Phase 5 — Form primitives
+export { RadioGroup, Radio } from './components/RadioGroup.js';
+export { Slider } from './components/Slider.js';
+export { ColorPicker } from './components/ColorPicker.js';
+export { Rating } from './components/Rating.js';
+export { Switch } from './components/Switch.js';
+export { PinInput } from './components/PinInput.js';
+export { Combobox } from './components/Combobox.js';
+export { TagInput } from './components/TagInput.js';
+export { NumberInput } from './components/NumberInput.js';
+export { MultiSelect } from './components/MultiSelect.js';
+
+// Phase 6 — Data display
+export { Stat } from './components/Stat.js';
+export { Timeline, TimelineItem } from './components/Timeline.js';
+export { Tag } from './components/Tag.js';
+export { Kbd } from './components/Kbd.js';
+export { Code } from './components/Code.js';
+export { CopyButton } from './components/CopyButton.js';
+export { Carousel } from './components/Carousel.js';
+export { List, ListItem } from './components/List.js';
+export { DescriptionList } from './components/DescriptionList.js';
+export { Callout } from './components/Callout.js';
+export { Meter } from './components/Meter.js';
+export { Collapse } from './components/Collapse.js';
+
+// Phase 7 — Nav & overlays
+export { Drawer } from './components/Drawer.js';
+export { ContextMenu } from './components/ContextMenu.js';
+export { Dropdown } from './components/Dropdown.js';
+export { Tree, TreeItem } from './components/Tree.js';
+export { BottomNav, BottomNavItem } from './components/BottomNav.js';
+export { MegaMenu } from './components/MegaMenu.js';
+export { NotificationCenter } from './components/NotificationCenter.js';
+export { ScrollArea } from './components/ScrollArea.js';
+export { SplitPane } from './components/SplitPane.js';
+export { SpeedDial } from './components/SpeedDial.js';
+
+// Phase 9 — Rich media
+export { Lightbox } from './components/Lightbox.js';
+export { Gallery } from './components/Gallery.js';
+export { VirtualList } from './components/VirtualList.js';
+export { Sortable } from './components/Sortable.js';
+export { Kanban, KanbanColumn } from './components/Kanban.js';
+export { Mention } from './components/Mention.js';
+export { QrCode } from './components/QrCode.js';
+export { Video } from './components/Video.js';

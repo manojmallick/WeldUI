@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { html } from 'lit';
+const meta: Meta = { title: 'Components/TagInput', component: 'wu-tag-input', tags: ['autodocs'] };
+export default meta;
+type Story = StoryObj;
+export const Default: Story = { render: () => html`<wu-tag-input label="Labels" placeholder="Add label…"></wu-tag-input>` };
+export const PrePopulated: Story = { render: () => html`<wu-tag-input label="Technologies" .values=${['TypeScript', 'Lit', 'WebComponents']}></wu-tag-input>` };
+export const WithMax: Story = { render: () => html`<wu-tag-input label="Max 3 tags" max="3" .values=${['a', 'b']}></wu-tag-input>` };
+export const WithError: Story = { render: () => html`<wu-tag-input label="Tags" error="Invalid tag" .values=${['bad']}></wu-tag-input>` };
+export const Disabled: Story = { render: () => html`<wu-tag-input label="Tags" disabled .values=${['one', 'two']}></wu-tag-input>` };

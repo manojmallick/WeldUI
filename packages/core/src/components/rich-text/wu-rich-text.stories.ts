@@ -1,0 +1,10 @@
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { html } from 'lit';
+const meta: Meta = { title: 'Components/RichText', component: 'wu-rich-text', tags: ['autodocs'] };
+export default meta;
+type Story = StoryObj;
+export const Default: Story = { render: () => html`<wu-rich-text label="Description" placeholder="Write something…"></wu-rich-text>` };
+export const WithContent: Story = { render: () => html`<wu-rich-text label="Bio" value="<p>Hello <b>world</b>!</p>"></wu-rich-text>` };
+export const Readonly: Story = { render: () => html`<wu-rich-text label="Terms" readonly value="<p>These are the <b>terms</b> of service.</p>"></wu-rich-text>` };
+export const WithError: Story = { render: () => html`<wu-rich-text label="Notes" error="Content is required"></wu-rich-text>` };
+export const Disabled: Story = { render: () => html`<wu-rich-text label="Archive" disabled value="<p>Archived content</p>"></wu-rich-text>` };
