@@ -1,0 +1,31 @@
+import { css } from 'lit';
+
+export const styles = css`
+  :host {
+    display: block;
+    font-family: var(--wu-font-sans);
+    color: var(--wu-color-text);
+    --wu-metric-card-bg: var(--wu-color-surface);
+    --wu-metric-card-border: var(--wu-color-border);
+    --wu-metric-card-radius: var(--wu-radius-md);
+  }
+  .container {
+    background: var(--wu-metric-card-bg);
+    border: 1px solid var(--wu-metric-card-border);
+    border-radius: var(--wu-metric-card-radius);
+    padding: var(--wu-space-4);
+    font-size: var(--wu-text-sm);
+  }
+  .label {
+    font-size: var(--wu-text-xs);
+    font-weight: var(--wu-font-semibold);
+    color: var(--wu-color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--wu-space-2);
+  }
+  .content {
+    color: var(--wu-color-text);
+    line-height: var(--wu-leading-normal);
+  }
+`;
