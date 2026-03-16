@@ -360,3 +360,197 @@ import './components/audio/wu-audio.js';
 import './components/event-calendar/wu-event-calendar.js';
 import './components/report-builder/wu-report-builder.js';
 import './components/emoji-picker/wu-emoji-picker.js';
+
+// v3.0 §3.7 AI/LLM-Native
+export { WuChatMessage } from './components/chat-message/wu-chat-message.js';
+export { WuChatInput } from './components/chat-input/wu-chat-input.js';
+export { WuTypingIndicator } from './components/typing-indicator/wu-typing-indicator.js';
+export { WuStreamingText } from './components/streaming-text/wu-streaming-text.js';
+export { WuModelSelector } from './components/model-selector/wu-model-selector.js';
+export { WuTokenCounter } from './components/token-counter/wu-token-counter.js';
+export { WuPromptLibrary } from './components/prompt-library/wu-prompt-library.js';
+export { WuAiSuggestion } from './components/ai-suggestion/wu-ai-suggestion.js';
+export { WuAiActionBar } from './components/ai-action-bar/wu-ai-action-bar.js';
+export { WuReasoningTrace } from './components/reasoning-trace/wu-reasoning-trace.js';
+export { WuToolCallDisplay } from './components/tool-call-display/wu-tool-call-display.js';
+import './components/chat-message/wu-chat-message.js';
+import './components/chat-input/wu-chat-input.js';
+import './components/typing-indicator/wu-typing-indicator.js';
+import './components/streaming-text/wu-streaming-text.js';
+import './components/model-selector/wu-model-selector.js';
+import './components/token-counter/wu-token-counter.js';
+import './components/prompt-library/wu-prompt-library.js';
+import './components/ai-suggestion/wu-ai-suggestion.js';
+import './components/ai-action-bar/wu-ai-action-bar.js';
+import './components/reasoning-trace/wu-reasoning-trace.js';
+import './components/tool-call-display/wu-tool-call-display.js';
+
+// v3.0 §3.8 Real-Time & Collaborative
+export { WuPresence } from './components/presence/wu-presence.js';
+export { WuUserCursor } from './components/user-cursor/wu-user-cursor.js';
+export { WuLiveIndicator } from './components/live-indicator/wu-live-indicator.js';
+export { WuSyncStatus } from './components/sync-status/wu-sync-status.js';
+export { WuConnectionStatus } from './components/connection-status/wu-connection-status.js';
+export { WuConflictResolver } from './components/conflict-resolver/wu-conflict-resolver.js';
+export { WuCollaborativeForm } from './components/collaborative-form/wu-collaborative-form.js';
+export { WuTypingUsers } from './components/typing-users/wu-typing-users.js';
+import './components/presence/wu-presence.js';
+import './components/user-cursor/wu-user-cursor.js';
+import './components/live-indicator/wu-live-indicator.js';
+import './components/sync-status/wu-sync-status.js';
+import './components/connection-status/wu-connection-status.js';
+import './components/conflict-resolver/wu-conflict-resolver.js';
+import './components/collaborative-form/wu-collaborative-form.js';
+import './components/typing-users/wu-typing-users.js';
+
+// v3.0 §3.9 Chart Extensions
+export { WuFunnelChart } from './components/funnel-chart/wu-funnel-chart.js';
+export { WuSankey } from './components/sankey/wu-sankey.js';
+export { WuTreeMap } from './components/tree-map/wu-tree-map.js';
+export { WuRadarChart } from './components/radar-chart/wu-radar-chart.js';
+export { WuCandlestick } from './components/candlestick/wu-candlestick.js';
+export type { CandleData } from './components/candlestick/wu-candlestick.js';
+export { WuWaterfallChart } from './components/waterfall-chart/wu-waterfall-chart.js';
+export type { WaterfallItem } from './components/waterfall-chart/wu-waterfall-chart.js';
+export { WuGeoMap } from './components/geo-map/wu-geo-map.js';
+export type { GeoRegion } from './components/geo-map/wu-geo-map.js';
+export { WuNetworkGraph } from './components/network-graph/wu-network-graph.js';
+export type { GraphNode, GraphEdge } from './components/network-graph/wu-network-graph.js';
+import './components/funnel-chart/wu-funnel-chart.js';
+import './components/sankey/wu-sankey.js';
+import './components/tree-map/wu-tree-map.js';
+import './components/radar-chart/wu-radar-chart.js';
+import './components/candlestick/wu-candlestick.js';
+import './components/waterfall-chart/wu-waterfall-chart.js';
+import './components/geo-map/wu-geo-map.js';
+import './components/network-graph/wu-network-graph.js';
+
+// v3.0 §3.10 Media & Creative
+export { WuImageCrop } from './components/image-crop/wu-image-crop.js';
+export { WuImageCompare } from './components/image-compare/wu-image-compare.js';
+export { WuColorSwatch } from './components/color-swatch/wu-color-swatch.js';
+export { WuColorPalette } from './components/color-palette/wu-color-palette.js';
+export { WuIcon } from './components/icon/wu-icon.js';
+export { WuLottie } from './components/lottie/wu-lottie.js';
+export { WuConfetti } from './components/confetti/wu-confetti.js';
+export { WuCanvasSketch } from './components/canvas-sketch/wu-canvas-sketch.js';
+export { WuPdfViewer } from './components/pdf-viewer/wu-pdf-viewer.js';
+import './components/image-crop/wu-image-crop.js';
+import './components/image-compare/wu-image-compare.js';
+import './components/color-swatch/wu-color-swatch.js';
+import './components/color-palette/wu-color-palette.js';
+import './components/icon/wu-icon.js';
+import './components/lottie/wu-lottie.js';
+import './components/confetti/wu-confetti.js';
+import './components/canvas-sketch/wu-canvas-sketch.js';
+import './components/pdf-viewer/wu-pdf-viewer.js';
+
+// v3.0 §3.11 Maps & Location
+export { WuMap } from './components/map/wu-map.js';
+export { WuAddressInput } from './components/address-input/wu-address-input.js';
+export { WuLocationPicker } from './components/location-picker/wu-location-picker.js';
+export { WuRouteDisplay } from './components/route-display/wu-route-display.js';
+export { WuGeofence } from './components/geofence/wu-geofence.js';
+export { WuDistanceCalculator } from './components/distance-calculator/wu-distance-calculator.js';
+import './components/map/wu-map.js';
+import './components/address-input/wu-address-input.js';
+import './components/location-picker/wu-location-picker.js';
+import './components/route-display/wu-route-display.js';
+import './components/geofence/wu-geofence.js';
+import './components/distance-calculator/wu-distance-calculator.js';
+
+// v3.0 §3.12 Print & Documents
+export { WuInvoice } from './components/invoice/wu-invoice.js';
+export { WuReceipt } from './components/receipt/wu-receipt.js';
+export { WuLetter } from './components/letter/wu-letter.js';
+export { WuReport } from './components/report/wu-report.js';
+export { WuCertificate } from './components/certificate/wu-certificate.js';
+export { WuLabelSheet } from './components/label-sheet/wu-label-sheet.js';
+import './components/invoice/wu-invoice.js';
+import './components/receipt/wu-receipt.js';
+import './components/letter/wu-letter.js';
+import './components/report/wu-report.js';
+import './components/certificate/wu-certificate.js';
+import './components/label-sheet/wu-label-sheet.js';
+
+// v3.0 §3.13 Developer Experience
+export { WuApiExplorer } from './components/api-explorer/wu-api-explorer.js';
+export { WuCodeEditor } from './components/code-editor/wu-code-editor.js';
+export { WuTerminal } from './components/terminal/wu-terminal.js';
+export { WuSchemaViewer } from './components/schema-viewer/wu-schema-viewer.js';
+export { WuWebhookLog } from './components/webhook-log/wu-webhook-log.js';
+export { WuEnvVars } from './components/env-vars/wu-env-vars.js';
+export { WuCronBuilder } from './components/cron-builder/wu-cron-builder.js';
+export { WuRegexTester } from './components/regex-tester/wu-regex-tester.js';
+import './components/api-explorer/wu-api-explorer.js';
+import './components/code-editor/wu-code-editor.js';
+import './components/terminal/wu-terminal.js';
+import './components/schema-viewer/wu-schema-viewer.js';
+import './components/webhook-log/wu-webhook-log.js';
+import './components/env-vars/wu-env-vars.js';
+import './components/cron-builder/wu-cron-builder.js';
+import './components/regex-tester/wu-regex-tester.js';
+
+// v3.0 §3.14 Analytics & Monitoring
+export { WuMetricCard } from './components/metric-card/wu-metric-card.js';
+export { WuUptimeBar } from './components/uptime-bar/wu-uptime-bar.js';
+export { WuAlertRule } from './components/alert-rule/wu-alert-rule.js';
+export { WuLogStream } from './components/log-stream/wu-log-stream.js';
+export { WuErrorTrace } from './components/error-trace/wu-error-trace.js';
+export { WuEventTimeline } from './components/event-timeline/wu-event-timeline.js';
+export { WuHealthCheck } from './components/health-check/wu-health-check.js';
+export { WuSlaTracker } from './components/sla-tracker/wu-sla-tracker.js';
+import './components/metric-card/wu-metric-card.js';
+import './components/uptime-bar/wu-uptime-bar.js';
+import './components/alert-rule/wu-alert-rule.js';
+import './components/log-stream/wu-log-stream.js';
+import './components/error-trace/wu-error-trace.js';
+import './components/event-timeline/wu-event-timeline.js';
+import './components/health-check/wu-health-check.js';
+import './components/sla-tracker/wu-sla-tracker.js';
+
+// v3.0 §3.15 Accessibility & Utility
+export { WuSkipLink } from './components/skip-link/wu-skip-link.js';
+export { WuFocusTrap } from './components/focus-trap/wu-focus-trap.js';
+export { WuAnnounce } from './components/announce/wu-announce.js';
+export { WuSrOnly } from './components/sr-only/wu-sr-only.js';
+export { WuReducedMotion } from './components/reduced-motion/wu-reduced-motion.js';
+export { WuHighContrast } from './components/high-contrast/wu-high-contrast.js';
+export { WuKeyboardFocus } from './components/keyboard-focus/wu-keyboard-focus.js';
+export { WuLandmark } from './components/landmark/wu-landmark.js';
+import './components/skip-link/wu-skip-link.js';
+import './components/focus-trap/wu-focus-trap.js';
+import './components/announce/wu-announce.js';
+import './components/sr-only/wu-sr-only.js';
+import './components/reduced-motion/wu-reduced-motion.js';
+import './components/high-contrast/wu-high-contrast.js';
+import './components/keyboard-focus/wu-keyboard-focus.js';
+import './components/landmark/wu-landmark.js';
+
+// v3.0 §3.16 Web3 & Emerging
+export { WuWalletConnect } from './components/wallet-connect/wu-wallet-connect.js';
+export { WuAddressDisplay } from './components/address-display/wu-address-display.js';
+export { WuTransactionStatus } from './components/transaction-status/wu-transaction-status.js';
+export { WuNftCard } from './components/nft-card/wu-nft-card.js';
+export { WuChainSelector } from './components/chain-selector/wu-chain-selector.js';
+export { WuGasFee } from './components/gas-fee/wu-gas-fee.js';
+import './components/wallet-connect/wu-wallet-connect.js';
+import './components/address-display/wu-address-display.js';
+import './components/transaction-status/wu-transaction-status.js';
+import './components/nft-card/wu-nft-card.js';
+import './components/chain-selector/wu-chain-selector.js';
+import './components/gas-fee/wu-gas-fee.js';
+
+// v3.0 §3.17 PWA & Device
+export { WuInstallPrompt } from './components/install-prompt/wu-install-prompt.js';
+export { WuNotificationPermission } from './components/notification-permission/wu-notification-permission.js';
+export { WuShareButton } from './components/share-button/wu-share-button.js';
+export { WuOfflineBanner } from './components/offline-banner/wu-offline-banner.js';
+export { WuUpdateAvailable } from './components/update-available/wu-update-available.js';
+export { WuBatteryIndicator } from './components/battery-indicator/wu-battery-indicator.js';
+import './components/install-prompt/wu-install-prompt.js';
+import './components/notification-permission/wu-notification-permission.js';
+import './components/share-button/wu-share-button.js';
+import './components/offline-banner/wu-offline-banner.js';
+import './components/update-available/wu-update-available.js';
+import './components/battery-indicator/wu-battery-indicator.js';
