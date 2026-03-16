@@ -243,6 +243,225 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/address-display/wu-address-display.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Shortened blockchain address display with copy",
+          "name": "WuAddressDisplay",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-address-display",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAddressDisplay",
+          "declaration": {
+            "name": "WuAddressDisplay",
+            "module": "src/components/address-display/wu-address-display.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-address-display",
+          "declaration": {
+            "name": "WuAddressDisplay",
+            "module": "src/components/address-display/wu-address-display.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/address-input/wu-address-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Address autocomplete input with geocoding",
+          "name": "WuAddressInput",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-address-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAddressInput",
+          "declaration": {
+            "name": "WuAddressInput",
+            "module": "src/components/address-input/wu-address-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-address-input",
+          "declaration": {
+            "name": "WuAddressInput",
+            "module": "src/components/address-input/wu-address-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/ai-action-bar/wu-ai-action-bar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Floating AI toolbar shown on text selection — Explain, Fix, Improve actions.",
+          "name": "WuAiActionBar",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "actions",
+              "description": "The currently selected text context */\n  @property({ attribute: 'selected-text' })\n  selectedText = '';\n\n  /** Actions to display",
+              "type": {
+                "text": "Array<{ id: AIAction; label: string; icon?: string }>"
+              },
+              "default": "[",
+              "attribute": "actions",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-action",
+              "description": "Emitted with `{ action: string, selectedText: string }` when action clicked",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "actions",
+              "description": "The currently selected text context */\n  @property({ attribute: 'selected-text' })\n  selectedText = '';\n\n  /** Actions to display",
+              "type": {
+                "text": "Array<{ id: AIAction; label: string; icon?: string }>"
+              },
+              "default": "[",
+              "fieldName": "actions"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-ai-action-bar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAiActionBar",
+          "declaration": {
+            "name": "WuAiActionBar",
+            "module": "src/components/ai-action-bar/wu-ai-action-bar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-ai-action-bar",
+          "declaration": {
+            "name": "WuAiActionBar",
+            "module": "src/components/ai-action-bar/wu-ai-action-bar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/ai-suggestion/wu-ai-suggestion.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Ghost/preview text inline AI suggestion (Copilot-style).",
+          "name": "WuAiSuggestion",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-accept",
+              "description": "Emitted when the user accepts the suggestion (Tab key or click)",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-dismiss",
+              "description": "Emitted when the user dismisses the suggestion (Escape key)",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-ai-suggestion",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAiSuggestion",
+          "declaration": {
+            "name": "WuAiSuggestion",
+            "module": "src/components/ai-suggestion/wu-ai-suggestion.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-ai-suggestion",
+          "declaration": {
+            "name": "WuAiSuggestion",
+            "module": "src/components/ai-suggestion/wu-ai-suggestion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/alert/wu-alert.ts",
       "declarations": [
         {
@@ -347,6 +566,144 @@
           "declaration": {
             "name": "WuAlert",
             "module": "src/components/alert/wu-alert.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/alert-rule/wu-alert-rule.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Alert rule configuration UI with condition builder",
+          "name": "WuAlertRule",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-alert-rule",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAlertRule",
+          "declaration": {
+            "name": "WuAlertRule",
+            "module": "src/components/alert-rule/wu-alert-rule.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-alert-rule",
+          "declaration": {
+            "name": "WuAlertRule",
+            "module": "src/components/alert-rule/wu-alert-rule.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/announce/wu-announce.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Screen reader live region announcer",
+          "name": "WuAnnounce",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-announce",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuAnnounce",
+          "declaration": {
+            "name": "WuAnnounce",
+            "module": "src/components/announce/wu-announce.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-announce",
+          "declaration": {
+            "name": "WuAnnounce",
+            "module": "src/components/announce/wu-announce.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/api-explorer/wu-api-explorer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Interactive REST API explorer Swagger-like UI",
+          "name": "WuApiExplorer",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-api-explorer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuApiExplorer",
+          "declaration": {
+            "name": "WuApiExplorer",
+            "module": "src/components/api-explorer/wu-api-explorer.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-api-explorer",
+          "declaration": {
+            "name": "WuApiExplorer",
+            "module": "src/components/api-explorer/wu-api-explorer.ts"
           }
         }
       ]
@@ -935,6 +1292,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/battery-indicator/wu-battery-indicator.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Device battery level indicator",
+          "name": "WuBatteryIndicator",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-battery-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuBatteryIndicator",
+          "declaration": {
+            "name": "WuBatteryIndicator",
+            "module": "src/components/battery-indicator/wu-battery-indicator.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-battery-indicator",
+          "declaration": {
+            "name": "WuBatteryIndicator",
+            "module": "src/components/battery-indicator/wu-battery-indicator.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/blockquote/wu-blockquote.ts",
       "declarations": [
         {
@@ -1377,6 +1780,93 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/candlestick/wu-candlestick.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "OHLC candlestick financial chart.",
+          "name": "WuCandlestick",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-candlestick",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCandlestick",
+          "declaration": {
+            "name": "WuCandlestick",
+            "module": "src/components/candlestick/wu-candlestick.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-candlestick",
+          "declaration": {
+            "name": "WuCandlestick",
+            "module": "src/components/candlestick/wu-candlestick.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/canvas-sketch/wu-canvas-sketch.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Freehand drawing canvas with toolbar",
+          "name": "WuCanvasSketch",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-canvas-sketch",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCanvasSketch",
+          "declaration": {
+            "name": "WuCanvasSketch",
+            "module": "src/components/canvas-sketch/wu-canvas-sketch.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-canvas-sketch",
+          "declaration": {
+            "name": "WuCanvasSketch",
+            "module": "src/components/canvas-sketch/wu-canvas-sketch.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/captcha/wu-captcha.ts",
       "declarations": [
         {
@@ -1626,6 +2116,98 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/certificate/wu-certificate.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Certificate of achievement or completion template",
+          "name": "WuCertificate",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-certificate",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCertificate",
+          "declaration": {
+            "name": "WuCertificate",
+            "module": "src/components/certificate/wu-certificate.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-certificate",
+          "declaration": {
+            "name": "WuCertificate",
+            "module": "src/components/certificate/wu-certificate.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/chain-selector/wu-chain-selector.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Blockchain network chain selector dropdown",
+          "name": "WuChainSelector",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-chain-selector",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuChainSelector",
+          "declaration": {
+            "name": "WuChainSelector",
+            "module": "src/components/chain-selector/wu-chain-selector.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-chain-selector",
+          "declaration": {
+            "name": "WuChainSelector",
+            "module": "src/components/chain-selector/wu-chain-selector.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/changelog/wu-changelog.ts",
       "declarations": [
         {
@@ -1753,6 +2335,150 @@
           "declaration": {
             "name": "WuChat",
             "module": "src/components/chat/wu-chat.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/chat-input/wu-chat-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Multiline prompt input with send, attach, and voice buttons.",
+          "name": "WuChatInput",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-submit",
+              "description": "Emitted with `{ value: string }` when user sends a message",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-attach",
+              "description": "Emitted when the attach button is clicked",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-chat-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuChatInput",
+          "declaration": {
+            "name": "WuChatInput",
+            "module": "src/components/chat-input/wu-chat-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-chat-input",
+          "declaration": {
+            "name": "WuChatInput",
+            "module": "src/components/chat-input/wu-chat-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/chat-message/wu-chat-message.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A single chat message bubble supporting text, code, image, and tool-call types.",
+          "name": "WuChatMessage",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Message content"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "role",
+              "description": "Role of the message author",
+              "type": {
+                "text": "'user' | 'assistant' | 'system'"
+              },
+              "default": "user",
+              "attribute": "role",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "description": "Role of the message author */\n  @property({ reflect: true })\n  role: 'user' | 'assistant' | 'system' = 'user';\n\n  /** Display name shown above the bubble */\n  @property()\n  author = '';\n\n  /** Timestamp string shown below the bubble */\n  @property()\n  timestamp = '';\n\n  /** Content type for special rendering",
+              "type": {
+                "text": "'text' | 'code' | 'tool-call'"
+              },
+              "default": "text",
+              "attribute": "type",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "role",
+              "description": "Role of the message author",
+              "type": {
+                "text": "'user' | 'assistant' | 'system'"
+              },
+              "default": "user",
+              "fieldName": "role"
+            },
+            {
+              "name": "type",
+              "description": "Role of the message author */\n  @property({ reflect: true })\n  role: 'user' | 'assistant' | 'system' = 'user';\n\n  /** Display name shown above the bubble */\n  @property()\n  author = '';\n\n  /** Timestamp string shown below the bubble */\n  @property()\n  timestamp = '';\n\n  /** Content type for special rendering",
+              "type": {
+                "text": "'text' | 'code' | 'tool-call'"
+              },
+              "default": "text",
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-chat-message",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuChatMessage",
+          "declaration": {
+            "name": "WuChatMessage",
+            "module": "src/components/chat-message/wu-chat-message.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-chat-message",
+          "declaration": {
+            "name": "WuChatMessage",
+            "module": "src/components/chat-message/wu-chat-message.ts"
           }
         }
       ]
@@ -2080,6 +2806,130 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/code-editor/wu-code-editor.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Syntax-highlighted code editor placeholder",
+          "name": "WuCodeEditor",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-code-editor",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCodeEditor",
+          "declaration": {
+            "name": "WuCodeEditor",
+            "module": "src/components/code-editor/wu-code-editor.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-code-editor",
+          "declaration": {
+            "name": "WuCodeEditor",
+            "module": "src/components/code-editor/wu-code-editor.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/collaborative-form/wu-collaborative-form.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Form with field-level locking when another user is editing.",
+          "name": "WuCollaborativeForm",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fields",
+              "description": "",
+              "type": {
+                "text": "CollaborativeField[]"
+              },
+              "default": "[",
+              "attribute": "fields",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-field-focus",
+              "description": "Emitted with `{ field: string }` when a field gains focus",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "wu-field-blur",
+              "description": "Emitted with `{ field: string }` when a field loses focus",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fields",
+              "description": "",
+              "type": {
+                "text": "CollaborativeField[]"
+              },
+              "default": "[",
+              "fieldName": "fields"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-collaborative-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCollaborativeForm",
+          "declaration": {
+            "name": "WuCollaborativeForm",
+            "module": "src/components/collaborative-form/wu-collaborative-form.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-collaborative-form",
+          "declaration": {
+            "name": "WuCollaborativeForm",
+            "module": "src/components/collaborative-form/wu-collaborative-form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/collapse/wu-collapse.ts",
       "declarations": [
         {
@@ -2145,6 +2995,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/color-palette/wu-color-palette.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays a row/grid of colour swatches",
+          "name": "WuColorPalette",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-color-palette",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuColorPalette",
+          "declaration": {
+            "name": "WuColorPalette",
+            "module": "src/components/color-palette/wu-color-palette.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-color-palette",
+          "declaration": {
+            "name": "WuColorPalette",
+            "module": "src/components/color-palette/wu-color-palette.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/color-picker/wu-color-picker.ts",
       "declarations": [
         {
@@ -2188,6 +3084,52 @@
           "declaration": {
             "name": "WuColorPicker",
             "module": "src/components/color-picker/wu-color-picker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/color-swatch/wu-color-swatch.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays a colour swatch with label and value",
+          "name": "WuColorSwatch",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-color-swatch",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuColorSwatch",
+          "declaration": {
+            "name": "WuColorSwatch",
+            "module": "src/components/color-swatch/wu-color-swatch.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-color-swatch",
+          "declaration": {
+            "name": "WuColorSwatch",
+            "module": "src/components/color-swatch/wu-color-swatch.ts"
           }
         }
       ]
@@ -2449,6 +3391,164 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/confetti/wu-confetti.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Confetti celebration animation burst",
+          "name": "WuConfetti",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-confetti",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuConfetti",
+          "declaration": {
+            "name": "WuConfetti",
+            "module": "src/components/confetti/wu-confetti.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-confetti",
+          "declaration": {
+            "name": "WuConfetti",
+            "module": "src/components/confetti/wu-confetti.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/conflict-resolver/wu-conflict-resolver.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Side-by-side diff display for resolving edit conflicts in collaborative editing.",
+          "name": "WuConflictResolver",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-resolve",
+              "description": "Emitted with `{ winner: 'mine' | 'theirs' }` when resolved",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-conflict-resolver",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuConflictResolver",
+          "declaration": {
+            "name": "WuConflictResolver",
+            "module": "src/components/conflict-resolver/wu-conflict-resolver.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-conflict-resolver",
+          "declaration": {
+            "name": "WuConflictResolver",
+            "module": "src/components/conflict-resolver/wu-conflict-resolver.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/connection-status/wu-connection-status.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Online/offline/reconnecting banner for connection state.",
+          "name": "WuConnectionStatus",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "description": "",
+              "type": {
+                "text": "'online' | 'offline' | 'reconnecting'"
+              },
+              "default": "online",
+              "attribute": "status",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "status",
+              "description": "",
+              "type": {
+                "text": "'online' | 'offline' | 'reconnecting'"
+              },
+              "default": "online",
+              "fieldName": "status"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-connection-status",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuConnectionStatus",
+          "declaration": {
+            "name": "WuConnectionStatus",
+            "module": "src/components/connection-status/wu-connection-status.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-connection-status",
+          "declaration": {
+            "name": "WuConnectionStatus",
+            "module": "src/components/connection-status/wu-connection-status.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/container/wu-container.ts",
       "declarations": [
         {
@@ -2691,6 +3791,52 @@
           "declaration": {
             "name": "WuCountdown",
             "module": "src/components/countdown/wu-countdown.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/cron-builder/wu-cron-builder.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Visual cron expression builder",
+          "name": "WuCronBuilder",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-cron-builder",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuCronBuilder",
+          "declaration": {
+            "name": "WuCronBuilder",
+            "module": "src/components/cron-builder/wu-cron-builder.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-cron-builder",
+          "declaration": {
+            "name": "WuCronBuilder",
+            "module": "src/components/cron-builder/wu-cron-builder.ts"
           }
         }
       ]
@@ -3236,6 +4382,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/distance-calculator/wu-distance-calculator.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Calculate distance between two points",
+          "name": "WuDistanceCalculator",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-distance-calculator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuDistanceCalculator",
+          "declaration": {
+            "name": "WuDistanceCalculator",
+            "module": "src/components/distance-calculator/wu-distance-calculator.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-distance-calculator",
+          "declaration": {
+            "name": "WuDistanceCalculator",
+            "module": "src/components/distance-calculator/wu-distance-calculator.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/divider/wu-divider.ts",
       "declarations": [
         {
@@ -3501,6 +4693,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/env-vars/wu-env-vars.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Environment variable manager UI",
+          "name": "WuEnvVars",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-env-vars",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuEnvVars",
+          "declaration": {
+            "name": "WuEnvVars",
+            "module": "src/components/env-vars/wu-env-vars.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-env-vars",
+          "declaration": {
+            "name": "WuEnvVars",
+            "module": "src/components/env-vars/wu-env-vars.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/error-page/wu-error-page.ts",
       "declarations": [
         {
@@ -3536,6 +4774,52 @@
           "declaration": {
             "name": "WuErrorPage",
             "module": "src/components/error-page/wu-error-page.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/error-trace/wu-error-trace.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Error stack trace viewer with source mapping",
+          "name": "WuErrorTrace",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-error-trace",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuErrorTrace",
+          "declaration": {
+            "name": "WuErrorTrace",
+            "module": "src/components/error-trace/wu-error-trace.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-error-trace",
+          "declaration": {
+            "name": "WuErrorTrace",
+            "module": "src/components/error-trace/wu-error-trace.ts"
           }
         }
       ]
@@ -3592,6 +4876,52 @@
           "declaration": {
             "name": "WuEventCalendar",
             "module": "src/components/event-calendar/wu-event-calendar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/event-timeline/wu-event-timeline.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Chronological event timeline for audits",
+          "name": "WuEventTimeline",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-event-timeline",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuEventTimeline",
+          "declaration": {
+            "name": "WuEventTimeline",
+            "module": "src/components/event-timeline/wu-event-timeline.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-event-timeline",
+          "declaration": {
+            "name": "WuEventTimeline",
+            "module": "src/components/event-timeline/wu-event-timeline.ts"
           }
         }
       ]
@@ -3771,6 +5101,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/focus-trap/wu-focus-trap.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Trap focus within a container for modal patterns",
+          "name": "WuFocusTrap",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-focus-trap",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuFocusTrap",
+          "declaration": {
+            "name": "WuFocusTrap",
+            "module": "src/components/focus-trap/wu-focus-trap.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-focus-trap",
+          "declaration": {
+            "name": "WuFocusTrap",
+            "module": "src/components/focus-trap/wu-focus-trap.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/form/wu-form.ts",
       "declarations": [
         {
@@ -3806,6 +5182,69 @@
           "declaration": {
             "name": "WuForm",
             "module": "src/components/form/wu-form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/funnel-chart/wu-funnel-chart.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Conversion funnel chart showing stages and drop-off.",
+          "name": "WuFunnelChart",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "stages",
+              "description": "",
+              "type": {
+                "text": "FunnelStage[]"
+              },
+              "default": "[]",
+              "attribute": "stages",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "stages",
+              "description": "",
+              "type": {
+                "text": "FunnelStage[]"
+              },
+              "default": "[]",
+              "fieldName": "stages"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-funnel-chart",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuFunnelChart",
+          "declaration": {
+            "name": "WuFunnelChart",
+            "module": "src/components/funnel-chart/wu-funnel-chart.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-funnel-chart",
+          "declaration": {
+            "name": "WuFunnelChart",
+            "module": "src/components/funnel-chart/wu-funnel-chart.ts"
           }
         }
       ]
@@ -3855,6 +5294,147 @@
           "declaration": {
             "name": "WuGallery",
             "module": "src/components/gallery/wu-gallery.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/gas-fee/wu-gas-fee.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Current gas fee estimation display",
+          "name": "WuGasFee",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-gas-fee",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuGasFee",
+          "declaration": {
+            "name": "WuGasFee",
+            "module": "src/components/gas-fee/wu-gas-fee.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-gas-fee",
+          "declaration": {
+            "name": "WuGasFee",
+            "module": "src/components/gas-fee/wu-gas-fee.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/geo-map/wu-geo-map.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Geographic choropleth / regional map (placeholder — integrate your map library).",
+          "name": "WuGeoMap",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-region-select",
+              "description": "Emitted when a region is selected; detail: { region: GeoRegion }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-geo-map",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuGeoMap",
+          "declaration": {
+            "name": "WuGeoMap",
+            "module": "src/components/geo-map/wu-geo-map.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-geo-map",
+          "declaration": {
+            "name": "WuGeoMap",
+            "module": "src/components/geo-map/wu-geo-map.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/geofence/wu-geofence.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Draw and manage geofence boundaries on a map",
+          "name": "WuGeofence",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-geofence",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuGeofence",
+          "declaration": {
+            "name": "WuGeofence",
+            "module": "src/components/geofence/wu-geofence.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-geofence",
+          "declaration": {
+            "name": "WuGeofence",
+            "module": "src/components/geofence/wu-geofence.ts"
           }
         }
       ]
@@ -3998,6 +5578,144 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/health-check/wu-health-check.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Service health check status dashboard",
+          "name": "WuHealthCheck",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-health-check",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuHealthCheck",
+          "declaration": {
+            "name": "WuHealthCheck",
+            "module": "src/components/health-check/wu-health-check.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-health-check",
+          "declaration": {
+            "name": "WuHealthCheck",
+            "module": "src/components/health-check/wu-health-check.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/high-contrast/wu-high-contrast.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "High contrast mode wrapper and toggle",
+          "name": "WuHighContrast",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-high-contrast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuHighContrast",
+          "declaration": {
+            "name": "WuHighContrast",
+            "module": "src/components/high-contrast/wu-high-contrast.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-high-contrast",
+          "declaration": {
+            "name": "WuHighContrast",
+            "module": "src/components/high-contrast/wu-high-contrast.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/icon/wu-icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Renders an SVG icon from a named set or slot",
+          "name": "WuIcon",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuIcon",
+          "declaration": {
+            "name": "WuIcon",
+            "module": "src/components/icon/wu-icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-icon",
+          "declaration": {
+            "name": "WuIcon",
+            "module": "src/components/icon/wu-icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/image/wu-image.ts",
       "declarations": [
         {
@@ -4033,6 +5751,98 @@
           "declaration": {
             "name": "WuImage",
             "module": "src/components/image/wu-image.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/image-compare/wu-image-compare.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Before/after image slider comparison",
+          "name": "WuImageCompare",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-image-compare",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuImageCompare",
+          "declaration": {
+            "name": "WuImageCompare",
+            "module": "src/components/image-compare/wu-image-compare.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-image-compare",
+          "declaration": {
+            "name": "WuImageCompare",
+            "module": "src/components/image-compare/wu-image-compare.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/image-crop/wu-image-crop.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Image cropper with aspect ratio control",
+          "name": "WuImageCrop",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-image-crop",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuImageCrop",
+          "declaration": {
+            "name": "WuImageCrop",
+            "module": "src/components/image-crop/wu-image-crop.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-image-crop",
+          "declaration": {
+            "name": "WuImageCrop",
+            "module": "src/components/image-crop/wu-image-crop.ts"
           }
         }
       ]
@@ -4230,6 +6040,98 @@
           "declaration": {
             "name": "WuInput",
             "module": "src/components/input/wu-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/install-prompt/wu-install-prompt.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "PWA install prompt banner and button",
+          "name": "WuInstallPrompt",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-install-prompt",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuInstallPrompt",
+          "declaration": {
+            "name": "WuInstallPrompt",
+            "module": "src/components/install-prompt/wu-install-prompt.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-install-prompt",
+          "declaration": {
+            "name": "WuInstallPrompt",
+            "module": "src/components/install-prompt/wu-install-prompt.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/invoice/wu-invoice.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Invoice document layout for printing and PDF export",
+          "name": "WuInvoice",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-invoice",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuInvoice",
+          "declaration": {
+            "name": "WuInvoice",
+            "module": "src/components/invoice/wu-invoice.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-invoice",
+          "declaration": {
+            "name": "WuInvoice",
+            "module": "src/components/invoice/wu-invoice.ts"
           }
         }
       ]
@@ -4472,6 +6374,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/keyboard-focus/wu-keyboard-focus.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Visible focus ring only during keyboard navigation",
+          "name": "WuKeyboardFocus",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-keyboard-focus",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuKeyboardFocus",
+          "declaration": {
+            "name": "WuKeyboardFocus",
+            "module": "src/components/keyboard-focus/wu-keyboard-focus.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-keyboard-focus",
+          "declaration": {
+            "name": "WuKeyboardFocus",
+            "module": "src/components/keyboard-focus/wu-keyboard-focus.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/keyboard-shortcuts/wu-keyboard-shortcuts.ts",
       "declarations": [
         {
@@ -4558,6 +6506,144 @@
           "declaration": {
             "name": "WuLabel",
             "module": "src/components/label/wu-label.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/label-sheet/wu-label-sheet.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Printable label sheet Avery-style layout",
+          "name": "WuLabelSheet",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-label-sheet",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLabelSheet",
+          "declaration": {
+            "name": "WuLabelSheet",
+            "module": "src/components/label-sheet/wu-label-sheet.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-label-sheet",
+          "declaration": {
+            "name": "WuLabelSheet",
+            "module": "src/components/label-sheet/wu-label-sheet.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/landmark/wu-landmark.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "ARIA landmark region wrapper with label",
+          "name": "WuLandmark",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-landmark",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLandmark",
+          "declaration": {
+            "name": "WuLandmark",
+            "module": "src/components/landmark/wu-landmark.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-landmark",
+          "declaration": {
+            "name": "WuLandmark",
+            "module": "src/components/landmark/wu-landmark.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/letter/wu-letter.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Formal letter template with header body signature",
+          "name": "WuLetter",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-letter",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLetter",
+          "declaration": {
+            "name": "WuLetter",
+            "module": "src/components/letter/wu-letter.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-letter",
+          "declaration": {
+            "name": "WuLetter",
+            "module": "src/components/letter/wu-letter.ts"
           }
         }
       ]
@@ -4795,6 +6881,139 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/live-indicator/wu-live-indicator.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Pulsing \"LIVE\" badge for dashboards, sports scores, and real-time data feeds.",
+          "name": "WuLiveIndicator",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-live-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLiveIndicator",
+          "declaration": {
+            "name": "WuLiveIndicator",
+            "module": "src/components/live-indicator/wu-live-indicator.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-live-indicator",
+          "declaration": {
+            "name": "WuLiveIndicator",
+            "module": "src/components/live-indicator/wu-live-indicator.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/location-picker/wu-location-picker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Click-to-pick location on a map",
+          "name": "WuLocationPicker",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-location-picker",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLocationPicker",
+          "declaration": {
+            "name": "WuLocationPicker",
+            "module": "src/components/location-picker/wu-location-picker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-location-picker",
+          "declaration": {
+            "name": "WuLocationPicker",
+            "module": "src/components/location-picker/wu-location-picker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/log-stream/wu-log-stream.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Live log stream viewer with level filtering",
+          "name": "WuLogStream",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-log-stream",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLogStream",
+          "declaration": {
+            "name": "WuLogStream",
+            "module": "src/components/log-stream/wu-log-stream.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-log-stream",
+          "declaration": {
+            "name": "WuLogStream",
+            "module": "src/components/log-stream/wu-log-stream.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/log-viewer/wu-log-viewer.ts",
       "declarations": [
         {
@@ -4886,6 +7105,98 @@
           "declaration": {
             "name": "WuLoginForm",
             "module": "src/components/login-form/wu-login-form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/lottie/wu-lottie.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Lottie animation player placeholder",
+          "name": "WuLottie",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-lottie",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuLottie",
+          "declaration": {
+            "name": "WuLottie",
+            "module": "src/components/lottie/wu-lottie.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-lottie",
+          "declaration": {
+            "name": "WuLottie",
+            "module": "src/components/lottie/wu-lottie.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/map/wu-map.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Interactive map component placeholder",
+          "name": "WuMap",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-map",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMap",
+          "declaration": {
+            "name": "WuMap",
+            "module": "src/components/map/wu-map.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-map",
+          "declaration": {
+            "name": "WuMap",
+            "module": "src/components/map/wu-map.ts"
           }
         }
       ]
@@ -5274,6 +7585,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/metric-card/wu-metric-card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "KPI metric card with value label and trend",
+          "name": "WuMetricCard",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-metric-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuMetricCard",
+          "declaration": {
+            "name": "WuMetricCard",
+            "module": "src/components/metric-card/wu-metric-card.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-metric-card",
+          "declaration": {
+            "name": "WuMetricCard",
+            "module": "src/components/metric-card/wu-metric-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/modal/wu-modal.ts",
       "declarations": [
         {
@@ -5367,6 +7724,77 @@
           "declaration": {
             "name": "WuModal",
             "module": "src/components/modal/wu-modal.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/model-selector/wu-model-selector.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Dropdown to choose an AI model.",
+          "name": "WuModelSelector",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "models",
+              "description": "Currently selected model value */\n  @property()\n  value = 'gpt-4o';\n\n  /** List of available models",
+              "type": {
+                "text": "AIModel[]"
+              },
+              "default": "DEFAULT_MODELS",
+              "attribute": "models",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-change",
+              "description": "Emitted with `{ value: string }` when selection changes",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "models",
+              "description": "Currently selected model value */\n  @property()\n  value = 'gpt-4o';\n\n  /** List of available models",
+              "type": {
+                "text": "AIModel[]"
+              },
+              "default": "DEFAULT_MODELS",
+              "fieldName": "models"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-model-selector",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuModelSelector",
+          "declaration": {
+            "name": "WuModelSelector",
+            "module": "src/components/model-selector/wu-model-selector.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-model-selector",
+          "declaration": {
+            "name": "WuModelSelector",
+            "module": "src/components/model-selector/wu-model-selector.ts"
           }
         }
       ]
@@ -5477,6 +7905,101 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/network-graph/wu-network-graph.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Force-directed network / graph visualization (placeholder — integrate D3/vis.js).",
+          "name": "WuNetworkGraph",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-node-select",
+              "description": "Emitted when a node is selected; detail: { node: GraphNode }",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-network-graph",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNetworkGraph",
+          "declaration": {
+            "name": "WuNetworkGraph",
+            "module": "src/components/network-graph/wu-network-graph.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-network-graph",
+          "declaration": {
+            "name": "WuNetworkGraph",
+            "module": "src/components/network-graph/wu-network-graph.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/nft-card/wu-nft-card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "NFT display card with image name collection and traits",
+          "name": "WuNftCard",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-nft-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNftCard",
+          "declaration": {
+            "name": "WuNftCard",
+            "module": "src/components/nft-card/wu-nft-card.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-nft-card",
+          "declaration": {
+            "name": "WuNftCard",
+            "module": "src/components/nft-card/wu-nft-card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/notification-center/wu-notification-center.ts",
       "declarations": [
         {
@@ -5526,6 +8049,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/notification-permission/wu-notification-permission.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Request browser notification permission UI",
+          "name": "WuNotificationPermission",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-notification-permission",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuNotificationPermission",
+          "declaration": {
+            "name": "WuNotificationPermission",
+            "module": "src/components/notification-permission/wu-notification-permission.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-notification-permission",
+          "declaration": {
+            "name": "WuNotificationPermission",
+            "module": "src/components/notification-permission/wu-notification-permission.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/number/wu-number.ts",
       "declarations": [
         {
@@ -5561,6 +8130,52 @@
           "declaration": {
             "name": "WuNumber",
             "module": "src/components/number/wu-number.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/offline-banner/wu-offline-banner.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Banner displayed when user goes offline",
+          "name": "WuOfflineBanner",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-offline-banner",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuOfflineBanner",
+          "declaration": {
+            "name": "WuOfflineBanner",
+            "module": "src/components/offline-banner/wu-offline-banner.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-offline-banner",
+          "declaration": {
+            "name": "WuOfflineBanner",
+            "module": "src/components/offline-banner/wu-offline-banner.ts"
           }
         }
       ]
@@ -5866,6 +8481,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/pdf-viewer/wu-pdf-viewer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "PDF document viewer placeholder",
+          "name": "WuPdfViewer",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-pdf-viewer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuPdfViewer",
+          "declaration": {
+            "name": "WuPdfViewer",
+            "module": "src/components/pdf-viewer/wu-pdf-viewer.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-pdf-viewer",
+          "declaration": {
+            "name": "WuPdfViewer",
+            "module": "src/components/pdf-viewer/wu-pdf-viewer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/pin-input/wu-pin-input.ts",
       "declarations": [
         {
@@ -6021,6 +8682,69 @@
           "declaration": {
             "name": "WuPopover",
             "module": "src/components/popover/wu-popover.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/presence/wu-presence.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Shows who else is currently viewing or editing a document (avatar stack).",
+          "name": "WuPresence",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "users",
+              "description": "",
+              "type": {
+                "text": "PresenceUser[]"
+              },
+              "default": "[]",
+              "attribute": "users",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "users",
+              "description": "",
+              "type": {
+                "text": "PresenceUser[]"
+              },
+              "default": "[]",
+              "fieldName": "users"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-presence",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuPresence",
+          "declaration": {
+            "name": "WuPresence",
+            "module": "src/components/presence/wu-presence.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-presence",
+          "declaration": {
+            "name": "WuPresence",
+            "module": "src/components/presence/wu-presence.ts"
           }
         }
       ]
@@ -6331,6 +9055,77 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/prompt-library/wu-prompt-library.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Browse and insert saved prompts.",
+          "name": "WuPromptLibrary",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "prompts",
+              "description": "",
+              "type": {
+                "text": "PromptItem[]"
+              },
+              "default": "[",
+              "attribute": "prompts",
+              "reflects": false
+            }
+          ],
+          "events": [
+            {
+              "name": "wu-insert",
+              "description": "Emitted with `{ prompt: PromptItem }` when an item is inserted",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "prompts",
+              "description": "",
+              "type": {
+                "text": "PromptItem[]"
+              },
+              "default": "[",
+              "fieldName": "prompts"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-prompt-library",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuPromptLibrary",
+          "declaration": {
+            "name": "WuPromptLibrary",
+            "module": "src/components/prompt-library/wu-prompt-library.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-prompt-library",
+          "declaration": {
+            "name": "WuPromptLibrary",
+            "module": "src/components/prompt-library/wu-prompt-library.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/prose/wu-prose.ts",
       "declarations": [
         {
@@ -6520,6 +9315,47 @@
           "declaration": {
             "name": "WuQueryBuilder",
             "module": "src/components/query-builder/wu-query-builder.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/radar-chart/wu-radar-chart.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Spider/web radar chart for multi-dimensional data comparison.",
+          "name": "WuRadarChart",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-radar-chart",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRadarChart",
+          "declaration": {
+            "name": "WuRadarChart",
+            "module": "src/components/radar-chart/wu-radar-chart.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-radar-chart",
+          "declaration": {
+            "name": "WuRadarChart",
+            "module": "src/components/radar-chart/wu-radar-chart.ts"
           }
         }
       ]
@@ -6782,6 +9618,253 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/reasoning-trace/wu-reasoning-trace.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Collapsible thought-chain / reasoning trace display for AI responses.",
+          "name": "WuReasoningTrace",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "steps",
+              "description": "Whether the trace is expanded */\n  @property({ type: Boolean, reflect: true })\n  open = false;\n\n  /** List of reasoning steps",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]",
+              "attribute": "steps",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "steps",
+              "description": "Whether the trace is expanded */\n  @property({ type: Boolean, reflect: true })\n  open = false;\n\n  /** List of reasoning steps",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]",
+              "fieldName": "steps"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-reasoning-trace",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuReasoningTrace",
+          "declaration": {
+            "name": "WuReasoningTrace",
+            "module": "src/components/reasoning-trace/wu-reasoning-trace.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-reasoning-trace",
+          "declaration": {
+            "name": "WuReasoningTrace",
+            "module": "src/components/reasoning-trace/wu-reasoning-trace.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/receipt/wu-receipt.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Receipt document layout for transactions",
+          "name": "WuReceipt",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-receipt",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuReceipt",
+          "declaration": {
+            "name": "WuReceipt",
+            "module": "src/components/receipt/wu-receipt.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-receipt",
+          "declaration": {
+            "name": "WuReceipt",
+            "module": "src/components/receipt/wu-receipt.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/reduced-motion/wu-reduced-motion.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Disable animations when prefers-reduced-motion is set",
+          "name": "WuReducedMotion",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-reduced-motion",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuReducedMotion",
+          "declaration": {
+            "name": "WuReducedMotion",
+            "module": "src/components/reduced-motion/wu-reduced-motion.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-reduced-motion",
+          "declaration": {
+            "name": "WuReducedMotion",
+            "module": "src/components/reduced-motion/wu-reduced-motion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/regex-tester/wu-regex-tester.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Interactive regular expression tester",
+          "name": "WuRegexTester",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-regex-tester",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRegexTester",
+          "declaration": {
+            "name": "WuRegexTester",
+            "module": "src/components/regex-tester/wu-regex-tester.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-regex-tester",
+          "declaration": {
+            "name": "WuRegexTester",
+            "module": "src/components/regex-tester/wu-regex-tester.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/report/wu-report.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Structured report document with cover page and sections",
+          "name": "WuReport",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-report",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuReport",
+          "declaration": {
+            "name": "WuReport",
+            "module": "src/components/report/wu-report.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-report",
+          "declaration": {
+            "name": "WuReport",
+            "module": "src/components/report/wu-report.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/report-builder/wu-report-builder.ts",
       "declarations": [
         {
@@ -6929,6 +10012,181 @@
           "declaration": {
             "name": "WuRichTextViewer",
             "module": "src/components/rich-text-viewer/wu-rich-text-viewer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/route-display/wu-route-display.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays a route with waypoints on a map",
+          "name": "WuRouteDisplay",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-route-display",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuRouteDisplay",
+          "declaration": {
+            "name": "WuRouteDisplay",
+            "module": "src/components/route-display/wu-route-display.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-route-display",
+          "declaration": {
+            "name": "WuRouteDisplay",
+            "module": "src/components/route-display/wu-route-display.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sankey/wu-sankey.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Sankey/flow diagram for budget allocation and user journey visualization.",
+          "name": "WuSankey",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "nodes",
+              "description": "",
+              "type": {
+                "text": "SankeyNode[]"
+              },
+              "default": "[]",
+              "attribute": "nodes",
+              "reflects": false
+            },
+            {
+              "kind": "field",
+              "name": "links",
+              "description": "",
+              "type": {
+                "text": "SankeyLink[]"
+              },
+              "default": "[]",
+              "attribute": "links",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "nodes",
+              "description": "",
+              "type": {
+                "text": "SankeyNode[]"
+              },
+              "default": "[]",
+              "fieldName": "nodes"
+            },
+            {
+              "name": "links",
+              "description": "",
+              "type": {
+                "text": "SankeyLink[]"
+              },
+              "default": "[]",
+              "fieldName": "links"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sankey",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSankey",
+          "declaration": {
+            "name": "WuSankey",
+            "module": "src/components/sankey/wu-sankey.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sankey",
+          "declaration": {
+            "name": "WuSankey",
+            "module": "src/components/sankey/wu-sankey.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/schema-viewer/wu-schema-viewer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "JSON Schema and TypeScript type tree viewer",
+          "name": "WuSchemaViewer",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-schema-viewer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSchemaViewer",
+          "declaration": {
+            "name": "WuSchemaViewer",
+            "module": "src/components/schema-viewer/wu-schema-viewer.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-schema-viewer",
+          "declaration": {
+            "name": "WuSchemaViewer",
+            "module": "src/components/schema-viewer/wu-schema-viewer.ts"
           }
         }
       ]
@@ -7185,6 +10443,52 @@
           "declaration": {
             "name": "WuSessionTimeout",
             "module": "src/components/session-timeout/wu-session-timeout.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/share-button/wu-share-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Web Share API button with clipboard fallback",
+          "name": "WuShareButton",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-share-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuShareButton",
+          "declaration": {
+            "name": "WuShareButton",
+            "module": "src/components/share-button/wu-share-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-share-button",
+          "declaration": {
+            "name": "WuShareButton",
+            "module": "src/components/share-button/wu-share-button.ts"
           }
         }
       ]
@@ -7479,6 +10783,98 @@
           "declaration": {
             "name": "WuSkeleton",
             "module": "src/components/skeleton/wu-skeleton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/skip-link/wu-skip-link.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Accessible skip navigation link for keyboard users",
+          "name": "WuSkipLink",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-skip-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSkipLink",
+          "declaration": {
+            "name": "WuSkipLink",
+            "module": "src/components/skip-link/wu-skip-link.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-skip-link",
+          "declaration": {
+            "name": "WuSkipLink",
+            "module": "src/components/skip-link/wu-skip-link.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sla-tracker/wu-sla-tracker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "SLA compliance tracker with percentage and target",
+          "name": "WuSlaTracker",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sla-tracker",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSlaTracker",
+          "declaration": {
+            "name": "WuSlaTracker",
+            "module": "src/components/sla-tracker/wu-sla-tracker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sla-tracker",
+          "declaration": {
+            "name": "WuSlaTracker",
+            "module": "src/components/sla-tracker/wu-sla-tracker.ts"
           }
         }
       ]
@@ -7938,6 +11334,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/sr-only/wu-sr-only.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Visually hidden content visible only to screen readers",
+          "name": "WuSrOnly",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sr-only",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSrOnly",
+          "declaration": {
+            "name": "WuSrOnly",
+            "module": "src/components/sr-only/wu-sr-only.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sr-only",
+          "declaration": {
+            "name": "WuSrOnly",
+            "module": "src/components/sr-only/wu-sr-only.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/stack/wu-stack.ts",
       "declarations": [
         {
@@ -8312,6 +11754,55 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/streaming-text/wu-streaming-text.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Text that renders character-by-character in a typewriter / streaming style.",
+          "name": "WuStreamingText",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [
+            {
+              "name": "wu-done",
+              "description": "Emitted when streaming completes",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-streaming-text",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuStreamingText",
+          "declaration": {
+            "name": "WuStreamingText",
+            "module": "src/components/streaming-text/wu-streaming-text.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-streaming-text",
+          "declaration": {
+            "name": "WuStreamingText",
+            "module": "src/components/streaming-text/wu-streaming-text.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/support-bubble/wu-support-bubble.ts",
       "declarations": [
         {
@@ -8497,6 +11988,69 @@
           "declaration": {
             "name": "WuSwitch",
             "module": "src/components/switch/wu-switch.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/sync-status/wu-sync-status.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Cloud save / sync / offline indicator.",
+          "name": "WuSyncStatus",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "description": "",
+              "type": {
+                "text": "'synced' | 'syncing' | 'offline' | 'error'"
+              },
+              "default": "synced",
+              "attribute": "status",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "status",
+              "description": "",
+              "type": {
+                "text": "'synced' | 'syncing' | 'offline' | 'error'"
+              },
+              "default": "synced",
+              "fieldName": "status"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-sync-status",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuSyncStatus",
+          "declaration": {
+            "name": "WuSyncStatus",
+            "module": "src/components/sync-status/wu-sync-status.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-sync-status",
+          "declaration": {
+            "name": "WuSyncStatus",
+            "module": "src/components/sync-status/wu-sync-status.ts"
           }
         }
       ]
@@ -8949,6 +12503,52 @@
           "declaration": {
             "name": "WuTagInput",
             "module": "src/components/tag-input/wu-tag-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/terminal/wu-terminal.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Web terminal xterm emulator placeholder",
+          "name": "WuTerminal",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-terminal",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTerminal",
+          "declaration": {
+            "name": "WuTerminal",
+            "module": "src/components/terminal/wu-terminal.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-terminal",
+          "declaration": {
+            "name": "WuTerminal",
+            "module": "src/components/terminal/wu-terminal.ts"
           }
         }
       ]
@@ -9514,6 +13114,110 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/token-counter/wu-token-counter.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Real-time token count display with a limit progress bar.",
+          "name": "WuTokenCounter",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-token-counter",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTokenCounter",
+          "declaration": {
+            "name": "WuTokenCounter",
+            "module": "src/components/token-counter/wu-token-counter.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-token-counter",
+          "declaration": {
+            "name": "WuTokenCounter",
+            "module": "src/components/token-counter/wu-token-counter.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tool-call-display/wu-tool-call-display.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Displays an AI tool invocation with inputs and outputs.",
+          "name": "WuToolCallDisplay",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "description": "Name of the tool that was called */\n  @property({ attribute: 'tool-name' })\n  toolName = '';\n\n  /** Status of the tool call",
+              "type": {
+                "text": "'running' | 'success' | 'error'"
+              },
+              "default": "success",
+              "attribute": "status",
+              "reflects": true
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "status",
+              "description": "Name of the tool that was called */\n  @property({ attribute: 'tool-name' })\n  toolName = '';\n\n  /** Status of the tool call",
+              "type": {
+                "text": "'running' | 'success' | 'error'"
+              },
+              "default": "success",
+              "fieldName": "status"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tool-call-display",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuToolCallDisplay",
+          "declaration": {
+            "name": "WuToolCallDisplay",
+            "module": "src/components/tool-call-display/wu-tool-call-display.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tool-call-display",
+          "declaration": {
+            "name": "WuToolCallDisplay",
+            "module": "src/components/tool-call-display/wu-tool-call-display.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/tooltip/wu-tooltip.ts",
       "declarations": [
         {
@@ -9662,6 +13366,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/components/transaction-status/wu-transaction-status.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Blockchain transaction status tracker",
+          "name": "WuTransactionStatus",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-transaction-status",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTransactionStatus",
+          "declaration": {
+            "name": "WuTransactionStatus",
+            "module": "src/components/transaction-status/wu-transaction-status.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-transaction-status",
+          "declaration": {
+            "name": "WuTransactionStatus",
+            "module": "src/components/transaction-status/wu-transaction-status.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/components/tree/wu-tree.ts",
       "declarations": [
         {
@@ -9760,6 +13510,284 @@
           "declaration": {
             "name": "WuTreeItem",
             "module": "src/components/tree/wu-tree.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/tree-map/wu-tree-map.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Hierarchical nested rectangles (treemap) chart.",
+          "name": "WuTreeMap",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-tree-map",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTreeMap",
+          "declaration": {
+            "name": "WuTreeMap",
+            "module": "src/components/tree-map/wu-tree-map.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-tree-map",
+          "declaration": {
+            "name": "WuTreeMap",
+            "module": "src/components/tree-map/wu-tree-map.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/typing-indicator/wu-typing-indicator.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Animated \"…\" dots indicator for streaming or thinking state.",
+          "name": "WuTypingIndicator",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-typing-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTypingIndicator",
+          "declaration": {
+            "name": "WuTypingIndicator",
+            "module": "src/components/typing-indicator/wu-typing-indicator.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-typing-indicator",
+          "declaration": {
+            "name": "WuTypingIndicator",
+            "module": "src/components/typing-indicator/wu-typing-indicator.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/typing-users/wu-typing-users.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Shows \"Alice and Bob are typing…\" indicator for collaborative contexts.",
+          "name": "WuTypingUsers",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "users",
+              "description": "",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]",
+              "attribute": "users",
+              "reflects": false
+            }
+          ],
+          "events": [],
+          "attributes": [
+            {
+              "name": "users",
+              "description": "",
+              "type": {
+                "text": "string[]"
+              },
+              "default": "[]",
+              "fieldName": "users"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-typing-users",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuTypingUsers",
+          "declaration": {
+            "name": "WuTypingUsers",
+            "module": "src/components/typing-users/wu-typing-users.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-typing-users",
+          "declaration": {
+            "name": "WuTypingUsers",
+            "module": "src/components/typing-users/wu-typing-users.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/update-available/wu-update-available.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "PWA service worker update notification banner",
+          "name": "WuUpdateAvailable",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-update-available",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuUpdateAvailable",
+          "declaration": {
+            "name": "WuUpdateAvailable",
+            "module": "src/components/update-available/wu-update-available.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-update-available",
+          "declaration": {
+            "name": "WuUpdateAvailable",
+            "module": "src/components/update-available/wu-update-available.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/uptime-bar/wu-uptime-bar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Service uptime history bar 28 or 90 day view",
+          "name": "WuUptimeBar",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-uptime-bar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuUptimeBar",
+          "declaration": {
+            "name": "WuUptimeBar",
+            "module": "src/components/uptime-bar/wu-uptime-bar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-uptime-bar",
+          "declaration": {
+            "name": "WuUptimeBar",
+            "module": "src/components/uptime-bar/wu-uptime-bar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/user-cursor/wu-user-cursor.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Another user's cursor rendered in a shared canvas or document.",
+          "name": "WuUserCursor",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-user-cursor",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuUserCursor",
+          "declaration": {
+            "name": "WuUserCursor",
+            "module": "src/components/user-cursor/wu-user-cursor.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-user-cursor",
+          "declaration": {
+            "name": "WuUserCursor",
+            "module": "src/components/user-cursor/wu-user-cursor.ts"
           }
         }
       ]
@@ -9977,6 +14005,139 @@
           "declaration": {
             "name": "WuVisuallyHidden",
             "module": "src/components/visually-hidden/wu-visually-hidden.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/wallet-connect/wu-wallet-connect.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Web3 wallet connection button and status",
+          "name": "WuWalletConnect",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-wallet-connect",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuWalletConnect",
+          "declaration": {
+            "name": "WuWalletConnect",
+            "module": "src/components/wallet-connect/wu-wallet-connect.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-wallet-connect",
+          "declaration": {
+            "name": "WuWalletConnect",
+            "module": "src/components/wallet-connect/wu-wallet-connect.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/waterfall-chart/wu-waterfall-chart.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Waterfall / bridge chart showing cumulative value changes.",
+          "name": "WuWaterfallChart",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-waterfall-chart",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuWaterfallChart",
+          "declaration": {
+            "name": "WuWaterfallChart",
+            "module": "src/components/waterfall-chart/wu-waterfall-chart.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-waterfall-chart",
+          "declaration": {
+            "name": "WuWaterfallChart",
+            "module": "src/components/waterfall-chart/wu-waterfall-chart.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/webhook-log/wu-webhook-log.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Real-time webhook request event log viewer",
+          "name": "WuWebhookLog",
+          "cssProperties": [],
+          "cssParts": [],
+          "slots": [
+            {
+              "name": "",
+              "description": "Default slot"
+            }
+          ],
+          "members": [],
+          "events": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "wu-webhook-log",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WuWebhookLog",
+          "declaration": {
+            "name": "WuWebhookLog",
+            "module": "src/components/webhook-log/wu-webhook-log.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "wu-webhook-log",
+          "declaration": {
+            "name": "WuWebhookLog",
+            "module": "src/components/webhook-log/wu-webhook-log.ts"
           }
         }
       ]
