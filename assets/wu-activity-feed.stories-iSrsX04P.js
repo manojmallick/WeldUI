@@ -1,7 +1,0 @@
-import{b as m}from"./lit-element-I0QAeI3K.js";import"./index-BlKKMvld.js";import"./directive-helpers-QMk0t2il.js";const h={title:"V3/SaaS & App Shell/Activity Feed",component:"wu-activity-feed",tags:["autodocs"]},c=[{id:"1",actor:"Alice Chen",action:"pushed to branch",target:"feature/dark-mode",time:"2 minutes ago"},{id:"2",actor:"Bob Smith",action:"opened pull request",target:"#48 Add tokens",time:"15 minutes ago"},{id:"3",actor:"Carol Wu",action:"commented on",target:"Issue #32",time:"1 hour ago"},{id:"4",actor:"Dave Park",action:"merged",target:"PR #45",time:"3 hours ago"}],e={render:()=>m`
-    <wu-activity-feed .items=${c} show-heading style="max-width:400px"></wu-activity-feed>
-  `},t={render:()=>m`<wu-activity-feed .items=${[]} show-heading style="max-width:400px"></wu-activity-feed>`};var a,r,i;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
-  render: () => html\`
-    <wu-activity-feed .items=\${sampleItems} show-heading style="max-width:400px"></wu-activity-feed>
-  \`
-}`,...(i=(r=e.parameters)==null?void 0:r.docs)==null?void 0:i.source}}};var o,s,d;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:'{\n  render: () => html`<wu-activity-feed .items=${[]} show-heading style="max-width:400px"></wu-activity-feed>`\n}',...(d=(s=t.parameters)==null?void 0:s.docs)==null?void 0:d.source}}};const l=["Default","Empty"];export{e as Default,t as Empty,l as __namedExportsOrder,h as default};
