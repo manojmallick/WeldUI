@@ -23,6 +23,8 @@ import { styles } from './wu-textarea.styles.js';
 export class WuTextarea extends LitElement {
   static styles = styles;
 
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
+
   /** Current value */
   @property()
   value = '';
@@ -81,13 +83,21 @@ export class WuTextarea extends LitElement {
   }
 
   override render() {
-    const id = 'textarea-' + (this.name ?? Math.random().toString(36).slice(2));
+    const textareaId = `wu-textarea-${this._uid}`;
+    const errorId = `${textareaId}-error`;
+    const hintId = `${textareaId}-hint`;
+    const countId = `${textareaId}-count`;
+    const descIds = [
+      this.error ? errorId : '',
+      this.hint && !this.error ? hintId : '',
+      this.maxlength ? countId : '',
+    ].filter(Boolean).join(' ') || undefined;
     return html`
       <div part="base" class="wrapper">
-        ${this.label ? html`<label for=${id}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
+        ${this.label ? html`<label for=${textareaId}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
         <textarea
           part="textarea"
-          id=${id}
+          id=${textareaId}
           rows=${this.rows}
           name=${ifDefined(this.name)}
           placeholder=${ifDefined(this.placeholder)}
@@ -95,13 +105,14 @@ export class WuTextarea extends LitElement {
           ?disabled=${this.disabled}
           ?required=${this.required}
           aria-invalid=${this.error ? 'true' : 'false'}
+          aria-describedby=${ifDefined(descIds)}
           .value=${this.value}
           @input=${this._handleInput}
           @blur=${this._handleBlur}
         ></textarea>
-        ${this.maxlength ? html`<span class="char-count">${this._charCount} / ${this.maxlength}</span>` : ''}
-        ${this.error ? html`<span class="error" role="alert">${this.error}</span>` : ''}
-        ${this.hint && !this.error ? html`<span class="hint">${this.hint}</span>` : ''}
+        ${this.maxlength ? html`<span id=${countId} class="char-count" aria-live="polite">${this._charCount} / ${this.maxlength}</span>` : ''}
+        ${this.error ? html`<span id=${errorId} class="error" role="alert">${this.error}</span>` : ''}
+        ${this.hint && !this.error ? html`<span id=${hintId} class="hint">${this.hint}</span>` : ''}
       </div>
     `;
   }

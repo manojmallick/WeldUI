@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit';
 import { customElement, property, state, query } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-command.styles.js';
 
 export interface WuCommandItem {
@@ -29,6 +30,8 @@ export interface WuCommandItem {
 @customElement('wu-command')
 export class WuCommand extends LitElement {
   static styles = styles;
+
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
 
   /** Whether the palette is open */
   @property({ type: Boolean, reflect: true })
@@ -134,6 +137,11 @@ export class WuCommand extends LitElement {
       }
     }
 
+    const listId = `wu-command-list-${this._uid}`;
+    const activeItemId = flat.length > 0
+      ? `wu-cmd-item-${this._uid}-${this._selectedIndex}`
+      : undefined;
+
     return html`
       <div
         class="backdrop"
@@ -158,6 +166,8 @@ export class WuCommand extends LitElement {
               role="combobox"
               aria-expanded="true"
               aria-autocomplete="list"
+              aria-controls=${listId}
+              aria-activedescendant=${ifDefined(activeItemId)}
               aria-label="${this.placeholder}"
               placeholder=${this.placeholder}
               .value=${this._query}
@@ -169,15 +179,17 @@ export class WuCommand extends LitElement {
           </div>
 
           <div
+            id=${listId}
             class="list"
             role="listbox"
             aria-label="Commands"
           >
-            ${flat.length === 0 ? html`<div class="empty">${this.emptyMessage}</div>` : nothing}
+            ${flat.length === 0 ? html`<div class="empty" role="option" aria-disabled="true">${this.emptyMessage}</div>` : nothing}
             ${rows.map(row => row.type === 'group'
-              ? html`<div class="group-label">${row.label}</div>`
+              ? html`<div class="group-label" role="presentation">${row.label}</div>`
               : html`
                   <div
+                    id="wu-cmd-item-${this._uid}-${row.idx}"
                     class="item"
                     role="option"
                     aria-selected=${this._selectedIndex === row.idx}
@@ -186,7 +198,7 @@ export class WuCommand extends LitElement {
                   >
                     ${row.item.icon ? html`<span class="item-icon" aria-hidden="true">${row.item.icon}</span>` : nothing}
                     <span class="item-label">${row.item.label}</span>
-                    ${row.item.shortcut ? html`<kbd class="item-shortcut">${row.item.shortcut}</kbd>` : nothing}
+                    ${row.item.shortcut ? html`<kbd class="item-shortcut" aria-label="Shortcut: ${row.item.shortcut}">${row.item.shortcut}</kbd>` : nothing}
                   </div>
                 `
             )}

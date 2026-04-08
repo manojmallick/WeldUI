@@ -158,7 +158,7 @@ export class WuDataGrid extends LitElement {
     const totalDisplay = this.totalRows || this._filteredData.length;
 
     return html`
-      <div class="grid" part="grid">
+      <div class="grid" part="grid" role="grid" aria-rowcount=${this.totalRows || this._filteredData.length}>
         ${this.showToolbar ? html`
           <div class="toolbar">
             <div class="search-wrap">

@@ -40,4 +40,11 @@ export const styles = css`
     0%   { background-position: 200% 0; }
     100% { background-position: -200% 0; }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton {
+      animation: none;
+      background: var(--wu-skeleton-color);
+    }
+  }
 `;

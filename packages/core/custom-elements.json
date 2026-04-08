@@ -5961,7 +5961,7 @@
             {
               "kind": "field",
               "name": "type",
-              "description": "Input type",
+              "description": "Stable per-instance ID prefix — avoids new IDs on every render */\n  private readonly _uid = Math.random().toString(36).slice(2, 9);\n\n  /** Input type",
               "type": {
                 "text": "'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url'"
               },
@@ -6000,7 +6000,7 @@
           "attributes": [
             {
               "name": "type",
-              "description": "Input type",
+              "description": "Stable per-instance ID prefix — avoids new IDs on every render */\n  private readonly _uid = Math.random().toString(36).slice(2, 9);\n\n  /** Input type",
               "type": {
                 "text": "'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url'"
               },
@@ -10920,7 +10920,7 @@
             {
               "kind": "field",
               "name": "ticks",
-              "description": "Slider label */\n  @property()\n  label = '';\n\n  /** Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
+              "description": "Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Human-readable value text for screen readers (e.g. \"50%\" or \"Medium\"). Defaults to the raw numeric value when not set. /\n  @property({ attribute: 'value-text' })\n  valueText = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
               "type": {
                 "text": "number[]"
               },
@@ -10948,7 +10948,7 @@
           "attributes": [
             {
               "name": "ticks",
-              "description": "Slider label */\n  @property()\n  label = '';\n\n  /** Current value */\n  @property({ type: Number })\n  value = 0;\n\n  /** Minimum value */\n  @property({ type: Number })\n  min = 0;\n\n  /** Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
+              "description": "Maximum value */\n  @property({ type: Number })\n  max = 100;\n\n  /** Step increment */\n  @property({ type: Number })\n  step = 1;\n\n  /** Show current value next to label */\n  @property({ type: Boolean, attribute: 'show-value' })\n  showValue = false;\n\n  /** Hint text below the slider */\n  @property()\n  hint = '';\n\n  /** Human-readable value text for screen readers (e.g. \"50%\" or \"Medium\"). Defaults to the raw numeric value when not set. /\n  @property({ attribute: 'value-text' })\n  valueText = '';\n\n  /** Show tick marks at min/max (and intermediate marks if ticks provided)",
               "type": {
                 "text": "number[]"
               },

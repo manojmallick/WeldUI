@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, nothing } from 'lit';
 import { customElement, property, state, query } from 'lit/decorators.js';
 import { styles } from './wu-carousel.styles.js';
 
@@ -25,7 +25,9 @@ export class WuCarousel extends LitElement {
 
   private _updateCount() {
     this._count = this.querySelectorAll('*').length || 0;
-    if (this.autoplay && this._count > 0) {
+    // Respect prefers-reduced-motion: do not autoplay if user prefers reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.autoplay && this._count > 0 && !prefersReduced) {
       this._autoTimer = window.setInterval(() => this._next(), this.autoplayInterval);
     }
   }
@@ -53,17 +55,31 @@ export class WuCarousel extends LitElement {
   render() {
     return html`
       <div class="carousel" role="region" aria-label="Carousel" aria-roledescription="carousel">
-        <div class="track">
+        <div
+          class="track"
+          aria-live=${this.autoplay ? 'off' : 'polite'}
+          aria-atomic="false"
+        >
           <slot @slotchange=${this._onSlotChange}></slot>
         </div>
-        <button class="nav prev" @click=${this._prev} aria-label="Previous slide">‹</button>
-        <button class="nav next" @click=${this._next} aria-label="Next slide">›</button>
+        ${!this.noControls ? html`
+          <button class="nav prev" @click=${this._prev} aria-label="Previous slide, slide ${this.index === 0 ? this._count : this.index} of ${this._count}">‹</button>
+          <button class="nav next" @click=${this._next} aria-label="Next slide, slide ${this.index === this._count - 1 ? 1 : this.index + 2} of ${this._count}">›</button>
+        ` : nothing}
       </div>
-      <div class="dots" role="tablist" aria-label="Slides">
-        ${Array.from({ length: this._count }, (_, i) => html`
-          <button class="dot ${i === this.index ? 'active' : ''}" @click=${() => this._goto(i)} role="tab" aria-selected=${i === this.index} aria-label="Slide ${i + 1}"></button>
-        `)}
-      </div>`;
+      ${!this.noDots ? html`
+        <div class="dots" role="tablist" aria-label="Slides">
+          ${Array.from({ length: this._count }, (_, i) => html`
+            <button
+              class="dot ${i === this.index ? 'active' : ''}"
+              @click=${() => this._goto(i)}
+              role="tab"
+              aria-selected=${i === this.index}
+              aria-label="Slide ${i + 1} of ${this._count}"
+            ></button>
+          `)}
+        </div>
+      ` : nothing}`;
   }
 }
 

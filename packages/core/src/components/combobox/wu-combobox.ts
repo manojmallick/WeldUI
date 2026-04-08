@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-combobox.styles.js';
 
 export interface ComboboxOption {
@@ -35,6 +36,8 @@ export interface ComboboxOption {
 @customElement('wu-combobox')
 export class WuCombobox extends LitElement {
   static styles = styles;
+
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
 
   /** Input label */
   @property()
@@ -148,21 +151,26 @@ export class WuCombobox extends LitElement {
 
   override render() {
     const filtered = this._filtered;
-    const listId = 'combobox-list';
+    const inputId = `wu-combobox-${this._uid}`;
+    const listId = `wu-combobox-list-${this._uid}`;
+    const errorId = `wu-combobox-error-${this._uid}`;
+    const activedescendant = this._highlighted >= 0
+      ? `option-${filtered[this._highlighted]?.value}-${this._uid}`
+      : undefined;
     return html`
-      <label ?hidden=${!this.label}>${this.label}</label>
+      <label for=${inputId} ?hidden=${!this.label}>${this.label}</label>
       <div class="wrapper">
         <input
           part="base"
+          id=${inputId}
           type="text"
           role="combobox"
           autocomplete="off"
           aria-expanded=${this._open ? 'true' : 'false'}
           aria-haspopup="listbox"
           aria-controls=${listId}
-          aria-activedescendant=${
-            this._highlighted >= 0 ? `option-${filtered[this._highlighted]?.value}` : ''
-          }
+          aria-activedescendant=${ifDefined(activedescendant)}
+          aria-describedby=${ifDefined(this.error ? errorId : undefined)}
           placeholder=${this.placeholder}
           ?disabled=${this.disabled}
           @input=${this._handleInput}
@@ -179,11 +187,11 @@ export class WuCombobox extends LitElement {
           ?hidden=${!this._open}
         >
           ${filtered.length === 0 && this._query && !this.loading
-            ? html`<li class="empty">No options found</li>`
+            ? html`<li class="empty" role="option" aria-disabled="true">No options found</li>`
             : filtered.map(
                 (opt, i) => html`
                   <li
-                    id="option-${opt.value}"
+                    id="option-${opt.value}-${this._uid}"
                     class="option ${i === this._highlighted ? 'highlighted' : ''}"
                     role="option"
                     aria-selected=${opt.value === this.value ? 'true' : 'false'}
@@ -194,7 +202,7 @@ export class WuCombobox extends LitElement {
               )}
         </ul>
       </div>
-      <span class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</span>
+      <span id=${errorId} class="error-msg" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

@@ -101,6 +101,8 @@ export class WuRadio extends LitElement {
 export class WuRadioGroup extends LitElement {
   static styles = radioGroupStyles;
 
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
+
   /** The name attribute applied to all child wu-radio elements */
   @property()
   name = '';
@@ -184,6 +186,7 @@ export class WuRadioGroup extends LitElement {
   }
 
   override render() {
+    const errorId = `wu-radio-group-error-${this._uid}`;
     return html`
       <span class="legend" ?hidden=${!this.label}>${this.label}</span>
       <div
@@ -192,10 +195,11 @@ export class WuRadioGroup extends LitElement {
         role="radiogroup"
         aria-label=${ifDefined(this.label || undefined)}
         aria-disabled=${this.disabled ? 'true' : 'false'}
+        aria-describedby=${ifDefined(this.error ? errorId : undefined)}
       >
         <slot @slotchange=${this._handleSlotChange}></slot>
       </div>
-      <span class="error" role="alert" ?hidden=${!this.error}>${this.error}</span>
+      <span id=${errorId} class="error" role="alert" ?hidden=${!this.error}>${this.error}</span>
     `;
   }
 }

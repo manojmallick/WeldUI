@@ -35,6 +35,10 @@ export const styles = css`
     to   { opacity: 1; transform: translateX(0); }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .toast { animation: none; }
+  }
+
   :host([variant="success"]) .toast { border-left: 4px solid var(--wu-color-success); }
   :host([variant="warning"]) .toast { border-left: 4px solid var(--wu-color-warning); }
   :host([variant="danger"])  .toast { border-left: 4px solid var(--wu-color-danger);  }

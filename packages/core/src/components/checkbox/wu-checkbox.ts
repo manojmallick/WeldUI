@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-checkbox.styles.js';
 
 /**
@@ -20,6 +21,8 @@ import { styles } from './wu-checkbox.styles.js';
 @customElement('wu-checkbox')
 export class WuCheckbox extends LitElement {
   static styles = styles;
+
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
 
   /** Checked state */
   @property({ type: Boolean, reflect: true })
@@ -45,6 +48,14 @@ export class WuCheckbox extends LitElement {
   @property()
   value = 'on';
 
+  /** Hint text shown below the checkbox */
+  @property()
+  hint?: string;
+
+  /** Error message — also marks the checkbox invalid */
+  @property()
+  error?: string;
+
   private _handleChange(e: Event) {
     const input = e.target as HTMLInputElement;
     this.checked = input.checked;
@@ -64,22 +75,29 @@ export class WuCheckbox extends LitElement {
   }
 
   override render() {
-    const id = 'checkbox-' + (this.name ?? Math.random().toString(36).slice(2));
+    const checkboxId = `wu-checkbox-${this._uid}`;
+    const errorId = `${checkboxId}-error`;
+    const hintId = `${checkboxId}-hint`;
+    const describedBy = this.error ? errorId : this.hint ? hintId : undefined;
     return html`
       <div part="base" class="wrapper">
         <input
           part="input"
           type="checkbox"
-          id=${id}
+          id=${checkboxId}
           name=${this.name ?? ''}
           value=${this.value}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           aria-checked=${this.indeterminate ? 'mixed' : this.checked ? 'true' : 'false'}
+          aria-invalid=${ifDefined(this.error ? 'true' : undefined)}
+          aria-describedby=${ifDefined(describedBy)}
           @change=${this._handleChange}
         />
-        ${this.label ? html`<label part="label" for=${id}>${this.label}</label>` : ''}
+        ${this.label ? html`<label part="label" for=${checkboxId}>${this.label}</label>` : ''}
       </div>
+      ${this.error ? html`<span id=${errorId} class="error" role="alert">${this.error}</span>` : ''}
+      ${this.hint && !this.error ? html`<span id=${hintId} class="hint">${this.hint}</span>` : ''}
     `;
   }
 }

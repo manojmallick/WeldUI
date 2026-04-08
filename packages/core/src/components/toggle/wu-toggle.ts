@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-toggle.styles.js';
 
 /**
@@ -23,6 +24,8 @@ import { styles } from './wu-toggle.styles.js';
 @customElement('wu-toggle')
 export class WuToggle extends LitElement {
   static styles = styles;
+
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
 
   /** Whether the toggle is on */
   @property({ type: Boolean, reflect: true })
@@ -48,6 +51,14 @@ export class WuToggle extends LitElement {
   @property()
   name?: string;
 
+  /** Hint text shown below the toggle */
+  @property()
+  hint?: string;
+
+  /** Error message — marks the toggle as invalid */
+  @property()
+  error?: string;
+
   private _handleChange(e: Event) {
     this.checked = (e.target as HTMLInputElement).checked;
     this.dispatchEvent(new CustomEvent('wu-change', {
@@ -58,19 +69,24 @@ export class WuToggle extends LitElement {
   }
 
   override render() {
-    const id = 'toggle-' + (this.name ?? Math.random().toString(36).slice(2));
-    const labelEl = this.label ? html`<label part="label" for=${id}>${this.label}</label>` : '';
+    const toggleId = `wu-toggle-${this._uid}`;
+    const errorId = `${toggleId}-error`;
+    const hintId = `${toggleId}-hint`;
+    const describedBy = this.error ? errorId : this.hint ? hintId : undefined;
+    const labelEl = this.label ? html`<label part="label" for=${toggleId}>${this.label}</label>` : '';
     return html`
       <div part="base" class="wrapper">
         ${this.labelPosition === 'start' ? labelEl : ''}
         <input
           type="checkbox"
-          id=${id}
+          id=${toggleId}
           name=${this.name ?? ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           role="switch"
           aria-checked=${this.checked ? 'true' : 'false'}
+          aria-invalid=${ifDefined(this.error ? 'true' : undefined)}
+          aria-describedby=${ifDefined(describedBy)}
           @change=${this._handleChange}
         />
         <div part="track" class="track ${this.checked ? 'on' : ''}">
@@ -78,6 +94,8 @@ export class WuToggle extends LitElement {
         </div>
         ${this.labelPosition === 'end' ? labelEl : ''}
       </div>
+      ${this.error ? html`<span id=${errorId} class="error" role="alert">${this.error}</span>` : ''}
+      ${this.hint && !this.error ? html`<span id=${hintId} class="hint">${this.hint}</span>` : ''}
     `;
   }
 }

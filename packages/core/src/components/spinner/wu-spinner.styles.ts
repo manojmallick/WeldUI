@@ -27,4 +27,12 @@ export const styles = css`
   }
 
   @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner {
+      animation: none;
+      border-top-color: var(--wu-spinner-color);
+      border-right-color: var(--wu-spinner-color);
+    }
+  }
 `;

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { announce } from '../../utils/a11y.js';
 import { styles } from './wu-date-picker.styles.js';
 
 const DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -57,6 +58,8 @@ export class WuDatePicker extends LitElement {
 
   @state() private _viewYear: number;
   @state() private _viewMonth: number;
+  /** Focused date within the calendar grid (YYYY-MM-DD) */
+  @state() private _focusedDate = '';
 
   constructor() {
     super();
@@ -67,21 +70,47 @@ export class WuDatePicker extends LitElement {
 
   private _toggle() {
     this.open = !this.open;
-    if (this.open && this.value) {
-      const d = new Date(this.value + 'T00:00:00');
+    if (this.open) {
+      const init = this.value || toDateStr(new Date());
+      const d = new Date(init + 'T00:00:00');
       this._viewYear = d.getFullYear();
       this._viewMonth = d.getMonth();
+      this._focusedDate = init;
+      // Focus the focused day cell after render
+      requestAnimationFrame(() => this._focusDay(this._focusedDate));
     }
   }
 
   private _prevMonth() {
     if (this._viewMonth === 0) { this._viewYear--; this._viewMonth = 11; }
     else this._viewMonth--;
+    announce(`${MONTHS[this._viewMonth]} ${this._viewYear}`);
   }
 
   private _nextMonth() {
     if (this._viewMonth === 11) { this._viewYear++; this._viewMonth = 0; }
     else this._viewMonth++;
+    announce(`${MONTHS[this._viewMonth]} ${this._viewYear}`);
+  }
+
+  private _focusDay(dateStr: string) {
+    const btn = this.shadowRoot?.querySelector<HTMLButtonElement>(`[data-date="${dateStr}"]`);
+    btn?.focus();
+  }
+
+  private _moveDay(delta: number) {
+    const current = this._focusedDate || toDateStr(new Date());
+    const d = new Date(current + 'T00:00:00');
+    d.setDate(d.getDate() + delta);
+    const next = toDateStr(d);
+    // Navigate to adjacent month if needed
+    if (d.getMonth() !== this._viewMonth || d.getFullYear() !== this._viewYear) {
+      this._viewYear = d.getFullYear();
+      this._viewMonth = d.getMonth();
+      announce(`${MONTHS[this._viewMonth]} ${this._viewYear}`);
+    }
+    this._focusedDate = next;
+    requestAnimationFrame(() => this._focusDay(next));
   }
 
   private _select(dateStr: string) {
@@ -121,18 +150,88 @@ export class WuDatePicker extends LitElement {
     return days;
   }
 
-  private _onKeydown(e: KeyboardEvent) {
-    if (e.key === 'Escape') this.open = false;
+  private _onCalendarKeydown(e: KeyboardEvent) {
+    if (!this.open) return;
+    switch (e.key) {
+      case 'Escape':
+        this.open = false;
+        (this.shadowRoot?.querySelector<HTMLButtonElement>('.trigger'))?.focus();
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        this._moveDay(1);
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        this._moveDay(-1);
+        break;
+      case 'ArrowDown':
+        e.preventDefault();
+        this._moveDay(7);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        this._moveDay(-7);
+        break;
+      case 'Home':
+        e.preventDefault();
+        // Move to first day of current week (Sunday)
+        {
+          const d = new Date((this._focusedDate || toDateStr(new Date())) + 'T00:00:00');
+          this._moveDay(-d.getDay());
+        }
+        break;
+      case 'End':
+        e.preventDefault();
+        // Move to last day of current week (Saturday)
+        {
+          const d = new Date((this._focusedDate || toDateStr(new Date())) + 'T00:00:00');
+          this._moveDay(6 - d.getDay());
+        }
+        break;
+      case 'PageUp':
+        e.preventDefault();
+        this._prevMonth();
+        requestAnimationFrame(() => {
+          // Keep same day-of-month, clamped to new month
+          const d = new Date((this._focusedDate || toDateStr(new Date())) + 'T00:00:00');
+          const clamped = new Date(this._viewYear, this._viewMonth + 1, 0); // last day of new month
+          const day = Math.min(d.getDate(), clamped.getDate());
+          const next = toDateStr(new Date(this._viewYear, this._viewMonth, day));
+          this._focusedDate = next;
+          this._focusDay(next);
+        });
+        break;
+      case 'PageDown':
+        e.preventDefault();
+        this._nextMonth();
+        requestAnimationFrame(() => {
+          const d = new Date((this._focusedDate || toDateStr(new Date())) + 'T00:00:00');
+          const clamped = new Date(this._viewYear, this._viewMonth + 1, 0);
+          const day = Math.min(d.getDate(), clamped.getDate());
+          const next = toDateStr(new Date(this._viewYear, this._viewMonth, day));
+          this._focusedDate = next;
+          this._focusDay(next);
+        });
+        break;
+      case 'Enter':
+      case ' ':
+        if (this._focusedDate && !this._isDisabled(this._focusedDate)) {
+          e.preventDefault();
+          this._select(this._focusedDate);
+        }
+        break;
+    }
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('keydown', this._onKeydown);
+    this.addEventListener('keydown', this._onCalendarKeydown);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener('keydown', this._onKeydown);
+    this.removeEventListener('keydown', this._onCalendarKeydown);
   }
 
   render() {
@@ -164,8 +263,9 @@ export class WuDatePicker extends LitElement {
         part="calendar"
         class="calendar"
         role="dialog"
-        aria-label="Date picker"
-        aria-modal="false"
+        aria-label="${this.label} picker"
+        aria-modal="true"
+        @keydown=${this._onCalendarKeydown}
       >
         <div class="header">
           <button class="nav-btn" type="button" aria-label="Previous month" @click=${this._prevMonth}>
@@ -173,7 +273,7 @@ export class WuDatePicker extends LitElement {
               <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <span class="month-year">${MONTHS[this._viewMonth]} ${this._viewYear}</span>
+          <span class="month-year" aria-live="polite" aria-atomic="true">${MONTHS[this._viewMonth]} ${this._viewYear}</span>
           <button class="nav-btn" type="button" aria-label="Next month" @click=${this._nextMonth}>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
               <path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -182,22 +282,27 @@ export class WuDatePicker extends LitElement {
         </div>
 
         <div class="grid" role="grid" aria-label="${MONTHS[this._viewMonth]} ${this._viewYear}">
-          ${DAYS.map((d) => html`<div class="day-name" role="columnheader" aria-label=${d}>${d}</div>`)}
+          ${DAYS.map((d, i) => html`<div class="day-name" role="columnheader" abbr=${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][i]}>${d}</div>`)}
           ${days.map(({ date, current }) => {
             const ds = toDateStr(date);
             const disabled = this._isDisabled(ds);
             const selected = ds === this.value;
             const isToday = ds === today;
+            const isFocused = ds === this._focusedDate;
             return html`
               <button
                 type="button"
                 class=${['day', !current ? 'other-month' : '', isToday ? 'today' : '', selected ? 'selected' : ''].join(' ').trim()}
                 role="gridcell"
+                data-date=${ds}
                 aria-label=${date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 aria-selected=${selected}
                 aria-current=${isToday ? 'date' : nothing}
+                aria-disabled=${disabled ? 'true' : nothing}
+                tabindex=${isFocused ? '0' : '-1'}
                 ?disabled=${disabled}
                 @click=${() => !disabled && this._select(ds)}
+                @focus=${() => { this._focusedDate = ds; }}
               >${date.getDate()}</button>
             `;
           })}

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { styles } from './wu-slider.styles.js';
 
 /**
@@ -26,6 +27,8 @@ import { styles } from './wu-slider.styles.js';
 @customElement('wu-slider')
 export class WuSlider extends LitElement {
   static styles = styles;
+
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
 
   /** Slider label */
   @property()
@@ -54,6 +57,13 @@ export class WuSlider extends LitElement {
   /** Hint text below the slider */
   @property()
   hint = '';
+
+  /**
+   * Human-readable value text for screen readers (e.g. "50%" or "Medium").
+   * Defaults to the raw numeric value when not set.
+   */
+  @property({ attribute: 'value-text' })
+  valueText = '';
 
   /** Show tick marks at min/max (and intermediate marks if ticks provided) */
   @property({ type: Array })
@@ -108,10 +118,13 @@ export class WuSlider extends LitElement {
 
   override render() {
     const pct = ((this._currentValue - this.min) / (this.max - this.min)) * 100;
+    const labelId = `wu-slider-label-${this._uid}`;
+    const hintId = `wu-slider-hint-${this._uid}`;
+    const valueText = this.valueText || String(this._currentValue);
     return html`
       <div class="label-row" ?hidden=${!this.label && !this.showValue}>
-        <label ?hidden=${!this.label}>${this.label}</label>
-        <span class="value" ?hidden=${!this.showValue}>${this._currentValue}</span>
+        <label id=${labelId} ?hidden=${!this.label}>${this.label}</label>
+        <span class="value" ?hidden=${!this.showValue} aria-hidden="true">${this._currentValue}</span>
       </div>
       <div class="track-container">
         <input
@@ -121,10 +134,13 @@ export class WuSlider extends LitElement {
           max=${this.max}
           step=${this.step}
           ?disabled=${this.disabled}
-          aria-label=${this.label}
+          aria-labelledby=${ifDefined(this.label ? labelId : undefined)}
+          aria-label=${ifDefined(!this.label ? this.label || undefined : undefined)}
           aria-valuemin=${this.min}
           aria-valuemax=${this.max}
           aria-valuenow=${this._currentValue}
+          aria-valuetext=${valueText}
+          aria-describedby=${ifDefined(this.hint ? hintId : undefined)}
           style="--_pct:${pct}%"
           @input=${this._handleInput}
           @change=${this._handleChange}
@@ -133,7 +149,7 @@ export class WuSlider extends LitElement {
       <div class="tick-marks" aria-hidden="true" ?hidden=${!this.ticks.length}>
         ${this.ticks.map((t) => html`<span class="tick">${t}</span>`)}
       </div>
-      <span class="hint" ?hidden=${!this.hint}>${this.hint}</span>
+      <span id=${hintId} class="hint" ?hidden=${!this.hint}>${this.hint}</span>
     `;
   }
 }

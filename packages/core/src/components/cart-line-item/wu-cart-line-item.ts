@@ -14,7 +14,7 @@ import { styles } from './wu-cart-line-item.styles.js';
 export class WuCartLineItem extends LitElement {
   static styles = styles;
 
-  @property() itemId = '';
+  @property({ attribute: 'item-id' }) itemId = '';
   @property() name = '';
   @property() image = '';
   @property() price = '';

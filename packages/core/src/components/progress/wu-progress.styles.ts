@@ -54,4 +54,13 @@ export const styles = css`
     0%   { transform: translateX(-100%); }
     100% { transform: translateX(300%); }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    :host([indeterminate]) .fill {
+      animation: none;
+      transform: none;
+      width: 100% !important;
+      opacity: 0.4;
+    }
+  }
 `;

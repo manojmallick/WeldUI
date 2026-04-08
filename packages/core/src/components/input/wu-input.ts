@@ -23,6 +23,9 @@ import { styles } from './wu-input.styles.js';
 export class WuInput extends LitElement {
   static styles = styles;
 
+  /** Stable per-instance ID prefix — avoids new IDs on every render */
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
+
   /** Input type */
   @property()
   type: 'text' | 'email' | 'password' | 'number' | 'search' | 'tel' | 'url' = 'text';
@@ -73,14 +76,17 @@ export class WuInput extends LitElement {
   }
 
   override render() {
-    const id = 'input-' + (this.name ?? Math.random().toString(36).slice(2));
+    const inputId = `wu-input-${this._uid}`;
+    const errorId = `${inputId}-error`;
+    const hintId = `${inputId}-hint`;
+    const describedBy = this.error ? errorId : this.hint ? hintId : undefined;
     return html`
       <div part="base" class="wrapper">
-        ${this.label ? html`<label for=${id}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
+        ${this.label ? html`<label for=${inputId}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
         <div class="input-row">
           <input
             part="input"
-            id=${id}
+            id=${inputId}
             type=${this.type}
             .value=${this.value}
             placeholder=${ifDefined(this.placeholder)}
@@ -88,12 +94,13 @@ export class WuInput extends LitElement {
             ?disabled=${this.disabled}
             ?required=${this.required}
             aria-invalid=${this.error ? 'true' : 'false'}
+            aria-describedby=${ifDefined(describedBy)}
             @input=${this._handleInput}
             @blur=${this._handleBlur}
           />
         </div>
-        ${this.error ? html`<span class="error" role="alert">${this.error}</span>` : ''}
-        ${this.hint && !this.error ? html`<span class="hint">${this.hint}</span>` : ''}
+        ${this.error ? html`<span id=${errorId} class="error" role="alert">${this.error}</span>` : ''}
+        ${this.hint && !this.error ? html`<span id=${hintId} class="hint">${this.hint}</span>` : ''}
       </div>
     `;
   }

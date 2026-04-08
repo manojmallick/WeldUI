@@ -27,6 +27,8 @@ export interface SelectOption {
 export class WuSelect extends LitElement {
   static styles = styles;
 
+  private readonly _uid = Math.random().toString(36).slice(2, 9);
+
   /** Currently selected value */
   @property()
   value = '';
@@ -73,18 +75,22 @@ export class WuSelect extends LitElement {
   }
 
   override render() {
-    const id = 'select-' + (this.name ?? Math.random().toString(36).slice(2));
+    const selectId = `wu-select-${this._uid}`;
+    const errorId = `${selectId}-error`;
+    const hintId = `${selectId}-hint`;
+    const describedBy = this.error ? errorId : this.hint ? hintId : undefined;
     return html`
       <div part="base" class="wrapper">
-        ${this.label ? html`<label for=${id}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
+        ${this.label ? html`<label for=${selectId}>${this.label}${this.required ? html` <span aria-hidden="true">*</span>` : ''}</label>` : ''}
         <div class="select-row">
           <select
             part="select"
-            id=${id}
+            id=${selectId}
             name=${ifDefined(this.name)}
             ?disabled=${this.disabled}
             ?required=${this.required}
             aria-invalid=${this.error ? 'true' : 'false'}
+            aria-describedby=${ifDefined(describedBy)}
             @change=${this._handleChange}
           >
             ${this.placeholder ? html`<option value="" ?selected=${!this.value} disabled>${this.placeholder}</option>` : ''}
@@ -98,8 +104,8 @@ export class WuSelect extends LitElement {
             <path d="M4 6l4 4 4-4"/>
           </svg>
         </div>
-        ${this.error ? html`<span class="error" role="alert">${this.error}</span>` : ''}
-        ${this.hint && !this.error ? html`<span class="hint">${this.hint}</span>` : ''}
+        ${this.error ? html`<span id=${errorId} class="error" role="alert">${this.error}</span>` : ''}
+        ${this.hint && !this.error ? html`<span id=${hintId} class="hint">${this.hint}</span>` : ''}
       </div>
     `;
   }
